@@ -34,6 +34,9 @@ public static class Anonymizer
 
     private static readonly System.Text.RegularExpressions.Regex PrinterMac = new(@"(\bHP|\[)[0-9A-F]{6}(\]|\b)");
 
+    /// <summary>A user account's security id (S-1-5-21-domain-rid) identifies the PC and the user; task names and paths include it.</summary>
+    private static readonly System.Text.RegularExpressions.Regex AccountSid = new(@"S-1-5-21(-\d+){1,5}");
+
     private static bool IsBluetoothPeer(DeviceEntry d) =>
         d.InstanceId is { } id && (id.StartsWith(@"BTHENUM\", StringComparison.OrdinalIgnoreCase) || id.StartsWith(@"BTHLE\", StringComparison.OrdinalIgnoreCase)
                                    || id.StartsWith(@"BTHLEDEVICE\", StringComparison.OrdinalIgnoreCase) || id.StartsWith(@"BTHHFENUM\", StringComparison.OrdinalIgnoreCase)
@@ -43,6 +46,7 @@ public static class Anonymizer
     public static string Scrub(string text, IReadOnlyList<string> names)
     {
         text = UserPath.Replace(text, "[user]");
+        text = AccountSid.Replace(text, "S-1-5-21-[redacted]");
         foreach (var n in names)
             text = System.Text.RegularExpressions.Regex.Replace(text, System.Text.RegularExpressions.Regex.Escape(n), "[redacted]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         return text;

@@ -2,8 +2,11 @@ Warning GPU-003: The graphics driver is old: Intel(R) Arc(TM) Graphics | Driver 
 Warning MEM-006: Memory is nearly full | 78% of RAM in use (7.1 GB free of 31.5 GB); commit 36.5 GB of 37.3 GB (98%).
 Info STO-016: Health of Disk 1 (SSD 860 EVO 1TB) can't be read over USB | The USB adapter or enclosure hides the drive's SMART data.
 Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
+NotChecked CPU-002: Performance: not collected in this scan
+NotChecked CPU-003: Performance: not collected in this scan
 NotChecked CPU-005: Events: not collected in this scan
 NotChecked CPU-006: Events: not collected in this scan
+NotChecked CPU-008: Tuning: not collected in this scan
 NotChecked CRA-001: Events: not collected in this scan
 NotChecked CRA-002: Events: not collected in this scan
 NotChecked CRA-003: Events: not collected in this scan
@@ -25,7 +28,14 @@ NotChecked GPU-009: Displays: not collected in this scan
 NotChecked MEM-007: Events: not collected in this scan
 NotChecked MEM-008: Events: not collected in this scan
 NotChecked MEM-009: Events: not collected in this scan
+NotChecked PRF-001: Startup: not collected in this scan
+NotChecked PRF-003: Performance: not collected in this scan
+NotChecked PRF-005: Software: not collected in this scan
+NotChecked PRF-009: Software: not collected in this scan
 NotChecked STO-007: Events: not collected in this scan
+NotChecked STO-018: Tuning: not collected in this scan
+NotChecked STO-019: Tuning: not collected in this scan
+NotChecked STO-020: Performance: not collected in this scan
 NotChecked UPD-001: Updates: not collected in this scan
 NotChecked UPD-002: Updates: not collected in this scan
 NotChecked UPD-003: Updates: not collected in this scan

@@ -41,6 +41,14 @@ public static class Snap
             Devices = [new() { Name = "Test GPU", Class = "Display", InstanceId = @"PCI\VEN_10DE&DEV_2684\4&1", DriverProvider = "NVIDIA", DriverDate = Now.AddMonths(-2) }, new() { Name = "Trusted Platform Module 2.0", Class = "SecurityDevices" }],
         }),
         Displays = Section<DisplaysInfo>.Of(new DisplaysInfo { Displays = [new() { Adapter = "Test GPU", Monitor = "Monitor", Primary = true, Width = 2560, Height = 1440, RefreshHz = 144, MaxRefreshHz = 144 }] }),
+        Startup = Section<StartupInfo>.Of(new StartupInfo()),
+        Software = Section<SoftwareInfo>.Of(new SoftwareInfo()),
+        Performance = Section<PerformanceInfo>.Of(new PerformanceInfo { SampleSeconds = 3, CpuPercent = 8, DiskActivePercent = 4, ProcessorPerformancePercent = 95 }),
+        Tuning = Section<TuningInfo>.Of(new TuningInfo
+        {
+            PowerPlan = "Balanced", PowerPlanGuid = "381b4222-f694-41f0-9685-ff5bb260df2e", MaxCpuOnAc = 100, MaxCpuOnBattery = 100, OnAcPower = true,
+            PageFileSettings = [@"?:\pagefile.sys"], PageFiles = [new() { Path = @"C:\pagefile.sys", AllocatedMB = 4096 }],
+        }),
         Updates = Section<UpdatesInfo>.Of(new UpdatesInfo { History = [new() { DateUtc = Now.AddDays(-10), Title = "2026-10 Cumulative Update for Windows 11 Version 25H2 (KB5099999)", Result = 2 }] }),
     };
 

@@ -108,6 +108,39 @@ s.updates = { value: {
   policy: { usesWsus: false, autoUpdateOff: false, windowsUpdateBlocked: false, pausedUntilUtc: ago(-21) },
   upgradeBlocks: [{ target: 'GE25H2', redReason: 'None', gatedBlockId: '56318982' }],
 } };
+// Phase 6: startup, software, a busy performance sample and slow settings.
+const run = (name, location, enabled = true) => ({ name, location, enabled, command: 'C:\\Program Files\\' + name + '\\' + name + '.exe' });
+s.startup = { value: { entries: [
+  ...['Steam', 'Discord', 'Spotify', 'Epic Games Launcher', 'Adobe Creative Cloud', 'Dropbox', 'Zoom', 'Teams', 'Razer Synapse', 'iCUE', 'OneDrive', 'Skype',
+      'Logitech G HUB', 'Battle.net', 'Opera GX', 'Wallpaper Engine', 'EA app'].map((n) => run(n, 'HKCU Run')),
+  run('MSI Center', 'HKLM Run', false),
+  { name: 'GoogleUpdateTaskMachineUA', location: 'Scheduled task', enabled: true, command: 'C:\\Program Files (x86)\\Google\\Update\\GoogleUpdate.exe /ua' },
+] } };
+s.software = { value: {
+  programs: [
+    { name: '7-Zip 24.08 (x64)', version: '24.08', publisher: 'Igor Pavlov', installDate: '2026-01-12T00:00:00Z', sizeKB: 5800, scope: 'Machine' },
+    { name: 'Driver Booster 12', version: '12.0.0', publisher: 'IObit', installDate: '2026-09-30T00:00:00Z', sizeKB: 120000, scope: 'Machine (32-bit)' },
+    { name: 'Google Chrome', version: '141.0.7390.65', publisher: 'Google LLC', installDate: '2026-10-01T00:00:00Z', scope: 'Machine' },
+    { name: 'Wave Browser', version: '1.5.1', publisher: 'Wavesor Software', installDate: '2026-10-02T00:00:00Z', scope: 'User' },
+  ],
+  defaultBrowser: 'ChromeHTML', browserExtensions: { 'Chrome: Default': 27 },
+} };
+s.performance = { value: {
+  sampleSeconds: 3, cpuPercent: 94, diskActivePercent: 100, processorPerformancePercent: 38, processCount: 212,
+  processes: [
+    { name: 'svchosts.exe', pid: 6120, cpuPercent: 81.5, privateMB: 220, workingSetMB: 240, diskBytesPerSec: 0, path: 'C:\\Users\\Public\\svchosts.exe' },
+    { name: 'chrome.exe', pid: 4410, cpuPercent: 6.2, privateMB: 2100, workingSetMB: 1800, diskBytesPerSec: 120000 },
+    { name: 'SearchIndexer.exe', pid: 3120, cpuPercent: 1.1, privateMB: 90, workingSetMB: 60, diskBytesPerSec: 64 * 1048576, path: 'C:\\Windows\\System32\\SearchIndexer.exe' },
+  ],
+} };
+s.tuning = { value: {
+  powerPlan: 'Power saver', powerPlanGuid: 'a1841308-3541-4fab-bc81-f71556f20b4a', maxCpuOnAc: 80, maxCpuOnBattery: 50, onAcPower: true, batterySaverOn: false,
+  pageFileSettings: [], pageFiles: [], visualEffects: 1, transparency: true, gameMode: true, gpuScheduling: false,
+  cleanup: [
+    { name: 'Previous Windows installation (Windows.old)', path: 'C:\\Windows.old', bytes: Math.round(23.4 * 1073741824), atLeast: false },
+    { name: 'Your temp files', path: 'C:\\Users\\[user]\\AppData\\Local\\Temp\\', bytes: Math.round(4.1 * 1073741824), atLeast: true },
+  ],
+} };
 s.health.value.licenseStatus = 5;
 s.health.value.licenseName = 'Windows(R), Professional edition';
 s.cpu.value.packages[0] ={ ...s.cpu.value.packages[0], name: '13th Gen Intel(R) Core(TM) i9-13900K', identifier: 'Intel64 Family 6 Model 183 Stepping 1', microcode: '0x119' };

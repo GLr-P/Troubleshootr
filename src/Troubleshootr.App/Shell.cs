@@ -12,7 +12,7 @@ public sealed class Shell : UserControl
     private static readonly Dictionary<string, string> Glyphs = new()
     {
         ["Diagnose"] = "", ["Summary"] = "", ["System"] = "", ["CPU"] = "", ["Memory"] = "",
-        ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "",
+        ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Performance"] = "", ["Processes"] = "", ["Startup"] = "", ["Software"] = "",["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "",
     };
 
     private readonly MainViewModel _vm;
@@ -60,6 +60,7 @@ public sealed class Shell : UserControl
             {
                 "Diagnose" => new DiagnosePage(_vm),
                 "Report" => new ReportPage(_vm),
+                "Processes" => new ProcessesPage(_vm),
                 _ => new InfoPage(page, _vm),
             };
         _content.Content = view;

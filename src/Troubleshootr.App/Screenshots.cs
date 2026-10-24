@@ -36,7 +36,7 @@ public static class Screenshots
         foreach (var t in themes)
         {
             Ui.ApplyTheme(t == "dark");
-            var vm = new MainViewModel();
+            var vm = new MainViewModel { Live = false };
             vm.Show(report);
             var shell = new Shell(vm);
             TextOptions.SetTextFormattingMode(shell, TextFormattingMode.Display);

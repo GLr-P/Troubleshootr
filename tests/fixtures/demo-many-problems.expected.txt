@@ -5,6 +5,7 @@ Critical MEM-008: Windows Memory Diagnostic found RAM errors | Memory test faile
 Critical STO-002: Disk 1 (WDC WD10EZEX-08WN4A0) has unreadable sectors | Reallocated: 312, pending: 24, uncorrectable: 8.
 Critical STO-007: A drive reported bad blocks | In the last 30 days: bad blocks once (disk 1); timeouts or resets 3 times.
 Critical STO-008: System drive C:\ is almost full | C:\ has 27.8 GB free of 925.9 GB (3%).
+Warning CPU-002: The processor is maxed out | CPU 94% busy over 3 s. Top: svchosts.exe 82%, chrome.exe 6%, SearchIndexer.exe 1%.
 Warning CPU-006: The processor reported corrected hardware errors | 1 WHEA processor event in 30 days: Cache Hierarchy Error.
 Warning CRA-002: Blue screens with different causes each time | 4 crashes with 4 different codes: DRIVER_IRQL_NOT_LESS_OR_EQUAL ×1, MEMORY_MANAGEMENT ×1, VIDEO_TDR_FAILURE ×1, SYSTEM_SERVICE_EXCEPTION ×1.
 Warning CRA-003: PhotoEditor.exe keeps crashing | PhotoEditor.exe: 4 crashes (in gpu_helper.dll) in the last 30 days.
@@ -17,6 +18,8 @@ Warning GPU-005: The graphics driver crashed the PC | 2026-10-15 0x116 VIDEO_TDR
 Warning MEM-006: Memory is nearly full | 98% of RAM in use (0.6 GB free of 31.5 GB); commit 36.4 GB of 37.3 GB (98%).
 Warning MEM-007: The RAM reported corrected errors | 1 WHEA memory error event in 30 days.
 Warning MEM-009: Crashes point to a memory problem | 1 of 4 blue screens in 30 days has a memory-type code: MEMORY_MANAGEMENT.
+Warning PRF-001: 17 programs start with Windows | Steam, Discord, Spotify, Epic Games Launcher, Adobe Creative Cloud, Dropbox, Zoom, Teams, Razer Synapse, iCUE, OneDrive, Skype and 5 more.
+Warning PRF-003: A program is hogging the PC | svchosts.exe is using 82% of the CPU; SearchIndexer.exe is reading/writing 64 MB/s (sampled for 3 s).
 Warning STO-003: Disk 0 (Micron_2400_MTFDKBA1T0QFM) has recorded media errors | 4 media and data integrity errors; spare 100%.
 Warning STO-004: Disk 0 (Micron_2400_MTFDKBA1T0QFM) is wearing out | 86% of rated endurance used. 4.8 TB written.
 Warning STO-005: Disk 0 (Micron_2400_MTFDKBA1T0QFM) runs hot | 73 °C now (comfortable below 70 °C).
@@ -24,6 +27,8 @@ Warning STO-006: Disk 1 (WDC WD10EZEX-08WN4A0) is an old hard drive | 43,210 pow
 Warning STO-009: Drive C:\ has file system errors | C:\ is marked dirty; Windows will check it at the next restart.
 Warning STO-011: TRIM is turned off for SSDs | DisableDeleteNotification = 1 (NTFS).
 Warning STO-013: Windows reports a health warning on Disk 1 (WDC WD10EZEX-08WN4A0) | Health: Warning. Status: Predictive Failure.
+Warning STO-019: There's no page file | Virtual memory is turned off (no paging file on any drive).
+Warning STO-020: A disk is at 100% | Disk active 100% over 3 s. Busiest: SearchIndexer.exe 64 MB/s, chrome.exe 117 KB/s.
 Warning UPD-001: Windows hasn't installed updates in a long time | Last successful Windows update: 2026-08-10 (75 days ago).
 Warning UPD-002: An update keeps failing | 2026-10 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5099999): 0x800F081F (component store files missing (run DISM RestoreHealth)).
 Warning UPD-003: Windows updates are blocked or paused | updates are paused until 2026-11-14.
@@ -40,6 +45,8 @@ Warning WIN-013: Windows had trouble loading a user profile | 1 User Profile Ser
 Warning WIN-014: Windows ran low on memory | Low virtual memory warnings once in 30 days. The following programs consumed the most virtual memory: chrome.exe (8124) consumed 12884901888 bytes, PhotoEditor.exe (4410) consumed 4294967296 bytes.
 Warning WIN-016: Windows Explorer or the Start menu keeps crashing | explorer.exe 3 times in the last 7 days.
 Warning WIN-017: Windows has been unstable lately | Reliability Monitor stability index 2.4 of 10 (lowest in 30 days: 1.2).
+Info CPU-003: The processor is running slowly under load | CPU 94% busy but at only 38% of its base speed, while plugged in.
+Info CPU-008: The power plan slows the processor down | the Power saver plan is active; the processor is capped at 80% while plugged in (plan: Power saver).
 Info CRA-004: Windows recorded hardware or driver error reports | recovered problem 0x141 VIDEO_ENGINE_TIMEOUT_DETECTED ×1 in the last 30 days.
 Info DRV-001: A device is disabled: Integrated Webcam | Integrated Webcam (Camera).
 Info DRV-005: An old driver: Realtek PCIe GbE Family Controller | Realtek PCIe GbE Family Controller: Realtek 10.12.1012.2016 from 2016-10-12.
@@ -48,6 +55,9 @@ Info GPU-007: A display runs below its best refresh rate | Generic PnP Monitor a
 Info MEM-003: RAM runs below its rated speed | Running at 4800 MT/s; the modules are rated for 6000 MT/s (F5-6000J3038F16G).
 Info MEM-005: RAM runs in single channel | 1 stick (4 GB LPDDR5) in a board with 2 slots.
 Info PER-007: The BIOS is old | American Megatrends International, LLC. E1595IMS.10B, dated 2021-03-01 (5.7 years old).
+Info PRF-005: "Optimizer" or adware programs are installed | Driver Booster 12, Wave Browser.
+Info PRF-009: A browser has a lot of extensions | Chrome: Default: 27 extensions.
+Info STO-018: About 27.5 GB could be freed up | Previous Windows installation (Windows.old): 23.4 GB; Your temp files: at least 4.1 GB.
 Info UPD-005: The next Windows version is blocked on this PC | 25H2: safeguard hold 56318982.
 Info WIN-005: The PC hasn't restarted in a long time | Up for 40 days. Fast Startup is on, so Shut down doesn't count; only Restart does.
 Info WIN-015: Group Policy is failing to apply | 1 Group Policy error in 30 days (ids 1129).

@@ -26,9 +26,9 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | STO-015 | Disk link speed / mode (SATA at 1.5/3 Gb/s, NVMe at reduced PCIe lanes or generation) | IOCTL / WMI MSFT_PhysicalDisk | ✓ | I/W | | 3 |
 | STO-016 | Drive behind a USB bridge (SMART may be hidden) | IOCTL bus type | | I "connect directly for full health data" | ✓ | 3 ✅ |
 | STO-017 | BitLocker on, and is the recovery key known? (before repair work) | WMI Win32_EncryptableVolume | ✓ | W "back up the key before touching the drive" | ✓ | 8 |
-| STO-018 | Large temp / Windows.old / update cache use | FILE sizes | | I with the amount reclaimable | | 6 |
-| STO-019 | Pagefile location and size sanity (none, on a full or USB drive) | REG / WMI Win32_PageFileUsage | | W | ✓ | 6 |
-| STO-020 | Average disk queue / active time during scan (disk at 100%) | API PDH counters, 3 s sample | | W if > 90% active for the whole sample | | 6 |
+| STO-018 | Large temp / Windows.old / update cache use | FILE sizes | | I with the amount reclaimable | | 6 ✅ |
+| STO-019 | Pagefile location and size sanity (none, on a full or USB drive) | REG / WMI Win32_PageFileUsage | | W | ✓ | 6 ✅ |
+| STO-020 | Average disk queue / active time during scan (disk at 100%) | API PDH counters, 3 s sample | | W if > 90% active for the whole sample | | 6 ✅ |
 
 ## Memory (MEM)
 
@@ -52,13 +52,13 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
 | CPU-001 | CPU identity: name, cores/threads, base/boost, socket, microcode, virtualization on | WMI Win32_Processor, REG, API | | I | ✓ | 1 ✅ |
-| CPU-002 | Sustained high CPU usage and the top processes (3 s sample) | API | | W > 85% average | ✓ | 6 |
-| CPU-003 | Throttling: current clock far below base under load | WMI Win32_PerfFormattedData_Counters_ProcessorInformation (% Processor Performance) | | W | ✓ | 6 |
+| CPU-002 | Sustained high CPU usage and the top processes (3 s sample) | API | | W > 85% average | ✓ | 6 ✅ |
+| CPU-003 | Throttling: current clock far below base under load | WMI Win32_PerfFormattedData_Counters_ProcessorInformation (% Processor Performance) | | W | ✓ | 6 ✅ |
 | CPU-004 | Temperature: package / cores | LHM, fallback ACPI MSAcpi_ThermalZoneTemperature | ✓ | W > 90 °C, C > 100 °C or at TjMax | ✓ | 9 |
 | CPU-005 | Thermal-throttling events / kernel-power thermal events | EVT Kernel-Processor-Power 37 | | I on laptops (normal on battery); W on desktops with 5+ | ✓ | 4 ✅ |
 | CPU-006 | WHEA CPU / cache / bus errors (machine checks: unstable OC or failing hardware) | EVT WHEA-Logger 18/19 | | C if fatal; W corrected | ✓ | 4 ✅ |
 | CPU-007 | Known-bad CPU microcode (Intel 13th/14th-gen Vmin instability: microcode < 0x12B) | REG microcode revision + model | | C on affected models below the fixed version | ✓ | 4 ✅ |
-| CPU-008 | Power plan (Power saver on a desktop; max processor state < 100%) | API PowerGetActiveScheme / REG | | W | ✓ | 6 |
+| CPU-008 | Power plan (Power saver on a desktop; max processor state < 100%) | API PowerGetActiveScheme / REG | | W | ✓ | 6 ✅ |
 | CPU-009 | Windows 11 CPU support (unsupported CPU = no feature updates) | lookup list | | I | | 5 ✅ |
 
 ## Graphics and display (GPU)
@@ -142,15 +142,15 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| PRF-001 | Startup programs (Run/RunOnce keys in both views, Startup folders, logon scheduled tasks, StartupApproved state) with the estimated impact | REG, FILE, Task Scheduler COM | | I; W if > 15 enabled | ✓ | 6 |
-| PRF-002 | Processes (task-manager view): CPU, memory, disk, path, signer, start time | API | | display | | 6 |
-| PRF-003 | Resource hogs right now (top CPU / RAM / disk processes during a 3 s sample) | API PDH | | W | ✓ | 6 |
+| PRF-001 | Startup programs (Run/RunOnce keys in both views, Startup folders, logon scheduled tasks, StartupApproved state) with the estimated impact | REG, FILE, Task Scheduler COM | | I; W if > 15 enabled | ✓ | 6 ✅ |
+| PRF-002 | Processes (task-manager view): CPU, memory, disk, path, signer, start time | API | | display | | 6 ✅ |
+| PRF-003 | Resource hogs right now (top CPU / RAM / disk processes during a 3 s sample) | API PDH | | W | ✓ | 6 ✅ |
 | PRF-004 | Multiple antivirus products running (common slowdown) | WMI root\SecurityCenter2 | | W | ✓ | 8 |
-| PRF-005 | Third-party "optimizers" / bloatware / PUPs installed (small lookup list) | REG Uninstall | | I | ✓ | 6 |
-| PRF-006 | Visual effects / transparency / Game Mode / hardware-accelerated GPU scheduling summary | REG | | I | | 6 |
-| PRF-007 | Services set to Automatic that keep crashing or use lots of CPU | WMI + EVT | | W | | 6 |
-| PRF-008 | Installed programs (name, version, publisher, install date, size): no Win32_Product | REG Uninstall + Appx | | display | | 6 |
-| PRF-009 | Browser count and default browser, heavy extension count (Chromium profiles) | FILE | | I | | 6 |
+| PRF-005 | Third-party "optimizers" / bloatware / PUPs installed (small lookup list) | REG Uninstall | | I | ✓ | 6 ✅ |
+| PRF-006 | Visual effects / transparency / Game Mode / hardware-accelerated GPU scheduling summary | REG | | I | | 6 ✅ |
+| PRF-007 | Services set to Automatic that keep crashing or use lots of CPU | WMI + EVT | | W | | 6 ✅ (covered by WIN-009 + PRF-003) |
+| PRF-008 | Installed programs (name, version, publisher, install date, size): no Win32_Product | REG Uninstall + Appx | | display | | 6 ✅ |
+| PRF-009 | Browser count and default browser, heavy extension count (Chromium profiles) | FILE | | I | | 6 ✅ |
 | PRF-010 | Thermal or power limits causing slowness on laptops (battery saver on, plugged into a low-watt charger) | API GetSystemPowerStatus + battery | | I | ✓ | 11 |
 
 ## Network (NET)

@@ -1,4 +1,467 @@
 {
+  "performance": {
+    "value": {
+      "sampleSeconds": 3.2000000000000002,
+      "cpuPercent": 17.800000000000001,
+      "diskActivePercent": 20.100000000000001,
+      "processorPerformancePercent": 79.099999999999994,
+      "processes": [
+        {
+          "name": "VBCSCompiler.exe",
+          "pid": 28776,
+          "cpuPercent": 2.7000000000000002,
+          "privateMB": 208,
+          "workingSetMB": 329,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Program Files\\dotnet\\sdk\\10.0.402\\Roslyn\\bincore\\VBCSCompiler.exe"
+        },
+        {
+          "name": "Discord.exe",
+          "pid": 25268,
+          "cpuPercent": 1.1000000000000001,
+          "privateMB": 752,
+          "workingSetMB": 664,
+          "diskBytesPerSec": 1766,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Discord\\app-1.0.9264\\Discord.exe"
+        },
+        {
+          "name": "Creative Cloud UI Helper.exe",
+          "pid": 39908,
+          "cpuPercent": 0.40000000000000002,
+          "privateMB": 461,
+          "workingSetMB": 305,
+          "diskBytesPerSec": 338157,
+          "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
+        },
+        {
+          "name": "Code.exe",
+          "pid": 20816,
+          "cpuPercent": 0.40000000000000002,
+          "privateMB": 85,
+          "workingSetMB": 132,
+          "diskBytesPerSec": 1968,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+        },
+        {
+          "name": "Troubleshootr.exe",
+          "pid": 27976,
+          "cpuPercent": 0.29999999999999999,
+          "privateMB": 530,
+          "workingSetMB": 538,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\Desktop\\Troubleshootr-0.3.0\\Troubleshootr.exe"
+        },
+        {
+          "name": "Code.exe",
+          "pid": 5408,
+          "cpuPercent": 0.29999999999999999,
+          "privateMB": 348,
+          "workingSetMB": 321,
+          "diskBytesPerSec": 7469,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+        },
+        {
+          "name": "claude.exe",
+          "pid": 14388,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 638,
+          "workingSetMB": 535,
+          "diskBytesPerSec": 426,
+          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+        },
+        {
+          "name": "Creative Cloud UI Helper.exe",
+          "pid": 22844,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 338,
+          "workingSetMB": 193,
+          "diskBytesPerSec": 338059,
+          "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
+        },
+        {
+          "name": "RustDesk.exe",
+          "pid": 31228,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 253,
+          "workingSetMB": 83,
+          "diskBytesPerSec": 574,
+          "path": "C:\\Program Files\\RustDesk\\RustDesk.exe"
+        },
+        {
+          "name": "opera.exe",
+          "pid": 5272,
+          "cpuPercent": 0,
+          "privateMB": 801,
+          "workingSetMB": 626,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
+        },
+        {
+          "name": "steamwebhelper.exe",
+          "pid": 20092,
+          "cpuPercent": 0,
+          "privateMB": 677,
+          "workingSetMB": 424,
+          "diskBytesPerSec": 98,
+          "path": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe"
+        },
+        {
+          "name": "claude.exe",
+          "pid": 15100,
+          "cpuPercent": 0,
+          "privateMB": 618,
+          "workingSetMB": 199,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+        },
+        {
+          "name": "claude.exe",
+          "pid": 3872,
+          "cpuPercent": 0,
+          "privateMB": 570,
+          "workingSetMB": 406,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+        },
+        {
+          "name": "explorer.exe",
+          "pid": 4588,
+          "cpuPercent": 0,
+          "privateMB": 561,
+          "workingSetMB": 488,
+          "diskBytesPerSec": 2975,
+          "path": "C:\\Windows\\explorer.exe"
+        },
+        {
+          "name": "claude.exe",
+          "pid": 39716,
+          "cpuPercent": 0,
+          "privateMB": 533,
+          "workingSetMB": 358,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+        },
+        {
+          "name": "claude.exe",
+          "pid": 44676,
+          "cpuPercent": 0,
+          "privateMB": 198,
+          "workingSetMB": 183,
+          "diskBytesPerSec": 24806,
+          "path": "C:\\Program Files\\WindowsApps\\Claude_3.6556.2.0_x64__pzs8sxrjxfjjc\\app\\claude.exe"
+        },
+        {
+          "name": "opera.exe",
+          "pid": 30560,
+          "cpuPercent": 0,
+          "privateMB": 53,
+          "workingSetMB": 80,
+          "diskBytesPerSec": 44700,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
+        },
+        {
+          "name": "claude.exe",
+          "pid": 3308,
+          "cpuPercent": 0,
+          "privateMB": 21,
+          "workingSetMB": 68,
+          "diskBytesPerSec": 20687,
+          "path": "C:\\Program Files\\WindowsApps\\Claude_3.6556.2.0_x64__pzs8sxrjxfjjc\\app\\claude.exe"
+        }
+      ],
+      "processCount": 468
+    }
+  },
+  "tuning": {
+    "value": {
+      "powerPlan": "Balanced",
+      "powerPlanGuid": "381b4222-f694-41f0-9685-ff5bb260df2e",
+      "maxCpuOnAc": 100,
+      "maxCpuOnBattery": 100,
+      "onAcPower": false,
+      "batterySaverOn": true,
+      "pageFileSettings": [
+        "?:\\pagefile.sys"
+      ],
+      "pageFiles": [
+        {
+          "path": "C:\\pagefile.sys",
+          "allocatedMB": 8982,
+          "currentMB": 197,
+          "peakMB": 268
+        }
+      ],
+      "transparency": true,
+      "gameMode": true,
+      "cleanup": [
+        {
+          "name": "Your temp files",
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Temp\\",
+          "bytes": 2803848579,
+          "atLeast": true
+        },
+        {
+          "name": "Windows temp files",
+          "path": "C:\\Windows\\Temp",
+          "bytes": 0,
+          "atLeast": false
+        },
+        {
+          "name": "Downloaded Windows updates",
+          "path": "C:\\Windows\\SoftwareDistribution\\Download",
+          "bytes": 2165022,
+          "atLeast": false
+        },
+        {
+          "name": "Error reports",
+          "path": "C:\\ProgramData\\Microsoft\\Windows\\WER",
+          "bytes": 1230660,
+          "atLeast": false
+        }
+      ]
+    }
+  },
+  "system": {
+    "value": {
+      "deviceName": "[redacted]",
+      "userName": "[redacted]",
+      "domain": "[redacted]",
+      "manufacturer": "Micro-Star International Co., Ltd.",
+      "model": "Summit E16 AI Evo A1MTG",
+      "serialNumber": "[redacted]",
+      "pcSystemType": 2,
+      "hasBattery": true,
+      "windowsProductName": "Windows 10 Home",
+      "windowsDisplayVersion": "25H2",
+      "editionId": "Core",
+      "build": 26200,
+      "ubr": 9711,
+      "majorVersion": 10,
+      "minorVersion": 0,
+      "installDateUtc": "2026-06-30T01:25:46Z",
+      "is64BitOs": true,
+      "architecture": "AMD64",
+      "uptimeSeconds": 373392,
+      "fastStartupEnabled": true,
+      "pendingRebootReasons": [
+        "file operations waiting for a restart"
+      ]
+    }
+  },
+  "cpu": {
+    "value": {
+      "packages": [
+        {
+          "name": "Intel(R) Core(TM) Ultra 7 155H",
+          "manufacturer": "GenuineIntel",
+          "identifier": "Intel64 Family 6 Model 170 Stepping 4",
+          "cores": 16,
+          "threads": 22,
+          "maxClockMhz": 3800,
+          "currentClockMhz": 1400,
+          "socket": "U3E1",
+          "l2KB": 18432,
+          "l3KB": 24576,
+          "virtualizationFirmwareEnabled": false,
+          "microcode": "0x1E"
+        }
+      ]
+    }
+  },
+  "memory": {
+    "value": {
+      "installedMB": 32768,
+      "usableMB": 32276,
+      "availableMB": 6307,
+      "commitUsedMB": 39321,
+      "commitLimitMB": 41258,
+      "slotCount": 8,
+      "maxCapacityMB": 32768,
+      "modules": [
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 0",
+          "locator": "Controller0-ChannelA",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 1",
+          "locator": "Controller0-ChannelB",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 2",
+          "locator": "Controller0-ChannelC",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 3",
+          "locator": "Controller0-ChannelD",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 0",
+          "locator": "Controller1-ChannelA",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 1",
+          "locator": "Controller1-ChannelB",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 2",
+          "locator": "Controller1-ChannelC",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 3",
+          "locator": "Controller1-ChannelD",
+          "type": "LPDDR5"
+        }
+      ]
+    }
+  },
+  "board": {
+    "value": {
+      "boardManufacturer": "Micro-Star International Co., Ltd.",
+      "boardProduct": "MS-1595",
+      "boardVersion": "REV:1.0",
+      "boardSerial": "[redacted]",
+      "biosVendor": "American Megatrends International, LLC.",
+      "biosVersion": "E1595IMS.10B",
+      "biosDate": "2024-09-30T17:00:00",
+      "firmwareType": "UEFI",
+      "secureBoot": true
+    }
+  },
+  "volumes": {
+    "value": [
+      {
+        "root": "C:\\",
+        "label": "Windows",
+        "fileSystem": "NTFS",
+        "driveType": "Fixed",
+        "totalBytes": 994179018752,
+        "freeBytes": 526973210624,
+        "isSystem": true
+      }
+    ]
+  },
+  "gpus": {
+    "value": [
+      {
+        "name": "Intel(R) Arc(TM) Graphics",
+        "vramBytes": 19327352832,
+        "driverVersion": "31.0.101.5333",
+        "driverDate": "2024-02-20T16:00:00",
+        "pnpDeviceId": "PCI\\VEN_8086\u0026DEV_7D55\u0026SUBSYS_14171462\u0026REV_08\\3\u002611583659\u00261\u002610",
+        "resolutionWidth": 2560,
+        "resolutionHeight": 1600,
+        "refreshHz": 165,
+        "status": "OK",
+        "errorCode": 0
+      }
+    ]
+  },
+  "storage": {
+    "value": {
+      "disks": [
+        {
+          "number": 0,
+          "model": "Micron_2400_MTFDKBA1T0QFM",
+          "serialNumber": "[redacted]",
+          "firmware": "V3MA002",
+          "busType": "NVMe",
+          "mediaType": "SSD",
+          "sizeBytes": 1024209543168,
+          "pnpDeviceId": "SCSI\\DISK\u0026VEN_NVME\u0026PROD_MICRON_2400_MTFD\\4\u0026213A8AFD\u00260\u0026020000",
+          "isBoot": true,
+          "driveLetters": [
+            "C:"
+          ],
+          "health": "Healthy",
+          "operationalStatus": [
+            "OK"
+          ],
+          "nvme": {
+            "criticalWarning": 0,
+            "temperatureC": 33,
+            "availableSparePercent": 100,
+            "spareThresholdPercent": 5,
+            "percentageUsed": 1,
+            "dataUnitsRead": 8211202,
+            "dataUnitsWritten": 9337344,
+            "powerCycles": 186,
+            "powerOnHours": 328,
+            "unsafeShutdowns": 13,
+            "mediaErrors": 0,
+            "errorLogEntries": 0,
+            "warningTempMinutes": 0,
+            "criticalTempMinutes": 0
+          }
+        }
+      ],
+      "partitions": [
+        {
+          "diskNumber": 0,
+          "partitionNumber": 0,
+          "driveLetter": "C:",
+          "offsetBytes": 449839104,
+          "sizeBytes": 0
+        }
+      ],
+      "virtualDisks": [],
+      "trimDisabled": false
+    }
+  },
   "events": {
     "value": {
       "days": 30,
@@ -3200,286 +3663,10 @@
       },
       "tempProfile": false,
       "profileBackups": 0,
-      "stabilityIndex": 6.54,
+      "stabilityIndex": 6.5599999999999996,
       "stabilityLowest30Days": 2.3399999999999999,
       "licenseStatus": 1,
       "licenseName": "Windows(R), Core edition"
-    }
-  },
-  "system": {
-    "value": {
-      "deviceName": "[redacted]",
-      "userName": "[redacted]",
-      "domain": "[redacted]",
-      "manufacturer": "Micro-Star International Co., Ltd.",
-      "model": "Summit E16 AI Evo A1MTG",
-      "serialNumber": "[redacted]",
-      "pcSystemType": 2,
-      "hasBattery": true,
-      "windowsProductName": "Windows 10 Home",
-      "windowsDisplayVersion": "25H2",
-      "editionId": "Core",
-      "build": 26200,
-      "ubr": 9711,
-      "majorVersion": 10,
-      "minorVersion": 0,
-      "installDateUtc": "2026-06-30T01:25:46Z",
-      "is64BitOs": true,
-      "architecture": "AMD64",
-      "uptimeSeconds": 372483,
-      "fastStartupEnabled": true,
-      "pendingRebootReasons": [
-        "file operations waiting for a restart"
-      ]
-    }
-  },
-  "cpu": {
-    "value": {
-      "packages": [
-        {
-          "name": "Intel(R) Core(TM) Ultra 7 155H",
-          "manufacturer": "GenuineIntel",
-          "identifier": "Intel64 Family 6 Model 170 Stepping 4",
-          "cores": 16,
-          "threads": 22,
-          "maxClockMhz": 3800,
-          "currentClockMhz": 1400,
-          "socket": "U3E1",
-          "l2KB": 18432,
-          "l3KB": 24576,
-          "virtualizationFirmwareEnabled": false,
-          "microcode": "0x1E"
-        }
-      ]
-    }
-  },
-  "memory": {
-    "value": {
-      "installedMB": 32768,
-      "usableMB": 32276,
-      "availableMB": 6734,
-      "commitUsedMB": 39085,
-      "commitLimitMB": 40225,
-      "slotCount": 8,
-      "maxCapacityMB": 32768,
-      "modules": [
-        {
-          "capacityMB": 4096,
-          "speedMts": 6400,
-          "configuredSpeedMts": 6400,
-          "manufacturer": "SK Hynix",
-          "partNumber": "H58G66AK6BX070",
-          "serialNumber": "[redacted]",
-          "bankLabel": "BANK 0",
-          "locator": "Controller0-ChannelA",
-          "type": "LPDDR5"
-        },
-        {
-          "capacityMB": 4096,
-          "speedMts": 6400,
-          "configuredSpeedMts": 6400,
-          "manufacturer": "SK Hynix",
-          "partNumber": "H58G66AK6BX070",
-          "serialNumber": "[redacted]",
-          "bankLabel": "BANK 1",
-          "locator": "Controller0-ChannelB",
-          "type": "LPDDR5"
-        },
-        {
-          "capacityMB": 4096,
-          "speedMts": 6400,
-          "configuredSpeedMts": 6400,
-          "manufacturer": "SK Hynix",
-          "partNumber": "H58G66AK6BX070",
-          "serialNumber": "[redacted]",
-          "bankLabel": "BANK 2",
-          "locator": "Controller0-ChannelC",
-          "type": "LPDDR5"
-        },
-        {
-          "capacityMB": 4096,
-          "speedMts": 6400,
-          "configuredSpeedMts": 6400,
-          "manufacturer": "SK Hynix",
-          "partNumber": "H58G66AK6BX070",
-          "serialNumber": "[redacted]",
-          "bankLabel": "BANK 3",
-          "locator": "Controller0-ChannelD",
-          "type": "LPDDR5"
-        },
-        {
-          "capacityMB": 4096,
-          "speedMts": 6400,
-          "configuredSpeedMts": 6400,
-          "manufacturer": "SK Hynix",
-          "partNumber": "H58G66AK6BX070",
-          "serialNumber": "[redacted]",
-          "bankLabel": "BANK 0",
-          "locator": "Controller1-ChannelA",
-          "type": "LPDDR5"
-        },
-        {
-          "capacityMB": 4096,
-          "speedMts": 6400,
-          "configuredSpeedMts": 6400,
-          "manufacturer": "SK Hynix",
-          "partNumber": "H58G66AK6BX070",
-          "serialNumber": "[redacted]",
-          "bankLabel": "BANK 1",
-          "locator": "Controller1-ChannelB",
-          "type": "LPDDR5"
-        },
-        {
-          "capacityMB": 4096,
-          "speedMts": 6400,
-          "configuredSpeedMts": 6400,
-          "manufacturer": "SK Hynix",
-          "partNumber": "H58G66AK6BX070",
-          "serialNumber": "[redacted]",
-          "bankLabel": "BANK 2",
-          "locator": "Controller1-ChannelC",
-          "type": "LPDDR5"
-        },
-        {
-          "capacityMB": 4096,
-          "speedMts": 6400,
-          "configuredSpeedMts": 6400,
-          "manufacturer": "SK Hynix",
-          "partNumber": "H58G66AK6BX070",
-          "serialNumber": "[redacted]",
-          "bankLabel": "BANK 3",
-          "locator": "Controller1-ChannelD",
-          "type": "LPDDR5"
-        }
-      ]
-    }
-  },
-  "board": {
-    "value": {
-      "boardManufacturer": "Micro-Star International Co., Ltd.",
-      "boardProduct": "MS-1595",
-      "boardVersion": "REV:1.0",
-      "boardSerial": "[redacted]",
-      "biosVendor": "American Megatrends International, LLC.",
-      "biosVersion": "E1595IMS.10B",
-      "biosDate": "2024-09-30T17:00:00",
-      "firmwareType": "UEFI",
-      "secureBoot": true
-    }
-  },
-  "volumes": {
-    "value": [
-      {
-        "root": "C:\\",
-        "label": "Windows",
-        "fileSystem": "NTFS",
-        "driveType": "Fixed",
-        "totalBytes": 994179018752,
-        "freeBytes": 527002161152,
-        "isSystem": true
-      },
-      {
-        "root": "D:\\",
-        "fileSystem": "NTFS",
-        "driveType": "Fixed",
-        "totalBytes": 1000080404480,
-        "freeBytes": 841721950208,
-        "isSystem": false,
-        "dirty": true
-      }
-    ]
-  },
-  "gpus": {
-    "value": [
-      {
-        "name": "Intel(R) Arc(TM) Graphics",
-        "vramBytes": 19327352832,
-        "driverVersion": "31.0.101.5333",
-        "driverDate": "2024-02-20T16:00:00",
-        "pnpDeviceId": "PCI\\VEN_8086\u0026DEV_7D55\u0026SUBSYS_14171462\u0026REV_08\\3\u002611583659\u00261\u002610",
-        "resolutionWidth": 2560,
-        "resolutionHeight": 1600,
-        "refreshHz": 165,
-        "status": "OK",
-        "errorCode": 0
-      }
-    ]
-  },
-  "storage": {
-    "value": {
-      "disks": [
-        {
-          "number": 0,
-          "model": "Micron_2400_MTFDKBA1T0QFM",
-          "serialNumber": "[redacted]",
-          "firmware": "V3MA002",
-          "busType": "NVMe",
-          "mediaType": "SSD",
-          "sizeBytes": 1024209543168,
-          "pnpDeviceId": "SCSI\\DISK\u0026VEN_NVME\u0026PROD_MICRON_2400_MTFD\\4\u0026213A8AFD\u00260\u0026020000",
-          "isBoot": true,
-          "driveLetters": [
-            "C:"
-          ],
-          "health": "Healthy",
-          "operationalStatus": [
-            "OK"
-          ],
-          "nvme": {
-            "criticalWarning": 0,
-            "temperatureC": 33,
-            "availableSparePercent": 100,
-            "spareThresholdPercent": 5,
-            "percentageUsed": 1,
-            "dataUnitsRead": 8210302,
-            "dataUnitsWritten": 9336426,
-            "powerCycles": 186,
-            "powerOnHours": 327,
-            "unsafeShutdowns": 13,
-            "mediaErrors": 0,
-            "errorLogEntries": 0,
-            "warningTempMinutes": 0,
-            "criticalTempMinutes": 0
-          }
-        },
-        {
-          "number": 1,
-          "model": "SSD 860 EVO 1TB",
-          "serialNumber": "[redacted]",
-          "firmware": "1.02",
-          "busType": "USB",
-          "mediaType": "SSD",
-          "sizeBytes": 1000204886016,
-          "pnpDeviceId": "USBSTOR\\DISK\u0026VEN_SAMSUNG\u0026PROD_SSD_860_EVO_1TB\u0026REV_1.02\\012345678994\u00260",
-          "isBoot": false,
-          "driveLetters": [
-            "D:"
-          ],
-          "health": "Healthy",
-          "operationalStatus": [
-            "OK"
-          ],
-          "healthDataUnavailable": "the USB adapter or enclosure hides the drive\u0027s health data (run as admin to try reading it through the adapter); connect it directly to read it"
-        }
-      ],
-      "partitions": [
-        {
-          "diskNumber": 0,
-          "partitionNumber": 0,
-          "driveLetter": "C:",
-          "offsetBytes": 449839104,
-          "sizeBytes": 0
-        },
-        {
-          "diskNumber": 1,
-          "partitionNumber": 0,
-          "driveLetter": "D:",
-          "offsetBytes": 122683392,
-          "sizeBytes": 0
-        }
-      ],
-      "virtualDisks": [],
-      "trimDisabled": false
     }
   },
   "devices": {
@@ -3918,19 +4105,6 @@
           "class": "DiskDrive",
           "instanceId": "SCSI\\DISK\u0026VEN_NVME\u0026PROD_MICRON_2400_MTFD\\4\u0026213A8AFD\u00260\u0026020000",
           "hardwareId": "SCSI\\DiskNVMe___________________Micron_2400_MTFDKBA1T0QFM_V3MA002",
-          "manufacturer": "(Standard disk drives)",
-          "service": "disk",
-          "problemCode": 0,
-          "driverProvider": "Microsoft",
-          "driverVersion": "10.0.26100.9711",
-          "driverDate": "2006-06-21T00:00:00Z",
-          "inf": "disk.inf"
-        },
-        {
-          "name": "Samsung SSD 860 EVO 1TB USB Device",
-          "class": "DiskDrive",
-          "instanceId": "USBSTOR\\DISK\u0026VEN_SAMSUNG\u0026PROD_SSD_860_EVO_1TB\u0026REV_1.02\\012345678994\u00260",
-          "hardwareId": "USBSTOR\\DiskSamsung_SSD_860_EVO_1TB_1.02",
           "manufacturer": "(Standard disk drives)",
           "service": "disk",
           "problemCode": 0,
@@ -6744,19 +6918,6 @@
           "inf": "usb.inf"
         },
         {
-          "name": "USB Mass Storage Device",
-          "class": "USB",
-          "instanceId": "USB\\VID_0BDA\u0026PID_9201\\012345678994",
-          "hardwareId": "USB\\VID_0BDA\u0026PID_9201\u0026REV_F200",
-          "manufacturer": "Compatible USB storage device",
-          "service": "USBSTOR",
-          "problemCode": 0,
-          "driverProvider": "Microsoft",
-          "driverVersion": "10.0.26100.9444",
-          "driverDate": "2006-06-21T00:00:00Z",
-          "inf": "usbstor.inf"
-        },
-        {
           "name": "USB Root Hub (USB 3.0)",
           "class": "USB",
           "instanceId": "USB\\ROOT_HUB30\\4\u0026FE8892A\u00260\u00260",
@@ -6824,46 +6985,7 @@
         {
           "name": "Volume",
           "class": "Volume",
-          "instanceId": "STORAGE\\VOLUME\\{66B34D0F-A4B7-11F1-86B4-1091D1F1F72E}#0000000000100000",
-          "hardwareId": "STORAGE\\Volume",
-          "manufacturer": "Microsoft",
-          "service": "volume",
-          "problemCode": 0,
-          "driverProvider": "Microsoft",
-          "driverVersion": "10.0.26100.5074",
-          "driverDate": "2006-06-21T00:00:00Z",
-          "inf": "volume.inf"
-        },
-        {
-          "name": "Volume",
-          "class": "Volume",
           "instanceId": "STORAGE\\VOLUME\\{54410A4A-7422-11F1-86AC-806E6F6E6963}#000000001AD00000",
-          "hardwareId": "STORAGE\\Volume",
-          "manufacturer": "Microsoft",
-          "service": "volume",
-          "problemCode": 0,
-          "driverProvider": "Microsoft",
-          "driverVersion": "10.0.26100.5074",
-          "driverDate": "2006-06-21T00:00:00Z",
-          "inf": "volume.inf"
-        },
-        {
-          "name": "Volume",
-          "class": "Volume",
-          "instanceId": "STORAGE\\VOLUME\\{66B34D0F-A4B7-11F1-86B4-1091D1F1F72E}#0000000007500000",
-          "hardwareId": "STORAGE\\Volume",
-          "manufacturer": "Microsoft",
-          "service": "volume",
-          "problemCode": 0,
-          "driverProvider": "Microsoft",
-          "driverVersion": "10.0.26100.5074",
-          "driverDate": "2006-06-21T00:00:00Z",
-          "inf": "volume.inf"
-        },
-        {
-          "name": "Volume",
-          "class": "Volume",
-          "instanceId": "STORAGE\\VOLUME\\{66B34D0F-A4B7-11F1-86B4-1091D1F1F72E}#0000000006500000",
           "hardwareId": "STORAGE\\Volume",
           "manufacturer": "Microsoft",
           "service": "volume",
@@ -6928,18 +7050,6 @@
         {
           "name": "Generic volume shadow copy",
           "class": "VolumeSnapshot",
-          "instanceId": "STORAGE\\VOLUMESNAPSHOT\\HARDDISKVOLUMESNAPSHOT1",
-          "hardwareId": "STORAGE\\VolumeSnapshot",
-          "manufacturer": "Microsoft",
-          "problemCode": 0,
-          "driverProvider": "Microsoft",
-          "driverVersion": "10.0.26100.1",
-          "driverDate": "2006-06-21T00:00:00Z",
-          "inf": "volsnap.inf"
-        },
-        {
-          "name": "Generic volume shadow copy",
-          "class": "VolumeSnapshot",
           "instanceId": "STORAGE\\VOLUMESNAPSHOT\\HARDDISKVOLUMESNAPSHOT2",
           "hardwareId": "STORAGE\\VolumeSnapshot",
           "manufacturer": "Microsoft",
@@ -6972,18 +7082,6 @@
           "driverVersion": "10.0.26100.1",
           "driverDate": "2006-06-21T00:00:00Z",
           "inf": "volsnap.inf"
-        },
-        {
-          "name": "D:\\",
-          "class": "WPD",
-          "instanceId": "SWD\\WPDBUSENUM\\{66B34D0F-A4B7-11F1-86B4-1091D1F1F72E}#0000000007500000",
-          "manufacturer": "Microsoft",
-          "service": "WUDFWpdFs",
-          "problemCode": 0,
-          "driverProvider": "Microsoft",
-          "driverVersion": "10.0.26100.9711",
-          "driverDate": "2006-06-21T00:00:00Z",
-          "inf": "wpdfs.inf"
         },
         {
           "name": "HPXXXXXX (HP OfficeJet 8020 series)",
@@ -7064,9 +7162,22 @@
           "driverVersion": "1.9.2501.1223",
           "driverDate": "2025-12-23T00:00:00Z",
           "inf": "oem496.inf"
+        },
+        {
+          "name": "Samsung SSD 860 EVO 1TB USB Device",
+          "class": "DiskDrive",
+          "instanceId": "USBSTOR\\DISK\u0026VEN_SAMSUNG\u0026PROD_SSD_860_EVO_1TB\u0026REV_1.02\\012345678994\u00260",
+          "hardwareId": "USBSTOR\\DiskSamsung_SSD_860_EVO_1TB_1.02",
+          "manufacturer": "(Standard disk drives)",
+          "service": "disk",
+          "problemCode": 45,
+          "driverProvider": "Microsoft",
+          "driverVersion": "10.0.26100.9711",
+          "driverDate": "2006-06-21T00:00:00Z",
+          "inf": "disk.inf"
         }
       ],
-      "hiddenCount": 85,
+      "hiddenCount": 92,
       "kernelDrivers": [
         {
           "name": "1394ohci",
@@ -10650,9 +10761,897 @@
       "upgradeBlocks": []
     }
   },
+  "startup": {
+    "value": {
+      "entries": [
+        {
+          "name": "OneDrive",
+          "location": "HKCU Run",
+          "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\u0022 /background",
+          "enabled": false
+        },
+        {
+          "name": "Opera Stable",
+          "location": "HKCU Run",
+          "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe\u0022 --autostart",
+          "enabled": true
+        },
+        {
+          "name": "Discord",
+          "location": "HKCU Run",
+          "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Discord\\Update.exe\u0022 --processStart Discord.exe --process-start-args \u0022--start-inactive\u0022",
+          "enabled": true
+        },
+        {
+          "name": "Steam",
+          "location": "HKCU Run",
+          "command": "\u0022C:\\Program Files (x86)\\Steam\\steam.exe\u0022 -silent",
+          "enabled": true
+        },
+        {
+          "name": "com.overwolf.curseforge",
+          "location": "HKCU Run",
+          "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Programs\\CurseForge Windows\\CurseForge.exe\u0022 --minimized",
+          "enabled": false
+        },
+        {
+          "name": "Spotify",
+          "location": "HKCU Run",
+          "command": "\u0022C:\\Users\\[user]\\AppData\\Roaming\\Spotify\\Spotify.exe\u0022 --autostart --minimized",
+          "enabled": true
+        },
+        {
+          "name": "EADM",
+          "location": "HKCU Run",
+          "command": "\u0022C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EALauncher.exe\u0022 -silentOs",
+          "enabled": true
+        },
+        {
+          "name": "com.nanotechservices.plannr",
+          "location": "HKCU Run",
+          "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Programs\\Plannr\\Plannr.exe\u0022 --hidden",
+          "enabled": true
+        },
+        {
+          "name": "Opera Browser Assistant",
+          "location": "HKCU Run",
+          "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\assistant\\browser_assistant.exe\u0022",
+          "enabled": true
+        },
+        {
+          "name": "MicrosoftEdgeAutoLaunch_9D8E8A6EDA8A2C7E41612F557B2C3C78",
+          "location": "HKCU Run",
+          "command": "\u0022C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\u0022 --no-startup-window --win-session-start",
+          "enabled": false
+        },
+        {
+          "name": "SecurityHealth",
+          "location": "HKLM Run",
+          "command": "C:\\Windows\\system32\\SecurityHealthSystray.exe",
+          "enabled": false
+        },
+        {
+          "name": "RtkAudUService",
+          "location": "HKLM Run",
+          "command": "\u0022C:\\Windows\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_a112e46fc636d880\\RtkAudUService64.exe\u0022 -background",
+          "enabled": true
+        },
+        {
+          "name": "MSI Pen",
+          "location": "HKLM Run",
+          "command": "\u0022C:\\Program Files (x86)\\MSI\\MSI Pen\\MSI Pen.exe\u0022",
+          "enabled": false
+        },
+        {
+          "name": "Adobe CCXProcess",
+          "location": "HKLM Run (32-bit)",
+          "command": "C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe",
+          "enabled": true
+        },
+        {
+          "name": "Intel\u00AE Graphics Software",
+          "location": "HKLM Run (32-bit)",
+          "command": "\u0022C:\\Program Files\\Intel\\Intel Graphics Software\\IntelGraphicsSoftware.exe\u0022 -s",
+          "enabled": true
+        },
+        {
+          "name": "Adobe Creative Cloud",
+          "location": "HKLM Run (32-bit)",
+          "command": "\u0022C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud.exe\u0022 --showwindow=false --onOSstartup=true",
+          "enabled": true
+        },
+        {
+          "name": "Jagex Launcher",
+          "location": "Startup folder",
+          "command": "C:\\Users\\[user]\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Jagex Launcher.lnk",
+          "enabled": false
+        },
+        {
+          "name": "Jagex Launcher",
+          "location": "All users Startup folder",
+          "command": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Jagex Launcher.lnk",
+          "enabled": false
+        },
+        {
+          "name": "RustDesk Tray",
+          "location": "All users Startup folder",
+          "command": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\RustDesk Tray.lnk",
+          "enabled": true
+        },
+        {
+          "name": "Tailscale",
+          "location": "All users Startup folder",
+          "command": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Tailscale.lnk",
+          "enabled": true
+        },
+        {
+          "name": "iGoAudioTaskSession",
+          "location": "Scheduled task",
+          "command": "C:\\Windows\\System32\\DriverStore\\FileRepository\\igoaudioservice.inf_amd64_04b47b6cfc11eefe\\iGoSwServer.exe --apo --server=session_monitor",
+          "enabled": true
+        },
+        {
+          "name": "OmApSvcBroker",
+          "location": "Scheduled task",
+          "command": "C:\\Program Files (x86)\\MSI\\MSI NBFoundation Service\\OmApSvcBroker.exe",
+          "enabled": true
+        },
+        {
+          "name": "OneDC_Updater",
+          "location": "Scheduled task",
+          "command": "C:\\Program Files (x86)\\MSI\\MSI_Center_Updater\\OneDC_Updater.exe OneDragonCenter",
+          "enabled": true
+        },
+        {
+          "name": "OneDrive Startup Task-S-1-5-21-[redacted]",
+          "location": "Scheduled task",
+          "command": "C:\\Users\\[user]\\AppData\\Local\\Microsoft\\OneDrive\\26.189.0928.0007\\OneDriveLauncher.exe /startInstances",
+          "enabled": true
+        },
+        {
+          "name": "Opera scheduled assistant Autoupdate 1787426078",
+          "location": "Scheduled task",
+          "command": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\autoupdate\\opera_autoupdate.exe --scheduledtask --productiscomponent --installdir=\u0022C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\assistant\u0022 --producttype=assistant $(Arg0)",
+          "enabled": true
+        },
+        {
+          "name": "Opera scheduled Autoupdate 1786040029",
+          "location": "Scheduled task",
+          "command": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\autoupdate\\opera_autoupdate.exe --scheduledtask $(Arg0)",
+          "enabled": true
+        }
+      ]
+    }
+  },
+  "software": {
+    "value": {
+      "programs": [
+        {
+          "name": "Adobe Creative Cloud",
+          "version": "6.11.0.478.6",
+          "publisher": "Adobe Inc.",
+          "sizeKB": 811717,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Adobe Illustrator 2026",
+          "version": "30.8.2",
+          "publisher": "Adobe Inc.",
+          "sizeKB": 3636273,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "ArtCraft Launcher",
+          "version": "0.6.1",
+          "publisher": "Learning Machines LLC",
+          "installDate": "2026-10-22T00:00:00Z",
+          "sizeKB": 23199,
+          "scope": "Machine"
+        },
+        {
+          "name": "Barony",
+          "publisher": "Turning Wheel LLC",
+          "scope": "Machine"
+        },
+        {
+          "name": "Big Ambitions",
+          "publisher": "Hovgaard Games",
+          "scope": "Machine"
+        },
+        {
+          "name": "Black Hole Fishing",
+          "publisher": "SDG Games",
+          "scope": "Machine"
+        },
+        {
+          "name": "CADCraft",
+          "version": "0.6.2",
+          "publisher": "Learning Machines LLC",
+          "installDate": "2026-10-12T00:00:00Z",
+          "sizeKB": 119037,
+          "scope": "Machine"
+        },
+        {
+          "name": "Copilot",
+          "version": "156.0.4314.42",
+          "publisher": "Microsoft Corporation",
+          "installDate": "2026-10-24T00:00:00Z",
+          "sizeKB": 2179059,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "CrystalDiskInfo 9.9.2",
+          "version": "9.9.2",
+          "publisher": "Crystal Dew World",
+          "installDate": "2026-08-25T00:00:00Z",
+          "sizeKB": 14800,
+          "scope": "Machine"
+        },
+        {
+          "name": "CrystalDiskMark 9.0.3",
+          "version": "9.0.3",
+          "publisher": "Crystal Dew World",
+          "installDate": "2026-08-25T00:00:00Z",
+          "sizeKB": 6433,
+          "scope": "Machine"
+        },
+        {
+          "name": "CurseForge 1.320.0-39172",
+          "version": "1.320.0-39172",
+          "publisher": "Overwolf",
+          "sizeKB": 418224,
+          "scope": "User"
+        },
+        {
+          "name": "Cursor (User)",
+          "version": "3.23.12",
+          "publisher": "Anysphere",
+          "installDate": "2026-10-03T00:00:00Z",
+          "sizeKB": 1303475,
+          "scope": "User"
+        },
+        {
+          "name": "Deadlock",
+          "publisher": "Valve",
+          "scope": "Machine"
+        },
+        {
+          "name": "Discord",
+          "version": "1.0.9260",
+          "publisher": "Discord Inc.",
+          "sizeKB": 141718,
+          "scope": "User"
+        },
+        {
+          "name": "EA app",
+          "version": "13.809.0.6322",
+          "publisher": "Electronic Arts",
+          "sizeKB": 772079,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "EffectCraft",
+          "version": "0.9.2",
+          "publisher": "Learning Machines LLC",
+          "installDate": "2026-10-12T00:00:00Z",
+          "sizeKB": 169690,
+          "scope": "Machine"
+        },
+        {
+          "name": "Elytra Anti-Cheat Framework",
+          "version": "0.0.3",
+          "publisher": "Elytra",
+          "installDate": "2026-09-05T00:00:00Z",
+          "sizeKB": 10253,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Farm RPG",
+          "publisher": "Magic \u0026amp; Wires LLC",
+          "scope": "Machine"
+        },
+        {
+          "name": "FilmCraft",
+          "version": "0.7.2",
+          "publisher": "Learning Machines LLC",
+          "installDate": "2026-10-12T00:00:00Z",
+          "sizeKB": 148997,
+          "scope": "Machine"
+        },
+        {
+          "name": "Forager",
+          "publisher": "HopFrog",
+          "scope": "Machine"
+        },
+        {
+          "name": "Git",
+          "version": "2.55.0.5",
+          "publisher": "The Git Development Community",
+          "installDate": "2026-10-03T00:00:00Z",
+          "sizeKB": 344561,
+          "scope": "Machine"
+        },
+        {
+          "name": "GitHub CLI",
+          "version": "2.102.0",
+          "publisher": "GitHub, Inc.",
+          "installDate": "2026-10-05T00:00:00Z",
+          "sizeKB": 41857,
+          "scope": "Machine"
+        },
+        {
+          "name": "Hollow Knight",
+          "publisher": "Team Cherry",
+          "scope": "Machine"
+        },
+        {
+          "name": "Intel(R) Graphics Software \u0026 Drivers",
+          "version": "1.0.1315.7",
+          "publisher": "Intel(R) Corporation",
+          "scope": "Machine"
+        },
+        {
+          "name": "Intel(R) NPU Software \u0026 Drivers",
+          "version": "1.0.17.0",
+          "publisher": "Intel(R) Corporation",
+          "scope": "Machine"
+        },
+        {
+          "name": "Intel(R) Wireless Bluetooth(R)",
+          "version": "24.70.0.4",
+          "publisher": "Intel Corporation",
+          "installDate": "2026-09-23T00:00:00Z",
+          "sizeKB": 48952,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Intel\u00AE Driver \u0026 Support Assistant",
+          "version": "26.2.0.7",
+          "publisher": "Intel",
+          "installDate": "2026-09-23T00:00:00Z",
+          "sizeKB": 162482,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Intel\u00AE Graphics Software",
+          "version": "26.32.2604.4",
+          "publisher": "Intel Corporation",
+          "installDate": "2026-09-23T00:00:00Z",
+          "sizeKB": 372585,
+          "scope": "Machine"
+        },
+        {
+          "name": "Jagex Launcher",
+          "version": "2.11.3.0",
+          "publisher": "Jagex Ltd",
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Kerbal Space Program",
+          "publisher": "Squad",
+          "scope": "Machine"
+        },
+        {
+          "name": "Killer Performance Driver Suite UWD",
+          "version": "50.26.820",
+          "publisher": "Rivet Networks",
+          "installDate": "2026-09-23T00:00:00Z",
+          "sizeKB": 421080,
+          "scope": "Machine"
+        },
+        {
+          "name": "LocalSend version 1.18.2",
+          "version": "1.18.2",
+          "publisher": "Tien Do Nam",
+          "installDate": "2026-10-20T00:00:00Z",
+          "sizeKB": 68017,
+          "scope": "User"
+        },
+        {
+          "name": "Magic: The Gathering Arena",
+          "publisher": "Wizards of the Coast",
+          "scope": "Machine"
+        },
+        {
+          "name": "Malwarebytes version 5.6.5.306",
+          "version": "5.6.5.306",
+          "publisher": "Malwarebytes",
+          "installDate": "2026-09-02T00:00:00Z",
+          "scope": "Machine"
+        },
+        {
+          "name": "Mewgenics",
+          "publisher": "Edmund McMillen",
+          "scope": "Machine"
+        },
+        {
+          "name": "Microsoft .NET SDK 10.0.402 (x64)",
+          "version": "10.4.226.50611",
+          "publisher": "Microsoft Corporation",
+          "installDate": "2026-10-24T00:00:00Z",
+          "sizeKB": 1226292,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft 365 - en-us",
+          "version": "16.0.20430.20182",
+          "publisher": "Microsoft Corporation",
+          "scope": "Machine"
+        },
+        {
+          "name": "Microsoft ASP.NET Core 7.0.7 - Shared Framework (x64)",
+          "version": "7.0.7.23274",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 34571,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft ASP.NET Core 8.0.14 - Shared Framework (x86)",
+          "version": "8.0.14.25112",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 34819,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Edge",
+          "version": "156.0.4314.42",
+          "publisher": "Microsoft Corporation",
+          "installDate": "2026-10-24T00:00:00Z",
+          "sizeKB": 2894741,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft GameInput",
+          "version": "3.5.270.0",
+          "publisher": "Microsoft Corporation",
+          "installDate": "2026-10-03T00:00:00Z",
+          "sizeKB": 2294,
+          "scope": "Machine"
+        },
+        {
+          "name": "Microsoft OneDrive",
+          "version": "26.189.0928.0007",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 576012,
+          "scope": "User"
+        },
+        {
+          "name": "Microsoft OneNote - en-us",
+          "version": "16.0.20430.20182",
+          "publisher": "Microsoft Corporation",
+          "scope": "Machine"
+        },
+        {
+          "name": "Microsoft Visual C\u002B\u002B 2010  x64 Redistributable - 10.0.40219",
+          "version": "10.0.40219",
+          "publisher": "Microsoft Corporation",
+          "installDate": "2026-09-05T00:00:00Z",
+          "sizeKB": 14199,
+          "scope": "Machine"
+        },
+        {
+          "name": "Microsoft Visual C\u002B\u002B 2010  x86 Redistributable - 10.0.40219",
+          "version": "10.0.40219",
+          "publisher": "Microsoft Corporation",
+          "installDate": "2026-09-05T00:00:00Z",
+          "sizeKB": 11417,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Visual C\u002B\u002B 2012 Redistributable (x64) - 11.0.61030",
+          "version": "11.0.61030.0",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 21014,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Visual C\u002B\u002B 2012 Redistributable (x86) - 11.0.61030",
+          "version": "11.0.61030.0",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 17800,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Visual C\u002B\u002B 2013 Redistributable (x64) - 12.0.40664",
+          "version": "12.0.40664.0",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 21062,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Visual C\u002B\u002B 2013 Redistributable (x86) - 12.0.40664",
+          "version": "12.0.40664.0",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 17602,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Visual C\u002B\u002B v14 Redistributable (x64) - 14.51.36247",
+          "version": "14.51.36247.0",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 21328,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Visual C\u002B\u002B v14 Redistributable (x86) - 14.51.36247",
+          "version": "14.51.36247.0",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 18982,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Visual Studio Code (User)",
+          "version": "1.143.1",
+          "publisher": "Microsoft Corporation",
+          "installDate": "2026-10-23T00:00:00Z",
+          "sizeKB": 1036459,
+          "scope": "User"
+        },
+        {
+          "name": "Microsoft Windows Application Compatibility Fix Database",
+          "scope": "Machine"
+        },
+        {
+          "name": "Microsoft Windows Desktop Runtime - 6.0.23 (x64)",
+          "version": "6.0.23.32930",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 215427,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Windows Desktop Runtime - 7.0.7 (x64)",
+          "version": "7.0.7.32525",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 218503,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Windows Desktop Runtime - 8.0.14 (x86)",
+          "version": "8.0.14.34613",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 206521,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Windows Desktop Runtime - 8.0.28 (x64)",
+          "version": "8.0.28.36119",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 221644,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Windows Desktop Runtime - 9.0.3 (x64)",
+          "version": "9.0.3.34613",
+          "publisher": "Microsoft Corporation",
+          "sizeKB": 233023,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Windows Desktop Runtime 10.0.10 (x64)",
+          "version": "10.0.10.50000",
+          "publisher": "Microsoft Corporation",
+          "installDate": "2026-09-23T00:00:00Z",
+          "sizeKB": 294307,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft Windows Desktop Runtime 10.0.8 (x64)",
+          "version": "10.0.8.50000",
+          "publisher": "Microsoft Corporation",
+          "installDate": "2026-09-23T00:00:00Z",
+          "sizeKB": 292758,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Microsoft XNA Framework Redistributable 4.0 Refresh",
+          "version": "4.0.30901.0",
+          "publisher": "Microsoft Corporation",
+          "installDate": "2026-08-22T00:00:00Z",
+          "sizeKB": 10853,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "MSI Center SDK",
+          "version": "3.2026.0611.01",
+          "publisher": "MSI",
+          "installDate": "2026-08-08T00:00:00Z",
+          "sizeKB": 182196,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "MSI NBFoundation Service",
+          "version": "2.0.2606.0801",
+          "publisher": "MSI",
+          "installDate": "2026-08-08T00:00:00Z",
+          "sizeKB": 94147,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "MSI Pen",
+          "version": "1.0.2310.0501",
+          "publisher": "MSI",
+          "installDate": "2025-11-10T00:00:00Z",
+          "sizeKB": 12056,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "MSP360 Connect 4.3.1",
+          "version": "4.3.1.20",
+          "publisher": "MSP360",
+          "sizeKB": 38613,
+          "scope": "Machine"
+        },
+        {
+          "name": "My Winter Car",
+          "publisher": "Amistech Games",
+          "scope": "Machine"
+        },
+        {
+          "name": "Node.js",
+          "version": "24.19.0",
+          "publisher": "Node.js Foundation",
+          "installDate": "2026-10-03T00:00:00Z",
+          "sizeKB": 107385,
+          "scope": "Machine"
+        },
+        {
+          "name": "oneAPI Level Zero",
+          "version": "1.32.0",
+          "publisher": "Intel Corporation",
+          "installDate": "2026-09-23T00:00:00Z",
+          "sizeKB": 2832,
+          "scope": "Machine"
+        },
+        {
+          "name": "Openplanet for Trackmania",
+          "publisher": "Melissa Geels",
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Opera Stable 138.0.6044.24",
+          "version": "138.0.6044.24",
+          "publisher": "Opera Software",
+          "scope": "User"
+        },
+        {
+          "name": "Paradox Launcher v2",
+          "version": "2.4.0",
+          "publisher": "Paradox Interactive",
+          "installDate": "2026-09-06T00:00:00Z",
+          "sizeKB": 140457,
+          "scope": "Machine"
+        },
+        {
+          "name": "PdfCraft",
+          "version": "0.11.0",
+          "publisher": "Learning Machines LLC",
+          "installDate": "2026-10-22T00:00:00Z",
+          "sizeKB": 170920,
+          "scope": "Machine"
+        },
+        {
+          "name": "Peggle Deluxe",
+          "publisher": "PopCap Games, Inc.",
+          "scope": "Machine"
+        },
+        {
+          "name": "PGA Tour",
+          "version": "1.0.3.53615",
+          "publisher": "Electronic Arts",
+          "sizeKB": 58564658,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "PhotoCraft",
+          "version": "0.8.2",
+          "publisher": "Learning Machines LLC",
+          "installDate": "2026-10-12T00:00:00Z",
+          "sizeKB": 166113,
+          "scope": "Machine"
+        },
+        {
+          "name": "Plannr 0.21.1",
+          "version": "0.21.1",
+          "publisher": "Nano Tech Services",
+          "sizeKB": 387299,
+          "scope": "User"
+        },
+        {
+          "name": "Pok\u00E9mon Trading Card Game Live",
+          "version": "1.41.0.0",
+          "publisher": "The Pok\u00E9mon Company International",
+          "installDate": "2026-09-06T00:00:00Z",
+          "sizeKB": 588694,
+          "scope": "Machine"
+        },
+        {
+          "name": "Pummel Party",
+          "publisher": "Rebuilt Games",
+          "scope": "Machine"
+        },
+        {
+          "name": "RainbwStats 0.6.0",
+          "version": "0.6.0",
+          "publisher": "GLr-P",
+          "sizeKB": 394558,
+          "scope": "User"
+        },
+        {
+          "name": "Realm of the Mad God Exalt",
+          "publisher": "Wild Shadow Studios",
+          "scope": "Machine"
+        },
+        {
+          "name": "Realtek Audio Driver",
+          "version": "6.0.9581.1",
+          "publisher": "Realtek Semiconductor Corp.",
+          "installDate": "2025-11-10T00:00:00Z",
+          "sizeKB": 298871,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Realtek Card Reader",
+          "version": "10.0.22621.21366",
+          "publisher": "Realtek Semiconductor Corp.",
+          "installDate": "2025-11-10T00:00:00Z",
+          "sizeKB": 15000,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "RimWorld",
+          "publisher": "Ludeon Studios",
+          "scope": "Machine"
+        },
+        {
+          "name": "RuneLite",
+          "version": "2.8.0",
+          "publisher": "RuneLite",
+          "installDate": "2026-08-07T00:00:00Z",
+          "sizeKB": 163867,
+          "scope": "User"
+        },
+        {
+          "name": "RustDesk",
+          "version": "1.5.0.29846474",
+          "publisher": "Purslane Tech Pte. Ltd.",
+          "installDate": "2026-10-20T00:00:00Z",
+          "sizeKB": 80878,
+          "scope": "Machine"
+        },
+        {
+          "name": "shapez 2 - Factory",
+          "publisher": "tobspr Games",
+          "scope": "Machine"
+        },
+        {
+          "name": "ShellShock Live",
+          "publisher": "kChamp Games",
+          "scope": "Machine"
+        },
+        {
+          "name": "SoundCraft",
+          "version": "0.6.1",
+          "publisher": "Learning Machines LLC",
+          "installDate": "2026-10-12T00:00:00Z",
+          "sizeKB": 34675,
+          "scope": "Machine"
+        },
+        {
+          "name": "Spelunky 2",
+          "publisher": "Mossmouth",
+          "scope": "Machine"
+        },
+        {
+          "name": "Spotify",
+          "version": "1.3.5.3058.g5d40d5480152",
+          "publisher": "Spotify AB",
+          "installDate": "2026-10-20T00:00:00Z",
+          "scope": "User"
+        },
+        {
+          "name": "Stardew Valley",
+          "publisher": "ConcernedApe",
+          "scope": "Machine"
+        },
+        {
+          "name": "Steam",
+          "version": "2.10.91.91",
+          "publisher": "Valve Corporation",
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Stellaris",
+          "publisher": "Paradox Development Studio",
+          "scope": "Machine"
+        },
+        {
+          "name": "Supermarket Together",
+          "publisher": "DeadDevsTellNoLies",
+          "scope": "Machine"
+        },
+        {
+          "name": "Tailscale",
+          "version": "1.104.1",
+          "publisher": "Tailscale Inc.",
+          "installDate": "2026-10-20T00:00:00Z",
+          "sizeKB": 72208,
+          "scope": "Machine"
+        },
+        {
+          "name": "The Binding of Isaac: Rebirth",
+          "publisher": "Nicalis, Inc.",
+          "scope": "Machine"
+        },
+        {
+          "name": "The House Always Wins",
+          "publisher": "Toxic Studio",
+          "scope": "Machine"
+        },
+        {
+          "name": "Timberborn",
+          "publisher": "Mechanistry",
+          "scope": "Machine"
+        },
+        {
+          "name": "Tom Clancy\u0027s Rainbow Six Siege",
+          "publisher": "Ubisoft Montreal",
+          "scope": "Machine"
+        },
+        {
+          "name": "Trackmania",
+          "publisher": "Nadeo",
+          "scope": "Machine"
+        },
+        {
+          "name": "Ubisoft Anti-Cheat",
+          "publisher": "Ubisoft",
+          "sizeKB": 70747,
+          "scope": "Machine"
+        },
+        {
+          "name": "Ubisoft Connect",
+          "version": "173.1.13333",
+          "publisher": "Ubisoft",
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "UXP WebView Support",
+          "version": "1.6.1",
+          "publisher": "Adobe Inc.",
+          "sizeKB": 606811,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "VectorCraft",
+          "version": "0.10.0",
+          "publisher": "Learning Machines LLC",
+          "installDate": "2026-10-12T00:00:00Z",
+          "sizeKB": 232870,
+          "scope": "Machine"
+        },
+        {
+          "name": "WARDOGS Playtest",
+          "publisher": "",
+          "scope": "Machine"
+        },
+        {
+          "name": "WordCraft",
+          "version": "0.9.0",
+          "publisher": "Learning Machines LLC",
+          "installDate": "2026-10-22T00:00:00Z",
+          "sizeKB": 184064,
+          "scope": "Machine"
+        }
+      ],
+      "defaultBrowser": "MSEdgeHTM",
+      "browserExtensions": {
+        "Edge: Default": 2
+      }
+    }
+  },
   "meta": {
-    "toolVersion": "0.3.0",
-    "collectedUtc": "2026-10-24T21:53:30.7607089Z",
+    "toolVersion": "0.4.0",
+    "collectedUtc": "2026-10-24T22:08:39.4816896Z",
     "isAdmin": false,
     "anonymized": true,
     "utcOffsetMinutes": -420

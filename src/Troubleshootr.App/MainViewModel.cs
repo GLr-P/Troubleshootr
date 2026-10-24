@@ -53,6 +53,8 @@ public sealed class MainViewModel : Observable
     public static string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "0.0.0";
 
     public Snapshot Snapshot { get; private set; } = new();
+    /// <summary>False in screenshot mode: live views (Processes) show the loaded snapshot instead of this PC.</summary>
+    public bool Live { get; set; } = true;
     public DeviceSummary Device => DeviceSummary.From(Snapshot);
     public bool IsAdmin { get; } = CollectorRegistry.IsElevated();
     public ObservableCollection<CategoryTile> Tiles { get; } = new(Enum.GetValues(typeof(Category)).Cast<Category>().Select(c => new CategoryTile(c)));

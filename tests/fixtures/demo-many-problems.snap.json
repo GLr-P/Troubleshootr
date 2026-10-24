@@ -912,5 +912,232 @@
         }
       ]
     }
+  },
+  "startup": {
+    "value": {
+      "entries": [
+        {
+          "name": "Steam",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Steam\\Steam.exe"
+        },
+        {
+          "name": "Discord",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Discord\\Discord.exe"
+        },
+        {
+          "name": "Spotify",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Spotify\\Spotify.exe"
+        },
+        {
+          "name": "Epic Games Launcher",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Epic Games Launcher\\Epic Games Launcher.exe"
+        },
+        {
+          "name": "Adobe Creative Cloud",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Adobe Creative Cloud\\Adobe Creative Cloud.exe"
+        },
+        {
+          "name": "Dropbox",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Dropbox\\Dropbox.exe"
+        },
+        {
+          "name": "Zoom",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Zoom\\Zoom.exe"
+        },
+        {
+          "name": "Teams",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Teams\\Teams.exe"
+        },
+        {
+          "name": "Razer Synapse",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Razer Synapse\\Razer Synapse.exe"
+        },
+        {
+          "name": "iCUE",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\iCUE\\iCUE.exe"
+        },
+        {
+          "name": "OneDrive",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\OneDrive\\OneDrive.exe"
+        },
+        {
+          "name": "Skype",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Skype\\Skype.exe"
+        },
+        {
+          "name": "Logitech G HUB",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Logitech G HUB\\Logitech G HUB.exe"
+        },
+        {
+          "name": "Battle.net",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Battle.net\\Battle.net.exe"
+        },
+        {
+          "name": "Opera GX",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Opera GX\\Opera GX.exe"
+        },
+        {
+          "name": "Wallpaper Engine",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\Wallpaper Engine\\Wallpaper Engine.exe"
+        },
+        {
+          "name": "EA app",
+          "location": "HKCU Run",
+          "enabled": true,
+          "command": "C:\\Program Files\\EA app\\EA app.exe"
+        },
+        {
+          "name": "MSI Center",
+          "location": "HKLM Run",
+          "enabled": false,
+          "command": "C:\\Program Files\\MSI Center\\MSI Center.exe"
+        },
+        {
+          "name": "GoogleUpdateTaskMachineUA",
+          "location": "Scheduled task",
+          "enabled": true,
+          "command": "C:\\Program Files (x86)\\Google\\Update\\GoogleUpdate.exe /ua"
+        }
+      ]
+    }
+  },
+  "software": {
+    "value": {
+      "programs": [
+        {
+          "name": "7-Zip 24.08 (x64)",
+          "version": "24.08",
+          "publisher": "Igor Pavlov",
+          "installDate": "2026-01-12T00:00:00Z",
+          "sizeKB": 5800,
+          "scope": "Machine"
+        },
+        {
+          "name": "Driver Booster 12",
+          "version": "12.0.0",
+          "publisher": "IObit",
+          "installDate": "2026-09-30T00:00:00Z",
+          "sizeKB": 120000,
+          "scope": "Machine (32-bit)"
+        },
+        {
+          "name": "Google Chrome",
+          "version": "141.0.7390.65",
+          "publisher": "Google LLC",
+          "installDate": "2026-10-01T00:00:00Z",
+          "scope": "Machine"
+        },
+        {
+          "name": "Wave Browser",
+          "version": "1.5.1",
+          "publisher": "Wavesor Software",
+          "installDate": "2026-10-02T00:00:00Z",
+          "scope": "User"
+        }
+      ],
+      "defaultBrowser": "ChromeHTML",
+      "browserExtensions": {
+        "Chrome: Default": 27
+      }
+    }
+  },
+  "performance": {
+    "value": {
+      "sampleSeconds": 3,
+      "cpuPercent": 94,
+      "diskActivePercent": 100,
+      "processorPerformancePercent": 38,
+      "processCount": 212,
+      "processes": [
+        {
+          "name": "svchosts.exe",
+          "pid": 6120,
+          "cpuPercent": 81.5,
+          "privateMB": 220,
+          "workingSetMB": 240,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\Public\\svchosts.exe"
+        },
+        {
+          "name": "chrome.exe",
+          "pid": 4410,
+          "cpuPercent": 6.2,
+          "privateMB": 2100,
+          "workingSetMB": 1800,
+          "diskBytesPerSec": 120000
+        },
+        {
+          "name": "SearchIndexer.exe",
+          "pid": 3120,
+          "cpuPercent": 1.1,
+          "privateMB": 90,
+          "workingSetMB": 60,
+          "diskBytesPerSec": 67108864,
+          "path": "C:\\Windows\\System32\\SearchIndexer.exe"
+        }
+      ]
+    }
+  },
+  "tuning": {
+    "value": {
+      "powerPlan": "Power saver",
+      "powerPlanGuid": "a1841308-3541-4fab-bc81-f71556f20b4a",
+      "maxCpuOnAc": 80,
+      "maxCpuOnBattery": 50,
+      "onAcPower": true,
+      "batterySaverOn": false,
+      "pageFileSettings": [],
+      "pageFiles": [],
+      "visualEffects": 1,
+      "transparency": true,
+      "gameMode": true,
+      "gpuScheduling": false,
+      "cleanup": [
+        {
+          "name": "Previous Windows installation (Windows.old)",
+          "path": "C:\\Windows.old",
+          "bytes": 25125558682,
+          "atLeast": false
+        },
+        {
+          "name": "Your temp files",
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Temp\\",
+          "bytes": 4402341478,
+          "atLeast": true
+        }
+      ]
+    }
   }
 }
