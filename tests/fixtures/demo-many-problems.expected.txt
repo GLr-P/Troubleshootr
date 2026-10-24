@@ -1,5 +1,6 @@
 Critical CPU-007: This Intel processor needs a BIOS update to stop permanent damage | 13th Gen Intel(R) Core(TM) i9-13900K runs microcode 0x119; Intel's fix for 13th/14th-gen instability is 0x12B or newer.
 Critical CRA-001: The PC had 4 blue screens in the last 30 days | 2026-10-23 0xD1 DRIVER_IRQL_NOT_LESS_OR_EQUAL in contosonet.sys; 2026-10-20 0x1A MEMORY_MANAGEMENT; 2026-10-15 0x116 VIDEO_TDR_FAILURE; and 1 more. Latest: A driver touched memory it wasn't allowed to; network, Wi-Fi and antivirus drivers are common causes.
+Critical DRV-001: A device isn't working: Intel(R) Wi-Fi 6E AX211 160MHz | Intel(R) Wi-Fi 6E AX211 160MHz (Net) can't start (code 10).
 Critical MEM-008: Windows Memory Diagnostic found RAM errors | Memory test failed on 2026-10-16.
 Critical STO-002: Disk 1 (WDC WD10EZEX-08WN4A0) has unreadable sectors | Reallocated: 312, pending: 24, uncorrectable: 8.
 Critical STO-007: A drive reported bad blocks | In the last 30 days: bad blocks once (disk 1); timeouts or resets 3 times.
@@ -7,6 +8,9 @@ Critical STO-008: System drive C:\ is almost full | C:\ has 27.8 GB free of 925.
 Warning CPU-006: The processor reported corrected hardware errors | 1 WHEA processor event in 30 days: Cache Hierarchy Error.
 Warning CRA-002: Blue screens with different causes each time | 4 crashes with 4 different codes: DRIVER_IRQL_NOT_LESS_OR_EQUAL ×1, MEMORY_MANAGEMENT ×1, VIDEO_TDR_FAILURE ×1, SYSTEM_SERVICE_EXCEPTION ×1.
 Warning CRA-003: PhotoEditor.exe keeps crashing | PhotoEditor.exe: 4 crashes (in gpu_helper.dll) in the last 30 days.
+Warning DRV-002: A device has no driver | Unknown device made by Realtek [PCI\VEN_10EC&DEV_5228&SUBSYS_11131462].
+Warning DRV-004: Windows is allowing unsigned drivers | Boot options: test-signing mode is on.
+Warning DRV-006: A driver with a known security hole is installed | WinRing0x64.sys from WinRing0 (old fan control, RGB and monitoring tools).
 Warning DRV-007: A driver crashed the PC: contosonet.sys | contosonet.sys once in the last 30 days (from the crash dumps).
 Warning GPU-004: The graphics driver keeps resetting | 4 graphics driver timeouts or errors in 30 days (up to 1 within 24 hours).
 Warning GPU-005: The graphics driver crashed the PC | 2026-10-15 0x116 VIDEO_TDR_FAILURE.
@@ -20,7 +24,11 @@ Warning STO-006: Disk 1 (WDC WD10EZEX-08WN4A0) is an old hard drive | 43,210 pow
 Warning STO-009: Drive C:\ has file system errors | C:\ is marked dirty; Windows will check it at the next restart.
 Warning STO-011: TRIM is turned off for SSDs | DisableDeleteNotification = 1 (NTFS).
 Warning STO-013: Windows reports a health warning on Disk 1 (WDC WD10EZEX-08WN4A0) | Health: Warning. Status: Predictive Failure.
+Warning UPD-001: Windows hasn't installed updates in a long time | Last successful Windows update: 2026-08-10 (75 days ago).
+Warning UPD-002: An update keeps failing | 2026-10 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5099999): 0x800F081F (component store files missing (run DISM RestoreHealth)).
+Warning UPD-003: Windows updates are blocked or paused | updates are paused until 2026-11-14.
 Warning WIN-002: This Windows version no longer gets security updates | Windows 11 Home 24H2 (build 26100.9711): support ended 2026-10-13.
+Warning WIN-003: Windows isn't activated | Windows(R), Professional edition is in notification mode (not activated).
 Warning WIN-004: A restart is pending | Waiting on: Windows Update.
 Warning WIN-006: Windows system files are damaged | CBS.log (last 90 days): 3 files SFC couldn't repair; 1 component store corruption entry.
 Warning WIN-007: The PC shut down unexpectedly 2 times | 2 unexpected shutdowns in 30 days (Kernel-Power 41 / EventLog 6008). Latest 2026-10-18 13:18.
@@ -33,8 +41,17 @@ Warning WIN-014: Windows ran low on memory | Low virtual memory warnings once in
 Warning WIN-016: Windows Explorer or the Start menu keeps crashing | explorer.exe 3 times in the last 7 days.
 Warning WIN-017: Windows has been unstable lately | Reliability Monitor stability index 2.4 of 10 (lowest in 30 days: 1.2).
 Info CRA-004: Windows recorded hardware or driver error reports | recovered problem 0x141 VIDEO_ENGINE_TIMEOUT_DETECTED ×1 in the last 30 days.
+Info DRV-001: A device is disabled: Integrated Webcam | Integrated Webcam (Camera).
+Info DRV-005: An old driver: Realtek PCIe GbE Family Controller | Realtek PCIe GbE Family Controller: Realtek 10.12.1012.2016 from 2016-10-12.
+Info DRV-010: Drivers for an old graphics card are still installed | Not connected any more: NVIDIA GeForce GTX 1060 6GB.
+Info GPU-007: A display runs below its best refresh rate | Generic PnP Monitor at 2560×1600: 60 Hz, can do 165 Hz.
 Info MEM-003: RAM runs below its rated speed | Running at 4800 MT/s; the modules are rated for 6000 MT/s (F5-6000J3038F16G).
 Info MEM-005: RAM runs in single channel | 1 stick (4 GB LPDDR5) in a board with 2 slots.
 Info PER-007: The BIOS is old | American Megatrends International, LLC. E1595IMS.10B, dated 2021-03-01 (5.7 years old).
+Info UPD-005: The next Windows version is blocked on this PC | 25H2: safeguard hold 56318982.
 Info WIN-005: The PC hasn't restarted in a long time | Up for 40 days. Fast Startup is on, so Shut down doesn't count; only Restart does.
 Info WIN-015: Group Policy is failing to apply | 1 Group Policy error in 30 days (ids 1129).
+NotChecked GPU-002: Gpus: WMI: 0x80041010 in root\cimv2 (SELECT Name FROM Win32_VideoController)
+NotChecked GPU-003: Gpus: WMI: 0x80041010 in root\cimv2 (SELECT Name FROM Win32_VideoController)
+NotChecked GPU-006: Gpus: WMI: 0x80041010 in root\cimv2 (SELECT Name FROM Win32_VideoController)
+NotChecked GPU-009: Gpus: WMI: 0x80041010 in root\cimv2 (SELECT Name FROM Win32_VideoController)

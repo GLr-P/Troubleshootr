@@ -17,7 +17,7 @@ public sealed class HealthCollector : Collector<WindowsHealthInfo>
     private const int CbsDays = 90;
 
     public override string Section => nameof(Snapshot.Health);
-    public override TimeSpan Timeout => TimeSpan.FromSeconds(6);
+    public override TimeSpan Timeout => TimeSpan.FromSeconds(8);
 
     protected override WindowsHealthInfo Collect(CollectContext ctx, CancellationToken ct)
     {
@@ -33,6 +33,8 @@ public sealed class HealthCollector : Collector<WindowsHealthInfo>
         info.Cbs = Cbs(DateTime.UtcNow);
         ct.ThrowIfCancellationRequested();
         Stability(info);
+        ct.ThrowIfCancellationRequested();
+        Activation(info);
         return info;
     }
 
@@ -81,6 +83,18 @@ public sealed class HealthCollector : Collector<WindowsHealthInfo>
             else if (line.IndexOf("Repairing corrupted file", StringComparison.Ordinal) >= 0) summary.Repaired++;
             else if (line.IndexOf("CSI Payload Corrupt", StringComparison.Ordinal) >= 0 || line.IndexOf("Corruption detected", StringComparison.OrdinalIgnoreCase) >= 0) summary.StoreCorrupt++;
         }
+    }
+
+    /// <summary>Windows activation (about 1.2 s; the WHERE clause keeps it to the Windows product, not Office).</summary>
+    private static void Activation(WindowsHealthInfo info)
+    {
+        List<WmiRow> rows;
+        try { rows = Wmi.QueryOptional("SELECT Name, LicenseStatus FROM SoftwareLicensingProduct WHERE PartialProductKey IS NOT NULL AND ApplicationID='55c92734-d682-4d71-983e-d6ec3f16059f'"); }
+        catch (CollectorException) { return; }
+        // A PC can list several Windows licenses (e.g. after an edition upgrade); the active one is licensed if any is.
+        var best = rows.OrderBy(r => r.Int("LicenseStatus") == 1 ? 0 : 1).FirstOrDefault();
+        info.LicenseStatus = best?.Int("LicenseStatus");
+        info.LicenseName = best?.Str("Name");
     }
 
     /// <summary>Reliability Monitor's hourly stability index (about 650 ms on the owner's laptop; WQL can't limit rows).</summary>

@@ -34,7 +34,7 @@ public sealed class InfoGroup(string title)
 /// <summary>Builds each info tab from the Snapshot. A tab is a list of groups, rendered by InfoPage.</summary>
 public static class InfoPages
 {
-    public static readonly string[] Names = ["Summary", "System", "CPU", "Memory", "Motherboard", "Storage", "Graphics", "Events & Crashes"];
+    public static readonly string[] Names = ["Summary", "System", "Updates", "CPU", "Memory", "Motherboard", "Storage", "Graphics", "Devices", "Drivers", "Events & Crashes"];
 
     public static List<InfoGroup> Build(string page, Snapshot s) => page switch
     {
@@ -46,6 +46,9 @@ public static class InfoPages
         "Storage" => Storage(s),
         "Graphics" => Graphics(s),
         "Events & Crashes" => EventsPage.Build(s),
+        "Devices" => DevicePages.Devices(s),
+        "Drivers" => DevicePages.Drivers(s),
+        "Updates" => DevicePages.Updates(s),
         _ => [],
     };
 
@@ -228,14 +231,15 @@ public static class InfoPages
 
     private static List<InfoGroup> Graphics(Snapshot s)
     {
-        if (Missing("Graphics", s, nameof(Snapshot.Gpus)) is { } m) return [m];
-        return s.Gpus!.Value!.Select(g => new InfoGroup(g.Name ?? "Display adapter")
+        var groups = Missing("Graphics", s, nameof(Snapshot.Gpus)) is { } m ? [m] : s.Gpus!.Value!.Select(g => new InfoGroup(g.Name ?? "Display adapter")
             .Row("Video memory", g.VramBytes is { } v and > 0 ? Gb(v) : null)
             .Row("Driver version", g.DriverVersion)
             .Row("Driver date", g.DriverDate)
             .Row("Resolution", g.ResolutionWidth is { } w and > 0 ? $"{w} × {g.ResolutionHeight} at {g.RefreshHz} Hz" : null)
             .Row("Status", g.Status)
             .Row("Device ID", g.PnpDeviceId)).ToList();
+        if (DevicePages.Displays(s) is { } displays) groups.Add(displays);
+        return groups;
     }
 
     private static string Gb(long bytes) => bytes >= 1073741824L * 1000 ? $"{bytes / 1099511627776.0:0.##} TB" : $"{bytes / 1073741824.0:0.#} GB";

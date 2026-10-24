@@ -59,22 +59,22 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | CPU-006 | WHEA CPU / cache / bus errors (machine checks: unstable OC or failing hardware) | EVT WHEA-Logger 18/19 | | C if fatal; W corrected | ✓ | 4 ✅ |
 | CPU-007 | Known-bad CPU microcode (Intel 13th/14th-gen Vmin instability: microcode < 0x12B) | REG microcode revision + model | | C on affected models below the fixed version | ✓ | 4 ✅ |
 | CPU-008 | Power plan (Power saver on a desktop; max processor state < 100%) | API PowerGetActiveScheme / REG | | W | ✓ | 6 |
-| CPU-009 | Windows 11 CPU support (unsupported CPU = no feature updates) | lookup list | | I | | 5 |
+| CPU-009 | Windows 11 CPU support (unsupported CPU = no feature updates) | lookup list | | I | | 5 ✅ |
 
 ## Graphics and display (GPU)
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
 | GPU-001 | GPUs: name, VRAM, driver version and date, which one is active | WMI Win32_VideoController, REG (VRAM over 4 GB is in the registry, not WMI) | | I | ✓ | 1 ✅ |
-| GPU-002 | Microsoft Basic Display Adapter in use (no GPU driver) | WMI | | C | ✓ | 5 |
-| GPU-003 | GPU driver older than about 12 months | WMI DriverDate | | I/W | ✓ | 5 |
+| GPU-002 | Microsoft Basic Display Adapter in use (no GPU driver) | WMI | | C | ✓ | 5 ✅ |
+| GPU-003 | GPU driver older than about 12 months | WMI DriverDate | | I/W | ✓ | 5 ✅ |
 | GPU-004 | Driver timeouts / TDR resets (Display 4101, nvlddmkm 13/14/153, amdkmdag) | EVT | | W; C if many per day | ✓ | 4 ✅ |
 | GPU-005 | Bugchecks in GPU drivers (0x116, 0x119, nvlddmkm.sys / amdkmdag.sys in dumps) | Crashes section | | W | ✓ | 4 ✅ |
-| GPU-006 | Monitor connected to the motherboard while a dedicated GPU exists (desktop) | API EnumDisplayDevices + adapter | | W | ✓ | 5 |
-| GPU-007 | Refresh rate below the monitor's maximum (144 Hz panel running at 60 Hz) | API EnumDisplaySettings | | I | ✓ | 5 |
+| GPU-006 | Monitor connected to the motherboard while a dedicated GPU exists (desktop) | API EnumDisplayDevices + adapter | | W | ✓ | 5 ✅ |
+| GPU-007 | Refresh rate below the monitor's maximum (144 Hz panel running at 60 Hz) | API EnumDisplaySettings | | I | ✓ | 5 ✅ |
 | GPU-008 | GPU temperature, hotspot, fan, load | LHM (NVAPI/ADL work without PawnIO) | | W > 85 °C core | | 9 |
-| GPU-009 | Hybrid laptops: app forced to the iGPU | REG UserGpuPreferences | | I | | 5 |
-| GPU-010 | HDR / scaling / resolution summary | API | | I | | 5 |
+| GPU-009 | Hybrid laptops: app forced to the iGPU | REG UserGpuPreferences | | I | | 5 ✅ |
+| GPU-010 | Display summary: monitor, GPU, resolution, refresh (HDR and scaling not yet) | API | | I | | 5 ✅ |
 
 ## Windows health (WIN)
 
@@ -82,7 +82,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 |---|---|---|---|---|---|---|
 | WIN-001 | Windows edition, version, build, install date, architecture, activation | REG CurrentVersion, WMI SoftwareLicensingProduct | | I | ✓ | 1 ✅ |
 | WIN-002 | Windows version out of support (Win7/8.1, Win10 after Oct 2025, old Win11 builds) | lookup table in code | | W | ✓ | 1 ✅ |
-| WIN-003 | Not activated | WMI SoftwareLicensingProduct LicenseStatus | | W | ✓ | 5 |
+| WIN-003 | Not activated | WMI SoftwareLicensingProduct LicenseStatus | | W | ✓ | 5 ✅ |
 | WIN-004 | Pending reboot (CBS, WU, PendingFileRenameOperations, ComputerName change) | REG | | W | ✓ | 1 ✅ |
 | WIN-005 | Uptime very long (no restart in > 14 days; Fast Startup hides it) | API GetTickCount64, REG HiberbootEnabled | | I "restart properly" | ✓ | 1 ✅ |
 | WIN-006 | Component store / system file corruption reported (CBS.log, DISM log, last SFC result) | FILE CBS.log tail | ✓ | W if corruption recorded | ✓ | 4 ✅ |
@@ -97,34 +97,34 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | WIN-015 | Group Policy errors (1085, 1096, 1129) | EVT | | I | | 4 ✅ |
 | WIN-016 | Search indexer / Explorer crash loops | Crashes section | | W | | 4 ✅ |
 | WIN-017 | Reliability Monitor stability index and history | WMI Win32_ReliabilityStabilityMetrics / Records | | I/W | | 4 ✅ |
-| WIN-018 | Firmware: UEFI vs legacy boot, Secure Boot, TPM version, Windows 11 readiness | API GetFirmwareType, REG SecureBoot, WMI Win32_Tpm | | I | ✓ | 5 |
+| WIN-018 | Firmware: UEFI vs legacy boot, Secure Boot, TPM version, Windows 11 readiness | API GetFirmwareType, REG SecureBoot, WMI Win32_Tpm | | I | ✓ | 5 ✅ |
 
 ## Updates (UPD)
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| UPD-001 | Last successful update install date | COM Microsoft.Update.Session history / REG | | W > 60 days | ✓ | 5 |
-| UPD-002 | Failed updates (WindowsUpdateClient 20, 25, 31; error codes with meaning) | EVT + COM history | | W, listing the KB and error code | ✓ | 5 |
-| UPD-003 | Updates paused or blocked by policy (WSUS set, NoAutoUpdate, pause dates, metered connection) | REG Policies\…\WindowsUpdate | | W | ✓ | 5 |
-| UPD-004 | Pending updates available (slow: online search) | COM IUpdateSearcher | | I | | 5 |
-| UPD-005 | Feature update blocked (safeguard hold, not enough space) | REG / free space | | I | | 5 |
-| UPD-006 | Installed hotfix list | WMI Win32_QuickFixEngineering | | I (display) | | 5 |
+| UPD-001 | Last successful update install date | COM Microsoft.Update.Session history / REG | | W > 60 days | ✓ | 5 ✅ |
+| UPD-002 | Failed updates (WindowsUpdateClient 20, 25, 31; error codes with meaning) | EVT + COM history | | W, listing the KB and error code | ✓ | 5 ✅ |
+| UPD-003 | Updates paused or blocked by policy (WSUS set, NoAutoUpdate, pause dates, metered connection) | REG Policies\…\WindowsUpdate | | W | ✓ | 5 ✅ |
+| UPD-004 | Pending updates available (slow: online search) | COM IUpdateSearcher | | I | | 12 |
+| UPD-005 | Feature update blocked (safeguard hold, not enough space) | REG / free space | | I | | 5 ✅ |
+| UPD-006 | Installed hotfix list | WMI Win32_QuickFixEngineering | | I (display) | | 5 ✅ |
 | UPD-007 | Defender definitions age | WMI root\Microsoft\Windows\Defender MSFT_MpComputerStatus | | W > 7 days | ✓ | 8 |
 
 ## Drivers and devices (DRV)
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| DRV-001 | Devices with problems (Device Manager yellow-bang: ConfigManagerErrorCode ≠ 0, with the meaning of each code) | WMI Win32_PnPEntity / SetupAPI | | W; C for storage/network/display classes | ✓ | 5 |
-| DRV-002 | Unknown devices with no driver, and their hardware ids (vendor names from a compact PCI/USB id table) | SetupAPI | | W | ✓ | 5 |
-| DRV-003 | Full driver list: name, provider, version, date, signer, INF | WMI Win32_PnPSignedDriver / SetupAPI (faster) | | I (display) | | 5 |
-| DRV-004 | Unsigned or test-signed drivers, test-signing mode on | SetupAPI / BCD (REG) | ✓ | W | ✓ | 5 |
-| DRV-005 | Very old chipset / storage / network drivers (generic Microsoft driver where a vendor one is needed) | driver list | | I | | 5 |
-| DRV-006 | Known-problem drivers (old Realtek audio, Killer network, vulnerable drivers on Microsoft's blocklist, old WinRing0 copies) | small lookup table | | W | ✓ | 5 |
+| DRV-001 | Devices with problems (Device Manager yellow-bang: ConfigManagerErrorCode ≠ 0, with the meaning of each code) | WMI Win32_PnPEntity / SetupAPI | | W; C for storage/network/display classes | ✓ | 5 ✅ |
+| DRV-002 | Unknown devices with no driver, and their hardware ids (vendor names from a compact PCI/USB id table) | SetupAPI | | W | ✓ | 5 ✅ |
+| DRV-003 | Full driver list: name, provider, version, date, signer, INF | WMI Win32_PnPSignedDriver / SetupAPI (faster) | | I (display) | | 5 ✅ |
+| DRV-004 | Unsigned or test-signed drivers, test-signing mode on | REG SystemStartOptions (test-signing, integrity checks); a per-driver unsigned scan (WMI) takes 11 s, so it was left out | ✓ | W | ✓ | 5 ✅ |
+| DRV-005 | Very old chipset / storage / network drivers (generic Microsoft driver where a vendor one is needed) | driver list | | I | | 5 ✅ |
+| DRV-006 | Known-problem drivers (old Realtek audio, Killer network, vulnerable drivers on Microsoft's blocklist, old WinRing0 copies) | small lookup table | | W | ✓ | 5 ✅ |
 | DRV-007 | Drivers that crashed the PC (driver names from the minidumps) | Crashes section | | W | ✓ | 4 ✅ |
-| DRV-008 | Driver install failures (Kernel-PnP 219, 411; DeviceSetupManager) | EVT | | I/W | | 5 |
+| DRV-008 | Driver install failures (Kernel-PnP 219, 411; DeviceSetupManager) | EVT | | I/W | | 5 ✅ |
 | DRV-009 | USB problems: connect/disconnect storms, power-surge events, selective suspend | EVT Kernel-PnP / USB + REG | | W | | 10 |
-| DRV-010 | Ghost devices from old hardware (hidden non-present devices) | SetupAPI | | I | | 5 |
+| DRV-010 | Ghost devices from old hardware (hidden non-present devices) | SetupAPI | | I | | 5 ✅ |
 
 ## Crashes and errors (CRA)
 

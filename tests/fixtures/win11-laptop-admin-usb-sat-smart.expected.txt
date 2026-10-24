@@ -1,3 +1,4 @@
+Warning GPU-003: The graphics driver is old: Intel(R) Arc(TM) Graphics | Driver 31.0.101.5333 from 2024-02-20 (2.7 years old).
 Warning MEM-006: Memory is nearly full | 78% of RAM in use (7 GB free of 31.5 GB); commit 36.6 GB of 37.3 GB (98%).
 Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
 NotChecked CPU-005: Events: not collected in this scan
@@ -7,13 +8,28 @@ NotChecked CRA-002: Events: not collected in this scan
 NotChecked CRA-003: Events: not collected in this scan
 NotChecked CRA-004: Crashes: not collected in this scan
 NotChecked CRA-006: Crashes: not collected in this scan
+NotChecked DRV-001: Devices: not collected in this scan
+NotChecked DRV-002: Devices: not collected in this scan
+NotChecked DRV-004: Devices: not collected in this scan
+NotChecked DRV-005: Devices: not collected in this scan
+NotChecked DRV-006: Devices: not collected in this scan
 NotChecked DRV-007: Events: not collected in this scan
+NotChecked DRV-008: Events: not collected in this scan
+NotChecked DRV-010: Devices: not collected in this scan
 NotChecked GPU-004: Events: not collected in this scan
 NotChecked GPU-005: Events: not collected in this scan
+NotChecked GPU-006: Displays: not collected in this scan
+NotChecked GPU-007: Displays: not collected in this scan
+NotChecked GPU-009: Displays: not collected in this scan
 NotChecked MEM-007: Events: not collected in this scan
 NotChecked MEM-008: Events: not collected in this scan
 NotChecked MEM-009: Events: not collected in this scan
 NotChecked STO-007: Events: not collected in this scan
+NotChecked UPD-001: Updates: not collected in this scan
+NotChecked UPD-002: Updates: not collected in this scan
+NotChecked UPD-003: Updates: not collected in this scan
+NotChecked UPD-005: Updates: not collected in this scan
+NotChecked WIN-003: Health: not collected in this scan
 NotChecked WIN-006: Health: not collected in this scan
 NotChecked WIN-007: Events: not collected in this scan
 NotChecked WIN-008: Events: not collected in this scan
@@ -24,3 +40,4 @@ NotChecked WIN-014: Events: not collected in this scan
 NotChecked WIN-015: Events: not collected in this scan
 NotChecked WIN-016: Events: not collected in this scan
 NotChecked WIN-017: Health: not collected in this scan
+NotChecked WIN-018: Devices: not collected in this scan

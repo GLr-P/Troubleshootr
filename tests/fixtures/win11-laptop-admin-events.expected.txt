@@ -1,4 +1,5 @@
 Warning CRA-003: Some apps keep crashing | MiracastPowerManager.exe: 8 crashes (in ntdll.dll); mscopilot_proxy.exe: 4 hangs in the last 30 days.
+Warning GPU-003: The graphics driver is old: Intel(R) Arc(TM) Graphics | Driver 31.0.101.5333 from 2024-02-20 (2.7 years old).
 Warning MEM-006: Memory is nearly full | 81% of RAM in use (6.1 GB free of 31.5 GB); commit 37.6 GB of 38.3 GB (98%).
 Warning STO-007: Drive errors in the event log | In the last 30 days: file system errors reported 2 times on D:.
 Warning STO-009: Drive D:\ has file system errors | D:\ is marked dirty; Windows will check it at the next restart.
@@ -6,3 +7,17 @@ Warning WIN-008: Windows takes a long time to start | Last boot took 115 s. Slow
 Warning WIN-009: A service keeps failing: MBAMService | MBAMService 3 times in 30 days.
 Info CPU-005: The processor's speed is being limited by the firmware | 40 speed-limit events in 30 days (Kernel-Processor-Power 37).
 Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
+NotChecked DRV-001: Devices: not collected in this scan
+NotChecked DRV-002: Devices: not collected in this scan
+NotChecked DRV-004: Devices: not collected in this scan
+NotChecked DRV-005: Devices: not collected in this scan
+NotChecked DRV-006: Devices: not collected in this scan
+NotChecked DRV-010: Devices: not collected in this scan
+NotChecked GPU-006: Displays: not collected in this scan
+NotChecked GPU-007: Displays: not collected in this scan
+NotChecked GPU-009: Displays: not collected in this scan
+NotChecked UPD-001: Updates: not collected in this scan
+NotChecked UPD-002: Updates: not collected in this scan
+NotChecked UPD-003: Updates: not collected in this scan
+NotChecked UPD-005: Updates: not collected in this scan
+NotChecked WIN-018: Devices: not collected in this scan

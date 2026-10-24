@@ -16,11 +16,28 @@ public static class Anonymizer
             .Where(n => n is { Length: >= 3 } && n != Redacted).Select(n => n!).Distinct(StringComparer.OrdinalIgnoreCase)
             .OrderByDescending(n => n.Length).ToList();
         Walk(s, names);
+        // Bluetooth devices are named by their owners ("Sam's AirPods") and their ids hold MAC addresses.
+        foreach (var d in (s.Devices?.Value?.Devices ?? []).Concat(s.Devices?.Value?.Hidden ?? []).Where(IsBluetoothPeer))
+        {
+            d.Name = "Bluetooth device";
+            d.InstanceId = Redacted;
+            d.HardwareId = Redacted;
+        }
+        // Network printers put the end of their MAC address in their name ("HP732C80", "[732C80]").
+        foreach (var d in (s.Devices?.Value?.Devices ?? []).Concat(s.Devices?.Value?.Hidden ?? []))
+            d.Name = PrinterMac.Replace(d.Name, m => m.Groups[1].Value + "XXXXXX" + m.Groups[2].Value);
         s.Meta.Anonymized = true;
     }
 
     private static readonly System.Text.RegularExpressions.Regex UserPath =
         new(@"(?<=\\Users\\)(?!Public\\|Default\\|All Users\\)[^\\""<>|]+", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+    private static readonly System.Text.RegularExpressions.Regex PrinterMac = new(@"(\bHP|\[)[0-9A-F]{6}(\]|\b)");
+
+    private static bool IsBluetoothPeer(DeviceEntry d) =>
+        d.InstanceId is { } id && (id.StartsWith(@"BTHENUM\", StringComparison.OrdinalIgnoreCase) || id.StartsWith(@"BTHLE\", StringComparison.OrdinalIgnoreCase)
+                                   || id.StartsWith(@"BTHLEDEVICE\", StringComparison.OrdinalIgnoreCase) || id.StartsWith(@"BTHHFENUM\", StringComparison.OrdinalIgnoreCase)
+                                   || id.IndexOf("BTHENUM", StringComparison.OrdinalIgnoreCase) >= 0 || id.IndexOf("BTHLE", StringComparison.OrdinalIgnoreCase) >= 0);
 
     /// <summary>Removes user and device names from free text.</summary>
     public static string Scrub(string text, IReadOnlyList<string> names)

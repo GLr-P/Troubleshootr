@@ -766,7 +766,151 @@
       "tempProfile": false,
       "profileBackups": 0,
       "stabilityIndex": 2.4,
-      "stabilityLowest30Days": 1.2
+      "stabilityLowest30Days": 1.2,
+      "licenseStatus": 5,
+      "licenseName": "Windows(R), Professional edition"
+    }
+  },
+  "devices": {
+    "value": {
+      "devices": [
+        {
+          "name": "Intel(R) Arc(TM) Graphics",
+          "class": "Display",
+          "problemCode": 0,
+          "instanceId": "PCI\\VEN_8086&DEV_7D55\\3&1",
+          "driverProvider": "Intel Corporation",
+          "driverVersion": "31.0.101.5333",
+          "driverDate": "2024-02-20T00:00:00Z"
+        },
+        {
+          "name": "Intel(R) Wi-Fi 6E AX211 160MHz",
+          "class": "Net",
+          "problemCode": 10,
+          "hardwareId": "PCI\\VEN_8086&DEV_51F0&SUBSYS_00948086",
+          "driverProvider": "Intel",
+          "driverVersion": "23.40.0.4",
+          "driverDate": "2024-03-01T00:00:00Z"
+        },
+        {
+          "name": "Realtek PCIe GbE Family Controller",
+          "class": "Net",
+          "problemCode": 0,
+          "driverProvider": "Realtek",
+          "driverVersion": "10.12.1012.2016",
+          "driverDate": "2016-10-12T00:00:00Z"
+        },
+        {
+          "name": "Unknown device",
+          "problemCode": 28,
+          "hardwareId": "PCI\\VEN_10EC&DEV_5228&SUBSYS_11131462"
+        },
+        {
+          "name": "Integrated Webcam",
+          "class": "Camera",
+          "problemCode": 22
+        },
+        {
+          "name": "Trusted Platform Module 2.0",
+          "class": "SecurityDevices",
+          "problemCode": 0
+        },
+        {
+          "name": "Speakers (Realtek(R) Audio)",
+          "class": "AudioEndpoint",
+          "problemCode": 0,
+          "driverProvider": "Realtek",
+          "driverVersion": "6.0.9600.1",
+          "driverDate": "2023-05-04T00:00:00Z"
+        }
+      ],
+      "hidden": [
+        {
+          "name": "NVIDIA GeForce GTX 1060 6GB",
+          "class": "Display",
+          "problemCode": 45,
+          "instanceId": "PCI\\VEN_10DE&DEV_1C03\\4&2"
+        }
+      ],
+      "hiddenCount": 61,
+      "kernelDrivers": [
+        {
+          "name": "WinRing0_1_2_0",
+          "file": "WinRing0x64.sys",
+          "start": 3
+        },
+        {
+          "name": "stornvme",
+          "file": "stornvme.sys",
+          "start": 0
+        }
+      ],
+      "testSigning": true,
+      "integrityChecksOff": false
+    }
+  },
+  "displays": {
+    "value": {
+      "displays": [
+        {
+          "adapter": "Intel(R) Arc(TM) Graphics",
+          "monitor": "Generic PnP Monitor",
+          "primary": true,
+          "width": 2560,
+          "height": 1600,
+          "refreshHz": 60,
+          "maxRefreshHz": 165,
+          "bitsPerPixel": 32
+        }
+      ],
+      "powerSavingApps": []
+    }
+  },
+  "updates": {
+    "value": {
+      "history": [
+        {
+          "dateUtc": "2026-10-23T20:18:33.771Z",
+          "title": "Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.461.184.0) - Current Channel (Broad)",
+          "result": 2,
+          "hResult": 0,
+          "operation": 1
+        },
+        {
+          "dateUtc": "2026-10-21T20:18:33.771Z",
+          "title": "2026-10 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5099999)",
+          "result": 4,
+          "hResult": -2146498529,
+          "operation": 1
+        },
+        {
+          "dateUtc": "2026-10-14T20:18:33.771Z",
+          "title": "2026-10 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5099999)",
+          "result": 4,
+          "hResult": -2146498529,
+          "operation": 1
+        },
+        {
+          "dateUtc": "2026-08-10T20:18:33.771Z",
+          "title": "2026-08 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5090000)",
+          "result": 2,
+          "hResult": 0,
+          "operation": 1
+        }
+      ],
+      "policy": {
+        "usesWsus": false,
+        "autoUpdateOff": false,
+        "windowsUpdateBlocked": false,
+        "pausedUntilUtc": "2026-11-14T20:18:33.771Z"
+      },
+      "upgradeBlocks": [
+        {
+          "target": "GE25H2",
+          "redReason": "None",
+          "gatedBlockId": "56318982"
+        }
+      ]
     }
   }
 }

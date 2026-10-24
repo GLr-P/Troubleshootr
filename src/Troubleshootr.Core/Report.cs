@@ -74,6 +74,8 @@ public static class Json
     public static readonly JsonSerializerOptions Options = new()
     {
         WriteIndented = true,
+        // Computed properties (IsLaptop, LevelName, Vendor…) are recalculated on load; don't bloat reports with them.
+        IgnoreReadOnlyProperties = true,
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         Converters = { new JsonStringEnumConverter() },

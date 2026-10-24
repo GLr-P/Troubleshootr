@@ -12,7 +12,7 @@ public sealed class Shell : UserControl
     private static readonly Dictionary<string, string> Glyphs = new()
     {
         ["Diagnose"] = "", ["Summary"] = "", ["System"] = "", ["CPU"] = "", ["Memory"] = "",
-        ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Events & Crashes"] = "", ["Report"] = "",
+        ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "",
     };
 
     private readonly MainViewModel _vm;

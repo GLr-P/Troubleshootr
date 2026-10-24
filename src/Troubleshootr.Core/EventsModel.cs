@@ -83,6 +83,9 @@ public sealed class WindowsHealthInfo
     /// <summary>Reliability Monitor's latest stability index, 1 (bad) to 10 (perfect).</summary>
     public double? StabilityIndex { get; set; }
     public double? StabilityLowest30Days { get; set; }
+    /// <summary>Windows activation (SoftwareLicensingProduct.LicenseStatus): 1 licensed, 0 unlicensed, 2–6 grace or notification periods.</summary>
+    public int? LicenseStatus { get; set; }
+    public string? LicenseName { get; set; }
 }
 
 public sealed class ServiceState

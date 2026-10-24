@@ -76,7 +76,41 @@ s.health = { value: {
   cbs: { cannotRepair: 3, repaired: 0, storeCorrupt: 1, lastWriteUtc: ago(2) },
   tempProfile: false, profileBackups: 0, stabilityIndex: 2.4, stabilityLowest30Days: 1.2,
 } };
-s.cpu.value.packages[0] = { ...s.cpu.value.packages[0], name: '13th Gen Intel(R) Core(TM) i9-13900K', identifier: 'Intel64 Family 6 Model 183 Stepping 1', microcode: '0x119' };
+// Phase 5: devices, drivers, displays and Windows Update.
+const dev = (cls, name, extra) => ({ name, class: cls, problemCode: 0, ...extra });
+s.devices = { value: {
+  devices: [
+    dev('Display', 'Intel(R) Arc(TM) Graphics', { instanceId: 'PCI\\VEN_8086&DEV_7D55\\3&1', driverProvider: 'Intel Corporation', driverVersion: '31.0.101.5333', driverDate: '2024-02-20T00:00:00Z' }),
+    dev('Net', 'Intel(R) Wi-Fi 6E AX211 160MHz', { problemCode: 10, hardwareId: 'PCI\\VEN_8086&DEV_51F0&SUBSYS_00948086', driverProvider: 'Intel', driverVersion: '23.40.0.4', driverDate: '2024-03-01T00:00:00Z' }),
+    dev('Net', 'Realtek PCIe GbE Family Controller', { driverProvider: 'Realtek', driverVersion: '10.12.1012.2016', driverDate: '2016-10-12T00:00:00Z' }),
+    dev(undefined, 'Unknown device', { problemCode: 28, hardwareId: 'PCI\\VEN_10EC&DEV_5228&SUBSYS_11131462' }),
+    dev('Camera', 'Integrated Webcam', { problemCode: 22 }),
+    dev('SecurityDevices', 'Trusted Platform Module 2.0'),
+    dev('AudioEndpoint', 'Speakers (Realtek(R) Audio)', { driverProvider: 'Realtek', driverVersion: '6.0.9600.1', driverDate: '2023-05-04T00:00:00Z' }),
+  ],
+  hidden: [dev('Display', 'NVIDIA GeForce GTX 1060 6GB', { problemCode: 45, instanceId: 'PCI\\VEN_10DE&DEV_1C03\\4&2' })],
+  hiddenCount: 61,
+  kernelDrivers: [{ name: 'WinRing0_1_2_0', file: 'WinRing0x64.sys', start: 3 }, { name: 'stornvme', file: 'stornvme.sys', start: 0 }],
+  testSigning: true, integrityChecksOff: false,
+} };
+s.displays = { value: {
+  displays: [{ adapter: 'Intel(R) Arc(TM) Graphics', monitor: 'Generic PnP Monitor', primary: true, width: 2560, height: 1600, refreshHz: 60, maxRefreshHz: 165, bitsPerPixel: 32 }],
+  powerSavingApps: [],
+} };
+const upd = (days, title, result, hResult = 0) => ({ dateUtc: ago(days), title, result, hResult, operation: 1 });
+s.updates = { value: {
+  history: [
+    upd(1, 'Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.461.184.0) - Current Channel (Broad)', 2),
+    upd(3, '2026-10 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5099999)', 4, 0x800F081F | 0),
+    upd(10, '2026-10 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5099999)', 4, 0x800F081F | 0),
+    upd(75, '2026-08 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5090000)', 2),
+  ],
+  policy: { usesWsus: false, autoUpdateOff: false, windowsUpdateBlocked: false, pausedUntilUtc: ago(-21) },
+  upgradeBlocks: [{ target: 'GE25H2', redReason: 'None', gatedBlockId: '56318982' }],
+} };
+s.health.value.licenseStatus = 5;
+s.health.value.licenseName = 'Windows(R), Professional edition';
+s.cpu.value.packages[0] ={ ...s.cpu.value.packages[0], name: '13th Gen Intel(R) Core(TM) i9-13900K', identifier: 'Intel64 Family 6 Model 183 Stepping 1', microcode: '0x119' };
 
 fs.writeFileSync(path.join(dir, 'demo-many-problems.snap.json'), JSON.stringify(s, null, 2) + '\n');
 console.log('wrote demo-many-problems.snap.json');

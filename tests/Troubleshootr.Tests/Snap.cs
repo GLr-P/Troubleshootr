@@ -31,10 +31,17 @@ public static class Snap
             new() { Root = @"C:\", DriveType = "Fixed", TotalBytes = 500L * GB, FreeBytes = 200L * GB, IsSystem = true },
         ]),
         Cpu = Section<CpuInfo>.Of(new CpuInfo { Packages = [new() { Name = "Test CPU", Cores = 8, Threads = 16 }] }),
-        Gpus = Section<List<GpuInfo>>.Of([new() { Name = "Test GPU" }]),
+        Gpus = Section<List<GpuInfo>>.Of([new() { Name = "Test GPU", DriverDate = Now.AddMonths(-2) }]),
         Events = Section<EventsInfo>.Of(new EventsInfo()),
         Crashes = Section<CrashInfo>.Of(new CrashInfo { CrashDumpEnabled = 7, AutoReboot = true }),
-        Health = Section<WindowsHealthInfo>.Of(new WindowsHealthInfo { StabilityIndex = 9.5, Cbs = new CbsSummary() }),
+        Health = Section<WindowsHealthInfo>.Of(new WindowsHealthInfo { StabilityIndex = 9.5, Cbs = new CbsSummary(), LicenseStatus = 1 }),
+        Devices = Section<DevicesInfo>.Of(new DevicesInfo
+        {
+            TestSigning = false, IntegrityChecksOff = false,
+            Devices = [new() { Name = "Test GPU", Class = "Display", InstanceId = @"PCI\VEN_10DE&DEV_2684\4&1", DriverProvider = "NVIDIA", DriverDate = Now.AddMonths(-2) }, new() { Name = "Trusted Platform Module 2.0", Class = "SecurityDevices" }],
+        }),
+        Displays = Section<DisplaysInfo>.Of(new DisplaysInfo { Displays = [new() { Adapter = "Test GPU", Monitor = "Monitor", Primary = true, Width = 2560, Height = 1440, RefreshHz = 144, MaxRefreshHz = 144 }] }),
+        Updates = Section<UpdatesInfo>.Of(new UpdatesInfo { History = [new() { DateUtc = Now.AddDays(-10), Title = "2026-10 Cumulative Update for Windows 11 Version 25H2 (KB5099999)", Result = 2 }] }),
     };
 
     public const long GB = 1073741824L;
