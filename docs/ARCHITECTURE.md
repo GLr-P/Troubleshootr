@@ -1,4 +1,4 @@
-# Triagr architecture
+# EZDiag architecture
 
 Read the section you need. The design has one aim: **fast to build and test with AI.** Every check runs against recorded
 data, so almost all of the work is tested without real hardware and without opening a window.
@@ -25,16 +25,16 @@ data, so almost all of the work is tested without real hardware and without open
 ## 2. Solution layout
 
 ```
-Triagr/
-  Triagr.sln
+EZDiag/
+  EZDiag.sln
   src/
-    Triagr.Core/          netstandard2.0  Snapshot model, Finding, ICheck, ICollector, scan engine, report writers
-    Triagr.Collectors/    netstandard2.0  WMI, registry, event log, IOCTL (SMART/NVMe), files, network, LHM adapter
-    Triagr.Checks/        netstandard2.0  one class per check, grouped by category folder
-    Triagr.Cli/           net472          `triagr scan|collect|report`, used by tests and by AI
-    Triagr.App/           net472 WPF      UI shell, tabs, theme, screenshot mode
+    EZDiag.Core/          netstandard2.0  Snapshot model, Finding, ICheck, ICollector, scan engine, report writers
+    EZDiag.Collectors/    netstandard2.0  WMI, registry, event log, IOCTL (SMART/NVMe), files, network, LHM adapter
+    EZDiag.Checks/        netstandard2.0  one class per check, grouped by category folder
+    EZDiag.Cli/           net472          `ezdiag scan|collect|report`, used by tests and by AI
+    EZDiag.App/           net472 WPF      UI shell, tabs, theme, screenshot mode
   tests/
-    Triagr.Tests/         net10.0;net472  xUnit: check tests, golden fixture tests, parser tests
+    EZDiag.Tests/         net10.0;net472  xUnit: check tests, golden fixture tests, parser tests
     fixtures/             *.snap.json     recorded, anonymized real PCs + hand-made edge cases
   docs/                   this file, CHECKS.md
   scripts/                publish.ps1, compat helpers
@@ -71,7 +71,7 @@ interface ICollector {
 ```
 
 - Every Snapshot section is a `Section<T>`: either `Value` or `Unavailable(reason)`. Checks that need missing data return nothing, and the report lists "not checked: needs admin / not supported on this Windows".
-- Checks discover each other by reflection (every `ICheck` in Triagr.Checks), so adding one is a single file.
+- Checks discover each other by reflection (every `ICheck` in EZDiag.Checks), so adding one is a single file.
 - Thresholds live as constants at the top of each check class, with a comment saying where the number came from.
 
 ## 4. Collectors: speed and compatibility rules
@@ -87,12 +87,12 @@ interface ICollector {
 
 ## 5. Tests (the main reason this design exists)
 
-- **Unit tests per check:** build a tiny Snapshot in code (builder helpers in `tests/Triagr.Tests/Snap.cs`), run the check, assert on the findings. Cover: healthy → no finding, each threshold edge, data Unavailable → no finding and no crash.
+- **Unit tests per check:** build a tiny Snapshot in code (builder helpers in `tests/EZDiag.Tests/Snap.cs`), run the check, assert on the findings. Cover: healthy → no finding, each threshold edge, data Unavailable → no finding and no crash.
 - **Golden fixture tests:** for each `tests/fixtures/*.snap.json`, run all checks and compare the findings with the stored `*.verified.txt` (Verify library). A changed result shows as a diff; accept it only if the change is intended.
-- **Fixtures come from real PCs:** `triagr collect --anonymize --out x.snap.json` on any PC (this laptop, the desktop, client PCs with consent). Each fixture name says what's interesting (`win10-1809-failing-hdd.snap.json`). Hand-edit copies to create edge cases.
+- **Fixtures come from real PCs:** `ezdiag collect --anonymize --out x.snap.json` on any PC (this laptop, the desktop, client PCs with consent). Each fixture name says what's interesting (`win10-1809-failing-hdd.snap.json`). Hand-edit copies to create edge cases.
 - **Parser tests:** SMART attribute tables, NVMe health log bytes, minidump headers and battery reports are parsed from byte arrays or text saved in `tests/fixtures/raw/`.
-- **Collector smoke test:** `triagr scan --json --timings` on this PC; it must finish and every section must be Value or a clear Unavailable reason. This is the only test that touches real hardware.
-- **UI screenshots without windows:** `Triagr.App --screenshot <tab|all> --fixture <file> --out <dir>` loads a fixture, renders each tab off-screen with `RenderTargetBitmap` at 1280×800 in light and dark, saves PNGs and exits. Look at them after every UI change.
+- **Collector smoke test:** `ezdiag scan --json --timings` on this PC; it must finish and every section must be Value or a clear Unavailable reason. This is the only test that touches real hardware.
+- **UI screenshots without windows:** `EZDiag.App --screenshot <tab|all> --fixture <file> --out <dir>` loads a fixture, renders each tab off-screen with `RenderTargetBitmap` at 1280×800 in light and dark, saves PNGs and exits. Look at them after every UI change.
 - **Both runtimes:** tests target net10.0 (fast, the default) and net472 (run before releases, since that's what ships).
 - **CI:** GitHub Actions `windows-latest` runs build + tests + `scan` on every push (a free second, clean machine).
 
