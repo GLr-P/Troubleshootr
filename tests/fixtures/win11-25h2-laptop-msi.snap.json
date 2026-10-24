@@ -1,7 +1,7 @@
 {
   "meta": {
     "toolVersion": "0.1.0",
-    "collectedUtc": "2026-10-24T19:53:11.467081Z",
+    "collectedUtc": "2026-10-24T20:18:33.7711566Z",
     "isAdmin": false,
     "anonymized": true
   },
@@ -25,7 +25,7 @@
       "installDateUtc": "2026-06-30T01:25:46Z",
       "is64BitOs": true,
       "architecture": "AMD64",
-      "uptimeSeconds": 365264,
+      "uptimeSeconds": 366786,
       "fastStartupEnabled": true,
       "pendingRebootReasons": [
         "file operations waiting for a restart"
@@ -56,8 +56,8 @@
     "value": {
       "installedMB": 32768,
       "usableMB": 32276,
-      "availableMB": 8779,
-      "commitUsedMB": 36553,
+      "availableMB": 7419,
+      "commitUsedMB": 37244,
       "commitLimitMB": 38164,
       "slotCount": 8,
       "maxCapacityMB": 32768,
@@ -174,7 +174,7 @@
         "fileSystem": "NTFS",
         "driveType": "Fixed",
         "totalBytes": 994179018752,
-        "freeBytes": 534175633408,
+        "freeBytes": 534176718848,
         "isSystem": true
       }
     ]
@@ -194,5 +194,59 @@
         "errorCode": 0
       }
     ]
+  },
+  "storage": {
+    "value": {
+      "disks": [
+        {
+          "number": 0,
+          "model": "Micron_2400_MTFDKBA1T0QFM",
+          "serialNumber": "[redacted]",
+          "firmware": "V3MA002",
+          "busType": "NVMe",
+          "mediaType": "SSD",
+          "sizeBytes": 1024209543168,
+          "pnpDeviceId": "SCSI\\DISK\u0026VEN_NVME\u0026PROD_MICRON_2400_MTFD\\4\u0026213A8AFD\u00260\u0026020000",
+          "isBoot": true,
+          "driveLetters": [
+            "C:"
+          ],
+          "health": "Healthy",
+          "operationalStatus": [
+            "OK"
+          ],
+          "nvme": {
+            "criticalWarning": 0,
+            "temperatureC": 35,
+            "availableSparePercent": 100,
+            "spareThresholdPercent": 5,
+            "percentageUsed": 1,
+            "dataUnitsRead": 8204847,
+            "dataUnitsWritten": 9324491,
+            "powerCycles": 186,
+            "powerOnHours": 326,
+            "unsafeShutdowns": 13,
+            "mediaErrors": 0,
+            "errorLogEntries": 0,
+            "warningTempMinutes": 0,
+            "criticalTempMinutes": 0,
+            "terabytesWritten": 4.7741393920000004
+          },
+          "name": "Disk 0 (Micron_2400_MTFDKBA1T0QFM)",
+          "isSsd": true
+        }
+      ],
+      "partitions": [
+        {
+          "diskNumber": 0,
+          "partitionNumber": 0,
+          "driveLetter": "C:",
+          "offsetBytes": 449839104,
+          "sizeBytes": 0
+        }
+      ],
+      "virtualDisks": [],
+      "trimDisabled": false
+    }
   }
 }

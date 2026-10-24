@@ -31,7 +31,17 @@ public sealed class InfoPage : UserControl
     private static Border Card(InfoGroup g)
     {
         var panel = new StackPanel();
-        panel.Children.Add(new TextBlock { Text = g.Title, Style = St("H2"), Margin = new Thickness(0, 0, 0, 10) });
+        var header = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 10) };
+        header.Children.Add(new TextBlock { Text = g.Title, Style = St("H2"), VerticalAlignment = VerticalAlignment.Center });
+        if (g.Badge is not null)
+        {
+            var text = new TextBlock { Text = g.Badge, FontSize = 12, FontWeight = FontWeights.SemiBold };
+            text.SetResourceReference(TextBlock.ForegroundProperty, g.BadgeKey);
+            var pill = new Border { CornerRadius = new CornerRadius(10), Padding = new Thickness(10, 2, 10, 2), Margin = new Thickness(12, 0, 0, 0), Child = text, VerticalAlignment = VerticalAlignment.Center };
+            pill.SetResourceReference(Border.BackgroundProperty, g.BadgeKey + "Soft");
+            header.Children.Add(pill);
+        }
+        panel.Children.Add(header);
         if (g.Note is not null) panel.Children.Add(new TextBlock { Text = g.Note, Style = St("Dim") });
         if (g.Rows.Count > 0) panel.Children.Add(KeyValues(g.Rows));
         if (g.Columns is not null) panel.Children.Add(g.Table.Count == 0 ? new TextBlock { Text = "None found.", Style = St("Dim") } : Table(g.Columns, g.Table));

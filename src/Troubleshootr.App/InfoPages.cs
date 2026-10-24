@@ -10,6 +10,9 @@ public sealed class InfoGroup(string title)
     public string[]? Columns { get; set; }
     public List<string[]> Table { get; } = new();
     public string? Note { get; set; }
+    /// <summary>Optional status pill next to the title ("Good", "Bad"), coloured by a theme key (Ok, Warning, Critical, Info).</summary>
+    public string? Badge { get; set; }
+    public string BadgeKey { get; set; } = "Info";
 
     public InfoGroup Row(string label, object? value)
     {
@@ -18,6 +21,7 @@ public sealed class InfoGroup(string title)
             null => null,
             bool b => b ? "Yes" : "No",
             DateTime d => d.ToString("yyyy-MM-dd"),
+            long l => l.ToString("N0"),
             _ => value.ToString(),
         };
         if (!string.IsNullOrWhiteSpace(text)) Rows.Add((label, text!));
@@ -62,6 +66,8 @@ public static class InfoPages
             .Row("Graphics", d.Gpu)
             .Row("Uptime", sys is null ? null : Ui.Duration(sys.UptimeSeconds))
             .Row("Running as admin", s.Meta.IsAdmin);
+        foreach (var disk in s.Storage?.Value?.Disks ?? [])
+            g.Row($"Disk {disk.Number}", $"{disk.Model} ({Gb(disk.SizeBytes)}): {DiskHealth.Assess(disk).State}");
         var groups = new List<InfoGroup> { g };
         if (s.Volumes?.Value is { Count: > 0 } vols)
         {
@@ -147,12 +153,75 @@ public static class InfoPages
 
     private static List<InfoGroup> Storage(Snapshot s)
     {
-        if (Missing("Volumes", s, nameof(Snapshot.Volumes)) is { } m) return [m];
-        var v = new InfoGroup("Volumes") { Columns = ["Drive", "Label", "File system", "Type", "Free", "Size", "System"] };
-        foreach (var x in s.Volumes!.Value!)
-            v.Table.Add([x.Root, x.Label ?? "", x.FileSystem ?? "", x.DriveType ?? "", Gb(x.FreeBytes), Gb(x.TotalBytes), x.IsSystem ? "Yes" : ""]);
-        return [v, new InfoGroup("Drive health") { Note = "Drive health (SMART / NVMe) arrives in a later version." }];
+        var groups = new List<InfoGroup>();
+        if (s.Storage?.Value is { } st)
+            foreach (var d in st.Disks.OrderBy(d => d.Number)) groups.AddRange(Disk(d));
+        else if (Missing("Drives", s, nameof(Snapshot.Storage)) is { } missing) groups.Add(missing);
+
+        if (s.Volumes?.Value is { } vols)
+        {
+            var v = new InfoGroup("Volumes") { Columns = ["Drive", "Label", "File system", "Type", "Free", "Size", "System", "Needs chkdsk"] };
+            foreach (var x in vols)
+                v.Table.Add([x.Root, x.Label ?? "", x.FileSystem ?? "", x.DriveType ?? "", Gb(x.FreeBytes), Gb(x.TotalBytes), x.IsSystem ? "Yes" : "",
+                             x.Dirty switch { true => "Yes", false => "No", null => "?" }]);
+            groups.Add(v);
+        }
+        if (s.Storage?.Value is { VirtualDisks.Count: > 0 } sp)
+        {
+            var g = new InfoGroup("Storage Spaces") { Columns = ["Name", "Type", "Health", "Status"] };
+            foreach (var v in sp.VirtualDisks) g.Table.Add([v.Name ?? "", v.Resiliency ?? "", v.Health ?? "", string.Join(", ", v.OperationalStatus)]);
+            groups.Add(g);
+        }
+        return groups;
     }
+
+    /// <summary>One CrystalDiskInfo-style card per drive, plus its SMART table for ATA drives.</summary>
+    private static IEnumerable<InfoGroup> Disk(DiskInfo d)
+    {
+        var (state, reasons) = DiskHealth.Assess(d);
+        var g = new InfoGroup($"Disk {d.Number}: {d.Model}")
+        {
+            Badge = state switch { DiskState.Good => "Good", DiskState.Caution => "Caution", DiskState.Bad => "Bad", _ => "Unknown" },
+            BadgeKey = state switch { DiskState.Good => "Ok", DiskState.Caution => "Warning", DiskState.Bad => "Critical", _ => "Info" },
+        };
+        var n = d.Nvme;
+        var r = d.Reliability;
+        var hours = DiskHealth.PowerOnHoursOf(d);
+        var wear = DiskHealth.Wear(d);
+        g.Row("Health", state == DiskState.Unknown ? $"Unknown: {d.HealthDataUnavailable ?? "no health data"}" : reasons.Count == 0 ? "No problems reported" : string.Join("; ", reasons))
+         .Row("Type", $"{d.MediaType ?? "Drive"} on {d.BusType ?? "unknown bus"}{(d.SpindleRpm is { } rpm ? $", {rpm} rpm" : "")}")
+         .Row("Capacity", d.SizeBytes > 0 ? Gb(d.SizeBytes) : null)
+         .Row("Drive letters", d.DriveLetters.Count > 0 ? string.Join(" ", d.DriveLetters) : null)
+         .Row("Holds Windows", d.IsBoot ? "Yes" : null)
+         .Row("Temperature", DiskHealth.TemperatureC(d) is { } t ? $"{t} °C{(r?.TemperatureMaxC is { } max and > 0 ? $" (max {max} °C)" : "")}" : null)
+         .Row("Life used", wear is { } w ? $"{w}% ({Math.Max(0, 100 - w)}% left)" : null)
+         .Row("Power-on hours", hours is { } h ? $"{h:N0} h ({h / 24.0:N0} days)" : null)
+         .Row("Power cycles", n?.PowerCycles ?? d.Ata?[0x0C]?.Raw)
+         .Row("Data written", n is not null ? $"{n.TerabytesWritten:0.##} TB" : null)
+         .Row("Data read", n is not null ? $"{n.DataUnitsRead * 512000.0 / 1e12:0.##} TB" : null)
+         .Row("Available spare", n is not null ? $"{n.AvailableSparePercent}% (threshold {n.SpareThresholdPercent}%)" : null)
+         .Row("Unsafe shutdowns", n?.UnsafeShutdowns)
+         .Row("Media errors", n?.MediaErrors)
+         .Row("Uncorrected errors", r is { } rr && (rr.ReadErrorsUncorrected is not null || rr.WriteErrorsUncorrected is not null)
+             ? $"read {rr.ReadErrorsUncorrected ?? 0}, write {rr.WriteErrorsUncorrected ?? 0}" : null)
+         .Row("Windows health", d.Health is null ? null : $"{d.Health}{(d.OperationalStatus.Count > 0 ? $" ({string.Join(", ", d.OperationalStatus)})" : "")}")
+         .Row("Firmware", d.Firmware)
+         .Row("Serial number", d.SerialNumber);
+        yield return g;
+
+        if (d.Ata is { Attributes.Count: > 0 } a)
+        {
+            var table = new InfoGroup($"Disk {d.Number}: SMART attributes") { Columns = ["ID", "Attribute", "Current", "Worst", "Threshold", "Raw", ""] };
+            foreach (var x in a.Attributes)
+                table.Table.Add([x.Id.ToString("X2"), x.Name, x.Current.ToString(), x.Worst.ToString(), x.Threshold.ToString(), x.Raw.ToString("N0"),
+                             x.BelowThreshold ? "FAILING" : Flag(x)]);
+            yield return table;
+        }
+    }
+
+    private static string Flag(SmartAttribute x) =>
+        x.Id is DiskHealth.PendingSectors or DiskHealth.UncorrectableSectors && x.Raw > 0 ? "Bad"
+        : x.Id is DiskHealth.ReallocatedSectors && x.Raw > 0 ? "Caution" : "";
 
     private static List<InfoGroup> Graphics(Snapshot s)
     {

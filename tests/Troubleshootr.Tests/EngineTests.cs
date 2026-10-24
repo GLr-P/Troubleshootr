@@ -24,10 +24,10 @@ public class EngineTests
         protected override List<GpuInfo> Collect(CollectContext ctx, CancellationToken ct) { Thread.Sleep(delay); return []; }
     }
 
-    private sealed class VolumesStub : Collector<List<VolumeInfo>>
+    private sealed class BoardStub : Collector<BoardInfo>
     {
-        public override string Section => nameof(Snapshot.Volumes);
-        protected override List<VolumeInfo> Collect(CollectContext ctx, CancellationToken ct) => [];
+        public override string Section => nameof(Snapshot.Board);
+        protected override BoardInfo Collect(CollectContext ctx, CancellationToken ct) => new();
     }
 
     private sealed class FailingCollector : Collector<SystemInfo>
@@ -69,9 +69,9 @@ public class EngineTests
     public async Task CategoryScanRunsOnlyNeededCollectors()
     {
         var report = await ScanEngine.ScanAsync(
-            [new VolumesStub(), new FailingCollector()],
+            [new BoardStub(), new FailingCollector()],
             CheckRegistry.All, new ScanOptions { Categories = [Category.Memory] });
-        Assert.Null(report.Snapshot!.Volumes);
+        Assert.Null(report.Snapshot!.Board); // only PER-007 needs it
         Assert.NotNull(report.Snapshot.System); // always collected for the header
     }
 

@@ -153,6 +153,7 @@ public sealed class VolumeCollector : Collector<List<VolumeInfo>>
                     TotalBytes = d.TotalSize,
                     FreeBytes = d.AvailableFreeSpace,
                     IsSystem = string.Equals(d.Name, systemRoot, StringComparison.OrdinalIgnoreCase),
+                    Dirty = d.DriveType == DriveType.Fixed ? DeviceIo.VolumeDirty(d.Name) : null,
                 });
             }
             catch (IOException) { }

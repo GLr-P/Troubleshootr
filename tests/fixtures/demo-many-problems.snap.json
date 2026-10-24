@@ -1,10 +1,10 @@
 {
   "meta": {
     "toolVersion": "0.1.0",
-    "collectedUtc": "2026-10-24T19:53:11.467081Z",
+    "collectedUtc": "2026-10-24T20:18:33.7711566Z",
     "isAdmin": false,
     "anonymized": true,
-    "note": "Hand-made demo: one of every Phase 1 finding, for UI screenshots"
+    "note": "Hand-made demo: one of each finding, for UI screenshots. Rebuild with scripts/make-demo-fixture.js"
   },
   "system": {
     "value": {
@@ -58,7 +58,7 @@
       "installedMB": 32768,
       "usableMB": 32276,
       "availableMB": 600,
-      "commitUsedMB": 36553,
+      "commitUsedMB": 37244,
       "commitLimitMB": 38164,
       "slotCount": 2,
       "maxCapacityMB": 32768,
@@ -99,11 +99,168 @@
         "driveType": "Fixed",
         "totalBytes": 994179018752,
         "freeBytes": 29825370563,
-        "isSystem": true
+        "isSystem": true,
+        "dirty": true
       }
     ]
   },
   "gpus": {
     "unavailable": "WMI: 0x80041010 in root\\cimv2 (SELECT Name FROM Win32_VideoController)"
+  },
+  "storage": {
+    "value": {
+      "disks": [
+        {
+          "number": 0,
+          "model": "Micron_2400_MTFDKBA1T0QFM",
+          "serialNumber": "[redacted]",
+          "firmware": "V3MA002",
+          "busType": "NVMe",
+          "mediaType": "SSD",
+          "sizeBytes": 1024209543168,
+          "pnpDeviceId": "SCSI\\DISK&VEN_NVME&PROD_MICRON_2400_MTFD\\4&213A8AFD&0&020000",
+          "isBoot": true,
+          "driveLetters": [
+            "C:"
+          ],
+          "health": "Healthy",
+          "operationalStatus": [
+            "OK"
+          ],
+          "nvme": {
+            "criticalWarning": 0,
+            "temperatureC": 73,
+            "availableSparePercent": 100,
+            "spareThresholdPercent": 5,
+            "percentageUsed": 86,
+            "dataUnitsRead": 8204847,
+            "dataUnitsWritten": 9324491,
+            "powerCycles": 186,
+            "powerOnHours": 326,
+            "unsafeShutdowns": 13,
+            "mediaErrors": 4,
+            "errorLogEntries": 0,
+            "warningTempMinutes": 0,
+            "criticalTempMinutes": 0,
+            "terabytesWritten": 4.774139392
+          },
+          "name": "Disk 0 (Micron_2400_MTFDKBA1T0QFM)",
+          "isSsd": true
+        },
+        {
+          "number": 1,
+          "model": "WDC WD10EZEX-08WN4A0",
+          "serialNumber": "[redacted]",
+          "firmware": "01.01A01",
+          "busType": "SATA",
+          "mediaType": "HDD",
+          "sizeBytes": 1000204886016,
+          "spindleRpm": 7200,
+          "isBoot": false,
+          "driveLetters": [
+            "D:"
+          ],
+          "health": "Warning",
+          "operationalStatus": [
+            "Predictive Failure"
+          ],
+          "ata": {
+            "predictFailure": false,
+            "attributes": [
+              {
+                "id": 1,
+                "name": "Read error rate",
+                "current": 200,
+                "worst": 200,
+                "threshold": 51,
+                "raw": 14,
+                "rawHex": "00000000000E"
+              },
+              {
+                "id": 5,
+                "name": "Reallocated sectors",
+                "current": 189,
+                "worst": 189,
+                "threshold": 140,
+                "raw": 312,
+                "rawHex": "000000000138"
+              },
+              {
+                "id": 9,
+                "name": "Power-on hours",
+                "current": 41,
+                "worst": 41,
+                "threshold": 0,
+                "raw": 43210,
+                "rawHex": "00000000A8CA"
+              },
+              {
+                "id": 12,
+                "name": "Power cycle count",
+                "current": 98,
+                "worst": 98,
+                "threshold": 0,
+                "raw": 2311,
+                "rawHex": "000000000907"
+              },
+              {
+                "id": 194,
+                "name": "Temperature",
+                "current": 108,
+                "worst": 95,
+                "threshold": 0,
+                "raw": 39,
+                "rawHex": "000000000027"
+              },
+              {
+                "id": 197,
+                "name": "Pending sectors",
+                "current": 200,
+                "worst": 200,
+                "threshold": 0,
+                "raw": 24,
+                "rawHex": "000000000018"
+              },
+              {
+                "id": 198,
+                "name": "Uncorrectable sectors",
+                "current": 200,
+                "worst": 200,
+                "threshold": 0,
+                "raw": 8,
+                "rawHex": "000000000008"
+              },
+              {
+                "id": 199,
+                "name": "UltraDMA CRC errors",
+                "current": 200,
+                "worst": 200,
+                "threshold": 0,
+                "raw": 0,
+                "rawHex": "000000000000"
+              }
+            ]
+          }
+        }
+      ],
+      "partitions": [
+        {
+          "diskNumber": 0,
+          "partitionNumber": 0,
+          "driveLetter": "C:",
+          "offsetBytes": 449839104,
+          "sizeBytes": 0
+        },
+        {
+          "diskNumber": 1,
+          "partitionNumber": 0,
+          "driveLetter": "D:",
+          "offsetBytes": 32256,
+          "sizeBytes": 0
+        }
+      ],
+      "virtualDisks": [],
+      "trimDisabled": true
+    }
   }
 }

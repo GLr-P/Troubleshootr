@@ -9,22 +9,22 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| STO-001 | SMART overall health (ATA) | IOCTL SMART_RCV_DRIVE_DATA, WMI MSStorageDriver_FailurePredictStatus | ✓ | C if predict-failure flag | ✓ | 3 |
-| STO-002 | Reallocated / pending / uncorrectable sectors (ATA 05, C5, C6) | IOCTL | ✓ | C if pending or uncorrectable > 0; W if reallocated > 0 | ✓ | 3 |
-| STO-003 | NVMe critical warning byte, available spare vs threshold, media errors | IOCTL StorageDeviceProtocolSpecificProperty (log page 02h) | ✓ | C if critical warning ≠ 0 or spare < threshold; W if media errors > 0 | ✓ | 3 |
-| STO-004 | SSD wear (NVMe percentage used, ATA wear attributes E7/E9/A9/AD by vendor) | IOCTL | ✓ | W ≥ 80% used, C ≥ 100% | ✓ | 3 |
-| STO-005 | Drive temperature now (SMART C2 / NVMe composite) | IOCTL | ✓ | W HDD > 50 °C, NVMe > 70 °C; C above the drive's critical temp | ✓ | 3 |
-| STO-006 | Power-on hours and age context | IOCTL | ✓ | I; W HDD > 40,000 h | ✓ | 3 |
+| STO-001 | SMART overall health (ATA) | IOCTL SMART_RCV_DRIVE_DATA, WMI MSStorageDriver_FailurePredictStatus | ✓ | C if predict-failure flag | ✓ | 3 ✅ |
+| STO-002 | Reallocated / pending / uncorrectable sectors (ATA 05, C5, C6) | IOCTL | ✓ | C if pending or uncorrectable > 0; W if reallocated > 0 | ✓ | 3 ✅ |
+| STO-003 | NVMe critical warning byte, available spare vs threshold, media errors | IOCTL StorageDeviceProtocolSpecificProperty (log page 02h) | ✓ | C if critical warning ≠ 0 or spare < threshold; W if media errors > 0 | ✓ | 3 ✅ |
+| STO-004 | SSD wear (NVMe percentage used, ATA wear attributes E7/E9/A9/AD by vendor) | IOCTL | ✓ | W ≥ 80% used, C ≥ 100% | ✓ | 3 ✅ |
+| STO-005 | Drive temperature now (SMART C2 / NVMe composite) | IOCTL | ✓ | W HDD > 50 °C, NVMe > 70 °C; C above the drive's critical temp | ✓ | 3 ✅ |
+| STO-006 | Power-on hours and age context | IOCTL | ✓ | I; W HDD > 40,000 h | ✓ | 3 ✅ |
 | STO-007 | Disk errors in the System log (disk 7, 11, 51, 153; storahci/stornvme 129; Ntfs 55, 98) in 30 days | EVT | | C if bad-block events (7) are recent; W for timeouts/resets | ✓ | 3 |
 | STO-008 | Volume free space (system drive and others) | API GetDiskFreeSpaceEx | | C system < 5% or < 5 GB; W < 15% | ✓ | 1 ✅ |
-| STO-009 | File system dirty bit / chkdsk scheduled | IOCTL FSCTL_IS_VOLUME_DIRTY | ✓ | W | ✓ | 3 |
-| STO-010 | Windows runs on an HDD (slow-PC cause no. 1) | WMI MSFT_PhysicalDisk MediaType / seek-penalty IOCTL | | W if the system drive is a spinning disk | ✓ | 3 |
-| STO-011 | TRIM disabled on SSD | REG / PROC fsutil behavior query DisableDeleteNotify | | W | ✓ | 3 |
-| STO-012 | Storage Spaces / RAID degraded | WMI MSFT_VirtualDisk HealthStatus | | C if Unhealthy, W if Warning | ✓ | 3 |
-| STO-013 | MSFT_PhysicalDisk HealthStatus + reliability counters (read/write errors) | WMI root\Microsoft\Windows\Storage (Win8+) | ✓ | W/C by status | ✓ | 3 |
-| STO-014 | Partition alignment (offset not 4 KiB-aligned on SSD) | WMI Win32_DiskPartition | | W | | 3 |
+| STO-009 | File system dirty bit / chkdsk scheduled | IOCTL FSCTL_IS_VOLUME_DIRTY | ✓ | W | ✓ | 3 ✅ |
+| STO-010 | Windows runs on an HDD (slow-PC cause no. 1) | WMI MSFT_PhysicalDisk MediaType / seek-penalty IOCTL | | W if the system drive is a spinning disk | ✓ | 3 ✅ |
+| STO-011 | TRIM disabled on SSD | REG / PROC fsutil behavior query DisableDeleteNotify | | W | ✓ | 3 ✅ |
+| STO-012 | Storage Spaces / RAID degraded | WMI MSFT_VirtualDisk HealthStatus | | C if Unhealthy, W if Warning | ✓ | 3 ✅ |
+| STO-013 | MSFT_PhysicalDisk HealthStatus + reliability counters (read/write errors) | WMI root\Microsoft\Windows\Storage (Win8+) | ✓ | W/C by status | ✓ | 3 ✅ |
+| STO-014 | Partition alignment (offset not 4 KiB-aligned on SSD) | WMI Win32_DiskPartition | | W | | 3 ✅ |
 | STO-015 | Disk link speed / mode (SATA at 1.5/3 Gb/s, NVMe at reduced PCIe lanes or generation) | IOCTL / WMI MSFT_PhysicalDisk | ✓ | I/W | | 3 |
-| STO-016 | Drive behind a USB bridge (SMART may be hidden) | IOCTL bus type | | I "connect directly for full health data" | ✓ | 3 |
+| STO-016 | Drive behind a USB bridge (SMART may be hidden) | IOCTL bus type | | I "connect directly for full health data" | ✓ | 3 ✅ |
 | STO-017 | BitLocker on, and is the recovery key known? (before repair work) | WMI Win32_EncryptableVolume | ✓ | W "back up the key before touching the drive" | ✓ | 8 |
 | STO-018 | Large temp / Windows.old / update cache use | FILE sizes | | I with the amount reclaimable | | 6 |
 | STO-019 | Pagefile location and size sanity (none, on a full or USB drive) | REG / WMI Win32_PageFileUsage | | W | ✓ | 6 |

@@ -1,5 +1,13 @@
+Critical STO-002: Disk 1 (WDC WD10EZEX-08WN4A0) has unreadable sectors | Reallocated: 312, pending: 24, uncorrectable: 8.
 Critical STO-008: System drive C:\ is almost full | C:\ has 27.8 GB free of 925.9 GB (3%).
-Warning MEM-006: Memory is nearly full | 98% of RAM in use (0.6 GB free of 31.5 GB); commit 35.7 GB of 37.3 GB (96%).
+Warning MEM-006: Memory is nearly full | 98% of RAM in use (0.6 GB free of 31.5 GB); commit 36.4 GB of 37.3 GB (98%).
+Warning STO-003: Disk 0 (Micron_2400_MTFDKBA1T0QFM) has recorded media errors | 4 media and data integrity errors; spare 100%.
+Warning STO-004: Disk 0 (Micron_2400_MTFDKBA1T0QFM) is wearing out | 86% of rated endurance used. 4.8 TB written.
+Warning STO-005: Disk 0 (Micron_2400_MTFDKBA1T0QFM) runs hot | 73 °C now (comfortable below 70 °C).
+Warning STO-006: Disk 1 (WDC WD10EZEX-08WN4A0) is an old hard drive | 43,210 power-on hours (4.9 years of running).
+Warning STO-009: Drive C:\ has file system errors | C:\ is marked dirty; Windows will check it at the next restart.
+Warning STO-011: TRIM is turned off for SSDs | DisableDeleteNotification = 1 (NTFS).
+Warning STO-013: Windows reports a health warning on Disk 1 (WDC WD10EZEX-08WN4A0) | Health: Warning. Status: Predictive Failure.
 Warning WIN-002: This Windows version no longer gets security updates | Windows 11 Home 24H2 (build 26100.9711): support ended 2026-10-13.
 Warning WIN-004: A restart is pending | Waiting on: Windows Update.
 Warning WIN-011: Windows Management Instrumentation (WMI) isn't working properly | Gpus: WMI: 0x80041010 in root\cimv2 (SELECT Name FROM Win32_VideoController)

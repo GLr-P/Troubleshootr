@@ -17,7 +17,7 @@ public sealed class ScanOptions
 public static class ScanEngine
 {
     /// <summary>Sections every scan collects, because the device header needs them.</summary>
-    public static readonly IReadOnlyList<string> AlwaysCollect = ["System", "Cpu", "Memory", "Gpus"];
+    public static readonly IReadOnlyList<string> AlwaysCollect = ["System", "Cpu", "Memory", "Gpus", "Storage", "Volumes"];
 
     /// <summary>
     /// Runs the needed collectors in parallel, then each check as soon as its sections are ready.

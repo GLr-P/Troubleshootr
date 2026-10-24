@@ -1,6 +1,6 @@
 # Troubleshootr plan
 
-Status: **Phases 0–2 done** (2026-10-24): engine, CLI, 11 checks, WPF app. Next: Phase 3 (Storage). Work phase by phase. Each phase ends with tests passing, a commit and a
+Status: **Phases 0–3 done** (2026-10-24): engine, CLI, WPF app, drive health. Next: Phase 4 (crashes and event logs). Work phase by phase. Each phase ends with tests passing, a commit and a
 push, and a line in the Progress log. Phases 0–2 come first and in order. After that, any category phase can be done in
 any order (they all plug into the same engine).
 
@@ -60,10 +60,10 @@ under 1 s; Quick scan under 10 s.
 - [x] Screenshot mode (`--screenshot`), Report tab with Save JSON + text and Copy ticket summary. (HTML report moves to Phase 12.)
 - **Done when:** screenshots of every tab look right in both themes; the window appears in < 1 s (measured).
 
-### Phase 3: Storage (CrystalDiskInfo level): STO-001..016
-- [ ] ATA SMART reader + attribute names table; NVMe health log reader; bus type and USB-bridge detection.
-- [ ] Storage tab: per-drive health card (Good / Caution / Bad like CrystalDiskInfo), attributes table, temperature, hours, wear.
-- [ ] Parser tests from saved raw SMART/NVMe bytes (record the laptop's NVMe and the desktop's drives).
+### Phase 3: Storage (CrystalDiskInfo level): done except STO-007 (needs the Phase 4 event-log collector) and STO-015 (link speed)
+- [x] ATA SMART reader + attribute names table; NVMe health log reader; bus type and USB-bridge detection.
+- [x] Storage tab: per-drive health card (Good / Caution / Bad like CrystalDiskInfo), attributes table, temperature, hours, wear.
+- [x] Parser tests from saved raw SMART/NVMe bytes (record the laptop's NVMe and the desktop's drives).
 
 ### Phase 4: Crashes, errors and Windows health: CRA-*, WIN-006..017, MEM-007..009, CPU-005..007, GPU-004/005, DRV-007
 - [ ] Event-log collector (filtered XPath queries, 30 days), minidump header parser (bugcheck code, parameters, faulting module), bugcheck table.
@@ -123,3 +123,4 @@ under 1 s; Quick scan under 10 s.
 
 - 2026-10-24: project folder, plan, architecture, check catalogue and AI instructions written. No code yet.
 - 2026-10-24: Phases 0–2 done. .NET 10 SDK installed; solution builds net472 + netstandard2.0 with warnings as errors. Engine runs collectors in parallel with timeouts; checks stream in as their sections arrive. CLI `troubleshootr-cli.exe scan|collect|check`. Quick scan on the owner's laptop: 0.3 s. App window appears in 0.48 s (measured). 38 tests pass on net10 and net472. Fixtures: the laptop (real, anonymized) and demo-many-problems (hand-made). Off-screen screenshots of all 9 tabs in light and dark checked by eye. Repo: https://github.com/GLr-P/Troubleshootr. Decision: asInvoker manifest + "Restart as admin" (highestAvailable would show a UAC prompt on every AI test run). Microcode reads as empty on the laptop's Core Ultra (registry format to check in Phase 4, CPU-007).
+- 2026-10-24: Phase 3 done (v0.2.0). Storage collector: MSFT_Disk/PhysicalDisk (+ Win32_DiskDrive for Windows 7), NVMe health log via IOCTL_STORAGE_QUERY_PROPERTY, which **works without admin** on the laptop's Micron 2400 (stornvme), ATA SMART via root\wmi MSStorageDriver_FailurePredict* and MSFT_StorageReliabilityCounter (both admin), drive letters via IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS (MSFT_Partition returns nothing without admin). 13 storage checks + DiskHealth.Assess (Good/Caution/Bad shared by the tab and checks). Storage tab: per-drive card + SMART table. 57 tests. Storage collection 170 ms warm, ~0.9 s cold. Not verified on real hardware: ATA SMART path (the laptop is NVMe only; parser tested with built bytes), admin-only paths (CI runs elevated on a VM). The volume dirty flag reads null without admin.

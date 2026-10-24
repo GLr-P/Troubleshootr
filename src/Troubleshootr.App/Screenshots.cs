@@ -10,11 +10,12 @@ namespace Troubleshootr.App;
 
 /// <summary>
 /// Off-screen screenshots for testing without opening a window:
-/// Troubleshootr.exe --screenshot all|&lt;page&gt; --fixture tests/fixtures/x.snap.json --out test-results/screens [--theme light|dark|both]
+/// Troubleshootr.exe --screenshot all|&lt;page&gt; --fixture tests/fixtures/x.snap.json --out test-results/screens [--theme light|dark|both] [--height 2000]
 /// </summary>
 public static class Screenshots
 {
-    private const int Width = 1280, Height = 800;
+    private const int Width = 1280;
+    private static int Height = 800;
 
     public static int Run(string[] args)
     {
@@ -23,6 +24,7 @@ public static class Screenshots
         var fixture = Arg("--fixture") ?? throw new ArgumentException("--fixture <snap.json> is required");
         var outDir = Arg("--out") ?? "test-results/screens";
         var theme = Arg("--theme") ?? "both";
+        if (int.TryParse(Arg("--height"), out var h)) Height = h;
         Directory.CreateDirectory(outDir);
 
         var snapshot = Json.Deserialize<Snapshot>(File.ReadAllText(fixture));

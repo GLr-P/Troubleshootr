@@ -15,6 +15,7 @@ public sealed class Snapshot
     public Section<BoardInfo>? Board { get; set; }
     public Section<List<VolumeInfo>>? Volumes { get; set; }
     public Section<List<GpuInfo>>? Gpus { get; set; }
+    public Section<StorageInfo>? Storage { get; set; }
 
     public static readonly IReadOnlyList<string> SectionNames = typeof(Snapshot).GetProperties()
         .Where(p => p.PropertyType.IsGenericType && p.PropertyType.GetGenericTypeDefinition() == typeof(Section<>))
@@ -163,6 +164,8 @@ public sealed class VolumeInfo
     public long TotalBytes { get; set; }
     public long FreeBytes { get; set; }
     public bool IsSystem { get; set; }
+    /// <summary>NTFS "dirty" flag: Windows will run chkdsk at the next boot. Null if it couldn't be read.</summary>
+    public bool? Dirty { get; set; }
 }
 
 public sealed class GpuInfo
