@@ -131,7 +131,7 @@ public enum DiskState { Unknown, Good, Caution, Bad }
 /// </summary>
 public static class DiskHealth
 {
-    public const int ReallocatedSectors = 0x05, PendingSectors = 0xC5, UncorrectableSectors = 0xC6, Temperature = 0xC2, PowerOnHours = 0x09;
+    public const int ReallocatedSectors = 0x05, PendingSectors = 0xC5, UncorrectableSectors = 0xC6, Temperature = 0xC2, AirflowTemperature = 0xBE, PowerOnHours = 0x09;
     public const int WearCaution = 80;
     public const int WearBad = 100;
 
@@ -183,7 +183,7 @@ public static class DiskHealth
     public static int? TemperatureC(DiskInfo d) =>
         d.Nvme is { TemperatureC: > 0 and < 150 } n ? n.TemperatureC
         : d.Reliability?.TemperatureC is { } t and > 0 and < 150 ? t
-        : d.Ata?[Temperature] is { } a && (a.Raw & 0xFF) is > 0 and < 150 ? (int)(a.Raw & 0xFF)
+        : (d.Ata?[Temperature] ?? d.Ata?[AirflowTemperature]) is { } a && (a.Raw & 0xFF) is > 0 and < 150 ? (int)(a.Raw & 0xFF)
         : null;
 
     public static long? PowerOnHoursOf(DiskInfo d) =>

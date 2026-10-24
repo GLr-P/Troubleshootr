@@ -126,10 +126,19 @@ public sealed class StorageCollector : Collector<StorageInfo>
                     };
             }
 
+            // No SMART from Windows (USB enclosure, some RAID/vendor drivers): ask the drive directly through SCSI ATA pass-through.
+            string? satError = null;
+            if (disk.Ata is null && disk.BusType != "NVMe" && ctx.IsAdmin && disk.BusType is "USB" or "SATA" or "ATA" or "SCSI" or "RAID" or "SAS"
+                && DeviceIo.SatSmartPage(disk.Number, 0xD0, out satError) is { } satData)
+            {
+                var satThresholds = DeviceIo.SatSmartPage(disk.Number, 0xD1, out _);
+                disk.Ata = new AtaSmart { Attributes = HealthParsers.ParseAtaSmart(satData, satThresholds) };
+            }
+
             if (disk.Nvme is null && disk.Ata is null && disk.Reliability is null)
                 disk.HealthDataUnavailable = disk.BusType switch
                 {
-                    "USB" => "the USB adapter or enclosure hides the drive's health data; connect it directly to read it",
+                    "USB" => $"the USB adapter or enclosure hides the drive's health data ({satError ?? (ctx.IsAdmin ? "no answer" : "run as admin to try reading it through the adapter")}); connect it directly to read it",
                     "RAID" => "the drive is behind a RAID controller",
                     "Virtual" or "FileBackedVirtual" or "StorageSpaces" => "virtual disk",
                     _ when !ctx.IsAdmin => "needs admin",

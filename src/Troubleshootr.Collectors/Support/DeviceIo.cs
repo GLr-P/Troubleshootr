@@ -81,6 +81,64 @@ public static class DeviceIo
         return null;
     }
 
+    /// <summary>
+    /// SMART READ DATA (feature D0h) or READ THRESHOLDS (D1h) sent as a SCSI "ATA PASS-THROUGH" command (SAT, T10 SAT-4),
+    /// which most USB-to-SATA bridges and some RAID/SCSI drivers translate. Needs admin. Returns the 512-byte page only if
+    /// its checksum is valid, so a bridge that ignores the command can't produce garbage values.
+    /// </summary>
+    public static byte[]? SatSmartPage(int diskNumber, byte feature, out string? error)
+    {
+        const uint IoctlScsiPassThrough = 0x0004D004;
+        var x64 = IntPtr.Size == 8;
+        // SCSI_PASS_THROUGH layout differs by pointer size (DataBufferOffset is a ULONG_PTR).
+        int sptSize = x64 ? 56 : 44, dataOffsetField = x64 ? 24 : 20, senseOffsetField = x64 ? 32 : 24, cdbField = x64 ? 36 : 28;
+        const int SenseSize = 32, DataSize = 512;
+        int senseAt = sptSize, dataAt = sptSize + SenseSize;
+
+        using var h = Open($@"\\.\PhysicalDrive{diskNumber}", readWrite: true);
+        if (h is null) { error = new Win32Exception(Marshal.GetLastWin32Error()).Message; return null; }
+
+        // ATA PASS-THROUGH(16) first, then (12): bridges differ in which they accept.
+        var cdbs = new[]
+        {
+            new byte[] { 0x85, 0x08, 0x0E, 0x00, feature, 0x00, 0x01, 0x00, 0x00, 0x00, 0x4F, 0x00, 0xC2, 0xA0, 0xB0, 0x00 },
+            new byte[] { 0xA1, 0x08, 0x0E, feature, 0x01, 0x00, 0x4F, 0xC2, 0xA0, 0xB0, 0x00, 0x00 },
+        };
+        error = null;
+        foreach (var cdb in cdbs)
+        {
+            var buf = new byte[dataAt + DataSize];
+            BitConverter.GetBytes((ushort)sptSize).CopyTo(buf, 0);   // Length
+            buf[6] = (byte)cdb.Length;                               // CdbLength
+            buf[7] = SenseSize;                                      // SenseInfoLength
+            buf[8] = 1;                                              // DataIn = SCSI_IOCTL_DATA_IN
+            BitConverter.GetBytes(DataSize).CopyTo(buf, 12);         // DataTransferLength
+            BitConverter.GetBytes(5).CopyTo(buf, 16);                // TimeOutValue (s)
+            if (x64) BitConverter.GetBytes((long)dataAt).CopyTo(buf, dataOffsetField);
+            else BitConverter.GetBytes(dataAt).CopyTo(buf, dataOffsetField);
+            BitConverter.GetBytes(senseAt).CopyTo(buf, senseOffsetField);
+            cdb.CopyTo(buf, cdbField);
+
+            var output = Ioctl(h, IoctlScsiPassThrough, buf, buf.Length, out error);
+            if (output is null || output.Length < dataAt + DataSize) continue;
+            if (output[2] != 0) { error = $"SCSI status 0x{output[2]:X2}"; continue; }
+            var page = new byte[DataSize];
+            Array.Copy(output, dataAt, page, 0, DataSize);
+            if (ValidSmartPage(page)) return page;
+            error = "the bridge answered but the data wasn't a valid SMART page";
+        }
+        return null;
+    }
+
+    /// <summary>A SMART data/threshold page is valid if it isn't all zeros and its 512 bytes sum to 0 mod 256.</summary>
+    public static bool ValidSmartPage(byte[] page)
+    {
+        if (page.Length != 512 || page.All(b => b == 0)) return false;
+        var sum = 0;
+        foreach (var b in page) sum += b;
+        return (sum & 0xFF) == 0;
+    }
+
     /// <summary>Which disk(s) a volume like "C:\" lives on, and where it starts. Works without admin.</summary>
     public static List<(int Disk, long Offset)> VolumeExtents(string root)
     {
@@ -100,9 +158,14 @@ public static class DeviceIo
     /// <summary>NTFS dirty bit for a volume like "C:\". Null if it can't be read.</summary>
     public static bool? VolumeDirty(string root)
     {
-        using var h = Open(@"\\.\" + root.TrimEnd('\\'), readWrite: false);
-        if (h is null) return null;
-        var output = Ioctl(h, FsctlIsVolumeDirty, null, 4, out _);
-        return output is { Length: 4 } ? (BitConverter.ToUInt32(output, 0) & 1) != 0 : null;
+        // FSCTL_IS_VOLUME_DIRTY needs a read handle on the volume (admin).
+        foreach (var readWrite in new[] { false, true })
+        {
+            using var h = Open(@"\\.\" + root.TrimEnd('\\'), readWrite);
+            if (h is null) continue;
+            var output = Ioctl(h, FsctlIsVolumeDirty, null, 4, out _);
+            if (output is { Length: 4 }) return (BitConverter.ToUInt32(output, 0) & 1) != 0;
+        }
+        return null;
     }
 }

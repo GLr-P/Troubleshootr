@@ -181,3 +181,31 @@ public class StorageTests
         Assert.Single(new Sto009DirtyVolume().Run(s));
     }
 }
+
+public class SatTests
+{
+    [Fact]
+    public void SmartPageChecksum()
+    {
+        var page = new byte[512];
+        Assert.False(Troubleshootr.Collectors.Support.DeviceIo.ValidSmartPage(page));   // all zeros: bridge ignored the command
+        page[0] = 0x10; page[2] = 0x05; page[5] = 100;
+        page[511] = (byte)(256 - (0x10 + 0x05 + 100) % 256);
+        Assert.True(Troubleshootr.Collectors.Support.DeviceIo.ValidSmartPage(page));
+        page[3] = 1;
+        Assert.False(Troubleshootr.Collectors.Support.DeviceIo.ValidSmartPage(page));
+    }
+
+    [Fact]
+    public void SamsungThroughUsbReadsAsGood()
+    {
+        // Real admin scan: Samsung 860 EVO in a USB enclosure, SMART read via SCSI ATA pass-through.
+        var path = Path.Combine(Paths.Repo(), "tests", "fixtures", "win11-laptop-admin-usb-sat-smart.snap.json");
+        var s = Troubleshootr.Core.Json.Deserialize<Troubleshootr.Core.Snapshot>(File.ReadAllText(path));
+        var disk = s.Storage!.Value!.Disks.Single(d => d.BusType == "USB");
+        Assert.Equal(Troubleshootr.Core.DiskState.Good, Troubleshootr.Core.DiskHealth.Assess(disk).State);
+        Assert.Equal(24, Troubleshootr.Core.DiskHealth.TemperatureC(disk));   // from attribute BE (Samsung has no C2)
+        Assert.Equal(1, Troubleshootr.Core.DiskHealth.Wear(disk));            // B1 normalized 99
+        Assert.Equal(9551, Troubleshootr.Core.DiskHealth.PowerOnHoursOf(disk));
+    }
+}

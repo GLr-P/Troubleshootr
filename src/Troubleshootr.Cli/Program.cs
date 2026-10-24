@@ -10,6 +10,7 @@ namespace Troubleshootr.Cli;
 /// troubleshootr scan    [--full] [--categories storage,memory] [--json] [--timings] [--anonymize] [--out file]
 /// troubleshootr collect --out file.snap.json [--full] [--anonymize]
 /// troubleshootr check   --snapshot file.snap.json [--json]
+/// troubleshootr anonymize --snapshot report-or-snapshot.json --out file.snap.json   (e.g. a report saved by an admin run)
 /// </summary>
 public static class Program
 {
@@ -24,6 +25,7 @@ public static class Program
                 case "scan": return await Scan(a, snapshotOnly: false);
                 case "collect": return await Scan(a, snapshotOnly: true);
                 case "check": return CheckSnapshot(a);
+                case "anonymize": return AnonymizeFile(a);
                 default:
                     Console.Error.WriteLine("Usage: troubleshootr scan|collect|check [options]. See Program.cs for the options.");
                     return 2;
@@ -65,6 +67,19 @@ public static class Program
         var snapshot = Json.Deserialize<Snapshot>(File.ReadAllText(path));
         var report = ScanEngine.Evaluate(snapshot, CheckRegistry.All, new ScanOptions { Categories = a.Categories(), ToolVersion = Version });
         return Output(a, report);
+    }
+
+    private static int AnonymizeFile(Args a)
+    {
+        var path = a.Value("snapshot") ?? throw new ArgumentException("anonymize needs --snapshot <file>");
+        var outPath = a.Value("out") ?? throw new ArgumentException("anonymize needs --out <file>");
+        var json = File.ReadAllText(path);
+        // Accept a full report (from scan --json) or a bare snapshot.
+        var snapshot = json.Contains("\"findings\"") ? Json.Deserialize<Report>(json).Snapshot ?? throw new ArgumentException("report has no snapshot") : Json.Deserialize<Snapshot>(json);
+        Anonymizer.Apply(snapshot);
+        File.WriteAllText(outPath, Json.Serialize(snapshot));
+        Console.WriteLine($"Anonymized snapshot written to {outPath}.");
+        return 0;
     }
 
     private static int Output(Args a, Report report)

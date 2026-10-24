@@ -1,0 +1,432 @@
+{
+  "meta": {
+    "toolVersion": "0.2.0",
+    "collectedUtc": "2026-10-24T20:28:06.4557749Z",
+    "isAdmin": true,
+    "anonymized": true
+  },
+  "system": {
+    "value": {
+      "deviceName": "[redacted]",
+      "userName": "[redacted]",
+      "domain": "[redacted]",
+      "manufacturer": "Micro-Star International Co., Ltd.",
+      "model": "Summit E16 AI Evo A1MTG",
+      "serialNumber": "[redacted]",
+      "pcSystemType": 2,
+      "hasBattery": true,
+      "windowsProductName": "Windows 10 Home",
+      "windowsDisplayVersion": "25H2",
+      "editionId": "Core",
+      "build": 26200,
+      "ubr": 9711,
+      "majorVersion": 10,
+      "minorVersion": 0,
+      "installDateUtc": "2026-06-30T01:25:46Z",
+      "is64BitOs": true,
+      "architecture": "AMD64",
+      "uptimeSeconds": 367359,
+      "fastStartupEnabled": true,
+      "pendingRebootReasons": [
+        "file operations waiting for a restart"
+      ],
+      "isLaptop": true,
+      "isVirtualMachine": false
+    }
+  },
+  "cpu": {
+    "value": {
+      "packages": [
+        {
+          "name": "Intel(R) Core(TM) Ultra 7 155H",
+          "manufacturer": "GenuineIntel",
+          "identifier": "Intel64 Family 6 Model 170 Stepping 4",
+          "cores": 16,
+          "threads": 22,
+          "maxClockMhz": 3800,
+          "currentClockMhz": 1400,
+          "socket": "U3E1",
+          "l2KB": 18432,
+          "l3KB": 24576,
+          "virtualizationFirmwareEnabled": false
+        }
+      ]
+    }
+  },
+  "memory": {
+    "value": {
+      "installedMB": 32768,
+      "usableMB": 32276,
+      "availableMB": 7171,
+      "commitUsedMB": 37521,
+      "commitLimitMB": 38164,
+      "slotCount": 8,
+      "maxCapacityMB": 32768,
+      "modules": [
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 0",
+          "locator": "Controller0-ChannelA",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 1",
+          "locator": "Controller0-ChannelB",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 2",
+          "locator": "Controller0-ChannelC",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 3",
+          "locator": "Controller0-ChannelD",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 0",
+          "locator": "Controller1-ChannelA",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 1",
+          "locator": "Controller1-ChannelB",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 2",
+          "locator": "Controller1-ChannelC",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 3",
+          "locator": "Controller1-ChannelD",
+          "type": "LPDDR5"
+        }
+      ]
+    }
+  },
+  "board": {
+    "value": {
+      "boardManufacturer": "Micro-Star International Co., Ltd.",
+      "boardProduct": "MS-1595",
+      "boardVersion": "REV:1.0",
+      "boardSerial": "[redacted]",
+      "biosVendor": "American Megatrends International, LLC.",
+      "biosVersion": "E1595IMS.10B",
+      "biosDate": "2024-09-30T17:00:00",
+      "firmwareType": "UEFI",
+      "secureBoot": true
+    }
+  },
+  "volumes": {
+    "value": [
+      {
+        "root": "C:\\",
+        "label": "Windows",
+        "fileSystem": "NTFS",
+        "driveType": "Fixed",
+        "totalBytes": 994179018752,
+        "freeBytes": 534159679488,
+        "isSystem": true
+      },
+      {
+        "root": "D:\\",
+        "fileSystem": "NTFS",
+        "driveType": "Fixed",
+        "totalBytes": 1000080404480,
+        "freeBytes": 841721950208,
+        "isSystem": false
+      }
+    ]
+  },
+  "gpus": {
+    "value": [
+      {
+        "name": "Intel(R) Arc(TM) Graphics",
+        "vramBytes": 19327352832,
+        "driverVersion": "31.0.101.5333",
+        "driverDate": "2024-02-20T16:00:00",
+        "pnpDeviceId": "PCI\\VEN_8086\u0026DEV_7D55\u0026SUBSYS_14171462\u0026REV_08\\3\u002611583659\u00261\u002610",
+        "resolutionWidth": 2560,
+        "resolutionHeight": 1600,
+        "refreshHz": 165,
+        "status": "OK",
+        "errorCode": 0
+      }
+    ]
+  },
+  "storage": {
+    "value": {
+      "disks": [
+        {
+          "number": 0,
+          "model": "Micron_2400_MTFDKBA1T0QFM",
+          "serialNumber": "[redacted]",
+          "firmware": "V3MA002",
+          "busType": "NVMe",
+          "mediaType": "SSD",
+          "sizeBytes": 1024209543168,
+          "pnpDeviceId": "SCSI\\DISK\u0026VEN_NVME\u0026PROD_MICRON_2400_MTFD\\4\u0026213A8AFD\u00260\u0026020000",
+          "isBoot": true,
+          "driveLetters": [
+            "C:"
+          ],
+          "health": "Healthy",
+          "operationalStatus": [
+            "OK"
+          ],
+          "nvme": {
+            "criticalWarning": 0,
+            "temperatureC": 36,
+            "availableSparePercent": 100,
+            "spareThresholdPercent": 5,
+            "percentageUsed": 1,
+            "dataUnitsRead": 8206012,
+            "dataUnitsWritten": 9325131,
+            "powerCycles": 186,
+            "powerOnHours": 326,
+            "unsafeShutdowns": 13,
+            "mediaErrors": 0,
+            "errorLogEntries": 0,
+            "warningTempMinutes": 0,
+            "criticalTempMinutes": 0,
+            "terabytesWritten": 4.7744670720000002
+          },
+          "name": "Disk 0 (Micron_2400_MTFDKBA1T0QFM)",
+          "isSsd": true
+        },
+        {
+          "number": 1,
+          "model": "SSD 860 EVO 1TB",
+          "serialNumber": "[redacted]",
+          "firmware": "1.02",
+          "busType": "USB",
+          "mediaType": "SSD",
+          "sizeBytes": 1000204886016,
+          "pnpDeviceId": "USBSTOR\\DISK\u0026VEN_SAMSUNG\u0026PROD_SSD_860_EVO_1TB\u0026REV_1.02\\012345678994\u00260",
+          "isBoot": false,
+          "driveLetters": [
+            "D:"
+          ],
+          "health": "Healthy",
+          "operationalStatus": [
+            "OK"
+          ],
+          "ata": {
+            "attributes": [
+              {
+                "id": 5,
+                "name": "Reallocated sectors",
+                "current": 100,
+                "worst": 100,
+                "threshold": 10,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 9,
+                "name": "Power-on hours",
+                "current": 98,
+                "worst": 98,
+                "threshold": 0,
+                "raw": 9551,
+                "rawHex": "00000000254F",
+                "belowThreshold": false
+              },
+              {
+                "id": 12,
+                "name": "Power cycle count",
+                "current": 99,
+                "worst": 99,
+                "threshold": 0,
+                "raw": 252,
+                "rawHex": "0000000000FC",
+                "belowThreshold": false
+              },
+              {
+                "id": 177,
+                "name": "Wear range delta / wear leveling",
+                "current": 99,
+                "worst": 99,
+                "threshold": 0,
+                "raw": 14,
+                "rawHex": "00000000000E",
+                "belowThreshold": false
+              },
+              {
+                "id": 179,
+                "name": "Used reserved blocks",
+                "current": 100,
+                "worst": 100,
+                "threshold": 10,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 181,
+                "name": "Program fail count",
+                "current": 100,
+                "worst": 100,
+                "threshold": 10,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 182,
+                "name": "Erase fail count",
+                "current": 100,
+                "worst": 100,
+                "threshold": 10,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 183,
+                "name": "SATA downshift errors",
+                "current": 100,
+                "worst": 100,
+                "threshold": 10,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 187,
+                "name": "Reported uncorrectable errors",
+                "current": 100,
+                "worst": 100,
+                "threshold": 0,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 190,
+                "name": "Airflow temperature",
+                "current": 76,
+                "worst": 47,
+                "threshold": 0,
+                "raw": 24,
+                "rawHex": "000000000018",
+                "belowThreshold": false
+              },
+              {
+                "id": 195,
+                "name": "Hardware ECC recovered",
+                "current": 200,
+                "worst": 200,
+                "threshold": 0,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 199,
+                "name": "UltraDMA CRC errors",
+                "current": 100,
+                "worst": 100,
+                "threshold": 0,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 235,
+                "name": "Vendor specific EB",
+                "current": 99,
+                "worst": 99,
+                "threshold": 0,
+                "raw": 150,
+                "rawHex": "000000000096",
+                "belowThreshold": false
+              },
+              {
+                "id": 241,
+                "name": "Total host writes",
+                "current": 99,
+                "worst": 99,
+                "threshold": 0,
+                "raw": 20555141600,
+                "rawHex": "0004C92E91E0",
+                "belowThreshold": false
+              }
+            ]
+          },
+          "name": "Disk 1 (SSD 860 EVO 1TB)",
+          "isSsd": true
+        }
+      ],
+      "partitions": [
+        {
+          "diskNumber": 0,
+          "partitionNumber": 0,
+          "driveLetter": "C:",
+          "offsetBytes": 449839104,
+          "sizeBytes": 0
+        },
+        {
+          "diskNumber": 1,
+          "partitionNumber": 0,
+          "driveLetter": "D:",
+          "offsetBytes": 122683392,
+          "sizeBytes": 0
+        }
+      ],
+      "virtualDisks": [],
+      "trimDisabled": false
+    }
+  }
+}

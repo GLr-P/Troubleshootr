@@ -34,7 +34,7 @@ Build first; the exes are in `src/<project>/bin/Release/net472/`. CLI = `trouble
 | Accept changed golden results (then review the git diff) | set `UPDATE_GOLDEN=1`, run the tests |
 | Scan this PC from the command line | `troubleshootr-cli.exe scan --timings` (`--json`, `--full`, `--categories storage,memory`, `--out f`) |
 | Re-run checks on a saved snapshot | `troubleshootr-cli.exe check --snapshot tests/fixtures/<name>.snap.json` |
-| Record this PC as a test fixture | `troubleshootr-cli.exe collect --anonymize --out tests/fixtures/<name>.snap.json` |
+| Record this PC as a test fixture | `troubleshootr-cli.exe collect --anonymize --out tests/fixtures/<name>.snap.json`. For admin-only data: run `scan --full --json --out x.json` elevated (`Start-Process -Verb RunAs`, the owner clicks Yes), then `anonymize --snapshot x.json --out tests/fixtures/<name>.snap.json` |
 | UI screenshots (off-screen, no window) | `powershell -c "Start-Process -Wait Troubleshootr.exe -ArgumentList '--screenshot','all','--fixture','tests\fixtures\demo-many-problems.snap.json','--out','test-results\screens'"` (`--theme light|dark|both`, `--height 1700` for long pages; a page name instead of `all`)\|dark\|both`; a page name instead of `all`) |
 | Package a preview zip | `powershell -NoProfile -File scripts/package.ps1` → `release/Troubleshootr-<version>.zip`; then tag `v<version>` and `gh release create … --prerelease`. Bump `<Version>` in Directory.Build.props first. (One-exe build: Phase 12.) |
 
