@@ -1,6 +1,6 @@
 # Troubleshootr plan
 
-Status: **Phases 0–2 done** (2026-10-24): engine, CLI, 15 checks, WPF app. Next: Phase 3 (Storage). Work phase by phase. Each phase ends with tests passing, a commit and a
+Status: **Phases 0–2 done** (2026-10-24): engine, CLI, 11 checks, WPF app. Next: Phase 3 (Storage). Work phase by phase. Each phase ends with tests passing, a commit and a
 push, and a line in the Progress log. Phases 0–2 come first and in order. After that, any category phase can be done in
 any order (they all plug into the same engine).
 
