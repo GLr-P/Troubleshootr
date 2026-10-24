@@ -7,6 +7,6 @@ system details sit in tabs.
 
 Built for technicians and enthusiasts. Windows 10 and 11 (Windows 7/8.1 best effort). No install, nothing left behind.
 
-**Status:** in planning. See [PLAN.md](PLAN.md) and the [check catalogue](docs/CHECKS.md).
+**Website:** https://glr-p.github.io/Troubleshootr/ (screenshots and features). **Download:** the newest zip on [Releases](https://github.com/GLr-P/Troubleshootr/releases) (previews while it's being built; see [PLAN.md](PLAN.md) and the [check catalogue](docs/CHECKS.md)).
 
 License: GPL-3.0.

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Troubleshootr: free portable PC diagnostics for Windows</title>
+    <meta name="description" content="The first tool to open when a Windows PC has a problem. Free, open source and portable: one scan finds failing drives, blue screens, bad RAM, crashing apps and more, ranked by severity, with what to do." />
+    <meta property="og:title" content="Troubleshootr" />
+    <meta property="og:description" content="Free, portable Windows diagnostics for technicians: one scan, every common problem ranked by severity, with the evidence and the fix." />
+    <meta property="og:image" content="https://glr-p.github.io/Troubleshootr/screenshots/diagnose.png" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M9 10h14M16 10v13' stroke='white' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --bg-soft: #f3f4f6;
+        --text: #1a1d23;
+        --muted: #5e6673;
+        --border: #dee2e8;
+        --accent: #2563eb;
+        --accent-soft: rgba(37, 99, 235, 0.1);
+        --critical: #c62828;
+        --warning: #b26a00;
+        --ok: #2e7d32;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 18px 50px rgba(0, 0, 0, 0.12);
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #16181d;
+          --bg-soft: #1f2229;
+          --text: #e8eaee;
+          --muted: #9ba3b0;
+          --border: #343a46;
+          --accent: #5b8def;
+          --accent-soft: rgba(91, 141, 239, 0.16);
+          --critical: #f06262;
+          --warning: #e8a13a;
+          --ok: #5dbb63;
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 18px 50px rgba(0, 0, 0, 0.5);
+          color-scheme: dark;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.6 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      }
+      a { color: var(--accent); }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+      header.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+      .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; text-decoration: none; color: var(--text); }
+      .logo { width: 30px; height: 30px; border-radius: 8px; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 700; }
+      nav.links a { color: var(--muted); text-decoration: none; margin-left: 22px; font-size: 15px; }
+      nav.links a:hover { color: var(--text); }
+      .hero { text-align: center; padding: 56px 0 28px; }
+      .hero h1 {
+        font-family: 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+        font-size: clamp(34px, 5vw, 54px);
+        line-height: 1.12;
+        margin: 0 auto 16px;
+        max-width: 780px;
+        letter-spacing: -0.02em;
+      }
+      .hero p { font-size: 19px; color: var(--muted); max-width: 660px; margin: 0 auto 28px; }
+      .buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+      .btn {
+        display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 10px;
+        font-weight: 600; text-decoration: none; border: 1px solid var(--border); color: var(--text); background: var(--bg);
+      }
+      .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+      .btn svg { width: 18px; height: 18px; }
+      .small { font-size: 14px; color: var(--muted); margin-top: 12px; }
+      .pill {
+        display: inline-block; font-size: 13px; font-weight: 600; padding: 3px 12px; border-radius: 999px;
+        background: var(--accent-soft); color: var(--accent); margin-bottom: 18px;
+      }
+      .shot {
+        margin: 40px auto 0; border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow);
+        overflow: hidden; max-width: 1000px; background: var(--bg-soft);
+      }
+      .shot img { display: block; width: 100%; height: auto; }
+      section { padding: 72px 0 0; }
+      section h2 {
+        font-family: 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+        font-size: 30px; margin: 0 0 8px; text-align: center;
+      }
+      section .lead { text-align: center; color: var(--muted); max-width: 640px; margin: 0 auto 32px; }
+      .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: 16px; margin-top: 48px; }
+      .stat { text-align: center; }
+      .stat b { display: block; font-size: 30px; font-family: 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif; }
+      .stat span { color: var(--muted); font-size: 14px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; }
+      .card { border: 1px solid var(--border); border-radius: 12px; padding: 20px; background: var(--bg); }
+      .card h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 6px; font-size: 17px; }
+      .card p { margin: 0; color: var(--muted); font-size: 15px; }
+      .ico {
+        width: 34px; height: 34px; border-radius: 9px; background: var(--accent-soft); color: var(--accent);
+        display: grid; place-items: center; flex-shrink: 0;
+      }
+      .ico svg { width: 18px; height: 18px; }
+      .severity { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; }
+      .sev { border: 1px solid var(--border); border-left-width: 4px; border-radius: 10px; padding: 16px 18px; }
+      .sev.c { border-left-color: var(--critical); }
+      .sev.w { border-left-color: var(--warning); }
+      .sev.i { border-left-color: var(--accent); }
+      .sev b { display: block; margin-bottom: 2px; }
+      .sev p { margin: 0; color: var(--muted); font-size: 15px; }
+      .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 20px; }
+      .gallery figure { margin: 0; }
+      .gallery img { width: 100%; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow); display: block; }
+      .gallery figcaption { text-align: center; color: var(--muted); font-size: 14px; margin-top: 8px; }
+      .roadmap { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 12px; }
+      .road { border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; display: flex; gap: 10px; align-items: baseline; }
+      .road .tag { font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+      .road .done { background: rgba(46, 125, 50, 0.12); color: var(--ok); }
+      .road .next { background: var(--accent-soft); color: var(--accent); }
+      .road .later { background: var(--bg-soft); color: var(--muted); }
+      ol.steps { max-width: 660px; margin: 0 auto; padding-left: 22px; }
+      ol.steps li { margin: 8px 0; }
+      .band { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 0; margin-top: 72px; }
+      .band section { padding: 0; }
+      footer { padding: 40px 0 56px; text-align: center; color: var(--muted); font-size: 14px; }
+      code { font: 14px 'Cascadia Code', Consolas, monospace; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; }
+      @media (max-width: 640px) {
+        nav.links { display: none; }
+        .gallery { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="#"><span class="logo">T</span> Troubleshootr</a>
+        <nav class="links">
+          <a href="#features">Features</a>
+          <a href="#screenshots">Screenshots</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#download">Download</a>
+          <a href="https://github.com/GLr-P/Troubleshootr">GitHub</a>
+        </nav>
+      </header>
+
+      <div class="hero">
+        <span class="pill">Free preview · <span class="ver">v0.3.0</span></span>
+        <h1>The first thing to open when a PC has a problem</h1>
+        <p>One scan finds failing drives, blue screens, bad RAM, crashing apps, broken services and more. Every problem is ranked by how serious it is, with the actual numbers and what to do about it. Portable: run it from a USB stick, nothing to install.</p>
+        <div class="buttons">
+          <a class="btn primary dl" href="https://github.com/GLr-P/Troubleshootr/releases">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></svg>
+            Download for Windows
+          </a>
+          <a class="btn" href="https://github.com/GLr-P/Troubleshootr">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.74-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" /></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="small">Windows 10 and 11 · 0.6 MB download · Free under GPL-3.0 · No install, no account, nothing sent anywhere</div>
+        <div class="shot"><img src="screenshots/diagnose.png" alt="The Diagnose screen: the PC's details, scan buttons, area tiles and results sorted from critical to notes" width="1280" height="800" /></div>
+
+        <div class="stats">
+          <div class="stat"><b>~1 s</b><span>Quick scan on a normal PC</span></div>
+          <div class="stat"><b>50</b><span>checks today, about 130 planned</span></div>
+          <div class="stat"><b>0.6 MB</b><span>fits on any USB stick</span></div>
+          <div class="stat"><b>Read-only</b><span>changes nothing unless you click a fix</span></div>
+        </div>
+      </div>
+
+      <section id="features">
+        <h2>Finds the problem, explains it, says what to do</h2>
+        <p class="lead">Built for technicians and enthusiasts. Every finding shows the evidence (the real numbers), not just a red light.</p>
+        <div class="grid">
+          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="12" x2="2" y2="12" /><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /><line x1="6" y1="16" x2="6.01" y2="16" /><line x1="10" y1="16" x2="10.01" y2="16" /></svg></span>Drive health</h3>
+            <p>CrystalDiskInfo-level SMART and NVMe health: Good, Caution or Bad, reallocated and pending sectors, wear, temperature and hours. Reads SATA drives in USB enclosures too.</p>
+          </div>
+          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4M12 17h.01" /></svg></span>Blue screens</h3>
+            <p>Every crash in the last 30 days, its code in plain English, the driver at fault from the dump file, and the pattern: one bad driver, the graphics card, or random codes that point at RAM or power.</p>
+          </div>
+          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" /></svg></span>Event logs that make sense</h3>
+            <p>Disk errors, hardware (WHEA) errors, graphics driver resets, unexpected shutdowns, failing services and apps that keep crashing, pulled out of Event Viewer and grouped. Plus a searchable error timeline.</p>
+          </div>
+          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19v-3M10 19v-3M14 19v-3M18 19v-3M8 11V9M16 11V9M12 11V9" /><path d="M2 15h20M2 7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1.1a2 2 0 0 0 0 3.837V17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5.1a2 2 0 0 0 0-3.837Z" /></svg></span>Memory</h3>
+            <p>RAM running below its rated speed, single-channel setups, mismatched sticks, failed Windows Memory Diagnostic results, corrected memory errors, and crash codes that point at bad RAM.</p>
+          </div>
+          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" /></svg></span>CPU and graphics</h3>
+            <p>Intel 13th/14th-gen chips missing the microcode fix that stops permanent damage, machine-check errors, firmware speed limits, graphics driver timeouts and GPU crashes.</p>
+          </div>
+          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg></span>Windows health</h3>
+            <p>Unsupported Windows versions, pending restarts, broken WMI, important services turned off, damaged system files (SFC/DISM), temporary user profiles, slow boot and what causes it, and the Reliability Monitor score.</p>
+          </div>
+          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" /></svg></span>Reports for the ticket</h3>
+            <p>Copy a short summary straight into your ticket system, or save full text and JSON reports next to the app on the USB stick. The command-line tool can anonymize a report (strips names and serial numbers).</p>
+          </div>
+          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31M14 9.3V1.99M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0" /></svg></span>Full system info</h3>
+            <p>Tabs for System, CPU, Memory (every stick, speed and part number), Motherboard and BIOS, Storage, Graphics and Events &amp; Crashes. Every value can be selected and copied.</p>
+          </div>
+          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></span>Safe on a customer's PC</h3>
+            <p>Portable and read-only: no installer, no registry writes, no kernel driver, nothing left behind. Works without admin; "Restart as admin" adds SMART, crash dumps and boot timing.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ranked, so you start with what matters</h2>
+        <p class="lead">Critical means near-certain trouble. When in doubt, Troubleshootr says so instead of raising a false alarm.</p>
+        <div class="severity">
+          <div class="sev c"><b>Critical</b><p>"Disk 1 has unreadable sectors: reallocated 312, pending 24. Back it up now."</p></div>
+          <div class="sev w"><b>Warning</b><p>"Blue screens with different causes each time: test the RAM and remove any overclock."</p></div>
+          <div class="sev i"><b>Note</b><p>"Crash dumps are turned off, so the next blue screen can't be diagnosed."</p></div>
+        </div>
+      </section>
+
+      <section id="screenshots">
+        <h2>Screenshots</h2>
+        <p class="lead">Light and dark themes follow Windows. These show a demo PC with one of every problem.</p>
+        <div class="gallery">
+          <figure><img src="screenshots/events.png" alt="Events and Crashes tab with blue screens, unexpected shutdowns, app crashes and hardware errors" loading="lazy" /><figcaption>Blue screens, crashes and hardware errors in one place</figcaption></figure>
+          <figure><img src="screenshots/storage.png" alt="Storage tab with per-drive health cards" loading="lazy" /><figcaption>Drive health like CrystalDiskInfo</figcaption></figure>
+          <figure><img src="screenshots/diagnose-dark.png" alt="The Diagnose screen in dark mode" loading="lazy" /><figcaption>Dark mode</figcaption></figure>
+          <figure><img src="screenshots/report.png" alt="Report tab with a ticket summary" loading="lazy" /><figcaption>A ticket-ready summary in one click</figcaption></figure>
+          <figure><img src="screenshots/memory.png" alt="Memory tab with each module" loading="lazy" /><figcaption>Every RAM stick: size, speed, part number</figcaption></figure>
+          <figure><img src="screenshots/storage-dark.png" alt="Storage tab in dark mode" loading="lazy" /><figcaption>Wear, temperature, hours and errors per drive</figcaption></figure>
+          <figure><img src="screenshots/summary.png" alt="Summary tab" loading="lazy" /><figcaption>The PC at a glance</figcaption></figure>
+          <figure><img src="screenshots/system-dark.png" alt="System tab in dark mode" loading="lazy" /><figcaption>Windows version, support dates and pending restarts</figcaption></figure>
+        </div>
+      </section>
+
+      <section id="roadmap">
+        <h2>Roadmap</h2>
+        <p class="lead">A new preview comes out after each part is finished. The full list of planned checks is in the <a href="https://github.com/GLr-P/Troubleshootr/blob/main/docs/CHECKS.md">check catalogue</a>.</p>
+        <div class="roadmap">
+          <div class="road"><span class="tag done">Done</span>Drive health and SMART</div>
+          <div class="road"><span class="tag done">Done</span>Blue screens, crashes, event logs</div>
+          <div class="road"><span class="tag done">Done</span>RAM, Windows health, BIOS</div>
+          <div class="road"><span class="tag next">Next</span>Drivers, devices, Windows Update</div>
+          <div class="road"><span class="tag later">Later</span>Startup apps and performance</div>
+          <div class="road"><span class="tag later">Later</span>Network, Wi-Fi and DNS</div>
+          <div class="road"><span class="tag later">Later</span>Security and malware signs</div>
+          <div class="road"><span class="tag later">Later</span>Live temperatures and sensors</div>
+          <div class="road"><span class="tag later">Later</span>Battery wear and power</div>
+          <div class="road"><span class="tag later">Later</span>One-click fixes and HTML reports</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="band">
+      <div class="wrap">
+        <section id="download">
+          <h2>Get started in a minute</h2>
+          <ol class="steps">
+            <li>Download <strong class="zip">the zip</strong> from the <a class="dl" href="https://github.com/GLr-P/Troubleshootr/releases">latest release</a>.</li>
+            <li>Unzip it anywhere: your desktop, or a USB stick to carry between PCs.</li>
+            <li>Run <strong>Troubleshootr.exe</strong>. It isn't code-signed, so if Windows says <em>"Windows protected your PC"</em>, click <strong>More info → Run anyway</strong>.</li>
+            <li>Click <strong>Quick scan</strong>. For the full picture (SMART data, crash dump details, boot timing), click <strong>Restart as admin</strong> first.</li>
+          </ol>
+          <p class="lead" style="margin-top: 24px">
+            Needs .NET Framework 4.7.2, which is built into Windows 10 (version 1803 and later) and Windows 11. Technicians can also use
+            <code>troubleshootr-cli.exe</code> for scripted scans and JSON output.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="wrap">
+      Troubleshootr is free software under the <a href="https://github.com/GLr-P/Troubleshootr/blob/main/LICENSE">GNU GPL v3</a>. ·
+      <a href="https://github.com/GLr-P/Troubleshootr">Source code</a> ·
+      <a href="https://github.com/GLr-P/Troubleshootr/issues">Report a problem</a>
+    </footer>
+
+    <script>
+      // Point the download links at the newest release's zip (previews are pre-releases, which /releases/latest skips).
+      fetch('https://api.github.com/repos/GLr-P/Troubleshootr/releases?per_page=1')
+        .then((r) => (r.ok ? r.json() : []))
+        .then((list) => {
+          const rel = list[0];
+          const zip = rel && rel.assets.find((a) => a.name.endsWith('.zip'));
+          if (!zip) return;
+          document.querySelectorAll('a.dl').forEach((a) => (a.href = zip.browser_download_url));
+          document.querySelectorAll('.ver').forEach((el) => (el.textContent = rel.tag_name));
+          document.querySelectorAll('.zip').forEach((el) => (el.textContent = zip.name));
+        })
+        .catch(() => {});
+    </script>
+  </body>
+</html>
