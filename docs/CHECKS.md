@@ -1,6 +1,6 @@
 # Check catalogue
 
-Every diagnostic EZDiag runs. **Id** matches the check class. **Src** = data source: WMI, REG (registry), EVT (event
+Every diagnostic Troubleshootr runs. **Id** matches the check class. **Src** = data source: WMI, REG (registry), EVT (event
 log), IOCTL, API (Win32), LHM (sensors, needs PawnIO), FILE, PROC (spawned tool, last resort). **A** = needs admin.
 **P** = build phase (see PLAN.md). **Q** = included in Quick scan. Severities: C = Critical, W = Warning, I = Info.
 Mark a row done with ✅ when the check and its tests exist. Thresholds are starting points; tune them with real fixtures.

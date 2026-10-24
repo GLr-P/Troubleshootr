@@ -1,4 +1,4 @@
-# EZDiag plan
+# Troubleshootr plan
 
 Status: **planned, not started** (2026-10-24). Work phase by phase. Each phase ends with tests passing, a commit and a
 push, and a line in the Progress log. Phases 0–2 come first and in order. After that, any category phase can be done in
@@ -29,30 +29,30 @@ under 1 s; Quick scan under 10 s.
    - **C++/ImGui:** the smallest option, but slow and error-prone to build.
    - **Tauri / Electron:** need a WebView2 or Chromium. Tauri is Windows 10+ only and a web view can be broken on exactly the PCs being diagnosed. Electron is about 100 MB.
 2. **Engine as netstandard2.0 libraries + pure checks over a recorded Snapshot,** so tests run on modern .NET in seconds with no hardware (see docs/ARCHITECTURE.md).
-3. **Kernel-driver features are opt-in.** WinRing0 (the old driver behind most of these tools) is flagged by Microsoft Defender since 2025. LibreHardwareMonitor moved to **PawnIO**, which is signed, installed by its own installer and blocked by some anti-cheats (FACEIT). So EZDiag works fully without a driver, and only live CPU temperatures/voltages and RAM SPD/timings ask to install PawnIO.
+3. **Kernel-driver features are opt-in.** WinRing0 (the old driver behind most of these tools) is flagged by Microsoft Defender since 2025. LibreHardwareMonitor moved to **PawnIO**, which is signed, installed by its own installer and blocked by some anti-cheats (FACEIT). So Troubleshootr works fully without a driver, and only live CPU temperatures/voltages and RAM SPD/timings ask to install PawnIO.
 4. **Disk health without a driver:**
    - ATA SMART through `SMART_RCV_DRIVE_DATA`;
    - NVMe health through `IOCTL_STORAGE_QUERY_PROPERTY` (protocol-specific property, log page 02h), which is documented by Microsoft;
    - some drivers and USB bridges hide the data, so report "not available" honestly.
 5. **License: GPL-3.0** (same as Plannr; lets us reuse GPL code such as ZenStates-Core for Ryzen timings if needed). LibreHardwareMonitor's MPL-2.0 is compatible.
 6. **Unsigned exe** (the owner's standing decision): SmartScreen shows "Windows protected your PC" on first run, so click "More info → Run anyway". Document it in the README.
-7. **Name: EZDiag** (chosen by the owner 2026-10-24, replacing the working name Triagr).
+7. **Name: Troubleshootr** (chosen by the owner 2026-10-24, after the working names Triagr and EZDiag).
 
 ## Phases
 
 ### Phase 0: Setup
 - [ ] Install the .NET 10 SDK (`winget install Microsoft.DotNet.SDK.10`); confirm it builds a net472 WPF project (needs the `Microsoft.NETFramework.ReferenceAssemblies` package).
 - [ ] Solution skeleton exactly as in docs/ARCHITECTURE.md §2; `Directory.Build.props` with LangVersion latest, nullable, warnings as errors; the net472 app manifest (highestAvailable, DPI-aware PerMonitorV2, supportedOS entries for 7–11).
-- [ ] GitHub repo `GLr-P/EZDiag` (public), GPL-3.0, README, .gitignore, and GitHub Actions: build + test + `ezdiag scan` on windows-latest.
+- [ ] GitHub repo `GLr-P/Troubleshootr` (public), GPL-3.0, README, .gitignore, and GitHub Actions: build + test + `troubleshootr scan` on windows-latest.
 - **Done when:** `dotnet build` and `dotnet test` pass locally and in CI.
 
 ### Phase 1: Engine + CLI + first collectors
 - [ ] Core types (Snapshot, Section<T>, Finding, ICheck, ICollector), the parallel scan engine with timeouts and timings, scan profiles.
-- [ ] JSON report writer + schema version; `ezdiag scan|collect` with `--json --timings --anonymize --categories`.
+- [ ] JSON report writer + schema version; `troubleshootr scan|collect` with `--json --timings --anonymize --categories`.
 - [ ] Collectors: System (OS, build, edition, device, uptime, pending reboot), CPU, Memory modules, Motherboard/BIOS, Volumes, GPU basic.
 - [ ] Checks: STO-008, MEM-001..005, WIN-001, 002, 004, 005, 011, PER-007.
 - [ ] First fixture recorded from this laptop (anonymized) + golden test.
-- **Done when:** `ezdiag scan` on this laptop finishes in < 3 s with correct info, and the tests pass on net10 and net472.
+- **Done when:** `troubleshootr scan` on this laptop finishes in < 3 s with correct info, and the tests pass on net10 and net472.
 
 ### Phase 2: WPF shell
 - [ ] Theme (light/dark), Home with the device header, Quick/Full scan, the category tiles and "Scan selected"; streaming results list (severity-sorted, expandable).
@@ -98,7 +98,7 @@ under 1 s; Quick scan under 10 s.
 ### Phase 13: Technician edition
 - [ ] **Claude panel:** bring-your-own API key (DPAPI-encrypted), anonymized report as context, follow-up tool calls into the Snapshot, model from the current Anthropic docs.
 - [ ] **Plannr export:** JSON contract doc; in Plannr, "Import diagnostic report" (match the customer/device, attach to the open ticket or create one; summary = possible issues, Windows version, device name, specs). Later: direct send through the Plannr sync Worker.
-- [ ] Optional: a USB "kit" layout (EZDiag + Reports folder + the owner's other portable tools).
+- [ ] Optional: a USB "kit" layout (Troubleshootr + Reports folder + the owner's other portable tools).
 
 ## Risks
 

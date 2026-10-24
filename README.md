@@ -1,4 +1,4 @@
-# EZDiag
+# Troubleshootr
 
 The first tool you open when a Windows PC has a problem. Free, open source and portable: run it from a USB stick, click
 **Quick scan**, and get every common problem ranked by severity, with the evidence and what to do. It covers drive
