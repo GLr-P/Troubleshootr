@@ -64,6 +64,7 @@ under 1 s; Quick scan under 10 s.
 - [x] ATA SMART reader + attribute names table; NVMe health log reader; bus type and USB-bridge detection.
 - [x] Storage tab: per-drive health card (Good / Caution / Bad like CrystalDiskInfo), attributes table, temperature, hours, wear.
 - [x] Parser tests from saved raw SMART/NVMe bytes (record the laptop's NVMe and the desktop's drives).
+- [ ] Later: SMART through USB enclosures via SCSI ATA pass-through (SAT, IOCTL_SCSI_PASS_THROUGH, admin) like CrystalDiskInfo. Tested 2026-10-24: a Samsung 860 EVO in a USB (USBSTOR, BOT) enclosure shows as "health hidden over USB".
 
 ### Phase 4: Crashes, errors and Windows health: CRA-*, WIN-006..017, MEM-007..009, CPU-005..007, GPU-004/005, DRV-007
 - [ ] Event-log collector (filtered XPath queries, 30 days), minidump header parser (bugcheck code, parameters, faulting module), bugcheck table.

@@ -1,0 +1,3 @@
+Warning MEM-006: Memory is nearly full | 78% of RAM in use (7.1 GB free of 31.5 GB); commit 36.5 GB of 37.3 GB (98%).
+Info STO-016: Health of Disk 1 (SSD 860 EVO 1TB) can't be read over USB | The USB adapter or enclosure hides the drive's SMART data.
+Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
