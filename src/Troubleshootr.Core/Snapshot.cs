@@ -83,6 +83,11 @@ public sealed class SystemInfo
     public const string PendingFileRenames = "file operations waiting for a restart";
 
     public bool IsLaptop => PcSystemType == 2 || HasBattery == true;
+
+    /// <summary>Hyper-V, VMware, VirtualBox, QEMU/KVM, Parallels, Xen: hardware checks (RAM sticks, BIOS age…) don't apply.</summary>
+    public bool IsVirtualMachine =>
+        $"{Manufacturer} {Model}" is var m && new[] { "Virtual Machine", "VMware", "VirtualBox", "innotek", "QEMU", "KVM", "Parallels", "Xen", "Bochs" }
+            .Any(k => m.IndexOf(k, StringComparison.OrdinalIgnoreCase) >= 0);
 }
 
 public sealed class CpuInfo

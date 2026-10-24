@@ -47,6 +47,21 @@ public class EngineTests
     }
 
     [Fact]
+    public void HardwareChecksSkipVirtualMachines()
+    {
+        // GitHub's Hyper-V runner reported its two dynamic-memory "sticks" as mismatched RAM.
+        var vm = Snap.Healthy().With(x =>
+        {
+            x.Sys().Manufacturer = "Microsoft Corporation";
+            x.Sys().Model = "Virtual Machine";
+            x.Mem().Modules[1].CapacityMB = 15360;
+        });
+        var report = ScanEngine.Evaluate(vm, CheckRegistry.All);
+        Assert.DoesNotContain(report.Findings, f => f.CheckId == "MEM-004");
+        Assert.Contains(report.NotChecked, n => n.CheckId == "MEM-004" && n.Reason == "virtual machine");
+    }
+
+    [Fact]
     public void CrashingCheckBecomesNotChecked()
     {
         var report = ScanEngine.Evaluate(Snap.Healthy(), [new Throws()]);

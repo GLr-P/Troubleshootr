@@ -87,7 +87,7 @@ public sealed class Win011WmiBroken : Check, IRunsLast
 }
 
 /// <summary>PER-007: BIOS/UEFI firmware is old. Updates fix stability, security (CPU microcode) and compatibility.</summary>
-public sealed class Per007OldBios : Check
+public sealed class Per007OldBios : Check, IPhysicalHardwareCheck
 {
     private const int Years = 3;
 

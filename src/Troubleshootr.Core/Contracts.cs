@@ -12,6 +12,9 @@ public interface ICheck
     IEnumerable<Finding> Run(Snapshot s);
 }
 
+/// <summary>Marker: the check is about physical hardware (RAM sticks, BIOS…) and is skipped on virtual machines.</summary>
+public interface IPhysicalHardwareCheck : ICheck { }
+
 /// <summary>Marker: run this check after every collector has finished (it looks across all sections).</summary>
 public interface IRunsLast : ICheck { }
 

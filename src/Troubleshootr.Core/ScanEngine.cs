@@ -101,6 +101,7 @@ public static class ScanEngine
     {
         var missing = check.Needs.Select(n => (n, why: s.WhyMissing(n))).FirstOrDefault(x => x.why is not null);
         if (missing.why is not null) return ([], new NotChecked(check.Id, check.Category, $"{missing.n}: {missing.why}"));
+        if (check is IPhysicalHardwareCheck && s.System?.Value?.IsVirtualMachine == true) return ([], new NotChecked(check.Id, check.Category, "virtual machine"));
         try { return (check.Run(s).ToList(), null); }
         catch (Exception e) { return ([], new NotChecked(check.Id, check.Category, $"check failed: {e.GetType().Name}: {e.Message}")); }
     }

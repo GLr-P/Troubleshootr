@@ -4,7 +4,7 @@ using Troubleshootr.Core;
 namespace Troubleshootr.Checks.Memory;
 
 /// <summary>MEM-001: RAM that's installed but Windows can't use (32-bit Windows, iGPU reservation, BIOS memory remap off, a bad slot).</summary>
-public sealed class Mem001UnusableRam : Check
+public sealed class Mem001UnusableRam : Check, IPhysicalHardwareCheck
 {
     private const double InfoFraction = 0.10;    // iGPUs commonly reserve 0.5–2 GB
     private const double WarningFraction = 0.25;
@@ -39,7 +39,7 @@ public sealed class Mem001UnusableRam : Check
 }
 
 /// <summary>MEM-003: RAM running below its rated speed (XMP/EXPO off). Laptops and OEM desktops often can't change it.</summary>
-public sealed class Mem003BelowRatedSpeed : Check
+public sealed class Mem003BelowRatedSpeed : Check, IPhysicalHardwareCheck
 {
     // Speeds sold as XMP/EXPO kits; used to read the rated speed from part numbers like F4-3600C16 or CMK32GX4M2D3600C18.
     private static readonly int[] KitSpeeds = [2400, 2666, 2800, 3000, 3200, 3333, 3466, 3600, 3733, 3800, 4000, 4266, 4400, 4600, 4800,
@@ -74,7 +74,7 @@ public sealed class Mem003BelowRatedSpeed : Check
 }
 
 /// <summary>MEM-004: mixed RAM sticks (different sizes, speeds or models): can cause instability or disable dual channel.</summary>
-public sealed class Mem004MismatchedModules : Check
+public sealed class Mem004MismatchedModules : Check, IPhysicalHardwareCheck
 {
     public override string Id => "MEM-004";
     public override Category Category => Category.Memory;
@@ -97,7 +97,7 @@ public sealed class Mem004MismatchedModules : Check
 }
 
 /// <summary>MEM-005: one stick in a PC with two or more slots = single channel, roughly half the memory bandwidth.</summary>
-public sealed class Mem005SingleChannel : Check
+public sealed class Mem005SingleChannel : Check, IPhysicalHardwareCheck
 {
     public override string Id => "MEM-005";
     public override Category Category => Category.Memory;
