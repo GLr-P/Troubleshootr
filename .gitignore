@@ -5,4 +5,4 @@ obj/
 release/
 test-results/
 Reports/
-*.snap.json.local
+TestResults/

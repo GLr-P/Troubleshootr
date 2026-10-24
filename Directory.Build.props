@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Version>0.1.0</Version>
+    <Authors>GLr-P</Authors>
+    <Product>Troubleshootr</Product>
+    <Copyright>Troubleshootr contributors, GPL-3.0</Copyright>
+    <Deterministic>true</Deterministic>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- System.Net.Http isn't referenced on net472 by default and nothing here needs it globally. -->
+    <Using Remove="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'net472'">
+    <Compile Include="$(MSBuildThisFileDirectory)build\Polyfills.cs" Link="Polyfills.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>troubleshootr</AssemblyName>
+    <RootNamespace>Troubleshootr.Cli</RootNamespace>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <ApplicationManifest>..\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Troubleshootr.Core\Troubleshootr.Core.csproj" />
+    <ProjectReference Include="..\Troubleshootr.Collectors\Troubleshootr.Collectors.csproj" />
+    <ProjectReference Include="..\Troubleshootr.Checks\Troubleshootr.Checks.csproj" />
+  </ItemGroup>
+</Project>

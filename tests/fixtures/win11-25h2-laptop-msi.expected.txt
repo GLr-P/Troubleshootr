@@ -1,0 +1,2 @@
+Warning MEM-006: Memory is nearly full | 73% of RAM in use (8.6 GB free of 31.5 GB); commit 35.7 GB of 37.3 GB (96%).
+Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
