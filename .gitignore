@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+*.user
+release/
+test-results/
+Reports/
+*.snap.json.local
