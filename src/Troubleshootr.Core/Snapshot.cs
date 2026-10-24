@@ -20,6 +20,17 @@ public sealed class Snapshot
         .Where(p => p.PropertyType.IsGenericType && p.PropertyType.GetGenericTypeDefinition() == typeof(Section<>))
         .Select(p => p.Name).ToList();
 
+    /// <summary>Copies every section the other snapshot collected over this one (a category scan adds to what's known).</summary>
+    public void MergeFrom(Snapshot other)
+    {
+        foreach (var name in SectionNames)
+        {
+            var prop = typeof(Snapshot).GetProperty(name)!;
+            if (prop.GetValue(other) is { } section) prop.SetValue(this, section);
+        }
+        Meta = other.Meta;
+    }
+
     /// <summary>Null if the section has a value; otherwise why it doesn't.</summary>
     public string? WhyMissing(string section)
     {

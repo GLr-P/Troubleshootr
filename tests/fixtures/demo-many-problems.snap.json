@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "toolVersion": "0.1.0",
+    "collectedUtc": "2026-10-24T19:53:11.467081Z",
+    "isAdmin": false,
+    "anonymized": true,
+    "note": "Hand-made demo: one of every Phase 1 finding, for UI screenshots"
+  },
+  "system": {
+    "value": {
+      "deviceName": "[redacted]",
+      "userName": "[redacted]",
+      "domain": "[redacted]",
+      "manufacturer": "Micro-Star International Co., Ltd.",
+      "model": "Summit E16 AI Evo A1MTG",
+      "serialNumber": "[redacted]",
+      "pcSystemType": 2,
+      "hasBattery": true,
+      "windowsProductName": "Windows 10 Home",
+      "windowsDisplayVersion": "24H2",
+      "editionId": "Core",
+      "build": 26100,
+      "ubr": 9711,
+      "majorVersion": 10,
+      "minorVersion": 0,
+      "installDateUtc": "2026-06-30T01:25:46Z",
+      "is64BitOs": true,
+      "architecture": "AMD64",
+      "uptimeSeconds": 3456000,
+      "fastStartupEnabled": true,
+      "pendingRebootReasons": [
+        "Windows Update"
+      ],
+      "isLaptop": true
+    }
+  },
+  "cpu": {
+    "value": {
+      "packages": [
+        {
+          "name": "Intel(R) Core(TM) Ultra 7 155H",
+          "manufacturer": "GenuineIntel",
+          "identifier": "Intel64 Family 6 Model 170 Stepping 4",
+          "cores": 16,
+          "threads": 22,
+          "maxClockMhz": 3800,
+          "currentClockMhz": 1400,
+          "socket": "U3E1",
+          "l2KB": 18432,
+          "l3KB": 24576,
+          "virtualizationFirmwareEnabled": false
+        }
+      ]
+    }
+  },
+  "memory": {
+    "value": {
+      "installedMB": 32768,
+      "usableMB": 32276,
+      "availableMB": 600,
+      "commitUsedMB": 36553,
+      "commitLimitMB": 38164,
+      "slotCount": 2,
+      "maxCapacityMB": 32768,
+      "modules": [
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 4800,
+          "manufacturer": "SK Hynix",
+          "partNumber": "F5-6000J3038F16G",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 0",
+          "locator": "Controller0-ChannelA",
+          "type": "LPDDR5"
+        }
+      ]
+    }
+  },
+  "board": {
+    "value": {
+      "boardManufacturer": "Micro-Star International Co., Ltd.",
+      "boardProduct": "MS-1595",
+      "boardVersion": "REV:1.0",
+      "boardSerial": "[redacted]",
+      "biosVendor": "American Megatrends International, LLC.",
+      "biosVersion": "E1595IMS.10B",
+      "biosDate": "2021-03-01T00:00:00",
+      "firmwareType": "UEFI",
+      "secureBoot": true
+    }
+  },
+  "volumes": {
+    "value": [
+      {
+        "root": "C:\\",
+        "label": "Windows",
+        "fileSystem": "NTFS",
+        "driveType": "Fixed",
+        "totalBytes": 994179018752,
+        "freeBytes": 29825370563,
+        "isSystem": true
+      }
+    ]
+  },
+  "gpus": {
+    "unavailable": "WMI: 0x80041010 in root\\cimv2 (SELECT Name FROM Win32_VideoController)"
+  }
+}

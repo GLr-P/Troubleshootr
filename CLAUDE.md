@@ -25,14 +25,20 @@ Hub page: [../Information/projects/troubleshootr.md](../Information/projects/tro
 
 The SDK is the .NET 10 SDK. If `dotnet` isn't found, use `"C:\Program Files\dotnet\dotnet.exe"`.
 
+Build first; the exes are in `src/<project>/bin/Release/net472/`. CLI = `troubleshootr-cli.exe`, app = `Troubleshootr.exe`.
+
 | Task | Command |
 |---|---|
 | Build everything | `dotnet build -c Release` |
-| Unit and golden tests (fast, no hardware) | `dotnet test tests/Troubleshootr.Tests` |
-| Scan this PC from the command line | `dotnet run --project src/Troubleshootr.Cli -- scan --json --timings` |
-| Record this PC as a test fixture | `dotnet run --project src/Troubleshootr.Cli -- collect --out tests/fixtures/<name>.snap.json --anonymize` |
-| UI screenshots (off-screen, no window) | `dotnet run --project src/Troubleshootr.App -- --screenshot all --fixture tests/fixtures/<name>.snap.json --out test-results/screens` |
-| Release build (one exe) | `pwsh scripts/publish.ps1` (output in `release/`) |
+| Unit and golden tests (net10 + net472, ~2 s, no hardware) | `dotnet test tests/Troubleshootr.Tests -c Release` |
+| Accept changed golden results (then review the git diff) | set `UPDATE_GOLDEN=1`, run the tests |
+| Scan this PC from the command line | `troubleshootr-cli.exe scan --timings` (`--json`, `--full`, `--categories storage,memory`, `--out f`) |
+| Re-run checks on a saved snapshot | `troubleshootr-cli.exe check --snapshot tests/fixtures/<name>.snap.json` |
+| Record this PC as a test fixture | `troubleshootr-cli.exe collect --anonymize --out tests/fixtures/<name>.snap.json` |
+| UI screenshots (off-screen, no window) | `powershell -c "Start-Process -Wait Troubleshootr.exe -ArgumentList '--screenshot','all','--fixture','tests\fixtures\demo-many-problems.snap.json','--out','test-results\screens'"` (`--theme light\|dark\|both`; a page name instead of `all`) |
+| Release build (one exe) | Phase 12: `scripts/publish.ps1` (not written yet) |
+
+Fixtures: `win11-25h2-laptop-msi` (the owner's laptop, real) and `demo-many-problems` (hand-made, one of each finding; use it for UI screenshots).
 
 ## Rules (non-negotiable)
 

@@ -3,7 +3,7 @@
 Every diagnostic Troubleshootr runs. **Id** matches the check class. **Src** = data source: WMI, REG (registry), EVT (event
 log), IOCTL, API (Win32), LHM (sensors, needs PawnIO), FILE, PROC (spawned tool, last resort). **A** = needs admin.
 **P** = build phase (see PLAN.md). **Q** = included in Quick scan. Severities: C = Critical, W = Warning, I = Info.
-Mark a row done with ✅ when the check and its tests exist. Thresholds are starting points; tune them with real fixtures.
+A ✅ after the phase number means done (the check and its tests exist, or the info is shown on a tab). Thresholds are starting points; tune them with real fixtures.
 
 ## Storage (STO)
 
@@ -16,7 +16,7 @@ Mark a row done with ✅ when the check and its tests exist. Thresholds are star
 | STO-005 | Drive temperature now (SMART C2 / NVMe composite) | IOCTL | ✓ | W HDD > 50 °C, NVMe > 70 °C; C above the drive's critical temp | ✓ | 3 |
 | STO-006 | Power-on hours and age context | IOCTL | ✓ | I; W HDD > 40,000 h | ✓ | 3 |
 | STO-007 | Disk errors in the System log (disk 7, 11, 51, 153; storahci/stornvme 129; Ntfs 55, 98) in 30 days | EVT | | C if bad-block events (7) are recent; W for timeouts/resets | ✓ | 3 |
-| STO-008 | Volume free space (system drive and others) | API GetDiskFreeSpaceEx | | C system < 5% or < 5 GB; W < 15% | ✓ | 1 |
+| STO-008 | Volume free space (system drive and others) | API GetDiskFreeSpaceEx | | C system < 5% or < 5 GB; W < 15% | ✓ | 1 ✅ |
 | STO-009 | File system dirty bit / chkdsk scheduled | IOCTL FSCTL_IS_VOLUME_DIRTY | ✓ | W | ✓ | 3 |
 | STO-010 | Windows runs on an HDD (slow-PC cause no. 1) | WMI MSFT_PhysicalDisk MediaType / seek-penalty IOCTL | | W if the system drive is a spinning disk | ✓ | 3 |
 | STO-011 | TRIM disabled on SSD | REG / PROC fsutil behavior query DisableDeleteNotify | | W | ✓ | 3 |
@@ -34,12 +34,12 @@ Mark a row done with ✅ when the check and its tests exist. Thresholds are star
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| MEM-001 | Installed vs usable RAM (hardware-reserved, iGPU, 32-bit OS) | WMI / API GlobalMemoryStatusEx | | W if > 10% unusable | ✓ | 1 |
-| MEM-002 | Module list: size, speed, configured speed, type, part number, slot | WMI Win32_PhysicalMemory, SMBIOS | | I | ✓ | 1 |
-| MEM-003 | Running below rated speed (XMP/EXPO off) | WMI Speed vs ConfiguredClockSpeed / SPD | | I "enable XMP/EXPO in BIOS" | ✓ | 1 |
-| MEM-004 | Mismatched modules (size, speed, part number) | WMI | | I/W | ✓ | 1 |
-| MEM-005 | Single-channel population (one stick, or wrong slots) | WMI BankLabel/DeviceLocator heuristic | | I "dual channel would be faster" | ✓ | 1 |
-| MEM-006 | Memory pressure: commit near the limit, sustained high use | API | | W > 90% committed | ✓ | 6 |
+| MEM-001 | Installed vs usable RAM (hardware-reserved, iGPU, 32-bit OS) | WMI / API GlobalMemoryStatusEx | | W if > 10% unusable | ✓ | 1 ✅ |
+| MEM-002 | Module list: size, speed, configured speed, type, part number, slot | WMI Win32_PhysicalMemory, SMBIOS | | I | ✓ | 1 ✅ |
+| MEM-003 | Running below rated speed (XMP/EXPO off) | WMI Speed vs ConfiguredClockSpeed / SPD | | I "enable XMP/EXPO in BIOS" | ✓ | 1 ✅ |
+| MEM-004 | Mismatched modules (size, speed, part number) | WMI | | I/W | ✓ | 1 ✅ |
+| MEM-005 | Single-channel population (one stick, or wrong slots) | WMI BankLabel/DeviceLocator heuristic | | I "dual channel would be faster" | ✓ | 1 ✅ |
+| MEM-006 | Memory pressure: commit near the limit (snapshot now; sustained sampling later) | API | | W > 90% committed or > 95% RAM used | ✓ | 1 ✅ |
 | MEM-007 | WHEA memory errors / corrected ECC events | EVT WHEA-Logger 19/47 | | C if uncorrected; W corrected | ✓ | 4 |
 | MEM-008 | Windows Memory Diagnostic past results | EVT MemoryDiagnostics-Results 1101/1102 | | C if errors found | ✓ | 4 |
 | MEM-009 | Bugchecks that point to RAM (0x1A, 0x50, 0x3B patterns across dumps) | Crashes section | | W "run a memory test" | ✓ | 4 |
@@ -51,7 +51,7 @@ Mark a row done with ✅ when the check and its tests exist. Thresholds are star
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| CPU-001 | CPU identity: name, cores/threads, base/boost, socket, microcode, virtualization on | WMI Win32_Processor, REG, API | | I | ✓ | 1 |
+| CPU-001 | CPU identity: name, cores/threads, base/boost, socket, microcode, virtualization on | WMI Win32_Processor, REG, API | | I | ✓ | 1 ✅ |
 | CPU-002 | Sustained high CPU usage and the top processes (3 s sample) | API | | W > 85% average | ✓ | 6 |
 | CPU-003 | Throttling: current clock far below base under load | WMI Win32_PerfFormattedData_Counters_ProcessorInformation (% Processor Performance) | | W | ✓ | 6 |
 | CPU-004 | Temperature: package / cores | LHM, fallback ACPI MSAcpi_ThermalZoneTemperature | ✓ | W > 90 °C, C > 100 °C or at TjMax | ✓ | 9 |
@@ -65,7 +65,7 @@ Mark a row done with ✅ when the check and its tests exist. Thresholds are star
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| GPU-001 | GPUs: name, VRAM, driver version and date, which one is active | WMI Win32_VideoController, REG (VRAM over 4 GB is in the registry, not WMI) | | I | ✓ | 1 |
+| GPU-001 | GPUs: name, VRAM, driver version and date, which one is active | WMI Win32_VideoController, REG (VRAM over 4 GB is in the registry, not WMI) | | I | ✓ | 1 ✅ |
 | GPU-002 | Microsoft Basic Display Adapter in use (no GPU driver) | WMI | | C | ✓ | 5 |
 | GPU-003 | GPU driver older than about 12 months | WMI DriverDate | | I/W | ✓ | 5 |
 | GPU-004 | Driver timeouts / TDR resets (Display 4101, nvlddmkm 13/14/153, amdkmdag) | EVT | | W; C if many per day | ✓ | 4 |
@@ -80,17 +80,17 @@ Mark a row done with ✅ when the check and its tests exist. Thresholds are star
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| WIN-001 | Windows edition, version, build, install date, architecture, activation | REG CurrentVersion, WMI SoftwareLicensingProduct | | I | ✓ | 1 |
-| WIN-002 | Windows version out of support (Win7/8.1, Win10 after Oct 2025, old Win11 builds) | lookup table in code | | W | ✓ | 1 |
+| WIN-001 | Windows edition, version, build, install date, architecture, activation | REG CurrentVersion, WMI SoftwareLicensingProduct | | I | ✓ | 1 ✅ |
+| WIN-002 | Windows version out of support (Win7/8.1, Win10 after Oct 2025, old Win11 builds) | lookup table in code | | W | ✓ | 1 ✅ |
 | WIN-003 | Not activated | WMI SoftwareLicensingProduct LicenseStatus | | W | ✓ | 5 |
-| WIN-004 | Pending reboot (CBS, WU, PendingFileRenameOperations, ComputerName change) | REG | | W | ✓ | 1 |
-| WIN-005 | Uptime very long (no restart in > 14 days; Fast Startup hides it) | API GetTickCount64, REG HiberbootEnabled | | I "restart properly" | ✓ | 1 |
+| WIN-004 | Pending reboot (CBS, WU, PendingFileRenameOperations, ComputerName change) | REG | | W | ✓ | 1 ✅ |
+| WIN-005 | Uptime very long (no restart in > 14 days; Fast Startup hides it) | API GetTickCount64, REG HiberbootEnabled | | I "restart properly" | ✓ | 1 ✅ |
 | WIN-006 | Component store / system file corruption reported (CBS.log, DISM log, last SFC result) | FILE CBS.log tail | ✓ | W if corruption recorded | ✓ | 4 |
 | WIN-007 | Unexpected shutdowns (Kernel-Power 41, EventLog 6008) in 30 days | EVT | | W; C if > 5 | ✓ | 4 |
 | WIN-008 | Boot time and slow boot (Diagnostics-Performance 100 + degradation 101–110) | EVT | ✓ | W boot > 60 s; names the culprit app/driver | | 4 |
 | WIN-009 | Service failures (SCM 7000, 7001, 7009, 7023, 7031, 7034) summary | EVT | | W for repeated | ✓ | 4 |
 | WIN-010 | Important services stopped or disabled (Windows Update, BITS, WMI, Spooler, Audio, DHCP, DNS client, Defender, Time) | API ServiceController | | W | ✓ | 4 |
-| WIN-011 | WMI repository broken (the collectors fail) | collector failures | | W "repair WMI" | ✓ | 1 |
+| WIN-011 | WMI repository broken (the collectors fail) | collector failures | | W "repair WMI" | ✓ | 1 ✅ |
 | WIN-012 | Wrong system time / time sync failing | API + EVT Time-Service | | W > 2 min off | ✓ | 7 |
 | WIN-013 | User profile problems (temp profile, User Profile Service 1511/1515) | EVT / REG ProfileList .bak | | C on a temp profile | ✓ | 4 |
 | WIN-014 | Low virtual memory events (Resource-Exhaustion-Detector 2004) | EVT | | W | ✓ | 4 |
@@ -204,7 +204,7 @@ Mark a row done with ✅ when the check and its tests exist. Thresholds are star
 | PER-004 | Monitors: model (EDID), size, max resolution and refresh | REG EDID | | I | | 10 |
 | PER-005 | Bluetooth adapter and radio state | SetupAPI | | I | | 10 |
 | PER-006 | Webcam / microphone privacy blocks (the "camera doesn't work" ticket) | REG CapabilityAccessManager | | W | ✓ | 10 |
-| PER-007 | Motherboard and BIOS: vendor, model, BIOS version and date (BIOS > 3 years old) | WMI Win32_BaseBoard / Win32_BIOS | | I | ✓ | 1 |
+| PER-007 | Motherboard and BIOS: vendor, model, BIOS version and date (BIOS > 3 years old) | WMI Win32_BaseBoard / Win32_BIOS | | I | ✓ | 1 ✅ |
 
 ## Info only (no findings, but shown on tabs)
 

@@ -116,6 +116,23 @@ public static class TextReport
         return sb.ToString();
     }
 
+    /// <summary>Short plain text to paste into a ticket: the device, then the problems (Critical and Warning in full).</summary>
+    public static string Ticket(Report r)
+    {
+        var d = r.Device;
+        var sb = new StringBuilder();
+        sb.AppendLine($"Device: {d.DeviceName} ({d.Manufacturer} {d.Model})");
+        sb.AppendLine($"Windows: {d.Windows}");
+        sb.AppendLine("Specs: " + string.Join(", ", new[] { d.Cpu, d.RamGB is { } gb ? $"{gb} GB RAM" : null, d.Gpu }.Where(x => !string.IsNullOrEmpty(x))));
+        sb.AppendLine($"Scanned: {r.StartedUtc.ToLocalTime():yyyy-MM-dd HH:mm} with Troubleshootr {r.ToolVersion}{(d.IsAdmin ? "" : " (not as admin)")}");
+        var serious = r.Findings.Where(f => f.Severity >= Severity.Warning).ToList();
+        sb.AppendLine(serious.Count == 0 ? "Problems found: none" : "Problems found:");
+        foreach (var f in serious) sb.AppendLine($"- [{f.Severity}] {f.Title}: {f.Evidence}");
+        var info = r.Findings.Count(f => f.Severity == Severity.Info);
+        if (info > 0) sb.AppendLine($"Also {info} informational note{(info == 1 ? "" : "s")}: {string.Join("; ", r.Findings.Where(f => f.Severity == Severity.Info).Select(f => f.Title))}.");
+        return sb.ToString();
+    }
+
     /// <summary>Stable one-line-per-finding form used by the golden tests.</summary>
     public static string Golden(Report r) => string.Join("\n",
         r.Findings.Select(f => $"{f.Severity} {f.CheckId}: {f.Title} | {f.Evidence}")

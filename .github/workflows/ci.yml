@@ -14,8 +14,8 @@ jobs:
       - run: dotnet build -c Release
       - run: dotnet test tests/Troubleshootr.Tests -c Release --no-build
       # Real collectors on a clean Windows Server machine: must finish and print a report.
-      - run: src/Troubleshootr.Cli/bin/Release/net472/troubleshootr.exe scan --full --timings
+      - run: src/Troubleshootr.Cli/bin/Release/net472/troubleshootr-cli.exe scan --full --timings
         shell: bash
         continue-on-error: true
-      - run: src/Troubleshootr.Cli/bin/Release/net472/troubleshootr.exe scan --full --json --out scan.json; test -s scan.json
+      - run: src/Troubleshootr.Cli/bin/Release/net472/troubleshootr-cli.exe scan --full --json --out scan.json; test -s scan.json
         shell: bash

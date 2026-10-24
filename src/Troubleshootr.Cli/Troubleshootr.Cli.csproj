@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>troubleshootr</AssemblyName>
+    <AssemblyName>troubleshootr-cli</AssemblyName>
     <RootNamespace>Troubleshootr.Cli</RootNamespace>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>

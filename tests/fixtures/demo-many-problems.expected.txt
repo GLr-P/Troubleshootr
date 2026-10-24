@@ -1,0 +1,9 @@
+Critical STO-008: System drive C:\ is almost full | C:\ has 27.8 GB free of 925.9 GB (3%).
+Warning MEM-006: Memory is nearly full | 98% of RAM in use (0.6 GB free of 31.5 GB); commit 35.7 GB of 37.3 GB (96%).
+Warning WIN-002: This Windows version no longer gets security updates | Windows 11 Home 24H2 (build 26100.9711): support ended 2026-10-13.
+Warning WIN-004: A restart is pending | Waiting on: Windows Update.
+Warning WIN-011: Windows Management Instrumentation (WMI) isn't working properly | Gpus: WMI: 0x80041010 in root\cimv2 (SELECT Name FROM Win32_VideoController)
+Info MEM-003: RAM runs below its rated speed | Running at 4800 MT/s; the modules are rated for 6000 MT/s (F5-6000J3038F16G).
+Info MEM-005: RAM runs in single channel | 1 stick (4 GB LPDDR5) in a board with 2 slots.
+Info PER-007: The BIOS is old | American Megatrends International, LLC. E1595IMS.10B, dated 2021-03-01 (5.7 years old).
+Info WIN-005: The PC hasn't restarted in a long time | Up for 40 days. Fast Startup is on, so Shut down doesn't count; only Restart does.

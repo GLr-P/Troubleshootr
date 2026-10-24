@@ -31,7 +31,7 @@ Troubleshootr/
     Troubleshootr.Core/          netstandard2.0  Snapshot model, Finding, ICheck, ICollector, scan engine, report writers
     Troubleshootr.Collectors/    netstandard2.0  WMI, registry, event log, IOCTL (SMART/NVMe), files, network, LHM adapter
     Troubleshootr.Checks/        netstandard2.0  one class per check, grouped by category folder
-    Troubleshootr.Cli/           net472          `troubleshootr scan|collect|report`, used by tests and by AI
+    Troubleshootr.Cli/           net472          troubleshootr-cli.exe scan|collect|check, used by tests and by AI
     Troubleshootr.App/           net472 WPF      UI shell, tabs, theme, screenshot mode
   tests/
     Troubleshootr.Tests/         net10.0;net472  xUnit: check tests, golden fixture tests, parser tests
@@ -41,7 +41,7 @@ Troubleshootr/
 ```
 
 Packages (keep the list short): `System.Management` (WMI), `System.Diagnostics.EventLog`, `LibreHardwareMonitorLib`,
-`xunit` + `Verify.Xunit` (snapshot-style golden tests), `Costura.Fody` (merges the DLLs into one exe at release).
+`xunit` (golden tests compare with checked-in `*.expected.txt` files; `UPDATE_GOLDEN=1` rewrites them), `Costura.Fody` (merges the DLLs into one exe at release).
 JSON goes through `System.Text.Json` (works on net472 via its NuGet package).
 
 ## 3. Core types (keep them this simple)
@@ -81,18 +81,18 @@ interface ICollector {
 - **Prefer faster sources:** registry > IOCTL / Win32 API > WMI > spawning a process. Spawning `powercfg`, `netsh` or `wevtutil` is a last resort (about 100–500 ms each) and must have a timeout.
 - **Event logs:** always query with an XPath filter on event ids and a time limit (`TimeCreated[timediff(@SystemTime) <= 2592000000]` = 30 days) through `EventLogReader`; never read whole logs.
 - **Registry:** read both 64- and 32-bit views (`RegistryView.Registry64/32`) where it matters (Uninstall, Run keys). The app runs as a 64-bit process on 64-bit Windows (AnyCPU, Prefer32Bit=false).
-- **Admin:** the manifest uses `highestAvailable` (admins get the UAC prompt and full data; standard users still get a reduced scan). Collectors that need admin check first and mark themselves Unavailable("needs admin").
+- **Admin:** the manifest uses `asInvoker` (so tests and AI runs never trigger a UAC prompt); the app shows "Restart as admin", which relaunches with the runas verb. Without admin the scan still runs, reduced. Collectors that need admin check first and mark themselves Unavailable("needs admin").
 - **IOCTL / P/Invoke:** all signatures in one `Native/` folder, `SetLastError = true`, handles in `SafeFileHandle`, and every buffer size checked before parsing.
 - **Driver-level data (LHM + PawnIO):** off by default. The Sensors tab offers "Enable advanced sensors", which explains that it installs the signed PawnIO driver (and that some anti-cheats such as FACEIT block it), then installs it after confirmation. Without it, temperatures come from what Windows exposes (ACPI thermal zone, NVMe/SMART temperature, the GPU through vendor APIs if available).
 
 ## 5. Tests (the main reason this design exists)
 
 - **Unit tests per check:** build a tiny Snapshot in code (builder helpers in `tests/Troubleshootr.Tests/Snap.cs`), run the check, assert on the findings. Cover: healthy → no finding, each threshold edge, data Unavailable → no finding and no crash.
-- **Golden fixture tests:** for each `tests/fixtures/*.snap.json`, run all checks and compare the findings with the stored `*.verified.txt` (Verify library). A changed result shows as a diff; accept it only if the change is intended.
-- **Fixtures come from real PCs:** `troubleshootr collect --anonymize --out x.snap.json` on any PC (this laptop, the desktop, client PCs with consent). Each fixture name says what's interesting (`win10-1809-failing-hdd.snap.json`). Hand-edit copies to create edge cases.
+- **Golden fixture tests:** for each `tests/fixtures/*.snap.json`, run all checks and compare the findings with the stored `*.expected.txt`. A changed result fails the test; if intended, rerun with `UPDATE_GOLDEN=1` and review the git diff.
+- **Fixtures come from real PCs:** `troubleshootr-cli collect --anonymize --out x.snap.json` on any PC (this laptop, the desktop, client PCs with consent). Each fixture name says what's interesting (`win10-1809-failing-hdd.snap.json`). Hand-edit copies to create edge cases.
 - **Parser tests:** SMART attribute tables, NVMe health log bytes, minidump headers and battery reports are parsed from byte arrays or text saved in `tests/fixtures/raw/`.
-- **Collector smoke test:** `troubleshootr scan --json --timings` on this PC; it must finish and every section must be Value or a clear Unavailable reason. This is the only test that touches real hardware.
-- **UI screenshots without windows:** `Troubleshootr.App --screenshot <tab|all> --fixture <file> --out <dir>` loads a fixture, renders each tab off-screen with `RenderTargetBitmap` at 1280×800 in light and dark, saves PNGs and exits. Look at them after every UI change.
+- **Collector smoke test:** `troubleshootr-cli scan --json --timings` on this PC; it must finish and every section must be Value or a clear Unavailable reason. This is the only test that touches real hardware.
+- **UI screenshots without windows:** `Troubleshootr.exe --screenshot <tab|all> --fixture <file> --out <dir>` loads a fixture, renders each tab off-screen with `RenderTargetBitmap` at 1280×800 in light and dark, saves PNGs and exits. Look at them after every UI change.
 - **Both runtimes:** tests target net10.0 (fast, the default) and net472 (run before releases, since that's what ships).
 - **CI:** GitHub Actions `windows-latest` runs build + tests + `scan` on every push (a free second, clean machine).
 

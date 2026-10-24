@@ -1,6 +1,6 @@
 # Troubleshootr plan
 
-Status: **planned, not started** (2026-10-24). Work phase by phase. Each phase ends with tests passing, a commit and a
+Status: **Phases 0–2 done** (2026-10-24): engine, CLI, 15 checks, WPF app. Next: Phase 3 (Storage). Work phase by phase. Each phase ends with tests passing, a commit and a
 push, and a line in the Progress log. Phases 0–2 come first and in order. After that, any category phase can be done in
 any order (they all plug into the same engine).
 
@@ -41,23 +41,23 @@ under 1 s; Quick scan under 10 s.
 ## Phases
 
 ### Phase 0: Setup
-- [ ] Install the .NET 10 SDK (`winget install Microsoft.DotNet.SDK.10`); confirm it builds a net472 WPF project (needs the `Microsoft.NETFramework.ReferenceAssemblies` package).
-- [ ] Solution skeleton exactly as in docs/ARCHITECTURE.md §2; `Directory.Build.props` with LangVersion latest, nullable, warnings as errors; the net472 app manifest (highestAvailable, DPI-aware PerMonitorV2, supportedOS entries for 7–11).
-- [ ] GitHub repo `GLr-P/Troubleshootr` (public), GPL-3.0, README, .gitignore, and GitHub Actions: build + test + `troubleshootr scan` on windows-latest.
+- [x] Install the .NET 10 SDK (`winget install Microsoft.DotNet.SDK.10`); confirm it builds a net472 WPF project (needs the `Microsoft.NETFramework.ReferenceAssemblies` package).
+- [x] Solution skeleton exactly as in docs/ARCHITECTURE.md §2; `Directory.Build.props` with LangVersion latest, nullable, warnings as errors; the net472 app manifest (asInvoker + a "Restart as admin" button, DPI-aware PerMonitorV2, supportedOS entries for 7–11).
+- [x] GitHub repo `GLr-P/Troubleshootr` (public), GPL-3.0, README, .gitignore, and GitHub Actions: build + test + `troubleshootr scan` on windows-latest.
 - **Done when:** `dotnet build` and `dotnet test` pass locally and in CI.
 
 ### Phase 1: Engine + CLI + first collectors
-- [ ] Core types (Snapshot, Section<T>, Finding, ICheck, ICollector), the parallel scan engine with timeouts and timings, scan profiles.
-- [ ] JSON report writer + schema version; `troubleshootr scan|collect` with `--json --timings --anonymize --categories`.
-- [ ] Collectors: System (OS, build, edition, device, uptime, pending reboot), CPU, Memory modules, Motherboard/BIOS, Volumes, GPU basic.
-- [ ] Checks: STO-008, MEM-001..005, WIN-001, 002, 004, 005, 011, PER-007.
-- [ ] First fixture recorded from this laptop (anonymized) + golden test.
+- [x] Core types (Snapshot, Section<T>, Finding, ICheck, ICollector), the parallel scan engine with timeouts and timings, scan profiles.
+- [x] JSON report writer + schema version; `troubleshootr scan|collect` with `--json --timings --anonymize --categories`.
+- [x] Collectors: System (OS, build, edition, device, uptime, pending reboot), CPU, Memory modules, Motherboard/BIOS, Volumes, GPU basic.
+- [x] Checks: STO-008, MEM-001..005, WIN-001, 002, 004, 005, 011, PER-007.
+- [x] First fixture recorded from this laptop (anonymized) + golden test.
 - **Done when:** `troubleshootr scan` on this laptop finishes in < 3 s with correct info, and the tests pass on net10 and net472.
 
 ### Phase 2: WPF shell
-- [ ] Theme (light/dark), Home with the device header, Quick/Full scan, the category tiles and "Scan selected"; streaming results list (severity-sorted, expandable).
-- [ ] Info tabs reading the Snapshot: Summary, System, CPU, Memory, Motherboard, Storage (basic), Graphics (basic).
-- [ ] Screenshot mode (`--screenshot`), Report tab with Save JSON/HTML/ticket text.
+- [x] Theme (light/dark), Home with the device header, Quick/Full scan, the category tiles and "Scan selected"; streaming results list (severity-sorted, expandable).
+- [x] Info tabs reading the Snapshot: Summary, System, CPU, Memory, Motherboard, Storage (basic), Graphics (basic).
+- [x] Screenshot mode (`--screenshot`), Report tab with Save JSON + text and Copy ticket summary. (HTML report moves to Phase 12.)
 - **Done when:** screenshots of every tab look right in both themes; the window appears in < 1 s (measured).
 
 ### Phase 3: Storage (CrystalDiskInfo level): STO-001..016
@@ -122,3 +122,4 @@ under 1 s; Quick scan under 10 s.
 ## Progress log
 
 - 2026-10-24: project folder, plan, architecture, check catalogue and AI instructions written. No code yet.
+- 2026-10-24: Phases 0–2 done. .NET 10 SDK installed; solution builds net472 + netstandard2.0 with warnings as errors. Engine runs collectors in parallel with timeouts; checks stream in as their sections arrive. CLI `troubleshootr-cli.exe scan|collect|check`. Quick scan on the owner's laptop: 0.3 s. App window appears in 0.48 s (measured). 38 tests pass on net10 and net472. Fixtures: the laptop (real, anonymized) and demo-many-problems (hand-made). Off-screen screenshots of all 9 tabs in light and dark checked by eye. Repo: https://github.com/GLr-P/Troubleshootr. Decision: asInvoker manifest + "Restart as admin" (highestAvailable would show a UAC prompt on every AI test run). Microcode reads as empty on the laptop's Core Ultra (registry format to check in Phase 4, CPU-007).
