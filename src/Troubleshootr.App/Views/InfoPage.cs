@@ -44,7 +44,13 @@ public sealed class InfoPage : UserControl
         panel.Children.Add(header);
         if (g.Note is not null) panel.Children.Add(new TextBlock { Text = g.Note, Style = St("Dim") });
         if (g.Rows.Count > 0) panel.Children.Add(KeyValues(g.Rows));
-        if (g.Columns is not null) panel.Children.Add(g.Table.Count == 0 ? new TextBlock { Text = "None found.", Style = St("Dim") } : Table(g.Columns, g.Table));
+        if (g.Columns is not null)
+        {
+            if (g.Table.Count == 0) panel.Children.Add(new TextBlock { Text = "None found.", Style = St("Dim") });
+            else if (g.Filterable) panel.Children.Add(FilteredTable(g.Columns, g.Table));
+            else panel.Children.Add(Table(g.Columns, LimitRows(g.Table, out _)));
+            if (!g.Filterable && g.Table.Count > MaxRows) panel.Children.Add(new TextBlock { Text = $"Showing the first {MaxRows} of {g.Table.Count}.", Style = St("Dim") });
+        }
         return new Border { Style = (Style)Application.Current.FindResource("Card"), Margin = new Thickness(0, 0, 0, 12), Child = panel };
     }
 
@@ -65,6 +71,40 @@ public sealed class InfoPage : UserControl
             grid.Children.Add(value);
         }
         return grid;
+    }
+
+    /// <summary>Tables are grids of text boxes, so very long ones are cut to keep the tab fast.</summary>
+    private const int MaxRows = 150;
+
+    private static List<string[]> LimitRows(List<string[]> rows, out int more)
+    {
+        more = Math.Max(0, rows.Count - MaxRows);
+        return more == 0 ? rows : rows.Take(MaxRows).ToList();
+    }
+
+    /// <summary>A filter box (matches any column, case-insensitive) above the table.</summary>
+    private static StackPanel FilteredTable(string[] columns, List<string[]> rows)
+    {
+        var panel = new StackPanel();
+        var box = new TextBox { Width = 320, HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 0, 0, 4), Padding = new Thickness(4, 3, 4, 3) };
+        box.SetResourceReference(TextBox.BackgroundProperty, "Surface2");
+        box.SetResourceReference(TextBox.ForegroundProperty, "Text");
+        box.SetResourceReference(TextBox.BorderBrushProperty, "Line");
+        var hint = new TextBlock { Style = St("Dim"), FontSize = 11.5, Margin = new Thickness(0, 0, 0, 8) };
+        var holder = new ContentControl();
+        void Apply()
+        {
+            var text = box.Text.Trim();
+            var match = text.Length == 0 ? rows : rows.Where(r => r.Any(c => c.IndexOf(text, StringComparison.OrdinalIgnoreCase) >= 0)).ToList();
+            holder.Content = match.Count == 0 ? new TextBlock { Text = "Nothing matches.", Style = St("Dim") } : Table(columns, LimitRows(match, out _));
+            hint.Text = $"Filter: type a word, source or ID. {match.Count} of {rows.Count} shown{(match.Count > MaxRows ? $" (first {MaxRows})" : "")}.";
+        }
+        box.TextChanged += (_, _) => Apply();
+        Apply();
+        panel.Children.Add(box);
+        panel.Children.Add(hint);
+        panel.Children.Add(holder);
+        return panel;
     }
 
     private static Grid Table(string[] columns, List<string[]> rows)

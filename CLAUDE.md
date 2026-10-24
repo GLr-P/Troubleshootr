@@ -33,12 +33,13 @@ Build first; the exes are in `src/<project>/bin/Release/net472/`. CLI = `trouble
 | Unit and golden tests (net10 + net472, ~2 s, no hardware) | `dotnet test tests/Troubleshootr.Tests -c Release` |
 | Accept changed golden results (then review the git diff) | set `UPDATE_GOLDEN=1`, run the tests |
 | Scan this PC from the command line | `troubleshootr-cli.exe scan --timings` (`--json`, `--full`, `--categories storage,memory`, `--out f`) |
+| Read a crash dump (bugcheck, driver at fault, driver list) | `troubleshootr-cli.exe dump --file C:\Windows\Minidump\x.dmp [--drivers]` (the Minidump folder needs admin) |
 | Re-run checks on a saved snapshot | `troubleshootr-cli.exe check --snapshot tests/fixtures/<name>.snap.json` |
 | Record this PC as a test fixture | `troubleshootr-cli.exe collect --anonymize --out tests/fixtures/<name>.snap.json`. For admin-only data: run `scan --full --json --out x.json` elevated (`Start-Process -Verb RunAs`, the owner clicks Yes), then `anonymize --snapshot x.json --out tests/fixtures/<name>.snap.json` |
 | UI screenshots (off-screen, no window) | `powershell -c "Start-Process -Wait Troubleshootr.exe -ArgumentList '--screenshot','all','--fixture','tests\fixtures\demo-many-problems.snap.json','--out','test-results\screens'"` (`--theme light|dark|both`, `--height 1700` for long pages; a page name instead of `all`)\|dark\|both`; a page name instead of `all`) |
 | Package a preview zip | `powershell -NoProfile -File scripts/package.ps1` → `release/Troubleshootr-<version>.zip`; then tag `v<version>` and `gh release create … --prerelease`. Bump `<Version>` in Directory.Build.props first. (One-exe build: Phase 12.) |
 
-Fixtures: `win11-25h2-laptop-msi` (the owner's laptop, real) and `demo-many-problems` (hand-made, one of each finding; use it for UI screenshots; rebuild it with `node scripts/make-demo-fixture.js` after re-recording the laptop).
+Fixtures: `win11-25h2-laptop-msi` (the owner's laptop, real), `win11-laptop-admin-events` (same laptop, admin, with real event logs and a parsed 0x119 dump) and `demo-many-problems` (hand-made, one of each finding; use it for UI screenshots; rebuild it with `node scripts/make-demo-fixture.js` after re-recording the laptop).
 
 ## Rules (non-negotiable)
 

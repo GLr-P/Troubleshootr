@@ -13,6 +13,8 @@ public sealed class InfoGroup(string title)
     /// <summary>Optional status pill next to the title ("Good", "Bad"), coloured by a theme key (Ok, Warning, Critical, Info).</summary>
     public string? Badge { get; set; }
     public string BadgeKey { get; set; } = "Info";
+    /// <summary>Show a filter box above the table (long lists like the error timeline).</summary>
+    public bool Filterable { get; set; }
 
     public InfoGroup Row(string label, object? value)
     {
@@ -32,7 +34,7 @@ public sealed class InfoGroup(string title)
 /// <summary>Builds each info tab from the Snapshot. A tab is a list of groups, rendered by InfoPage.</summary>
 public static class InfoPages
 {
-    public static readonly string[] Names = ["Summary", "System", "CPU", "Memory", "Motherboard", "Storage", "Graphics"];
+    public static readonly string[] Names = ["Summary", "System", "CPU", "Memory", "Motherboard", "Storage", "Graphics", "Events & Crashes"];
 
     public static List<InfoGroup> Build(string page, Snapshot s) => page switch
     {
@@ -43,6 +45,7 @@ public static class InfoPages
         "Motherboard" => Board(s),
         "Storage" => Storage(s),
         "Graphics" => Graphics(s),
+        "Events & Crashes" => EventsPage.Build(s),
         _ => [],
     };
 

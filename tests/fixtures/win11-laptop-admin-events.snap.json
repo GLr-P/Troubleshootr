@@ -1,0 +1,3824 @@
+{
+  "meta": {
+    "toolVersion": "0.2.1",
+    "collectedUtc": "2026-10-24T20:47:15.7250547Z",
+    "isAdmin": true,
+    "anonymized": true
+  },
+  "system": {
+    "value": {
+      "deviceName": "[redacted]",
+      "userName": "[redacted]",
+      "domain": "[redacted]",
+      "manufacturer": "Micro-Star International Co., Ltd.",
+      "model": "Summit E16 AI Evo A1MTG",
+      "serialNumber": "[redacted]",
+      "pcSystemType": 2,
+      "hasBattery": true,
+      "windowsProductName": "Windows 10 Home",
+      "windowsDisplayVersion": "25H2",
+      "editionId": "Core",
+      "build": 26200,
+      "ubr": 9711,
+      "majorVersion": 10,
+      "minorVersion": 0,
+      "installDateUtc": "2026-06-30T01:25:46Z",
+      "is64BitOs": true,
+      "architecture": "AMD64",
+      "uptimeSeconds": 368508,
+      "fastStartupEnabled": true,
+      "pendingRebootReasons": [
+        "file operations waiting for a restart"
+      ],
+      "isLaptop": true,
+      "isVirtualMachine": false
+    }
+  },
+  "cpu": {
+    "value": {
+      "packages": [
+        {
+          "name": "Intel(R) Core(TM) Ultra 7 155H",
+          "manufacturer": "GenuineIntel",
+          "identifier": "Intel64 Family 6 Model 170 Stepping 4",
+          "cores": 16,
+          "threads": 22,
+          "maxClockMhz": 3800,
+          "currentClockMhz": 1400,
+          "socket": "U3E1",
+          "l2KB": 18432,
+          "l3KB": 24576,
+          "virtualizationFirmwareEnabled": false,
+          "microcode": "0x1E"
+        }
+      ]
+    }
+  },
+  "memory": {
+    "value": {
+      "installedMB": 32768,
+      "usableMB": 32276,
+      "availableMB": 6230,
+      "commitUsedMB": 38499,
+      "commitLimitMB": 39195,
+      "slotCount": 8,
+      "maxCapacityMB": 32768,
+      "modules": [
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 0",
+          "locator": "Controller0-ChannelA",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 1",
+          "locator": "Controller0-ChannelB",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 2",
+          "locator": "Controller0-ChannelC",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 3",
+          "locator": "Controller0-ChannelD",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 0",
+          "locator": "Controller1-ChannelA",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 1",
+          "locator": "Controller1-ChannelB",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 2",
+          "locator": "Controller1-ChannelC",
+          "type": "LPDDR5"
+        },
+        {
+          "capacityMB": 4096,
+          "speedMts": 6400,
+          "configuredSpeedMts": 6400,
+          "manufacturer": "SK Hynix",
+          "partNumber": "H58G66AK6BX070",
+          "serialNumber": "[redacted]",
+          "bankLabel": "BANK 3",
+          "locator": "Controller1-ChannelD",
+          "type": "LPDDR5"
+        }
+      ]
+    }
+  },
+  "board": {
+    "value": {
+      "boardManufacturer": "Micro-Star International Co., Ltd.",
+      "boardProduct": "MS-1595",
+      "boardVersion": "REV:1.0",
+      "boardSerial": "[redacted]",
+      "biosVendor": "American Megatrends International, LLC.",
+      "biosVersion": "E1595IMS.10B",
+      "biosDate": "2024-09-30T17:00:00",
+      "firmwareType": "UEFI",
+      "secureBoot": true
+    }
+  },
+  "volumes": {
+    "value": [
+      {
+        "root": "C:\\",
+        "label": "Windows",
+        "fileSystem": "NTFS",
+        "driveType": "Fixed",
+        "totalBytes": 994179018752,
+        "freeBytes": 529485078528,
+        "isSystem": true,
+        "dirty": false
+      },
+      {
+        "root": "D:\\",
+        "fileSystem": "NTFS",
+        "driveType": "Fixed",
+        "totalBytes": 1000080404480,
+        "freeBytes": 841721950208,
+        "isSystem": false,
+        "dirty": true
+      }
+    ]
+  },
+  "gpus": {
+    "value": [
+      {
+        "name": "Intel(R) Arc(TM) Graphics",
+        "vramBytes": 19327352832,
+        "driverVersion": "31.0.101.5333",
+        "driverDate": "2024-02-20T16:00:00",
+        "pnpDeviceId": "PCI\\VEN_8086\u0026DEV_7D55\u0026SUBSYS_14171462\u0026REV_08\\3\u002611583659\u00261\u002610",
+        "resolutionWidth": 2560,
+        "resolutionHeight": 1600,
+        "refreshHz": 165,
+        "status": "OK",
+        "errorCode": 0
+      }
+    ]
+  },
+  "storage": {
+    "value": {
+      "disks": [
+        {
+          "number": 0,
+          "model": "Micron_2400_MTFDKBA1T0QFM",
+          "serialNumber": "[redacted]",
+          "firmware": "V3MA002",
+          "busType": "NVMe",
+          "mediaType": "SSD",
+          "sizeBytes": 1024209543168,
+          "pnpDeviceId": "SCSI\\DISK\u0026VEN_NVME\u0026PROD_MICRON_2400_MTFD\\4\u0026213A8AFD\u00260\u0026020000",
+          "isBoot": true,
+          "driveLetters": [
+            "C:"
+          ],
+          "health": "Healthy",
+          "operationalStatus": [
+            "OK"
+          ],
+          "nvme": {
+            "criticalWarning": 0,
+            "temperatureC": 35,
+            "availableSparePercent": 100,
+            "spareThresholdPercent": 5,
+            "percentageUsed": 1,
+            "dataUnitsRead": 8206536,
+            "dataUnitsWritten": 9327120,
+            "powerCycles": 186,
+            "powerOnHours": 326,
+            "unsafeShutdowns": 13,
+            "mediaErrors": 0,
+            "errorLogEntries": 0,
+            "warningTempMinutes": 0,
+            "criticalTempMinutes": 0,
+            "terabytesWritten": 4.7754854399999997
+          },
+          "name": "Disk 0 (Micron_2400_MTFDKBA1T0QFM)",
+          "isSsd": true
+        },
+        {
+          "number": 1,
+          "model": "SSD 860 EVO 1TB",
+          "serialNumber": "[redacted]",
+          "firmware": "1.02",
+          "busType": "USB",
+          "mediaType": "SSD",
+          "sizeBytes": 1000204886016,
+          "pnpDeviceId": "USBSTOR\\DISK\u0026VEN_SAMSUNG\u0026PROD_SSD_860_EVO_1TB\u0026REV_1.02\\012345678994\u00260",
+          "isBoot": false,
+          "driveLetters": [
+            "D:"
+          ],
+          "health": "Healthy",
+          "operationalStatus": [
+            "OK"
+          ],
+          "ata": {
+            "attributes": [
+              {
+                "id": 5,
+                "name": "Reallocated sectors",
+                "current": 100,
+                "worst": 100,
+                "threshold": 10,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 9,
+                "name": "Power-on hours",
+                "current": 98,
+                "worst": 98,
+                "threshold": 0,
+                "raw": 9551,
+                "rawHex": "00000000254F",
+                "belowThreshold": false
+              },
+              {
+                "id": 12,
+                "name": "Power cycle count",
+                "current": 99,
+                "worst": 99,
+                "threshold": 0,
+                "raw": 252,
+                "rawHex": "0000000000FC",
+                "belowThreshold": false
+              },
+              {
+                "id": 177,
+                "name": "Wear range delta / wear leveling",
+                "current": 99,
+                "worst": 99,
+                "threshold": 0,
+                "raw": 14,
+                "rawHex": "00000000000E",
+                "belowThreshold": false
+              },
+              {
+                "id": 179,
+                "name": "Used reserved blocks",
+                "current": 100,
+                "worst": 100,
+                "threshold": 10,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 181,
+                "name": "Program fail count",
+                "current": 100,
+                "worst": 100,
+                "threshold": 10,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 182,
+                "name": "Erase fail count",
+                "current": 100,
+                "worst": 100,
+                "threshold": 10,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 183,
+                "name": "SATA downshift errors",
+                "current": 100,
+                "worst": 100,
+                "threshold": 10,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 187,
+                "name": "Reported uncorrectable errors",
+                "current": 100,
+                "worst": 100,
+                "threshold": 0,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 190,
+                "name": "Airflow temperature",
+                "current": 74,
+                "worst": 47,
+                "threshold": 0,
+                "raw": 26,
+                "rawHex": "00000000001A",
+                "belowThreshold": false
+              },
+              {
+                "id": 195,
+                "name": "Hardware ECC recovered",
+                "current": 200,
+                "worst": 200,
+                "threshold": 0,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 199,
+                "name": "UltraDMA CRC errors",
+                "current": 100,
+                "worst": 100,
+                "threshold": 0,
+                "raw": 0,
+                "rawHex": "000000000000",
+                "belowThreshold": false
+              },
+              {
+                "id": 235,
+                "name": "Vendor specific EB",
+                "current": 99,
+                "worst": 99,
+                "threshold": 0,
+                "raw": 150,
+                "rawHex": "000000000096",
+                "belowThreshold": false
+              },
+              {
+                "id": 241,
+                "name": "Total host writes",
+                "current": 99,
+                "worst": 99,
+                "threshold": 0,
+                "raw": 20555141752,
+                "rawHex": "0004C92E9278",
+                "belowThreshold": false
+              }
+            ]
+          },
+          "name": "Disk 1 (SSD 860 EVO 1TB)",
+          "isSsd": true
+        }
+      ],
+      "partitions": [
+        {
+          "diskNumber": 0,
+          "partitionNumber": 0,
+          "driveLetter": "C:",
+          "offsetBytes": 449839104,
+          "sizeBytes": 0
+        },
+        {
+          "diskNumber": 1,
+          "partitionNumber": 0,
+          "driveLetter": "D:",
+          "offsetBytes": 122683392,
+          "sizeBytes": 0
+        }
+      ],
+      "virtualDisks": [],
+      "trimDisabled": false
+    }
+  },
+  "events": {
+    "value": {
+      "days": 30,
+      "events": [
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Ntfs",
+          "id": 98,
+          "level": 3,
+          "timeUtc": "2026-10-24T20:25:35.1805211Z",
+          "message": "Volume D: (\\Device\\HarddiskVolume8) requires an Online Scan. An Online Scan will automatically run as part of the next scheduled maintenance task. Alternatively you may run \u0022CHKDSK /SCAN\u0022 locally via the command line, or run \u0022REPAIR-VOLUME \u003Cdrive:\u003E -SCAN\u0022 locally or remotely via PowerShell.",
+          "data": {
+            "DriveName": "D:",
+            "DeviceName": "\\Device\\HarddiskVolume8",
+            "CorruptionActionState": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Ntfs",
+          "id": 98,
+          "level": 3,
+          "timeUtc": "2026-10-24T20:25:33.6650714Z",
+          "message": "Volume D: (\\Device\\HarddiskVolume8) requires an Online Scan. An Online Scan will automatically run as part of the next scheduled maintenance task. Alternatively you may run \u0022CHKDSK /SCAN\u0022 locally via the command line, or run \u0022REPAIR-VOLUME \u003Cdrive:\u003E -SCAN\u0022 locally or remotely via PowerShell.",
+          "data": {
+            "DriveName": "D:",
+            "DeviceName": "\\Device\\HarddiskVolume8",
+            "CorruptionActionState": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T22:16:50.678813Z",
+          "message": "The RustDesk Service service failed to start due to the following error: The service did not respond to the start or control request in a timely fashion.",
+          "data": {
+            "param1": "RustDesk Service",
+            "param2": "%%1053"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7009,
+          "level": 2,
+          "timeUtc": "2026-10-20T22:16:50.678813Z",
+          "message": "A timeout was reached (30000 milliseconds) while waiting for the RustDesk Service service to connect.",
+          "data": {
+            "param1": "30000",
+            "param2": "RustDesk Service"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 3,
+          "timeUtc": "2026-10-20T17:13:26.8715328Z",
+          "message": "This application took longer than usual to start up, resulting in a performance degradation in the system startup process: File Name : ShellHost.exe Friendly Name : ShellHost Version : 10.0.26100.9549 (WinBuild.160101.0800) Total Time : 3250ms Degradation Time : 750ms Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "StartTime": "2026-10-20T14:25:16.0946415Z",
+            "NameLength": "14",
+            "Name": "ShellHost.exe",
+            "FriendlyNameLength": "10",
+            "FriendlyName": "ShellHost",
+            "VersionLength": "39",
+            "Version": "10.0.26100.9549 (WinBuild.160101.0800)",
+            "TotalTime": "3250",
+            "DegradationTime": "750",
+            "PathLength": "34",
+            "Path": "C:\\Windows\\System32\\ShellHost.exe",
+            "ProductNameLength": "37",
+            "ProductName": "Microsoft\u00AE Windows\u00AE Operating System",
+            "CompanyNameLength": "22",
+            "CompanyName": "Microsoft Corporation"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 3,
+          "timeUtc": "2026-10-20T17:13:26.8715214Z",
+          "message": "This application took longer than usual to start up, resulting in a performance degradation in the system startup process: File Name : SearchHost.exe Friendly Name : Version : 2608.25008.200.0 Total Time : 3538ms Degradation Time : 1396ms Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "StartTime": "2026-10-20T14:25:16.0946415Z",
+            "NameLength": "15",
+            "Name": "SearchHost.exe",
+            "FriendlyNameLength": "1",
+            "FriendlyName": "",
+            "VersionLength": "17",
+            "Version": "2608.25008.200.0",
+            "TotalTime": "3538",
+            "DegradationTime": "1396",
+            "PathLength": "79",
+            "Path": "C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe",
+            "ProductNameLength": "37",
+            "ProductName": "Microsoft\u00AE Windows\u00AE Operating System",
+            "CompanyNameLength": "22",
+            "CompanyName": "Microsoft Corporation"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 3,
+          "timeUtc": "2026-10-20T17:13:26.8715103Z",
+          "message": "This application took longer than usual to start up, resulting in a performance degradation in the system startup process: File Name : CrossDeviceService.exe Friendly Name : Microsoft Cross Device Service Version : 1.26082.74.0 Total Time : 5162ms Degradation Time : 2662ms Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "StartTime": "2026-10-20T14:25:16.0946415Z",
+            "NameLength": "23",
+            "Name": "CrossDeviceService.exe",
+            "FriendlyNameLength": "31",
+            "FriendlyName": "Microsoft Cross Device Service",
+            "VersionLength": "13",
+            "Version": "1.26082.74.0",
+            "TotalTime": "5162",
+            "DegradationTime": "2662",
+            "PathLength": "113",
+            "Path": "C:\\Program Files\\WindowsApps\\MicrosoftWindows.CrossDevice_1.26082.74.0_x64__cw5n1h2txyewy\\CrossDeviceService.exe",
+            "ProductNameLength": "19",
+            "ProductName": "CrossDeviceService",
+            "CompanyNameLength": "22",
+            "CompanyName": "Microsoft Corporation"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 3,
+          "timeUtc": "2026-10-20T17:13:26.8714959Z",
+          "message": "This application took longer than usual to start up, resulting in a performance degradation in the system startup process: File Name : EADesktop.exe Friendly Name : EA Version : 13, 809, 0, 6322 Total Time : 8963ms Degradation Time : 3963ms Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "StartTime": "2026-10-20T14:25:16.0946415Z",
+            "NameLength": "14",
+            "Name": "EADesktop.exe",
+            "FriendlyNameLength": "3",
+            "FriendlyName": "EA",
+            "VersionLength": "17",
+            "Version": "13, 809, 0, 6322",
+            "TotalTime": "8963",
+            "DegradationTime": "3963",
+            "PathLength": "94",
+            "Path": "C:\\Program Files\\Electronic Arts\\EA Desktop\\13.809.0.6322-1792076696\\EA Desktop\\EADesktop.exe",
+            "ProductNameLength": "3",
+            "ProductName": "EA",
+            "CompanyNameLength": "16",
+            "CompanyName": "Electronic Arts"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 3,
+          "timeUtc": "2026-10-20T17:13:26.8714828Z",
+          "message": "This application took longer than usual to start up, resulting in a performance degradation in the system startup process: File Name : spotify_installer-1.3.5.3058.g5d40d5480152-299.exe Friendly Name : Version : Total Time : 9210ms Degradation Time : 4210ms Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "StartTime": "2026-10-20T14:25:16.0946415Z",
+            "NameLength": "51",
+            "Name": "spotify_installer-1.3.5.3058.g5d40d5480152-299.exe",
+            "FriendlyNameLength": "0",
+            "FriendlyName": "",
+            "VersionLength": "0",
+            "Version": "",
+            "TotalTime": "9210",
+            "DegradationTime": "4210",
+            "PathLength": "95",
+            "Path": "C:\\Users\\[user]\\AppData\\Local\\Spotify\\Update\\spotify_installer-1.3.5.3058.g5d40d5480152-299.exe",
+            "ProductNameLength": "0",
+            "ProductName": "",
+            "CompanyNameLength": "0",
+            "CompanyName": ""
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 3,
+          "timeUtc": "2026-10-20T17:13:26.8714733Z",
+          "message": "This application took longer than usual to start up, resulting in a performance degradation in the system startup process: File Name : Discord.exe Friendly Name : Version : Total Time : 14249ms Degradation Time : 9249ms Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "StartTime": "2026-10-20T14:25:16.0946415Z",
+            "NameLength": "12",
+            "Name": "Discord.exe",
+            "FriendlyNameLength": "0",
+            "FriendlyName": "",
+            "VersionLength": "0",
+            "Version": "",
+            "TotalTime": "14249",
+            "DegradationTime": "9249",
+            "PathLength": "62",
+            "Path": "C:\\Users\\[user]\\AppData\\Local\\Discord\\app-1.0.9260\\Discord.exe",
+            "ProductNameLength": "0",
+            "ProductName": "",
+            "CompanyNameLength": "0",
+            "CompanyName": ""
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 3,
+          "timeUtc": "2026-10-20T17:13:26.8714648Z",
+          "message": "This application took longer than usual to start up, resulting in a performance degradation in the system startup process: File Name : steam.exe Friendly Name : Steam Version : 11.12.30.07 Total Time : 14981ms Degradation Time : 9981ms Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "StartTime": "2026-10-20T14:25:16.0946415Z",
+            "NameLength": "10",
+            "Name": "steam.exe",
+            "FriendlyNameLength": "6",
+            "FriendlyName": "Steam",
+            "VersionLength": "12",
+            "Version": "11.12.30.07",
+            "TotalTime": "14981",
+            "DegradationTime": "9981",
+            "PathLength": "39",
+            "Path": "C:\\Program Files (x86)\\Steam\\steam.exe",
+            "ProductNameLength": "6",
+            "ProductName": "Steam",
+            "CompanyNameLength": "18",
+            "CompanyName": "Valve Corporation"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 3,
+          "timeUtc": "2026-10-20T17:13:26.8714538Z",
+          "message": "This application took longer than usual to start up, resulting in a performance degradation in the system startup process: File Name : EACefSubProcess.exe Friendly Name : EA Version : 13, 809, 0, 6322 Total Time : 27696ms Degradation Time : 22696ms Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "StartTime": "2026-10-20T14:25:16.0946415Z",
+            "NameLength": "20",
+            "Name": "EACefSubProcess.exe",
+            "FriendlyNameLength": "3",
+            "FriendlyName": "EA",
+            "VersionLength": "17",
+            "Version": "13, 809, 0, 6322",
+            "TotalTime": "27696",
+            "DegradationTime": "22696",
+            "PathLength": "100",
+            "Path": "C:\\Program Files\\Electronic Arts\\EA Desktop\\13.809.0.6322-1792076696\\EA Desktop\\EACefSubProcess.exe",
+            "ProductNameLength": "3",
+            "ProductName": "EA",
+            "CompanyNameLength": "16",
+            "CompanyName": "Electronic Arts"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 2,
+          "timeUtc": "2026-10-20T17:13:26.8714316Z",
+          "message": "This application took longer than usual to start up, resulting in a performance degradation in the system startup process: File Name : WUDFHost.exe Friendly Name : Windows Driver Foundation - User-mode Driver Framework Host Process Version : 10.0.26100.8521 (WinBuild.160101.0800) Total Time : 57003ms Degradation Time : 49503ms Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "StartTime": "2026-10-20T14:25:16.0946415Z",
+            "NameLength": "13",
+            "Name": "WUDFHost.exe",
+            "FriendlyNameLength": "68",
+            "FriendlyName": "Windows Driver Foundation - User-mode Driver Framework Host Process",
+            "VersionLength": "39",
+            "Version": "10.0.26100.8521 (WinBuild.160101.0800)",
+            "TotalTime": "57003",
+            "DegradationTime": "49503",
+            "PathLength": "33",
+            "Path": "C:\\Windows\\System32\\WUDFHost.exe",
+            "ProductNameLength": "37",
+            "ProductName": "Microsoft\u00AE Windows\u00AE Operating System",
+            "CompanyNameLength": "22",
+            "CompanyName": "Microsoft Corporation"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 1,
+          "timeUtc": "2026-10-20T17:13:26.8714119Z",
+          "message": "This application took longer than usual to start up, resulting in a performance degradation in the system startup process: File Name : MsMpEng.exe Friendly Name : Microsoft Defender Antimalware Service Version : 4.18.26090.9 (4df2f7dd1ad7282fa3437667daf210904670b7f3) Total Time : 158785ms Degradation Time : 151285ms Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "StartTime": "2026-10-20T14:25:16.0946415Z",
+            "NameLength": "12",
+            "Name": "MsMpEng.exe",
+            "FriendlyNameLength": "39",
+            "FriendlyName": "Microsoft Defender Antimalware Service",
+            "VersionLength": "56",
+            "Version": "4.18.26090.9 (4df2f7dd1ad7282fa3437667daf210904670b7f3)",
+            "TotalTime": "158785",
+            "DegradationTime": "151285",
+            "PathLength": "78",
+            "Path": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26090.9-0\\MsMpEng.exe",
+            "ProductNameLength": "37",
+            "ProductName": "Microsoft\u00AE Windows\u00AE Operating System",
+            "CompanyNameLength": "22",
+            "CompanyName": "Microsoft Corporation"
+          },
+          "levelName": "Critical"
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 100,
+          "level": 1,
+          "timeUtc": "2026-10-20T17:13:26.8713917Z",
+          "message": "Windows has started up: Boot Duration : 114574ms IsDegradation : false Incident Time (UTC) : \u200E2026\u200E-\u200E10\u200E-\u200E20T14:25:16.094641500Z",
+          "data": {
+            "BootTsVersion": "2",
+            "BootStartTime": "2026-10-20T14:25:16.0946415Z",
+            "BootEndTime": "2026-10-20T17:13:13.6598577Z",
+            "SystemBootInstance": "34",
+            "UserBootInstance": "12",
+            "BootTime": "114574",
+            "MainPathBootTime": "41174",
+            "BootKernelInitTime": "40",
+            "BootDriverInitTime": "644",
+            "BootDevicesInitTime": "782",
+            "BootPrefetchInitTime": "0",
+            "BootPrefetchBytes": "0",
+            "BootAutoChkTime": "0",
+            "BootSmssInitTime": "9437",
+            "BootCriticalServicesInitTime": "441",
+            "BootUserProfileProcessingTime": "288",
+            "BootMachineProfileProcessingTime": "0",
+            "BootExplorerInitTime": "10698",
+            "BootNumStartupApps": "16",
+            "BootPostBootTime": "73400",
+            "BootIsRebootAfterInstall": "false",
+            "BootRootCauseStepImprovementBits": "0",
+            "BootRootCauseGradualImprovementBits": "0",
+            "BootRootCauseStepDegradationBits": "0",
+            "BootRootCauseGradualDegradationBits": "0",
+            "BootIsDegradation": "false",
+            "BootIsStepDegradation": "false",
+            "BootIsGradualDegradation": "false",
+            "BootImprovementDelta": "0",
+            "BootDegradationDelta": "0",
+            "BootIsRootCauseIdentified": "false",
+            "OSLoaderDuration": "2130",
+            "BootPNPInitStartTimeMS": "40",
+            "BootPNPInitDuration": "2768",
+            "OtherKernelInitDuration": "656",
+            "SystemPNPInitStartTimeMS": "3061",
+            "SystemPNPInitDuration": "601",
+            "SessionInitStartTimeMS": "4026",
+            "Session0InitDuration": "5827",
+            "Session1InitDuration": "861",
+            "SessionInitOtherDuration": "2748",
+            "WinLogonStartTimeMS": "13463",
+            "OtherLogonInitActivityDuration": "16723",
+            "UserLogonWaitDuration": "9958887"
+          },
+          "levelName": "Critical"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T17:12:30.3340346Z",
+          "message": "The Steam Client Service service failed to start due to the following error: The service did not respond to the start or control request in a timely fashion.",
+          "data": {
+            "param1": "Steam Client Service",
+            "param2": "%%1053"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7009,
+          "level": 2,
+          "timeUtc": "2026-10-20T17:12:30.3340346Z",
+          "message": "A timeout was reached (30000 milliseconds) while waiting for the Steam Client Service service to connect.",
+          "data": {
+            "param1": "30000",
+            "param2": "Steam Client Service"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-20T14:26:34.2286823Z",
+          "message": "The speed of processor 21 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 71 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "21",
+            "CapDurationInSeconds": "71",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-20T14:26:34.1972263Z",
+          "message": "The speed of processor 20 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 71 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "20",
+            "CapDurationInSeconds": "71",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-20T14:26:34.1656443Z",
+          "message": "The speed of processor 9 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 71 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "9",
+            "CapDurationInSeconds": "71",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-20T14:26:34.149814Z",
+          "message": "The speed of processor 8 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 71 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "8",
+            "CapDurationInSeconds": "71",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-20T14:26:34.1498124Z",
+          "message": "The speed of processor 7 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 71 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "7",
+            "CapDurationInSeconds": "71",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-20T14:26:34.1498106Z",
+          "message": "The speed of processor 6 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 71 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "6",
+            "CapDurationInSeconds": "71",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-20T14:26:34.1498088Z",
+          "message": "The speed of processor 5 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 71 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "5",
+            "CapDurationInSeconds": "71",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-20T14:26:34.1498072Z",
+          "message": "The speed of processor 4 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 71 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "4",
+            "CapDurationInSeconds": "71",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-20T14:26:34.1498049Z",
+          "message": "The speed of processor 2 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 71 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "2",
+            "CapDurationInSeconds": "71",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-20T14:26:34.1497987Z",
+          "message": "The speed of processor 3 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 71 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "3",
+            "CapDurationInSeconds": "71",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "1"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:25:31.1132572Z",
+          "message": "The MBAMService service failed to start due to the following error: The system cannot find the file specified.",
+          "data": {
+            "param1": "MBAMService",
+            "param2": "%%2"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:24:47.1854705Z",
+          "message": "The MBAMService service failed to start due to the following error: The system cannot find the file specified.",
+          "data": {
+            "param1": "MBAMService",
+            "param2": "%%2"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:39.1474152Z",
+          "message": "The igccservice service failed to start due to the following error: The specified service does not exist as an installed service.",
+          "data": {
+            "param1": "igccservice",
+            "param2": "%%1060"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:37.469533Z",
+          "message": "The MBAMService service failed to start due to the following error: The system cannot find the file specified.",
+          "data": {
+            "param1": "MBAMService",
+            "param2": "%%2"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:10:39.5521146Z",
+          "message": "The speed of processor 21 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 680201 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "21",
+            "CapDurationInSeconds": "680201",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:10:39.5059537Z",
+          "message": "The speed of processor 20 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 680201 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "20",
+            "CapDurationInSeconds": "680201",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:10:39.4752378Z",
+          "message": "The speed of processor 4 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 680201 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "4",
+            "CapDurationInSeconds": "680201",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:10:39.4752234Z",
+          "message": "The speed of processor 9 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 680201 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "9",
+            "CapDurationInSeconds": "680201",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:10:39.4752151Z",
+          "message": "The speed of processor 8 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 680201 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "8",
+            "CapDurationInSeconds": "680201",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:10:39.4752013Z",
+          "message": "The speed of processor 7 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 680201 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "7",
+            "CapDurationInSeconds": "680201",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:10:39.4751967Z",
+          "message": "The speed of processor 6 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 680201 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "6",
+            "CapDurationInSeconds": "680201",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:10:39.4751893Z",
+          "message": "The speed of processor 5 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 680201 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "5",
+            "CapDurationInSeconds": "680201",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:10:39.4595107Z",
+          "message": "The speed of processor 3 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 680201 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "3",
+            "CapDurationInSeconds": "680201",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:10:39.4594929Z",
+          "message": "The speed of processor 2 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 680201 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "2",
+            "CapDurationInSeconds": "680201",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T18:37:24.7992785Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x9478 Faulting application start time: 0x1DD5F2885BEA6C1 Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: d9abc8f8-d5df-45a9-b97f-5e2ebe1a1768 Faulting package full name: Faulting package-relative application ID:",
+          "data": {
+            "AppName": "MiracastPowerManager.exe",
+            "AppVersion": "0.0.0.0",
+            "AppTimeStamp": "a52be36e",
+            "ModuleName": "ntdll.dll",
+            "ModuleVersion": "10.0.26100.9444",
+            "ModuleTimeStamp": "6bdf03ca",
+            "ExceptionCode": "c0000374",
+            "FaultingOffset": "0000000000117eb5",
+            "ProcessId": "0x9478",
+            "ProcessCreationTime": "0x1dd5f2885bea6c1",
+            "AppPath": "C:\\Windows\\System32\\MiracastPowerManager.exe",
+            "ModulePath": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+            "IntegratorReportId": "d9abc8f8-d5df-45a9-b97f-5e2ebe1a1768",
+            "PackageFullName": "",
+            "PackageRelativeAppId": ""
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T17:44:07.8127411Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0xA8EC Faulting application start time: 0x1DD5F283F21098C Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 0750db92-b185-49e9-8acc-ebd47ddce2cf Faulting package full name: Faulting package-relative application ID:",
+          "data": {
+            "AppName": "MiracastPowerManager.exe",
+            "AppVersion": "0.0.0.0",
+            "AppTimeStamp": "a52be36e",
+            "ModuleName": "ntdll.dll",
+            "ModuleVersion": "10.0.26100.9444",
+            "ModuleTimeStamp": "6bdf03ca",
+            "ExceptionCode": "c0000374",
+            "FaultingOffset": "0000000000117eb5",
+            "ProcessId": "0xa8ec",
+            "ProcessCreationTime": "0x1dd5f283f21098c",
+            "AppPath": "C:\\Windows\\System32\\MiracastPowerManager.exe",
+            "ModulePath": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+            "IntegratorReportId": "0750db92-b185-49e9-8acc-ebd47ddce2cf",
+            "PackageFullName": "",
+            "PackageRelativeAppId": ""
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T17:41:45.1189085Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0xA1EC Faulting application start time: 0x1DD5F27E8E860D2 Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 46cd8f8d-06b9-41fe-b844-747e04645d1a Faulting package full name: Faulting package-relative application ID:",
+          "data": {
+            "AppName": "MiracastPowerManager.exe",
+            "AppVersion": "0.0.0.0",
+            "AppTimeStamp": "a52be36e",
+            "ModuleName": "ntdll.dll",
+            "ModuleVersion": "10.0.26100.9444",
+            "ModuleTimeStamp": "6bdf03ca",
+            "ExceptionCode": "c0000374",
+            "FaultingOffset": "0000000000117eb5",
+            "ProcessId": "0xa1ec",
+            "ProcessCreationTime": "0x1dd5f27e8e860d2",
+            "AppPath": "C:\\Windows\\System32\\MiracastPowerManager.exe",
+            "ModulePath": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+            "IntegratorReportId": "46cd8f8d-06b9-41fe-b844-747e04645d1a",
+            "PackageFullName": "",
+            "PackageRelativeAppId": ""
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T17:39:37.4581184Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x7054 Faulting application start time: 0x1DD5F279DE92DEF Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 8eef6a31-2443-4bed-8786-98840a95cbc0 Faulting package full name: Faulting package-relative application ID:",
+          "data": {
+            "AppName": "MiracastPowerManager.exe",
+            "AppVersion": "0.0.0.0",
+            "AppTimeStamp": "a52be36e",
+            "ModuleName": "ntdll.dll",
+            "ModuleVersion": "10.0.26100.9444",
+            "ModuleTimeStamp": "6bdf03ca",
+            "ExceptionCode": "c0000374",
+            "FaultingOffset": "0000000000117eb5",
+            "ProcessId": "0x7054",
+            "ProcessCreationTime": "0x1dd5f279de92def",
+            "AppPath": "C:\\Windows\\System32\\MiracastPowerManager.exe",
+            "ModulePath": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+            "IntegratorReportId": "8eef6a31-2443-4bed-8786-98840a95cbc0",
+            "PackageFullName": "",
+            "PackageRelativeAppId": ""
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T17:39:15.1320164Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x610C Faulting application start time: 0x1DD5F27910DB94F Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 56574958-0a31-4d17-ac1d-8e6a11fd2e8d Faulting package full name: Faulting package-relative application ID:",
+          "data": {
+            "AppName": "MiracastPowerManager.exe",
+            "AppVersion": "0.0.0.0",
+            "AppTimeStamp": "a52be36e",
+            "ModuleName": "ntdll.dll",
+            "ModuleVersion": "10.0.26100.9444",
+            "ModuleTimeStamp": "6bdf03ca",
+            "ExceptionCode": "c0000374",
+            "FaultingOffset": "0000000000117eb5",
+            "ProcessId": "0x610c",
+            "ProcessCreationTime": "0x1dd5f27910db94f",
+            "AppPath": "C:\\Windows\\System32\\MiracastPowerManager.exe",
+            "ModulePath": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+            "IntegratorReportId": "56574958-0a31-4d17-ac1d-8e6a11fd2e8d",
+            "PackageFullName": "",
+            "PackageRelativeAppId": ""
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T17:38:50.1117552Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x52A8 Faulting application start time: 0x1DD5F27818DDDFE Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: ba83e4b0-afdb-400e-aac9-84e8d5de81e7 Faulting package full name: Faulting package-relative application ID:",
+          "data": {
+            "AppName": "MiracastPowerManager.exe",
+            "AppVersion": "0.0.0.0",
+            "AppTimeStamp": "a52be36e",
+            "ModuleName": "ntdll.dll",
+            "ModuleVersion": "10.0.26100.9444",
+            "ModuleTimeStamp": "6bdf03ca",
+            "ExceptionCode": "c0000374",
+            "FaultingOffset": "0000000000117eb5",
+            "ProcessId": "0x52a8",
+            "ProcessCreationTime": "0x1dd5f27818dddfe",
+            "AppPath": "C:\\Windows\\System32\\MiracastPowerManager.exe",
+            "ModulePath": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+            "IntegratorReportId": "ba83e4b0-afdb-400e-aac9-84e8d5de81e7",
+            "PackageFullName": "",
+            "PackageRelativeAppId": ""
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T01:45:45.470217Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x8640 Faulting application start time: 0x1DD5E98AC5110B5 Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 565f1d12-a546-4151-b803-7ece8d5771a1 Faulting package full name: Faulting package-relative application ID:",
+          "data": {
+            "AppName": "MiracastPowerManager.exe",
+            "AppVersion": "0.0.0.0",
+            "AppTimeStamp": "a52be36e",
+            "ModuleName": "ntdll.dll",
+            "ModuleVersion": "10.0.26100.9444",
+            "ModuleTimeStamp": "6bdf03ca",
+            "ExceptionCode": "c0000374",
+            "FaultingOffset": "0000000000117eb5",
+            "ProcessId": "0x8640",
+            "ProcessCreationTime": "0x1dd5e98ac5110b5",
+            "AppPath": "C:\\Windows\\System32\\MiracastPowerManager.exe",
+            "ModulePath": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+            "IntegratorReportId": "565f1d12-a546-4151-b803-7ece8d5771a1",
+            "PackageFullName": "",
+            "PackageRelativeAppId": ""
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Hang",
+          "id": 1002,
+          "level": 2,
+          "timeUtc": "2026-10-12T23:39:33.0217639Z",
+          "message": "The program mscopilot_proxy.exe version 155.0.4283.45 stopped interacting with Windows and was closed. To see if more information about the problem is available, check the problem history in the Security and Maintenance control panel.",
+          "data": {
+            "AppName": "mscopilot_proxy.exe",
+            "AppVersion": "155.0.4283.45",
+            "ProcessId": "0x903c",
+            "StartTime": "0x1dd59e011995374",
+            "TerminationTime": "4294967295",
+            "ExeFileName": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\mscopilot_proxy.exe",
+            "ReportId": "7f7f548c-0ba7-431f-acaa-9b368a5a8f37",
+            "PackageFullName": "Microsoft.Copilot_155.0.4283.45_neutral__8wekyb3d8bbwe",
+            "PackageRelativeAppId": "App",
+            "HangType": "Quiesce"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-11T23:13:57.8969054Z",
+          "message": "The speed of processor 21 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 603031 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "21",
+            "CapDurationInSeconds": "603031",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-11T23:13:57.8651744Z",
+          "message": "The speed of processor 20 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 603031 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "20",
+            "CapDurationInSeconds": "603031",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-11T23:13:57.8276201Z",
+          "message": "The speed of processor 9 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 603031 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "9",
+            "CapDurationInSeconds": "603031",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-11T23:13:57.8276007Z",
+          "message": "The speed of processor 8 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 603031 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "8",
+            "CapDurationInSeconds": "603031",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-11T23:13:57.8163614Z",
+          "message": "The speed of processor 3 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 603031 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "3",
+            "CapDurationInSeconds": "603031",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-11T23:13:57.8163338Z",
+          "message": "The speed of processor 4 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 603031 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "4",
+            "CapDurationInSeconds": "603031",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-11T23:13:57.816308Z",
+          "message": "The speed of processor 7 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 603031 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "7",
+            "CapDurationInSeconds": "603031",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-11T23:13:57.8163053Z",
+          "message": "The speed of processor 6 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 603031 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "6",
+            "CapDurationInSeconds": "603031",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-11T23:13:57.8163022Z",
+          "message": "The speed of processor 5 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 603031 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "5",
+            "CapDurationInSeconds": "603031",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-11T23:13:57.8162978Z",
+          "message": "The speed of processor 2 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 603031 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "2",
+            "CapDurationInSeconds": "603031",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Hang",
+          "id": 1002,
+          "level": 2,
+          "timeUtc": "2026-10-11T23:12:27.6866408Z",
+          "message": "The program mscopilot_proxy.exe version 155.0.4283.45 stopped interacting with Windows and was closed. To see if more information about the problem is available, check the problem history in the Security and Maintenance control panel.",
+          "data": {
+            "AppName": "mscopilot_proxy.exe",
+            "AppVersion": "155.0.4283.45",
+            "ProcessId": "0x5cb8",
+            "StartTime": "0x1dd58f13fa14626",
+            "TerminationTime": "4294967295",
+            "ExeFileName": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\mscopilot_proxy.exe",
+            "ReportId": "64db1c8e-a823-4155-8e3f-f9a9afd5d31a",
+            "PackageFullName": "Microsoft.Copilot_155.0.4283.45_neutral__8wekyb3d8bbwe",
+            "PackageRelativeAppId": "App",
+            "HangType": "Quiesce"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Hang",
+          "id": 1002,
+          "level": 2,
+          "timeUtc": "2026-10-10T19:05:32.2586425Z",
+          "message": "The program mscopilot_proxy.exe version 154.0.4258.62 stopped interacting with Windows and was closed. To see if more information about the problem is available, check the problem history in the Security and Maintenance control panel.",
+          "data": {
+            "AppName": "mscopilot_proxy.exe",
+            "AppVersion": "154.0.4258.62",
+            "ProcessId": "0x7f70",
+            "StartTime": "0x1dd58e9e373f7bb",
+            "TerminationTime": "4294967295",
+            "ExeFileName": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Temp\\38964_677968416\\mscopilot_proxy.exe",
+            "ReportId": "d348a415-4b9c-41a3-bf18-311e7ce88e01",
+            "PackageFullName": "Microsoft.Copilot_154.0.4258.62_neutral__8wekyb3d8bbwe",
+            "PackageRelativeAppId": "App",
+            "HangType": "Quiesce"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Hang",
+          "id": 1002,
+          "level": 2,
+          "timeUtc": "2026-10-08T22:52:03.9223114Z",
+          "message": "The program mscopilot_proxy.exe version 154.0.4258.53 stopped interacting with Windows and was closed. To see if more information about the problem is available, check the problem history in the Security and Maintenance control panel.",
+          "data": {
+            "AppName": "mscopilot_proxy.exe",
+            "AppVersion": "154.0.4258.53",
+            "ProcessId": "0x5aec",
+            "StartTime": "0x1dd551c6d459afa",
+            "TerminationTime": "4294967295",
+            "ExeFileName": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Temp\\34156_432042798\\mscopilot_proxy.exe",
+            "ReportId": "f0e7b8b2-3a89-413a-8c51-5db837985e89",
+            "PackageFullName": "Microsoft.Copilot_154.0.4258.53_neutral__8wekyb3d8bbwe",
+            "PackageRelativeAppId": "App",
+            "HangType": "Quiesce"
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-04T23:43:26.2411971Z",
+          "message": "The speed of processor 21 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 981141 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "21",
+            "CapDurationInSeconds": "981141",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-04T23:43:26.2022457Z",
+          "message": "The speed of processor 20 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 981141 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "20",
+            "CapDurationInSeconds": "981141",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-04T23:43:26.1685724Z",
+          "message": "The speed of processor 9 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 981141 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "9",
+            "CapDurationInSeconds": "981141",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-04T23:43:26.1623749Z",
+          "message": "The speed of processor 8 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 981141 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "8",
+            "CapDurationInSeconds": "981141",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-04T23:43:26.159869Z",
+          "message": "The speed of processor 7 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 981141 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "7",
+            "CapDurationInSeconds": "981141",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-04T23:43:26.1598518Z",
+          "message": "The speed of processor 6 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 981141 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "6",
+            "CapDurationInSeconds": "981141",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-04T23:43:26.1598366Z",
+          "message": "The speed of processor 5 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 981141 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "5",
+            "CapDurationInSeconds": "981141",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-04T23:43:26.1598191Z",
+          "message": "The speed of processor 4 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 981141 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "4",
+            "CapDurationInSeconds": "981141",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-04T23:43:26.1598003Z",
+          "message": "The speed of processor 3 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 981141 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "3",
+            "CapDurationInSeconds": "981141",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Processor-Power",
+          "id": 37,
+          "level": 3,
+          "timeUtc": "2026-10-04T23:43:26.1597883Z",
+          "message": "The speed of processor 2 in group 0 is being limited by system firmware. The processor has been in this reduced performance state for 981141 seconds since the last report.",
+          "data": {
+            "Group": "0",
+            "Number": "2",
+            "CapDurationInSeconds": "981141",
+            "PpcChanges": "0",
+            "TpcChanges": "0",
+            "PccChanges": "0"
+          },
+          "levelName": "Warning"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-04T09:59:56.6356701Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x89AC Faulting application start time: 0x1DD53D287CB5FCB Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: e532a3d2-01c8-4493-af99-d4fd57c12fc3 Faulting package full name: Faulting package-relative application ID:",
+          "data": {
+            "AppName": "MiracastPowerManager.exe",
+            "AppVersion": "0.0.0.0",
+            "AppTimeStamp": "a52be36e",
+            "ModuleName": "ntdll.dll",
+            "ModuleVersion": "10.0.26100.9444",
+            "ModuleTimeStamp": "6bdf03ca",
+            "ExceptionCode": "c0000374",
+            "FaultingOffset": "0000000000117eb5",
+            "ProcessId": "0x89ac",
+            "ProcessCreationTime": "0x1dd53d287cb5fcb",
+            "AppPath": "C:\\Windows\\System32\\MiracastPowerManager.exe",
+            "ModulePath": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+            "IntegratorReportId": "e532a3d2-01c8-4493-af99-d4fd57c12fc3",
+            "PackageFullName": "",
+            "PackageRelativeAppId": ""
+          },
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-01T08:17:32.0282208Z",
+          "message": "Faulting application name: Trackmania.exe, version: 2026.2.2.1751, time stamp: 0x6980d607 Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x2C74 Faulting application start time: 0x1DD5033809F9B2D Faulting application path: C:\\Program Files (x86)\\Steam\\steamapps\\common\\Trackmania\\Trackmania.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 6a7542e5-aeab-43b6-8781-1cc53de23da8 Faulting package full name: Faulting package-relative application ID:",
+          "data": {
+            "AppName": "Trackmania.exe",
+            "AppVersion": "2026.2.2.1751",
+            "AppTimeStamp": "6980d607",
+            "ModuleName": "ntdll.dll",
+            "ModuleVersion": "10.0.26100.9444",
+            "ModuleTimeStamp": "6bdf03ca",
+            "ExceptionCode": "c0000374",
+            "FaultingOffset": "0000000000117eb5",
+            "ProcessId": "0x2c74",
+            "ProcessCreationTime": "0x1dd5033809f9b2d",
+            "AppPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Trackmania\\Trackmania.exe",
+            "ModulePath": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+            "IntegratorReportId": "6a7542e5-aeab-43b6-8781-1cc53de23da8",
+            "PackageFullName": "",
+            "PackageRelativeAppId": ""
+          },
+          "levelName": "Error"
+        }
+      ],
+      "timeline": [
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-24T20:11:38.826461Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-24T19:58:56.4529749Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-24T19:28:57.7310352Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-24T19:04:14.6585445Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DriverFrameworks-UserMode",
+          "id": 10111,
+          "level": 1,
+          "timeUtc": "2026-10-24T19:00:56.4335346Z",
+          "message": "The device MCT USB3.0 External Graphics Device (location 0000.0014.0000.013.000.000.000.000.000) is offline due to a user-mode driver crash. Windows will attempt to restart the device 5 more times. Please contact the device manufacturer for more information about this problem.",
+          "data": {},
+          "levelName": "Critical"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DriverFrameworks-UserMode",
+          "id": 10120,
+          "level": 1,
+          "timeUtc": "2026-10-24T19:00:56.4226389Z",
+          "message": "A problem has occurred with one or more user-mode drivers and the hosting process has been terminated. This may temporarily interrupt your ability to access the devices.",
+          "data": {},
+          "levelName": "Critical"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-24T19:00:47.9355191Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-24T19:00:47.9355039Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-23T20:32:39.8570451Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-23T20:32:39.8570181Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-22T22:27:56.881147Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-22T22:18:58.0015076Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": ".NET Runtime",
+          "id": 1022,
+          "level": 2,
+          "timeUtc": "2026-10-22T22:17:14.1299963Z",
+          "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure. This process will not allow a profiler to attach. HRESULT: 0x80004005. Process ID (decimal): 32036. Message ID: [0x2509].",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-22T21:42:59.1465619Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-22T20:28:05.856815Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-22T20:28:05.8568041Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-22T06:11:52.8522217Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-22T06:11:52.8522053Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WindowsUpdateClient",
+          "id": 20,
+          "level": 2,
+          "timeUtc": "2026-10-21T21:22:34.195079Z",
+          "message": "Installation Failure: Windows failed to install the following update with error 0x80240016: Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.461.140.0) - Current Channel (Broad).",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-21T21:08:54.9110763Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-21T21:08:54.9110456Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-21T00:18:35.8478692Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-21T00:18:35.8478494Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T23:04:07.8245029Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T22:45:29.3887703Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T22:44:13.9239273Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T22:41:48.4198484Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T22:36:45.611698Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T22:16:50.678813Z",
+          "message": "The RustDesk Service service failed to start due to the following error: The service did not respond to the start or control request in a timely fashion.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7009,
+          "level": 2,
+          "timeUtc": "2026-10-20T22:16:50.678813Z",
+          "message": "A timeout was reached (30000 milliseconds) while waiting for the RustDesk Service service to connect.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T22:10:55.5919308Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T22:01:45.541273Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T21:56:37.7318947Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T21:41:53.8546284Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T21:21:50.482179Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T21:07:32.2892757Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T20:53:53.6489298Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T20:47:48.2588135Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T20:41:16.0158118Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T20:31:47.9402323Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T20:30:17.7921067Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T20:25:23.3716684Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-20T20:21:11.060993Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": ".NET Runtime",
+          "id": 1022,
+          "level": 2,
+          "timeUtc": "2026-10-20T19:01:50.6370656Z",
+          "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure. This process will not allow a profiler to attach. HRESULT: 0x80004005. Process ID (decimal): 12260. Message ID: [0x2509].",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": ".NET Runtime",
+          "id": 1022,
+          "level": 2,
+          "timeUtc": "2026-10-20T19:01:27.3181591Z",
+          "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure. This process will not allow a profiler to attach. HRESULT: 0x80004005. Process ID (decimal): 36024. Message ID: [0x2509].",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T19:00:50.8475124Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T19:00:50.847489Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": ".NET Runtime",
+          "id": 1022,
+          "level": 2,
+          "timeUtc": "2026-10-20T18:24:17.7647738Z",
+          "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure. This process will not allow a profiler to attach. HRESULT: 0x80004005. Process ID (decimal): 16528. Message ID: [0x2509].",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": ".NET Runtime",
+          "id": 1022,
+          "level": 2,
+          "timeUtc": "2026-10-20T18:24:14.1567111Z",
+          "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure. This process will not allow a profiler to attach. HRESULT: 0x80004005. Process ID (decimal): 31384. Message ID: [0x2509].",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Volsnap",
+          "id": 36,
+          "level": 2,
+          "timeUtc": "2026-10-20T17:17:01.9588789Z",
+          "message": "The shadow copies of volume C: were aborted because the shadow copy storage could not grow due to a user imposed limit.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T17:12:30.3340346Z",
+          "message": "The Steam Client Service service failed to start due to the following error: The service did not respond to the start or control request in a timely fashion.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7009,
+          "level": 2,
+          "timeUtc": "2026-10-20T17:12:30.3340346Z",
+          "message": "A timeout was reached (30000 milliseconds) while waiting for the Steam Client Service service to connect.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Microsoft-Windows-Perflib",
+          "id": 1023,
+          "level": 2,
+          "timeUtc": "2026-10-20T17:12:22.083101Z",
+          "message": "Windows cannot load the extensible counter DLL \u0022C:\\Windows\\system32\\sysmain.dll\u0022 (Win32 error code The specified module could not be found.).",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T17:00:07.9192297Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T17:00:07.9192175Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:26:01.5268615Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:26:01.5268209Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:26:01.5260118Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:26:01.5253632Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:26:01.0965763Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:26:01.0959318Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:26:00.9129918Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:26:00.9113943Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:25:31.1132572Z",
+          "message": "The MBAMService service failed to start due to the following error: The system cannot find the file specified.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:25:17.1315806Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:25:17.1315536Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:25:17.131525Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:24:59.3494229Z",
+          "message": "The server {A677570A-2BA2-4E9A-B2E2-8A02CD8B4FD3} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "VSS",
+          "id": 13,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:24:58.8259094Z",
+          "message": "Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress. ]",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:24:47.1854705Z",
+          "message": "The MBAMService service failed to start due to the following error: The system cannot find the file specified.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:24:33.1591284Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:24:33.1591193Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:24:33.1591085Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:52.9065477Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:52.9057257Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:52.6764512Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:52.6757175Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:51.5017448Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:51.5016279Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:51.5007611Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:51.5007205Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:39.1474152Z",
+          "message": "The igccservice service failed to start due to the following error: The specified service does not exist as an installed service.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:37.469533Z",
+          "message": "The MBAMService service failed to start due to the following error: The system cannot find the file specified.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:11.3676654Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:23:11.3676346Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.7886397Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.771998Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.7558169Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.7420633Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.7261282Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.7101322Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.6932443Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.6723844Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.6499007Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.6283566Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.6113885Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.5945927Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:55.5758138Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.85558Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.8345532Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.8190305Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.8039394Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.7871652Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.7683811Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.7441785Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.7127341Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.6840059Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.6584402Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.6361113Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.6142176Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:53.5936293Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:18.9239469Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T14:18:18.9239251Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T02:08:04.8525979Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-20T02:08:04.8525638Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DistributedCOM",
+          "id": 10010,
+          "level": 2,
+          "timeUtc": "2026-10-19T21:55:34.028659Z",
+          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WindowsUpdateClient",
+          "id": 20,
+          "level": 2,
+          "timeUtc": "2026-10-19T15:40:07.4983515Z",
+          "message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9MV0B5HZVK9Z-Microsoft.GamingApp.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WindowsUpdateClient",
+          "id": 20,
+          "level": 2,
+          "timeUtc": "2026-10-19T14:54:46.3585Z",
+          "message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9MV0B5HZVK9Z-Microsoft.GamingApp.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-19T14:45:08.6187674Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-19T14:43:48.8531835Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-19T14:43:48.8531524Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7011,
+          "level": 2,
+          "timeUtc": "2026-10-18T18:39:02.3066955Z",
+          "message": "A timeout (30000 milliseconds) was reached while waiting for a transaction response from the WSearch service.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T18:37:24.7992785Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x9478 Faulting application start time: 0x1DD5F2885BEA6C1 Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: d9abc8f8-d5df-45a9-b97f-5e2ebe1a1768 Faulting package full name: Faulting package-relative application ID:",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T17:44:07.8127411Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0xA8EC Faulting application start time: 0x1DD5F283F21098C Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 0750db92-b185-49e9-8acc-ebd47ddce2cf Faulting package full name: Faulting package-relative application ID:",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T17:41:45.1189085Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0xA1EC Faulting application start time: 0x1DD5F27E8E860D2 Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 46cd8f8d-06b9-41fe-b844-747e04645d1a Faulting package full name: Faulting package-relative application ID:",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T17:39:37.4581184Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x7054 Faulting application start time: 0x1DD5F279DE92DEF Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 8eef6a31-2443-4bed-8786-98840a95cbc0 Faulting package full name: Faulting package-relative application ID:",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T17:39:15.1320164Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x610C Faulting application start time: 0x1DD5F27910DB94F Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 56574958-0a31-4d17-ac1d-8e6a11fd2e8d Faulting package full name: Faulting package-relative application ID:",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T17:38:50.1117552Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x52A8 Faulting application start time: 0x1DD5F27818DDDFE Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: ba83e4b0-afdb-400e-aac9-84e8d5de81e7 Faulting package full name: Faulting package-relative application ID:",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-18T14:32:12.9272071Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-18T14:32:12.9271833Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WindowsUpdateClient",
+          "id": 20,
+          "level": 2,
+          "timeUtc": "2026-10-18T02:00:47.229354Z",
+          "message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9MV0B5HZVK9Z-Microsoft.GamingApp.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WindowsUpdateClient",
+          "id": 20,
+          "level": 2,
+          "timeUtc": "2026-10-18T01:45:46.5486377Z",
+          "message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9MV0B5HZVK9Z-Microsoft.GamingApp.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-18T01:45:45.470217Z",
+          "message": "Faulting application name: MiracastPowerManager.exe, version: 0.0.0.0, time stamp: 0xa52be36e Faulting module name: ntdll.dll, version: 10.0.26100.9444, time stamp: 0x6bdf03ca Exception code: 0xc0000374 Fault offset: 0x0000000000117eb5 Faulting process id: 0x8640 Faulting application start time: 0x1DD5E98AC5110B5 Faulting application path: C:\\Windows\\System32\\MiracastPowerManager.exe Faulting module path: C:\\Windows\\SYSTEM32\\ntdll.dll Report Id: 565f1d12-a546-4151-b803-7ece8d5771a1 Faulting package full name: Faulting package-relative application ID:",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-18T00:32:25.0685469Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-18T00:31:40.8506016Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-18T00:31:40.8505811Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-17T23:47:58.8352696Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-17T23:47:58.7377255Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-17T23:47:58.7354961Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-17T23:42:23.0445268Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-17T23:42:22.9822466Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "Application",
+          "provider": "Universal Print",
+          "id": 1,
+          "level": 2,
+          "timeUtc": "2026-10-17T23:42:22.9802672Z",
+          "message": "Failed to GetUserSid. hr: 0x8001012d",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-17T23:38:46.8576339Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-17T23:38:46.8576172Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WindowsUpdateClient",
+          "id": 20,
+          "level": 2,
+          "timeUtc": "2026-10-17T23:01:43.5867503Z",
+          "message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9NMPJ99VJBWV-Microsoft.YourPhone.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WindowsUpdateClient",
+          "id": 20,
+          "level": 2,
+          "timeUtc": "2026-10-17T23:01:43.1852672Z",
+          "message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9MV0B5HZVK9Z-Microsoft.GamingApp.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WindowsUpdateClient",
+          "id": 20,
+          "level": 2,
+          "timeUtc": "2026-10-17T22:22:20.7010085Z",
+          "message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9MV0B5HZVK9Z-Microsoft.GamingApp.",
+          "data": {},
+          "levelName": "Error"
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WindowsUpdateClient",
+          "id": 20,
+          "level": 2,
+          "timeUtc": "2026-10-17T22:21:18.171342Z",
+          "message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9NMPJ99VJBWV-Microsoft.YourPhone.",
+          "data": {},
+          "levelName": "Error"
+        }
+      ],
+      "timelineDays": 7,
+      "unreadable": []
+    }
+  },
+  "crashes": {
+    "value": {
+      "dumps": [
+        {
+          "file": "C:\\Windows\\Minidump\\092326-15703-01.dmp",
+          "timeUtc": "2026-09-23T14:37:18.9795106Z",
+          "sizeBytes": 17126862,
+          "bugCheck": 281,
+          "parameters": [
+            1,
+            6028473,
+            6028653,
+            18446636362840662016
+          ]
+        }
+      ],
+      "crashDumpEnabled": 3,
+      "autoReboot": true,
+      "reports": [
+        {
+          "kind": "NonCritical",
+          "subject": "setup.exe",
+          "timeUtc": "2026-10-24T19:17:10.3457493Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "UnhandledExcepti",
+          "timeUtc": "2026-10-24T19:01:08.8724102Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Acquisition;TabT",
+          "timeUtc": "2026-10-20T19:01:42.5438146Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "MicrosoftEdgeUpd",
+          "timeUtc": "2026-10-20T17:12:47.0966227Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;",
+          "timeUtc": "2026-10-20T14:23:44.1637339Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-19T15:40:09.5360891Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-19T14:54:49.6704715Z",
+          "queued": false
+        },
+        {
+          "kind": "AppCrash",
+          "subject": "MiracastPowerMan",
+          "timeUtc": "2026-10-18T18:37:28.2955245Z",
+          "queued": false
+        },
+        {
+          "kind": "AppCrash",
+          "subject": "MiracastPowerMan",
+          "timeUtc": "2026-10-18T17:44:11.2144816Z",
+          "queued": false
+        },
+        {
+          "kind": "AppCrash",
+          "subject": "MiracastPowerMan",
+          "timeUtc": "2026-10-18T17:41:47.0834714Z",
+          "queued": false
+        },
+        {
+          "kind": "AppCrash",
+          "subject": "MiracastPowerMan",
+          "timeUtc": "2026-10-18T17:39:39.4373924Z",
+          "queued": false
+        },
+        {
+          "kind": "AppCrash",
+          "subject": "MiracastPowerMan",
+          "timeUtc": "2026-10-18T17:39:17.5102615Z",
+          "queued": false
+        },
+        {
+          "kind": "AppCrash",
+          "subject": "MiracastPowerMan",
+          "timeUtc": "2026-10-18T17:38:52.5174623Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "setup.exe",
+          "timeUtc": "2026-10-18T14:38:31.4354486Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-18T14:38:14.7825677Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-18T01:45:49.7817501Z",
+          "queued": false
+        },
+        {
+          "kind": "AppCrash",
+          "subject": "MiracastPowerMan",
+          "timeUtc": "2026-10-18T01:45:49.2012459Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-17T23:01:46.8196482Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-17T23:01:45.8686863Z",
+          "queued": false
+        },
+        {
+          "kind": "Critical",
+          "subject": "10.0.26100.9703",
+          "timeUtc": "2026-10-17T22:27:01.5996711Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-17T22:22:24.8701556Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-17T22:21:21.7448913Z",
+          "queued": false
+        },
+        {
+          "kind": "Critical",
+          "subject": "10.0.26100.9441",
+          "timeUtc": "2026-10-17T19:17:43.6540407Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-17T19:02:26.8885209Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-17T19:01:26.5124999Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-17T19:01:24.6964898Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-15T15:09:11.0191683Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-15T15:09:09.8463416Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-13T02:10:11.7828061Z",
+          "queued": false
+        },
+        {
+          "kind": "AppHang",
+          "subject": "Microsoft.Copilo",
+          "timeUtc": "2026-10-12T23:39:32.7801757Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "setup.exe",
+          "timeUtc": "2026-10-12T23:39:06.5128181Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-12T03:37:54.5203635Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-11T23:28:31.8277421Z",
+          "queued": false
+        },
+        {
+          "kind": "AppHang",
+          "subject": "Microsoft.Copilo",
+          "timeUtc": "2026-10-11T23:12:27.5032226Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "setup.exe",
+          "timeUtc": "2026-10-11T23:11:51.3406644Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "setup.exe",
+          "timeUtc": "2026-10-10T19:06:42.4138767Z",
+          "queued": false
+        },
+        {
+          "kind": "AppHang",
+          "subject": "Microsoft.Copilo",
+          "timeUtc": "2026-10-10T19:05:31.9908814Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "setup.exe",
+          "timeUtc": "2026-10-10T19:05:06.2018297Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;",
+          "timeUtc": "2026-10-08T23:23:50.196485Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;",
+          "timeUtc": "2026-10-08T23:23:49.4303258Z",
+          "queued": false
+        },
+        {
+          "kind": "AppHang",
+          "subject": "Microsoft.Copilo",
+          "timeUtc": "2026-10-08T22:52:03.6069802Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "setup.exe",
+          "timeUtc": "2026-10-08T22:51:37.1358389Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "setup.exe",
+          "timeUtc": "2026-10-08T22:50:41.173797Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-04T10:14:38.1076878Z",
+          "queued": false
+        },
+        {
+          "kind": "AppCrash",
+          "subject": "MiracastPowerMan",
+          "timeUtc": "2026-10-04T10:00:00.8722792Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-03T23:24:17.3384352Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-03T19:34:03.3512934Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "setup.exe",
+          "timeUtc": "2026-10-03T19:14:01.4368909Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-01T11:24:13.9830814Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-01T09:26:08.6656686Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-01T09:25:56.2567726Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-10-01T09:19:28.5567449Z",
+          "queued": false
+        },
+        {
+          "kind": "AppCrash",
+          "subject": "Trackmania.exe",
+          "timeUtc": "2026-10-01T08:17:35.4366199Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-09-29T16:56:11.0275557Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-09-26T21:31:58.1747157Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-09-26T20:20:34.1361587Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "setup.exe",
+          "timeUtc": "2026-09-26T19:40:38.9826307Z",
+          "queued": false
+        },
+        {
+          "kind": "NonCritical",
+          "subject": "Update;MoUpdateO",
+          "timeUtc": "2026-09-26T19:38:43.1556187Z",
+          "queued": false
+        }
+      ],
+      "queuedReports": 5
+    }
+  },
+  "health": {
+    "value": {
+      "services": [
+        {
+          "name": "wuauserv",
+          "displayName": "Windows Update",
+          "status": "Running",
+          "startType": "Manual"
+        },
+        {
+          "name": "BITS",
+          "displayName": "Background Intelligent Transfer Service",
+          "status": "Stopped",
+          "startType": "Manual"
+        },
+        {
+          "name": "Winmgmt",
+          "displayName": "Windows Management Instrumentation",
+          "status": "Running",
+          "startType": "Automatic"
+        },
+        {
+          "name": "EventLog",
+          "displayName": "Windows Event Log",
+          "status": "Running",
+          "startType": "Automatic"
+        },
+        {
+          "name": "CryptSvc",
+          "displayName": "Cryptographic Services",
+          "status": "Running",
+          "startType": "Automatic"
+        },
+        {
+          "name": "Audiosrv",
+          "displayName": "Windows Audio",
+          "status": "Running",
+          "startType": "Automatic"
+        },
+        {
+          "name": "AudioEndpointBuilder",
+          "displayName": "Windows Audio Endpoint Builder",
+          "status": "Running",
+          "startType": "Automatic"
+        },
+        {
+          "name": "Dhcp",
+          "displayName": "DHCP Client",
+          "status": "Running",
+          "startType": "Automatic"
+        },
+        {
+          "name": "Dnscache",
+          "displayName": "DNS Client",
+          "status": "Running",
+          "startType": "Automatic"
+        },
+        {
+          "name": "Spooler",
+          "displayName": "Print Spooler",
+          "status": "Running",
+          "startType": "Automatic"
+        },
+        {
+          "name": "W32Time",
+          "displayName": "Windows Time",
+          "status": "Stopped",
+          "startType": "Manual"
+        }
+      ],
+      "cbs": {
+        "cannotRepair": 0,
+        "repaired": 0,
+        "storeCorrupt": 0,
+        "lastWriteUtc": "2026-10-24T19:43:34.6527432Z"
+      },
+      "tempProfile": false,
+      "profileBackups": 0,
+      "stabilityIndex": 6.5199999999999996,
+      "stabilityLowest30Days": 2.3399999999999999
+    }
+  }
+}

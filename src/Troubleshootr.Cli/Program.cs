@@ -11,6 +11,7 @@ namespace Troubleshootr.Cli;
 /// troubleshootr collect --out file.snap.json [--full] [--anonymize]
 /// troubleshootr check   --snapshot file.snap.json [--json]
 /// troubleshootr anonymize --snapshot report-or-snapshot.json --out file.snap.json   (e.g. a report saved by an admin run)
+/// troubleshootr dump --file C:\Windows\Minidump\x.dmp [--drivers]   (reading the Minidump folder needs admin)
 /// </summary>
 public static class Program
 {
@@ -26,6 +27,7 @@ public static class Program
                 case "collect": return await Scan(a, snapshotOnly: true);
                 case "check": return CheckSnapshot(a);
                 case "anonymize": return AnonymizeFile(a);
+                case "dump": return Dump(a);
                 default:
                     Console.Error.WriteLine("Usage: troubleshootr scan|collect|check [options]. See Program.cs for the options.");
                     return 2;
@@ -79,6 +81,23 @@ public static class Program
         Anonymizer.Apply(snapshot);
         File.WriteAllText(outPath, Json.Serialize(snapshot));
         Console.WriteLine($"Anonymized snapshot written to {outPath}.");
+        return 0;
+    }
+
+    /// <summary>Shows what a crash dump says: bugcheck, parameters, the driver at fault and (with --drivers) the loaded drivers.</summary>
+    private static int Dump(Args a)
+    {
+        var path = a.Value("file") ?? throw new ArgumentException("dump needs --file <file.dmp>");
+        var dump = Collectors.Crashes.CrashesCollector.ReadDump(path, out var drivers);
+        if (dump.ParseError is { } err) { Console.WriteLine($"{path}: {err}"); return 1; }
+        var code = dump.BugCheck ?? 0;
+        Console.WriteLine($"{Path.GetFileName(path)}  {dump.TimeUtc.ToLocalTime():yyyy-MM-dd HH:mm}  {dump.SizeBytes:N0} bytes");
+        Console.WriteLine($"Bugcheck {BugChecks.Hex(code)} {BugChecks.Name(code)} ({string.Join(", ", dump.Parameters.Select(p => $"0x{p:X}"))})");
+        if (BugChecks.Lookup(code) is { } info) Console.WriteLine(info.Meaning);
+        Console.WriteLine($"Driver at fault: {dump.Driver ?? "not identified"}");
+        Console.WriteLine(drivers is null ? "Driver list: not found (not a 64-bit small dump)" : $"Driver list: {drivers.Count} drivers");
+        if (a.Flag("drivers") && drivers is not null)
+            foreach (var d in drivers) Console.WriteLine($"  0x{d.Base:X16}  {d.Size,10:N0}  {d.Name}");
         return 0;
     }
 

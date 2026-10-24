@@ -1,2 +1,26 @@
 Warning MEM-006: Memory is nearly full | 77% of RAM in use (7.2 GB free of 31.5 GB); commit 36.4 GB of 37.3 GB (98%).
 Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
+NotChecked CPU-005: Events: not collected in this scan
+NotChecked CPU-006: Events: not collected in this scan
+NotChecked CRA-001: Events: not collected in this scan
+NotChecked CRA-002: Events: not collected in this scan
+NotChecked CRA-003: Events: not collected in this scan
+NotChecked CRA-004: Crashes: not collected in this scan
+NotChecked CRA-006: Crashes: not collected in this scan
+NotChecked DRV-007: Events: not collected in this scan
+NotChecked GPU-004: Events: not collected in this scan
+NotChecked GPU-005: Events: not collected in this scan
+NotChecked MEM-007: Events: not collected in this scan
+NotChecked MEM-008: Events: not collected in this scan
+NotChecked MEM-009: Events: not collected in this scan
+NotChecked STO-007: Events: not collected in this scan
+NotChecked WIN-006: Health: not collected in this scan
+NotChecked WIN-007: Events: not collected in this scan
+NotChecked WIN-008: Events: not collected in this scan
+NotChecked WIN-009: Events: not collected in this scan
+NotChecked WIN-010: Health: not collected in this scan
+NotChecked WIN-013: Health: not collected in this scan
+NotChecked WIN-014: Events: not collected in this scan
+NotChecked WIN-015: Events: not collected in this scan
+NotChecked WIN-016: Events: not collected in this scan
+NotChecked WIN-017: Health: not collected in this scan

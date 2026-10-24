@@ -1,0 +1,8 @@
+Warning CRA-003: Some apps keep crashing | MiracastPowerManager.exe: 8 crashes (in ntdll.dll); mscopilot_proxy.exe: 4 hangs in the last 30 days.
+Warning MEM-006: Memory is nearly full | 81% of RAM in use (6.1 GB free of 31.5 GB); commit 37.6 GB of 38.3 GB (98%).
+Warning STO-007: Drive errors in the event log | In the last 30 days: file system errors reported 2 times on D:.
+Warning STO-009: Drive D:\ has file system errors | D:\ is marked dirty; Windows will check it at the next restart.
+Warning WIN-008: Windows takes a long time to start | Last boot took 115 s. Slowest to start: Microsoft Defender Antimalware Service (+151.3 s), Windows Driver Foundation - User-mode Driver Framework Host Process (+49.5 s), EA (+22.7 s).
+Warning WIN-009: A service keeps failing: MBAMService | MBAMService 3 times in 30 days.
+Info CPU-005: The processor's speed is being limited by the firmware | 40 speed-limit events in 30 days (Kernel-Processor-Power 37).
+Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.

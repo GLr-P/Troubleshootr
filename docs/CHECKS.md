@@ -15,7 +15,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | STO-004 | SSD wear (NVMe percentage used, ATA wear attributes E7/E9/A9/AD by vendor) | IOCTL | ✓ | W ≥ 80% used, C ≥ 100% | ✓ | 3 ✅ |
 | STO-005 | Drive temperature now (SMART C2 / NVMe composite) | IOCTL | ✓ | W HDD > 50 °C, NVMe > 70 °C; C above the drive's critical temp | ✓ | 3 ✅ |
 | STO-006 | Power-on hours and age context | IOCTL | ✓ | I; W HDD > 40,000 h | ✓ | 3 ✅ |
-| STO-007 | Disk errors in the System log (disk 7, 11, 51, 153; storahci/stornvme 129; Ntfs 55, 98) in 30 days | EVT | | C if bad-block events (7) are recent; W for timeouts/resets | ✓ | 3 |
+| STO-007 | Disk errors in the System log (disk 7, 11, 51, 153; storahci/stornvme 129; Ntfs 55, 98) in 30 days | EVT | | C if bad-block events (7) are recent; W for timeouts/resets | ✓ | 4 ✅ |
 | STO-008 | Volume free space (system drive and others) | API GetDiskFreeSpaceEx | | C system < 5% or < 5 GB; W < 15% | ✓ | 1 ✅ |
 | STO-009 | File system dirty bit / chkdsk scheduled | IOCTL FSCTL_IS_VOLUME_DIRTY | ✓ | W | ✓ | 3 ✅ |
 | STO-010 | Windows runs on an HDD (slow-PC cause no. 1) | WMI MSFT_PhysicalDisk MediaType / seek-penalty IOCTL | | W if the system drive is a spinning disk | ✓ | 3 ✅ |
@@ -40,9 +40,9 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | MEM-004 | Mismatched modules (size, speed, part number) | WMI | | I/W | ✓ | 1 ✅ |
 | MEM-005 | Single-channel population (one stick, or wrong slots) | WMI BankLabel/DeviceLocator heuristic | | I "dual channel would be faster" | ✓ | 1 ✅ |
 | MEM-006 | Memory pressure: commit near the limit (snapshot now; sustained sampling later) | API | | W > 90% committed or > 95% RAM used | ✓ | 1 ✅ |
-| MEM-007 | WHEA memory errors / corrected ECC events | EVT WHEA-Logger 19/47 | | C if uncorrected; W corrected | ✓ | 4 |
-| MEM-008 | Windows Memory Diagnostic past results | EVT MemoryDiagnostics-Results 1101/1102 | | C if errors found | ✓ | 4 |
-| MEM-009 | Bugchecks that point to RAM (0x1A, 0x50, 0x3B patterns across dumps) | Crashes section | | W "run a memory test" | ✓ | 4 |
+| MEM-007 | WHEA memory errors / corrected ECC events | EVT WHEA-Logger 19/47 | | C if uncorrected; W corrected | ✓ | 4 ✅ |
+| MEM-008 | Windows Memory Diagnostic past results | EVT MemoryDiagnostics-Results 1101/1102 | | C if errors found | ✓ | 4 ✅ |
+| MEM-009 | Bugchecks that point to RAM (0x1A, 0x50, 0x3B patterns across dumps) | Crashes section | | W "run a memory test" | ✓ | 4 ✅ |
 | MEM-010 | SPD data and XMP/EXPO profiles; actual primary timings | LHM/RAMSPDToolkit SPD (PawnIO); ZenStates-Core on AMD | ✓ | I (display) | | 9 |
 | MEM-011 | DIMM temperature (DDR5) | LHM | ✓ | W > 85 °C | | 9 |
 | MEM-012 | Launch the Windows Memory Diagnostic (fix action) | PROC mdsched | ✓ | n/a | | 12 |
@@ -55,9 +55,9 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | CPU-002 | Sustained high CPU usage and the top processes (3 s sample) | API | | W > 85% average | ✓ | 6 |
 | CPU-003 | Throttling: current clock far below base under load | WMI Win32_PerfFormattedData_Counters_ProcessorInformation (% Processor Performance) | | W | ✓ | 6 |
 | CPU-004 | Temperature: package / cores | LHM, fallback ACPI MSAcpi_ThermalZoneTemperature | ✓ | W > 90 °C, C > 100 °C or at TjMax | ✓ | 9 |
-| CPU-005 | Thermal-throttling events / kernel-power thermal events | EVT Kernel-Processor-Power 37, Kernel-Power 86? (verify ids) | | W | ✓ | 4 |
-| CPU-006 | WHEA CPU / cache / bus errors (machine checks: unstable OC or failing hardware) | EVT WHEA-Logger 18/19 | | C if fatal; W corrected | ✓ | 4 |
-| CPU-007 | Known-bad CPU microcode (Intel 13th/14th-gen Vmin instability: microcode < 0x12B) | REG microcode revision + model | | C on affected models below the fixed version | ✓ | 4 |
+| CPU-005 | Thermal-throttling events / kernel-power thermal events | EVT Kernel-Processor-Power 37 | | I on laptops (normal on battery); W on desktops with 5+ | ✓ | 4 ✅ |
+| CPU-006 | WHEA CPU / cache / bus errors (machine checks: unstable OC or failing hardware) | EVT WHEA-Logger 18/19 | | C if fatal; W corrected | ✓ | 4 ✅ |
+| CPU-007 | Known-bad CPU microcode (Intel 13th/14th-gen Vmin instability: microcode < 0x12B) | REG microcode revision + model | | C on affected models below the fixed version | ✓ | 4 ✅ |
 | CPU-008 | Power plan (Power saver on a desktop; max processor state < 100%) | API PowerGetActiveScheme / REG | | W | ✓ | 6 |
 | CPU-009 | Windows 11 CPU support (unsupported CPU = no feature updates) | lookup list | | I | | 5 |
 
@@ -68,8 +68,8 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | GPU-001 | GPUs: name, VRAM, driver version and date, which one is active | WMI Win32_VideoController, REG (VRAM over 4 GB is in the registry, not WMI) | | I | ✓ | 1 ✅ |
 | GPU-002 | Microsoft Basic Display Adapter in use (no GPU driver) | WMI | | C | ✓ | 5 |
 | GPU-003 | GPU driver older than about 12 months | WMI DriverDate | | I/W | ✓ | 5 |
-| GPU-004 | Driver timeouts / TDR resets (Display 4101, nvlddmkm 13/14/153, amdkmdag) | EVT | | W; C if many per day | ✓ | 4 |
-| GPU-005 | Bugchecks in GPU drivers (0x116, 0x119, nvlddmkm.sys / amdkmdag.sys in dumps) | Crashes section | | W | ✓ | 4 |
+| GPU-004 | Driver timeouts / TDR resets (Display 4101, nvlddmkm 13/14/153, amdkmdag) | EVT | | W; C if many per day | ✓ | 4 ✅ |
+| GPU-005 | Bugchecks in GPU drivers (0x116, 0x119, nvlddmkm.sys / amdkmdag.sys in dumps) | Crashes section | | W | ✓ | 4 ✅ |
 | GPU-006 | Monitor connected to the motherboard while a dedicated GPU exists (desktop) | API EnumDisplayDevices + adapter | | W | ✓ | 5 |
 | GPU-007 | Refresh rate below the monitor's maximum (144 Hz panel running at 60 Hz) | API EnumDisplaySettings | | I | ✓ | 5 |
 | GPU-008 | GPU temperature, hotspot, fan, load | LHM (NVAPI/ADL work without PawnIO) | | W > 85 °C core | | 9 |
@@ -85,18 +85,18 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | WIN-003 | Not activated | WMI SoftwareLicensingProduct LicenseStatus | | W | ✓ | 5 |
 | WIN-004 | Pending reboot (CBS, WU, PendingFileRenameOperations, ComputerName change) | REG | | W | ✓ | 1 ✅ |
 | WIN-005 | Uptime very long (no restart in > 14 days; Fast Startup hides it) | API GetTickCount64, REG HiberbootEnabled | | I "restart properly" | ✓ | 1 ✅ |
-| WIN-006 | Component store / system file corruption reported (CBS.log, DISM log, last SFC result) | FILE CBS.log tail | ✓ | W if corruption recorded | ✓ | 4 |
-| WIN-007 | Unexpected shutdowns (Kernel-Power 41, EventLog 6008) in 30 days | EVT | | W; C if > 5 | ✓ | 4 |
-| WIN-008 | Boot time and slow boot (Diagnostics-Performance 100 + degradation 101–110) | EVT | ✓ | W boot > 60 s; names the culprit app/driver | | 4 |
-| WIN-009 | Service failures (SCM 7000, 7001, 7009, 7023, 7031, 7034) summary | EVT | | W for repeated | ✓ | 4 |
-| WIN-010 | Important services stopped or disabled (Windows Update, BITS, WMI, Spooler, Audio, DHCP, DNS client, Defender, Time) | API ServiceController | | W | ✓ | 4 |
+| WIN-006 | Component store / system file corruption reported (CBS.log, DISM log, last SFC result) | FILE CBS.log tail | ✓ | W if corruption recorded | ✓ | 4 ✅ |
+| WIN-007 | Unexpected shutdowns (Kernel-Power 41, EventLog 6008) in 30 days | EVT | | W; C if > 5 | ✓ | 4 ✅ |
+| WIN-008 | Boot time and slow boot (Diagnostics-Performance 100 + degradation 101–110) | EVT | ✓ | W boot > 60 s; names the culprit app/driver | | 4 ✅ |
+| WIN-009 | Service failures (SCM 7000, 7001, 7009, 7023, 7031, 7034) summary | EVT | | W for repeated | ✓ | 4 ✅ |
+| WIN-010 | Important services stopped or disabled (Windows Update, BITS, WMI, Spooler, Audio, DHCP, DNS client, Defender, Time) | API ServiceController | | W | ✓ | 4 ✅ |
 | WIN-011 | WMI repository broken (the collectors fail) | collector failures | | W "repair WMI" | ✓ | 1 ✅ |
 | WIN-012 | Wrong system time / time sync failing | API + EVT Time-Service | | W > 2 min off | ✓ | 7 |
-| WIN-013 | User profile problems (temp profile, User Profile Service 1511/1515) | EVT / REG ProfileList .bak | | C on a temp profile | ✓ | 4 |
-| WIN-014 | Low virtual memory events (Resource-Exhaustion-Detector 2004) | EVT | | W | ✓ | 4 |
-| WIN-015 | Group Policy errors (1085, 1096, 1129) | EVT | | I | | 4 |
-| WIN-016 | Search indexer / Explorer crash loops | Crashes section | | W | | 4 |
-| WIN-017 | Reliability Monitor stability index and history | WMI Win32_ReliabilityStabilityMetrics / Records | | I/W | | 4 |
+| WIN-013 | User profile problems (temp profile, User Profile Service 1511/1515) | EVT / REG ProfileList .bak | | C on a temp profile | ✓ | 4 ✅ |
+| WIN-014 | Low virtual memory events (Resource-Exhaustion-Detector 2004) | EVT | | W | ✓ | 4 ✅ |
+| WIN-015 | Group Policy errors (1085, 1096, 1129) | EVT | | I | | 4 ✅ |
+| WIN-016 | Search indexer / Explorer crash loops | Crashes section | | W | | 4 ✅ |
+| WIN-017 | Reliability Monitor stability index and history | WMI Win32_ReliabilityStabilityMetrics / Records | | I/W | | 4 ✅ |
 | WIN-018 | Firmware: UEFI vs legacy boot, Secure Boot, TPM version, Windows 11 readiness | API GetFirmwareType, REG SecureBoot, WMI Win32_Tpm | | I | ✓ | 5 |
 
 ## Updates (UPD)
@@ -121,7 +121,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | DRV-004 | Unsigned or test-signed drivers, test-signing mode on | SetupAPI / BCD (REG) | ✓ | W | ✓ | 5 |
 | DRV-005 | Very old chipset / storage / network drivers (generic Microsoft driver where a vendor one is needed) | driver list | | I | | 5 |
 | DRV-006 | Known-problem drivers (old Realtek audio, Killer network, vulnerable drivers on Microsoft's blocklist, old WinRing0 copies) | small lookup table | | W | ✓ | 5 |
-| DRV-007 | Drivers that crashed the PC (driver names from the minidumps) | Crashes section | | W | ✓ | 4 |
+| DRV-007 | Drivers that crashed the PC (driver names from the minidumps) | Crashes section | | W | ✓ | 4 ✅ |
 | DRV-008 | Driver install failures (Kernel-PnP 219, 411; DeviceSetupManager) | EVT | | I/W | | 5 |
 | DRV-009 | USB problems: connect/disconnect storms, power-surge events, selective suspend | EVT Kernel-PnP / USB + REG | | W | | 10 |
 | DRV-010 | Ghost devices from old hardware (hidden non-present devices) | SetupAPI | | I | | 5 |
@@ -130,13 +130,13 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| CRA-001 | Blue screens: list from minidump files + BugCheck 1001 events (code, meaning, parameters, driver at fault) | FILE C:\Windows\Minidump (header parse), EVT | ✓ | C if > 2 in 30 days; W any | ✓ | 4 |
-| CRA-002 | Pattern across BSODs (same driver or code → likely cause; different codes → suspect RAM/PSU/overclock) | derived | | W | ✓ | 4 |
-| CRA-003 | Application crashes and hangs (Application Error 1000, Hang 1002, .NET Runtime 1026) grouped by app | EVT | | W for repeated | ✓ | 4 |
-| CRA-004 | Windows Error Reporting queue and archive summary | FILE ProgramData\Microsoft\Windows\WER | | I | | 4 |
-| CRA-005 | Error timeline (all critical/error events for the last 7 days, filterable; the "event viewer that makes sense") | EVT | | I (display) | | 4 |
-| CRA-006 | Crash-dump settings (dumps disabled, so BSODs leave no trace) | REG CrashControl | | I | ✓ | 4 |
-| CRA-007 | Bugcheck code explanations (table of the ~60 common codes) | data file | | n/a | | 4 |
+| CRA-001 | Blue screens: list from minidump files + BugCheck 1001 events (code, meaning, parameters, driver at fault) | FILE C:\Windows\Minidump (header parse), EVT | ✓ | C if > 2 in 30 days; W any | ✓ | 4 ✅ |
+| CRA-002 | Pattern across BSODs (same driver or code → likely cause; different codes → suspect RAM/PSU/overclock) | derived | | W | ✓ | 4 ✅ |
+| CRA-003 | Application crashes and hangs (Application Error 1000, Hang 1002, .NET Runtime 1026) grouped by app | EVT | | W for repeated | ✓ | 4 ✅ |
+| CRA-004 | Windows Error Reporting queue and archive summary | FILE ProgramData\Microsoft\Windows\WER | | I | | 4 ✅ |
+| CRA-005 | Error timeline (all critical/error events for the last 7 days, filterable; the "event viewer that makes sense") | EVT | | I (display) | | 4 ✅ |
+| CRA-006 | Crash-dump settings (dumps disabled, so BSODs leave no trace) | REG CrashControl | | I | ✓ | 4 ✅ |
+| CRA-007 | Bugcheck code explanations (table of the ~60 common codes) | data file | | n/a | | 4 ✅ |
 
 ## Performance and startup (PRF)
 

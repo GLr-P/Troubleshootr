@@ -43,7 +43,7 @@ public static class Screenshots
             foreach (var page in pages)
             {
                 shell.Show(page);
-                var file = Path.Combine(outDir, $"{name}_{page.ToLowerInvariant()}_{t}.png");
+                var file = Path.Combine(outDir, $"{name}_{System.Text.RegularExpressions.Regex.Replace(page.ToLowerInvariant(), "[^a-z0-9]+", "-")}_{t}.png");
                 Render(shell, file);
                 Console.WriteLine(file);
             }

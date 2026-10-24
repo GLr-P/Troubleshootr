@@ -36,9 +36,13 @@ public sealed class CpuCollector : Collector<CpuInfo>
         return info;
     }
 
-    /// <summary>"Update Revision" is 8 bytes; Intel keeps the revision in the high dword, AMD in the low one.</summary>
-    private static string? Microcode(object? raw)
+    /// <summary>
+    /// "Update Revision" is 8 bytes on older Windows (Intel keeps the revision in the high dword, AMD in the low one) and
+    /// 4 bytes holding just the revision on current Windows 11 (the owner's Core Ultra: 1E 00 00 00 = 0x1E).
+    /// </summary>
+    internal static string? Microcode(object? raw)
     {
+        if (raw is byte[] { Length: 4 } four) return BitConverter.ToUInt32(four, 0) is var r4 and not 0 ? $"0x{r4:X}" : null;
         if (raw is not byte[] { Length: 8 } b) return null;
         var high = BitConverter.ToUInt32(b, 4);
         var low = BitConverter.ToUInt32(b, 0);

@@ -32,6 +32,9 @@ public static class Snap
         ]),
         Cpu = Section<CpuInfo>.Of(new CpuInfo { Packages = [new() { Name = "Test CPU", Cores = 8, Threads = 16 }] }),
         Gpus = Section<List<GpuInfo>>.Of([new() { Name = "Test GPU" }]),
+        Events = Section<EventsInfo>.Of(new EventsInfo()),
+        Crashes = Section<CrashInfo>.Of(new CrashInfo { CrashDumpEnabled = 7, AutoReboot = true }),
+        Health = Section<WindowsHealthInfo>.Of(new WindowsHealthInfo { StabilityIndex = 9.5, Cbs = new CbsSummary() }),
     };
 
     public const long GB = 1073741824L;
@@ -39,4 +42,19 @@ public static class Snap
     public static Snapshot With(this Snapshot s, Action<Snapshot> change) { change(s); return s; }
     public static SystemInfo Sys(this Snapshot s) => s.System!.Value!;
     public static MemoryInfo Mem(this Snapshot s) => s.Memory!.Value!;
+    public static EventsInfo Evs(this Snapshot s) => s.Events!.Value!;
+
+    /// <summary>Adds an event &lt;daysAgo&gt; before the snapshot time.</summary>
+    public static Snapshot Event(this Snapshot s, string provider, int id, double daysAgo = 1, string? message = null, int level = 2,
+        Dictionary<string, string>? data = null, string log = "System")
+    {
+        s.Evs().Events.Add(new LogEvent { Log = log, Provider = provider, Id = id, Level = level, TimeUtc = Now.AddDays(-daysAgo), Message = message, Data = data ?? new() });
+        return s;
+    }
+
+    public static Snapshot Events(this Snapshot s, int count, string provider, int id, double everyDays = 0.1, string? message = null, int level = 2, Func<int, Dictionary<string, string>>? data = null)
+    {
+        for (var i = 0; i < count; i++) s.Event(provider, id, 0.5 + i * everyDays, message, level, data?.Invoke(i));
+        return s;
+    }
 }

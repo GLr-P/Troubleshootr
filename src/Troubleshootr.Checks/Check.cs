@@ -13,6 +13,9 @@ public abstract class Check : ICheck
     protected Finding F(Severity severity, string title, string evidence, string advice, string? fix = null) =>
         new(Id, Category, severity, title, evidence, advice, fix);
 
+    /// <summary>"1 error", "3 errors".</summary>
+    protected static string N(int n, string one, string? many = null) => $"{n} {(n == 1 ? one : many ?? one + "s")}";
+
     protected static string Gb(long bytes) => $"{bytes / 1073741824.0:0.#} GB";
     protected static string GbFromMb(long mb) => $"{mb / 1024.0:0.#} GB";
 }

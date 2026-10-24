@@ -10,23 +10,48 @@ public static class Anonymizer
 
     public static void Apply(Snapshot s)
     {
-        Walk(s);
+        // Free text (event messages, file paths) can mention the user or PC by name; replace those names wherever they appear.
+        var sys = s.System?.Value;
+        var names = new[] { sys?.UserName, sys?.DeviceName, sys?.Domain, Environment.UserName, Environment.MachineName }
+            .Where(n => n is { Length: >= 3 } && n != Redacted).Select(n => n!).Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderByDescending(n => n.Length).ToList();
+        Walk(s, names);
         s.Meta.Anonymized = true;
     }
 
-    private static void Walk(object? node)
+    private static readonly System.Text.RegularExpressions.Regex UserPath =
+        new(@"(?<=\\Users\\)(?!Public\\|Default\\|All Users\\)[^\\""<>|]+", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+    /// <summary>Removes user and device names from free text.</summary>
+    public static string Scrub(string text, IReadOnlyList<string> names)
+    {
+        text = UserPath.Replace(text, "[user]");
+        foreach (var n in names)
+            text = System.Text.RegularExpressions.Regex.Replace(text, System.Text.RegularExpressions.Regex.Escape(n), "[redacted]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+        return text;
+    }
+
+    private static void Walk(object? node, IReadOnlyList<string> names)
     {
         if (node is null || node is string || node.GetType().IsPrimitive || node is DateTime) return;
-        if (node is IEnumerable list) { foreach (var item in list) Walk(item); return; }
+        if (node is Dictionary<string, string> dict)
+        {
+            foreach (var k in dict.Keys.ToList()) dict[k] = Scrub(dict[k], names);
+            return;
+        }
+        if (node is IEnumerable list) { foreach (var item in list) Walk(item, names); return; }
         foreach (var p in node.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
         {
             if (p.GetIndexParameters().Length > 0 || !p.CanRead) continue;
             if (p.PropertyType == typeof(string))
             {
-                if (p.CanWrite && p.GetCustomAttribute<SensitiveAttribute>() is not null && p.GetValue(node) is string { Length: > 0 })
-                    p.SetValue(node, Redacted);
+                if (!p.CanWrite || p.GetValue(node) is not string { Length: > 0 } value) continue;
+                if (p.GetCustomAttribute<SensitiveAttribute>() is not null) p.SetValue(node, Redacted);
+                else if (p.GetCustomAttribute<FreeTextAttribute>() is not null) p.SetValue(node, Scrub(value, names));
             }
-            else if (!p.PropertyType.IsValueType) Walk(p.GetValue(node));
+            else if (p.PropertyType == typeof(List<string>) && p.GetCustomAttribute<FreeTextAttribute>() is not null && p.GetValue(node) is List<string> strings)
+                for (var i = 0; i < strings.Count; i++) strings[i] = Scrub(strings[i], names);
+            else if (!p.PropertyType.IsValueType) Walk(p.GetValue(node), names);
         }
     }
 }

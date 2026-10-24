@@ -37,3 +37,7 @@ public sealed class Section<T> where T : class
 /// <summary>Marks a string property that identifies a person or device; the anonymizer blanks it.</summary>
 [AttributeUsage(AttributeTargets.Property)]
 public sealed class SensitiveAttribute : Attribute { }
+
+/// <summary>Marks free text (messages, paths) that may contain user or device names; the anonymizer scrubs those names out.</summary>
+[AttributeUsage(AttributeTargets.Property)]
+public sealed class FreeTextAttribute : Attribute { }

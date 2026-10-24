@@ -38,9 +38,9 @@
     "value": {
       "packages": [
         {
-          "name": "Intel(R) Core(TM) Ultra 7 155H",
+          "name": "13th Gen Intel(R) Core(TM) i9-13900K",
           "manufacturer": "GenuineIntel",
-          "identifier": "Intel64 Family 6 Model 170 Stepping 4",
+          "identifier": "Intel64 Family 6 Model 183 Stepping 1",
           "cores": 16,
           "threads": 22,
           "maxClockMhz": 3800,
@@ -48,7 +48,8 @@
           "socket": "U3E1",
           "l2KB": 18432,
           "l3KB": 24576,
-          "virtualizationFirmwareEnabled": false
+          "virtualizationFirmwareEnabled": false,
+          "microcode": "0x119"
         }
       ]
     }
@@ -261,6 +262,510 @@
       ],
       "virtualDisks": [],
       "trimDisabled": true
+    }
+  },
+  "events": {
+    "value": {
+      "days": 30,
+      "events": [
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-24T08:18:33.771Z",
+          "message": "Faulting application name: explorer.exe",
+          "data": {
+            "AppName": "explorer.exe",
+            "ModuleName": "ShellExt.dll"
+          }
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-23T20:18:33.771Z",
+          "message": "Faulting application name: PhotoEditor.exe",
+          "data": {
+            "AppName": "PhotoEditor.exe",
+            "ModuleName": "gpu_helper.dll"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "Display",
+          "id": 4101,
+          "level": 3,
+          "timeUtc": "2026-10-23T20:18:33.771Z",
+          "message": "Display driver nvlddmkm stopped responding and has successfully recovered.",
+          "data": {}
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 100,
+          "level": 2,
+          "timeUtc": "2026-10-23T20:18:33.771Z",
+          "message": "Windows has started up",
+          "data": {
+            "BootTime": "98000"
+          }
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 101,
+          "level": 3,
+          "timeUtc": "2026-10-23T20:18:33.771Z",
+          "message": "This application took longer than usual to start up",
+          "data": {
+            "Name": "GameLauncher.exe",
+            "FriendlyName": "Game Launcher",
+            "DegradationTime": "21500"
+          }
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-23T08:18:33.771Z",
+          "message": "Faulting application name: explorer.exe",
+          "data": {
+            "AppName": "explorer.exe",
+            "ModuleName": "ShellExt.dll"
+          }
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-22T20:18:33.771Z",
+          "message": "Faulting application name: PhotoEditor.exe",
+          "data": {
+            "AppName": "PhotoEditor.exe",
+            "ModuleName": "gpu_helper.dll"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "disk",
+          "id": 7,
+          "level": 2,
+          "timeUtc": "2026-10-22T20:18:33.771Z",
+          "message": "The device, \\Device\\Harddisk1\\DR1, has a bad block.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Display",
+          "id": 4101,
+          "level": 3,
+          "timeUtc": "2026-10-22T20:18:33.771Z",
+          "message": "Display driver nvlddmkm stopped responding and has successfully recovered.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7031,
+          "level": 2,
+          "timeUtc": "2026-10-22T20:18:33.771Z",
+          "message": "The Contoso Updater service terminated unexpectedly.",
+          "data": {
+            "param1": "Contoso Updater"
+          }
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-22T08:18:33.771Z",
+          "message": "Faulting application name: explorer.exe",
+          "data": {
+            "AppName": "explorer.exe",
+            "ModuleName": "ShellExt.dll"
+          }
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-21T20:18:33.771Z",
+          "message": "Faulting application name: PhotoEditor.exe",
+          "data": {
+            "AppName": "PhotoEditor.exe",
+            "ModuleName": "gpu_helper.dll"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "storahci",
+          "id": 129,
+          "level": 3,
+          "timeUtc": "2026-10-21T20:18:33.771Z",
+          "message": "Reset to device, \\Device\\RaidPort0, was issued.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Display",
+          "id": 4101,
+          "level": 3,
+          "timeUtc": "2026-10-21T20:18:33.771Z",
+          "message": "Display driver nvlddmkm stopped responding and has successfully recovered.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7031,
+          "level": 2,
+          "timeUtc": "2026-10-21T20:18:33.771Z",
+          "message": "The Contoso Updater service terminated unexpectedly.",
+          "data": {
+            "param1": "Contoso Updater"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-GroupPolicy",
+          "id": 1129,
+          "level": 2,
+          "timeUtc": "2026-10-21T20:18:33.771Z",
+          "message": "The processing of Group Policy failed because of lack of network connectivity to a domain controller.",
+          "data": {}
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-20T20:18:33.771Z",
+          "message": "Faulting application name: PhotoEditor.exe",
+          "data": {
+            "AppName": "PhotoEditor.exe",
+            "ModuleName": "gpu_helper.dll"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "storahci",
+          "id": 129,
+          "level": 3,
+          "timeUtc": "2026-10-20T20:18:33.771Z",
+          "message": "Reset to device, \\Device\\RaidPort0, was issued.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WHEA-Logger",
+          "id": 19,
+          "level": 3,
+          "timeUtc": "2026-10-20T20:18:33.771Z",
+          "message": "A corrected hardware error has occurred. Reported by component: Processor Core Error Source: Corrected Machine Check Error Type: Cache Hierarchy Error Processor APIC ID: 6",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-WHEA-Logger",
+          "id": 47,
+          "level": 3,
+          "timeUtc": "2026-10-20T20:18:33.771Z",
+          "message": "A corrected hardware error has occurred. Component: Memory Error Source: Corrected Machine Check",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Display",
+          "id": 4101,
+          "level": 3,
+          "timeUtc": "2026-10-20T20:18:33.771Z",
+          "message": "Display driver nvlddmkm stopped responding and has successfully recovered.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7031,
+          "level": 2,
+          "timeUtc": "2026-10-20T20:18:33.771Z",
+          "message": "The Contoso Updater service terminated unexpectedly.",
+          "data": {
+            "param1": "Contoso Updater"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "storahci",
+          "id": 129,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:18:33.771Z",
+          "message": "Reset to device, \\Device\\RaidPort0, was issued.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Resource-Exhaustion-Detector",
+          "id": 2004,
+          "level": 3,
+          "timeUtc": "2026-10-19T20:18:33.771Z",
+          "message": "Windows successfully diagnosed a low virtual memory condition. The following programs consumed the most virtual memory: chrome.exe (8124) consumed 12884901888 bytes, PhotoEditor.exe (4410) consumed 4294967296 bytes.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Power",
+          "id": 41,
+          "level": 1,
+          "timeUtc": "2026-10-18T20:18:33.771Z",
+          "message": "The system has rebooted without cleanly shutting down first.",
+          "data": {
+            "BugcheckCode": "0",
+            "LongPowerButtonPressDetected": "false"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-MemoryDiagnostics-Results",
+          "id": 1202,
+          "level": 2,
+          "timeUtc": "2026-10-16T20:18:33.771Z",
+          "message": "The Windows Memory Diagnostic tested the computer's memory and detected hardware errors.",
+          "data": {}
+        },
+        {
+          "log": "Application",
+          "provider": "Microsoft-Windows-User Profiles Service",
+          "id": 1515,
+          "level": 3,
+          "timeUtc": "2026-10-15T20:18:33.771Z",
+          "message": "Windows has backed up this user's profile.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-Kernel-Power",
+          "id": 41,
+          "level": 1,
+          "timeUtc": "2026-10-13T20:18:33.771Z",
+          "message": "The system has rebooted without cleanly shutting down first.",
+          "data": {
+            "BugcheckCode": "0",
+            "LongPowerButtonPressDetected": "false"
+          }
+        }
+      ],
+      "timeline": [
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-24T08:18:33.771Z",
+          "message": "Faulting application name: explorer.exe",
+          "data": {}
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-23T20:18:33.771Z",
+          "message": "Faulting application name: PhotoEditor.exe",
+          "data": {}
+        },
+        {
+          "log": "Diagnostics-Performance",
+          "provider": "Microsoft-Windows-Diagnostics-Performance",
+          "id": 100,
+          "level": 2,
+          "timeUtc": "2026-10-23T20:18:33.771Z",
+          "message": "Windows has started up",
+          "data": {}
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-23T08:18:33.771Z",
+          "message": "Faulting application name: explorer.exe",
+          "data": {}
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-22T20:18:33.771Z",
+          "message": "Faulting application name: PhotoEditor.exe",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "disk",
+          "id": 7,
+          "level": 2,
+          "timeUtc": "2026-10-22T20:18:33.771Z",
+          "message": "The device, \\Device\\Harddisk1\\DR1, has a bad block.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7031,
+          "level": 2,
+          "timeUtc": "2026-10-22T20:18:33.771Z",
+          "message": "The Contoso Updater service terminated unexpectedly.",
+          "data": {}
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-22T08:18:33.771Z",
+          "message": "Faulting application name: explorer.exe",
+          "data": {}
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-21T20:18:33.771Z",
+          "message": "Faulting application name: PhotoEditor.exe",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7031,
+          "level": 2,
+          "timeUtc": "2026-10-21T20:18:33.771Z",
+          "message": "The Contoso Updater service terminated unexpectedly.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-GroupPolicy",
+          "id": 1129,
+          "level": 2,
+          "timeUtc": "2026-10-21T20:18:33.771Z",
+          "message": "The processing of Group Policy failed because of lack of network connectivity to a domain controller.",
+          "data": {}
+        },
+        {
+          "log": "Application",
+          "provider": "Application Error",
+          "id": 1000,
+          "level": 2,
+          "timeUtc": "2026-10-20T20:18:33.771Z",
+          "message": "Faulting application name: PhotoEditor.exe",
+          "data": {}
+        }
+      ],
+      "timelineDays": 7,
+      "unreadable": []
+    }
+  },
+  "crashes": {
+    "value": {
+      "dumps": [
+        {
+          "file": "C:\\Windows\\Minidump\\1.dmp",
+          "timeUtc": "2026-10-23T20:18:33.771Z",
+          "sizeBytes": 1048576,
+          "bugCheck": 209,
+          "parameters": [
+            0,
+            2,
+            0,
+            0
+          ],
+          "driver": "contosonet.sys"
+        },
+        {
+          "file": "C:\\Windows\\Minidump\\4.dmp",
+          "timeUtc": "2026-10-20T20:18:33.771Z",
+          "sizeBytes": 1048576,
+          "bugCheck": 26,
+          "parameters": [
+            0,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "file": "C:\\Windows\\Minidump\\9.dmp",
+          "timeUtc": "2026-10-15T20:18:33.771Z",
+          "sizeBytes": 1048576,
+          "bugCheck": 278,
+          "parameters": [
+            0,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "file": "C:\\Windows\\Minidump\\15.dmp",
+          "timeUtc": "2026-10-09T20:18:33.771Z",
+          "sizeBytes": 1048576,
+          "bugCheck": 59,
+          "parameters": [
+            0,
+            2,
+            0,
+            0
+          ]
+        }
+      ],
+      "crashDumpEnabled": 7,
+      "autoReboot": true,
+      "reports": [
+        {
+          "kind": "LiveKernelEvent",
+          "subject": "141",
+          "timeUtc": "2026-10-22T20:18:33.771Z",
+          "queued": true
+        }
+      ],
+      "queuedReports": 1
+    }
+  },
+  "health": {
+    "value": {
+      "services": [
+        {
+          "name": "wuauserv",
+          "displayName": "Windows Update",
+          "status": "Stopped",
+          "startType": "Disabled"
+        },
+        {
+          "name": "Audiosrv",
+          "displayName": "Windows Audio",
+          "status": "Running",
+          "startType": "Automatic"
+        }
+      ],
+      "cbs": {
+        "cannotRepair": 3,
+        "repaired": 0,
+        "storeCorrupt": 1,
+        "lastWriteUtc": "2026-10-22T20:18:33.771Z"
+      },
+      "tempProfile": false,
+      "profileBackups": 0,
+      "stabilityIndex": 2.4,
+      "stabilityLowest30Days": 1.2
     }
   }
 }

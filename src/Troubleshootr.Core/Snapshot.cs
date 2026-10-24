@@ -16,6 +16,9 @@ public sealed class Snapshot
     public Section<List<VolumeInfo>>? Volumes { get; set; }
     public Section<List<GpuInfo>>? Gpus { get; set; }
     public Section<StorageInfo>? Storage { get; set; }
+    public Section<EventsInfo>? Events { get; set; }
+    public Section<CrashInfo>? Crashes { get; set; }
+    public Section<WindowsHealthInfo>? Health { get; set; }
 
     public static readonly IReadOnlyList<string> SectionNames = typeof(Snapshot).GetProperties()
         .Where(p => p.PropertyType.IsGenericType && p.PropertyType.GetGenericTypeDefinition() == typeof(Section<>))

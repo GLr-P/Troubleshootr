@@ -1,6 +1,18 @@
+Critical CPU-007: This Intel processor needs a BIOS update to stop permanent damage | 13th Gen Intel(R) Core(TM) i9-13900K runs microcode 0x119; Intel's fix for 13th/14th-gen instability is 0x12B or newer.
+Critical CRA-001: The PC had 4 blue screens in the last 30 days | 2026-10-23 0xD1 DRIVER_IRQL_NOT_LESS_OR_EQUAL in contosonet.sys; 2026-10-20 0x1A MEMORY_MANAGEMENT; 2026-10-15 0x116 VIDEO_TDR_FAILURE; and 1 more. Latest: A driver touched memory it wasn't allowed to; network, Wi-Fi and antivirus drivers are common causes.
+Critical MEM-008: Windows Memory Diagnostic found RAM errors | Memory test failed on 2026-10-16.
 Critical STO-002: Disk 1 (WDC WD10EZEX-08WN4A0) has unreadable sectors | Reallocated: 312, pending: 24, uncorrectable: 8.
+Critical STO-007: A drive reported bad blocks | In the last 30 days: bad blocks once (disk 1); timeouts or resets 3 times.
 Critical STO-008: System drive C:\ is almost full | C:\ has 27.8 GB free of 925.9 GB (3%).
+Warning CPU-006: The processor reported corrected hardware errors | 1 WHEA processor event in 30 days: Cache Hierarchy Error.
+Warning CRA-002: Blue screens with different causes each time | 4 crashes with 4 different codes: DRIVER_IRQL_NOT_LESS_OR_EQUAL ×1, MEMORY_MANAGEMENT ×1, VIDEO_TDR_FAILURE ×1, SYSTEM_SERVICE_EXCEPTION ×1.
+Warning CRA-003: PhotoEditor.exe keeps crashing | PhotoEditor.exe: 4 crashes (in gpu_helper.dll) in the last 30 days.
+Warning DRV-007: A driver crashed the PC: contosonet.sys | contosonet.sys once in the last 30 days (from the crash dumps).
+Warning GPU-004: The graphics driver keeps resetting | 4 graphics driver timeouts or errors in 30 days (up to 1 in one day).
+Warning GPU-005: The graphics driver crashed the PC | 2026-10-15 0x116 VIDEO_TDR_FAILURE.
 Warning MEM-006: Memory is nearly full | 98% of RAM in use (0.6 GB free of 31.5 GB); commit 36.4 GB of 37.3 GB (98%).
+Warning MEM-007: The RAM reported corrected errors | 1 WHEA memory error event in 30 days.
+Warning MEM-009: Crashes point to a memory problem | 1 of 4 blue screens in 30 days has a memory-type code: MEMORY_MANAGEMENT.
 Warning STO-003: Disk 0 (Micron_2400_MTFDKBA1T0QFM) has recorded media errors | 4 media and data integrity errors; spare 100%.
 Warning STO-004: Disk 0 (Micron_2400_MTFDKBA1T0QFM) is wearing out | 86% of rated endurance used. 4.8 TB written.
 Warning STO-005: Disk 0 (Micron_2400_MTFDKBA1T0QFM) runs hot | 73 °C now (comfortable below 70 °C).
@@ -10,8 +22,19 @@ Warning STO-011: TRIM is turned off for SSDs | DisableDeleteNotification = 1 (NT
 Warning STO-013: Windows reports a health warning on Disk 1 (WDC WD10EZEX-08WN4A0) | Health: Warning. Status: Predictive Failure.
 Warning WIN-002: This Windows version no longer gets security updates | Windows 11 Home 24H2 (build 26100.9711): support ended 2026-10-13.
 Warning WIN-004: A restart is pending | Waiting on: Windows Update.
+Warning WIN-006: Windows system files are damaged | CBS.log (last 90 days): 3 files SFC couldn't repair; 1 component store corruption entry.
+Warning WIN-007: The PC shut down unexpectedly 2 times | 2 unexpected shutdowns in 30 days (Kernel-Power 41 / EventLog 6008). Latest 2026-10-18 13:18.
+Warning WIN-008: Windows takes a long time to start | Last boot took 98 s. Slowest to start: Game Launcher (+21.5 s).
+Warning WIN-009: A service keeps failing: Contoso Updater | Contoso Updater 3 times in 30 days.
+Warning WIN-010: Important Windows services are off | Windows Update is disabled.
 Warning WIN-011: Windows Management Instrumentation (WMI) isn't working properly | Gpus: WMI: 0x80041010 in root\cimv2 (SELECT Name FROM Win32_VideoController)
+Warning WIN-013: Windows had trouble loading a user profile | 1 User Profile Service warning in 30 days.
+Warning WIN-014: Windows ran low on memory | Low virtual memory warnings once in 30 days. The following programs consumed the most virtual memory: chrome.exe (8124) consumed 12884901888 bytes, PhotoEditor.exe (4410) consumed 4294967296 bytes.
+Warning WIN-016: Windows Explorer or the Start menu keeps crashing | explorer.exe 3 times in the last 7 days.
+Warning WIN-017: Windows has been unstable lately | Reliability Monitor stability index 2.4 of 10 (lowest in 30 days: 1.2).
+Info CRA-004: Windows recorded hardware or driver error reports | recovered problem 0x141 VIDEO_ENGINE_TIMEOUT_DETECTED ×1 in the last 30 days.
 Info MEM-003: RAM runs below its rated speed | Running at 4800 MT/s; the modules are rated for 6000 MT/s (F5-6000J3038F16G).
 Info MEM-005: RAM runs in single channel | 1 stick (4 GB LPDDR5) in a board with 2 slots.
 Info PER-007: The BIOS is old | American Megatrends International, LLC. E1595IMS.10B, dated 2021-03-01 (5.7 years old).
 Info WIN-005: The PC hasn't restarted in a long time | Up for 40 days. Fast Startup is on, so Shut down doesn't count; only Restart does.
+Info WIN-015: Group Policy is failing to apply | 1 Group Policy error in 30 days (ids 1129).
