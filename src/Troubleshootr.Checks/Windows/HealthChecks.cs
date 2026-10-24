@@ -45,7 +45,7 @@ public sealed class Win007UnexpectedShutdowns : Check
         var button = kp41.Count(e => e.Get("LongPowerButtonPressDetected") == "true");
         var severity = count > CriticalCount ? Severity.Critical : count >= 2 ? Severity.Warning : Severity.Info;
         yield return F(severity, count == 1 ? "The PC shut down unexpectedly" : $"The PC shut down unexpectedly {count} times",
-            $"{count} unexpected shutdowns in 30 days (Kernel-Power 41 / EventLog 6008){(button > 0 ? $"; {button} by holding the power button" : "")}. Latest {kp41.Concat(e6008).Max(e => e.TimeUtc).ToLocalTime():yyyy-MM-dd HH:mm}.",
+            $"{count} unexpected shutdowns in 30 days (Kernel-Power 41 / EventLog 6008){(button > 0 ? $"; {button} by holding the power button" : "")}. Latest {s.Meta.Local(kp41.Concat(e6008).Max(e => e.TimeUtc)):yyyy-MM-dd HH:mm}.",
             "If nobody held the power button or pulled the plug: check the power supply and cables (desktops), the battery and charger (laptops), and temperatures. Freezes that need a hard reset count here too.");    }
 }
 

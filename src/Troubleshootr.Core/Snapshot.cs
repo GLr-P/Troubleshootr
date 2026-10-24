@@ -53,6 +53,10 @@ public sealed class SnapshotMeta
     public DateTime CollectedUtc { get; set; }
     public bool IsAdmin { get; set; }
     public bool Anonymized { get; set; }
+    /// <summary>The scanned PC's offset from UTC, so times in findings show in its local time wherever the report is read (0 in old fixtures).</summary>
+    public int UtcOffsetMinutes { get; set; }
+
+    public DateTime Local(DateTime utc) => utc.AddMinutes(UtcOffsetMinutes);
     /// <summary>What the fixture shows (set by hand on fixtures).</summary>
     public string? Note { get; set; }
 }

@@ -8,7 +8,7 @@ Warning CPU-006: The processor reported corrected hardware errors | 1 WHEA proce
 Warning CRA-002: Blue screens with different causes each time | 4 crashes with 4 different codes: DRIVER_IRQL_NOT_LESS_OR_EQUAL ×1, MEMORY_MANAGEMENT ×1, VIDEO_TDR_FAILURE ×1, SYSTEM_SERVICE_EXCEPTION ×1.
 Warning CRA-003: PhotoEditor.exe keeps crashing | PhotoEditor.exe: 4 crashes (in gpu_helper.dll) in the last 30 days.
 Warning DRV-007: A driver crashed the PC: contosonet.sys | contosonet.sys once in the last 30 days (from the crash dumps).
-Warning GPU-004: The graphics driver keeps resetting | 4 graphics driver timeouts or errors in 30 days (up to 1 in one day).
+Warning GPU-004: The graphics driver keeps resetting | 4 graphics driver timeouts or errors in 30 days (up to 1 within 24 hours).
 Warning GPU-005: The graphics driver crashed the PC | 2026-10-15 0x116 VIDEO_TDR_FAILURE.
 Warning MEM-006: Memory is nearly full | 98% of RAM in use (0.6 GB free of 31.5 GB); commit 36.4 GB of 37.3 GB (98%).
 Warning MEM-007: The RAM reported corrected errors | 1 WHEA memory error event in 30 days.

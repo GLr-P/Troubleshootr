@@ -5,6 +5,7 @@ const path = require('path');
 const dir = path.join(__dirname, '..', 'tests', 'fixtures');
 const s = JSON.parse(fs.readFileSync(path.join(dir, 'win11-25h2-laptop-msi.snap.json'), 'utf8'));
 
+s.meta.utcOffsetMinutes = -420; // the owner's laptop is on Pacific time
 s.meta.note = 'Hand-made demo: one of each finding, for UI screenshots. Rebuild with scripts/make-demo-fixture.js';
 const sys = s.system.value;
 Object.assign(sys, { build: 26100, windowsDisplayVersion: '24H2', uptimeSeconds: 40 * 86400, fastStartupEnabled: true, pendingRebootReasons: ['Windows Update'] });

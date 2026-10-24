@@ -3,7 +3,8 @@
     "toolVersion": "0.2.1",
     "collectedUtc": "2026-10-24T20:47:15.7250547Z",
     "isAdmin": true,
-    "anonymized": true
+    "anonymized": true,
+    "utcOffsetMinutes": -420
   },
   "system": {
     "value": {

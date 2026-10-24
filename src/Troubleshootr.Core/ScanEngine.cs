@@ -36,7 +36,7 @@ public static class ScanEngine
 
         var snapshot = new Snapshot
         {
-            Meta = new SnapshotMeta { ToolVersion = o.ToolVersion, CollectedUtc = started, IsAdmin = o.IsAdmin },
+            Meta = new SnapshotMeta { ToolVersion = o.ToolVersion, CollectedUtc = started, IsAdmin = o.IsAdmin, UtcOffsetMinutes = (int)TimeZoneInfo.Local.GetUtcOffset(started).TotalMinutes },
         };
         foreach (var skipped in all.Except(toRun))
             typeof(Snapshot).GetProperty(skipped.Section)!.SetValue(snapshot, MissingSection(skipped.Section, "Full scan only"));

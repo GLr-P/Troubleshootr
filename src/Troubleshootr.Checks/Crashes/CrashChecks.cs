@@ -14,8 +14,8 @@ internal static class Ev
     public static List<BlueScreen> RecentBlueScreens(Snapshot s, int days = Window) =>
         BlueScreens.From(s).Where(b => (s.Meta.CollectedUtc - b.TimeUtc).TotalDays <= days).ToList();
 
-    public static string Line(BlueScreen b) =>
-        $"{b.TimeUtc.ToLocalTime():yyyy-MM-dd} {BugChecks.Hex(b.Code)} {BugChecks.Name(b.Code)}{(b.Driver is { } d ? $" in {d}" : "")}";
+    public static string Line(Snapshot s, BlueScreen b) =>
+        $"{s.Meta.Local(b.TimeUtc):yyyy-MM-dd} {BugChecks.Hex(b.Code)} {BugChecks.Name(b.Code)}{(b.Driver is { } d ? $" in {d}" : "")}";
 
     public static string Times(int n) => n == 1 ? "once" : $"{n} times";
 
@@ -36,7 +36,7 @@ public sealed class Cra001BlueScreens : Check
     {
         var list = Ev.RecentBlueScreens(s);
         if (list.Count == 0) yield break;
-        var latest = string.Join("; ", list.Take(3).Select(Ev.Line)) + (list.Count > 3 ? $"; and {list.Count - 3} more" : "");
+        var latest = string.Join("; ", list.Take(3).Select(b => Ev.Line(s, b))) + (list.Count > 3 ? $"; and {list.Count - 3} more" : "");
         var meaning = list[0].Info?.Meaning is { } m ? $" Latest: {m}" : "";
         yield return F(list.Count > CriticalCount ? Severity.Critical : Severity.Warning,
             list.Count == 1 ? "The PC had a blue screen in the last 30 days" : $"The PC had {list.Count} blue screens in the last 30 days",
@@ -185,7 +185,7 @@ public sealed class Gpu005GraphicsCrashes : Check
             .Where(b => b.Info?.Hint == CrashHint.Graphics || b.Driver is { } d && BlueScreens.GpuDrivers.Contains(d, StringComparer.OrdinalIgnoreCase)).ToList();
         if (gpu.Count == 0) yield break;
         yield return F(Severity.Warning, "The graphics driver crashed the PC",
-            string.Join("; ", gpu.Take(3).Select(Ev.Line)) + ".",
+            string.Join("; ", gpu.Take(3).Select(b => Ev.Line(s, b))) + ".",
             "Install the latest graphics driver from NVIDIA, AMD or Intel (or the laptop maker), using a clean install. If it keeps happening, remove any GPU overclock and check GPU temperatures and power cables.");
     }
 }

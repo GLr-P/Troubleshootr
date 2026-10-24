@@ -108,7 +108,7 @@ public sealed class Mem008MemoryDiagnostic : Check
             .Where(e => e.Id is 1102 or 1202 || e.Level is 1 or 2).ToList();
         if (bad.Count == 0) yield break;
         yield return F(Severity.Critical, "Windows Memory Diagnostic found RAM errors",
-            $"Memory test failed on {bad[0].TimeUtc.ToLocalTime():yyyy-MM-dd}{(bad.Count > 1 ? $" ({bad.Count} failed results)" : "")}.",
+            $"Memory test failed on {s.Meta.Local(bad[0].TimeUtc):yyyy-MM-dd}{(bad.Count > 1 ? $" ({bad.Count} failed results)" : "")}.",
             "A RAM module is faulty. Test the sticks one at a time to find it, then replace it; until then expect crashes and corrupted files.");
     }
 }
@@ -204,10 +204,11 @@ public sealed class Gpu004DriverResets : Check
         var ev = s.Events!.Value!;
         var resets = ev.Find("Display", 4101).Concat(ev.Find("nvlddmkm", 13, 14, 153)).Concat(ev.Find("amdkmdag")).Within(s, Ev.Window).ToList();
         if (resets.Count == 0) yield break;
-        var worstDay = resets.GroupBy(e => e.TimeUtc.ToLocalTime().Date).Max(g => g.Count());
+        // The most resets within any 24 hours (not calendar days, so the result doesn't depend on the time zone).
+        var worstDay = resets.Max(r => resets.Count(x => x.TimeUtc >= r.TimeUtc && (x.TimeUtc - r.TimeUtc).TotalHours < 24));
         var severity = worstDay >= ManyPerDay ? Severity.Critical : resets.Count >= Repeated ? Severity.Warning : Severity.Info;
         yield return F(severity, resets.Count >= Repeated ? "The graphics driver keeps resetting" : "The graphics driver stopped responding",
-            $"{resets.Count} graphics driver timeouts or errors in 30 days (up to {worstDay} in one day).",
+            $"{resets.Count} graphics driver timeouts or errors in 30 days (up to {worstDay} within 24 hours).",
             "Clean-install the latest graphics driver, remove any GPU overclock, and check GPU temperatures and power cables. Screen flicker or black screens that recover are this.");
     }
 }

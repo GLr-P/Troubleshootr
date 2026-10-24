@@ -4,6 +4,7 @@
     "collectedUtc": "2026-10-24T20:18:33.7711566Z",
     "isAdmin": false,
     "anonymized": true,
+    "utcOffsetMinutes": -420,
     "note": "Hand-made demo: one of each finding, for UI screenshots. Rebuild with scripts/make-demo-fixture.js"
   },
   "system": {
