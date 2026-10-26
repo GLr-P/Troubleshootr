@@ -26,8 +26,27 @@ public static class Anonymizer
         // Network printers put the end of their MAC address in their name ("HP732C80", "[732C80]").
         foreach (var d in (s.Devices?.Value?.Devices ?? []).Concat(s.Devices?.Value?.Hidden ?? []))
             d.Name = PrinterMac.Replace(d.Name, m => m.Groups[1].Value + "XXXXXX" + m.Groups[2].Value);
+        // A router's global IPv6 DNS address carries the household's prefix; a VPN address (and the tailnet hosts it maps) names the account.
+        if (s.Network?.Value is { } net)
+        {
+            foreach (var a in net.Adapters)
+            {
+                a.DnsServers = a.DnsServers.Select(d => IsPersonalIpv6(d) ? Redacted : d).ToList();
+                if (a.IsVpn) a.Ipv4 = a.Ipv4.Select(_ => Redacted).ToList();
+            }
+            foreach (var h in net.Hosts.Where(h => IsCgnat(h.Address))) h.Address = Redacted;
+        }
         s.Meta.Anonymized = true;
     }
+
+    private static readonly string[] PublicIpv6Dns = ["2606:4700:", "2001:4860:", "2620:fe:", "2620:119:"];
+
+    private static bool IsPersonalIpv6(string ip) =>
+        ip.Contains(':') && !ip.StartsWith("fe80:", StringComparison.OrdinalIgnoreCase) && !ip.StartsWith("fd", StringComparison.OrdinalIgnoreCase)
+        && !PublicIpv6Dns.Any(p => ip.StartsWith(p, StringComparison.OrdinalIgnoreCase));
+
+    /// <summary>100.64.0.0/10: carrier-grade NAT, which Tailscale and other mesh VPNs use for device addresses.</summary>
+    private static bool IsCgnat(string ip) => ip.StartsWith("100.") && int.TryParse(ip.Split('.')[1], out var b) && b is >= 64 and <= 127;
 
     private static readonly System.Text.RegularExpressions.Regex UserPath =
         new(@"(?<=\\Users\\)(?!Public\\|Default\\|All Users\\)[^\\""<>|]+", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
@@ -72,6 +91,8 @@ public static class Anonymizer
             }
             else if (p.PropertyType == typeof(List<string>) && p.GetCustomAttribute<FreeTextAttribute>() is not null && p.GetValue(node) is List<string> strings)
                 for (var i = 0; i < strings.Count; i++) strings[i] = Scrub(strings[i], names);
+            else if (p.PropertyType == typeof(List<string>) && p.GetCustomAttribute<SensitiveAttribute>() is not null && p.GetValue(node) is List<string> secret)
+                for (var i = 0; i < secret.Count; i++) secret[i] = Redacted;
             else if (!p.PropertyType.IsValueType) Walk(p.GetValue(node), names);
         }
     }

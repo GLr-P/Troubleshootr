@@ -49,6 +49,21 @@ public static class Snap
             PowerPlan = "Balanced", PowerPlanGuid = "381b4222-f694-41f0-9685-ff5bb260df2e", MaxCpuOnAc = 100, MaxCpuOnBattery = 100, OnAcPower = true,
             PageFileSettings = [@"?:\pagefile.sys"], PageFiles = [new() { Path = @"C:\pagefile.sys", AllocatedMB = 4096 }],
         }),
+        Network = Section<NetworkInfo>.Of(new NetworkInfo
+        {
+            Adapters =
+            [
+                new() { Name = "Ethernet", Description = "Intel(R) Ethernet Controller I225-V", Type = "Ethernet", Status = "Up", SpeedMbps = 1000, Dhcp = true,
+                        Ipv4 = ["192.168.1.20/24"], Gateways = ["192.168.1.1"], DnsServers = ["192.168.1.1"] },
+            ],
+            Winsock = [new() { Catalog = "Protocol", Path = @"%SystemRoot%\system32\mswsock.dll", Standard = true }],
+        }),
+        Connectivity = Section<ConnectivityInfo>.Of(new ConnectivityInfo
+        {
+            Gateway = "192.168.1.1", GatewayPing = new PingStats { Target = "192.168.1.1", Sent = 20, Received = 20, AvgMs = 2, MaxMs = 5 },
+            InternetPing = new PingStats { Target = "1.1.1.1", Sent = 20, Received = 20, AvgMs = 18, MaxMs = 30 },
+            InternetTcp = true, DnsOk = true, DnsMs = 12, WebOk = true, ClockOffsetSeconds = 0.4, ClockSource = "time.windows.com (NTP)", TimeSyncType = "NTP", TimeServiceStart = 3,
+        }),
         Updates = Section<UpdatesInfo>.Of(new UpdatesInfo { History = [new() { DateUtc = Now.AddDays(-10), Title = "2026-10 Cumulative Update for Windows 11 Version 25H2 (KB5099999)", Result = 2 }] }),
     };
 

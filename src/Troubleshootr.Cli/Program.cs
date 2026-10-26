@@ -12,6 +12,7 @@ namespace Troubleshootr.Cli;
 /// troubleshootr check   --snapshot file.snap.json [--json]
 /// troubleshootr anonymize --snapshot report-or-snapshot.json --out file.snap.json   (e.g. a report saved by an admin run)
 /// troubleshootr dump --file C:\Windows\Minidump\x.dmp [--drivers]   (reading the Minidump folder needs admin)
+/// troubleshootr speedtest   (downloads for up to 10 s, the same test as the Network tab's button)
 /// </summary>
 public static class Program
 {
@@ -28,6 +29,10 @@ public static class Program
                 case "check": return CheckSnapshot(a);
                 case "anonymize": return AnonymizeFile(a);
                 case "dump": return Dump(a);
+                case "speedtest":
+                    var (mbps, mb) = await SpeedTest.RunAsync(CancellationToken.None);
+                    Console.WriteLine($"Download: {mbps:0.#} Mb/s ({mb:0.#} MB)");
+                    return 0;
                 default:
                     Console.Error.WriteLine("Usage: troubleshootr scan|collect|check [options]. See Program.cs for the options.");
                     return 2;

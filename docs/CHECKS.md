@@ -91,7 +91,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | WIN-009 | Service failures (SCM 7000, 7001, 7009, 7023, 7031, 7034) summary | EVT | | W for repeated | ✓ | 4 ✅ |
 | WIN-010 | Important services stopped or disabled (Windows Update, BITS, WMI, Spooler, Audio, DHCP, DNS client, Defender, Time) | API ServiceController | | W | ✓ | 4 ✅ |
 | WIN-011 | WMI repository broken (the collectors fail) | collector failures | | W "repair WMI" | ✓ | 1 ✅ |
-| WIN-012 | Wrong system time / time sync failing | API + EVT Time-Service | | W > 2 min off | ✓ | 7 |
+| WIN-012 | Wrong system time / time sync failing | API + EVT Time-Service | | W > 2 min off | ✓ | 7 ✅ |
 | WIN-013 | User profile problems (temp profile, User Profile Service 1511/1515) | EVT / REG ProfileList .bak | | C on a temp profile | ✓ | 4 ✅ |
 | WIN-014 | Low virtual memory events (Resource-Exhaustion-Detector 2004) | EVT | | W | ✓ | 4 ✅ |
 | WIN-015 | Group Policy errors (1085, 1096, 1129) | EVT | | I | | 4 ✅ |
@@ -157,16 +157,16 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| NET-001 | Adapters: type, status, link speed, MAC, driver, IP/DHCP/DNS/gateway | API GetAdaptersAddresses | | I | ✓ | 7 |
-| NET-002 | No IP / APIPA 169.254.x (DHCP failure) | API | | C | ✓ | 7 |
-| NET-003 | Gateway reachable (ping), internet reachable (ping 1.1.1.1 + 8.8.8.8), DNS resolves | API Ping, Dns | | C/W by step, saying which step fails | ✓ | 7 |
-| NET-004 | Latency and packet loss (20 pings each to the gateway and the internet) | API Ping | | W loss > 2% | | 7 |
-| NET-005 | Ethernet link at 10/100 Mb/s on a gigabit adapter (bad cable) | API | | W | ✓ | 7 |
-| NET-006 | Wi-Fi: SSID, signal %, band, channel, link rate, adapter standard | API WlanAPI | | W signal < 40% | ✓ | 7 |
-| NET-007 | Proxy set (WinINET, WinHTTP, PAC); hosts file changed; custom DNS servers (possible hijack) | REG, FILE | | W if unexpected | ✓ | 7 |
-| NET-008 | Disabled adapters, VPN/virtual adapters, metered connection | API / WMI | | I | | 7 |
-| NET-009 | Network reset candidates: Winsock catalog LSP entries, broken TCP/IP settings | REG | | W | | 7 |
-| NET-010 | Download speed test (optional, user-started) | HTTP to a public test file | | I | | 7 |
+| NET-001 | Adapters: type, status, link speed, MAC, driver, IP/DHCP/DNS/gateway | API GetAdaptersAddresses | | I | ✓ | 7 ✅ |
+| NET-002 | No IP / APIPA 169.254.x (DHCP failure) | API | | C | ✓ | 7 ✅ |
+| NET-003 | Gateway reachable (ping), internet reachable (ping 1.1.1.1 + 8.8.8.8), DNS resolves | API Ping, Dns | | C/W by step, saying which step fails | ✓ | 7 ✅ |
+| NET-004 | Latency and packet loss (20 pings each to the gateway and the internet) | API Ping | | W loss > 2% | | 7 ✅ |
+| NET-005 | Ethernet link at 10/100 Mb/s on a gigabit adapter (bad cable) | API | | W | ✓ | 7 ✅ |
+| NET-006 | Wi-Fi: SSID, signal %, band, channel, link rate, adapter standard | API WlanAPI | | W signal < 40% | ✓ | 7 ✅ |
+| NET-007 | Proxy set (WinINET, WinHTTP, PAC); hosts file changed; custom DNS servers (possible hijack) | REG, FILE | | W if unexpected | ✓ | 7 ✅ |
+| NET-008 | Disabled adapters, VPN/virtual adapters, metered connection | API / WMI | | I | | 7 ✅ |
+| NET-009 | Network reset candidates: Winsock catalog LSP entries, broken TCP/IP settings | REG | | W | | 7 ✅ |
+| NET-010 | Download speed test (optional, user-started) | HTTP to a public test file | | I | | 7 ✅ |
 | NET-011 | Firewall profiles on/off; ports open to the internet (RDP 3389, SMB) | API / REG | | W | ✓ | 8 |
 
 ## Security (SEC)

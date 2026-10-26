@@ -38,6 +38,23 @@ public static class Native
     [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool IsUserAnAdmin();
 
+    [DllImport("dnsapi.dll", CharSet = CharSet.Unicode, EntryPoint = "DnsQuery_W")]
+    private static extern int DnsQuery(string name, ushort type, uint options, IntPtr extra, out IntPtr results, IntPtr reserved);
+
+    [DllImport("dnsapi.dll")]
+    private static extern void DnsRecordListFree(IntPtr list, int freeType);
+
+    private const ushort DnsTypeA = 1;
+    private const uint DnsQueryBypassCache = 0x8;
+
+    /// <summary>Looks a name up through Windows' configured DNS servers, skipping the local cache. 0 = found, else a Win32/DNS error code (9003 = no such name, 1460 = timeout).</summary>
+    public static int DnsLookupUncached(string name)
+    {
+        var code = DnsQuery(name, DnsTypeA, DnsQueryBypassCache, IntPtr.Zero, out var list, IntPtr.Zero);
+        if (list != IntPtr.Zero) DnsRecordListFree(list, 1);
+        return code;
+    }
+
     public static MEMORYSTATUSEX? MemoryStatus()
     {
         var m = new MEMORYSTATUSEX { dwLength = (uint)Marshal.SizeOf<MEMORYSTATUSEX>() };

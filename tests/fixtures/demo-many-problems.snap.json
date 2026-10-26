@@ -822,6 +822,12 @@
           "driverProvider": "Realtek",
           "driverVersion": "6.0.9600.1",
           "driverDate": "2023-05-04T00:00:00Z"
+        },
+        {
+          "name": "Intel(R) Ethernet Connection I219-V",
+          "class": "Net",
+          "problemCode": 22,
+          "driverProvider": "Intel"
         }
       ],
       "hidden": [
@@ -1138,6 +1144,143 @@
           "atLeast": true
         }
       ]
+    }
+  },
+  "network": {
+    "value": {
+      "adapters": [
+        {
+          "type": "Wi-Fi",
+          "status": "Up",
+          "speedMbps": 58,
+          "dhcp": true,
+          "ipv4": [
+            "192.168.0.42/24"
+          ],
+          "ipv6": [],
+          "gateways": [
+            "192.168.0.1"
+          ],
+          "hasIpv6Gateway": false,
+          "dnsServers": [
+            "85.255.112.10",
+            "85.255.113.20"
+          ],
+          "staticDns": true,
+          "name": "Wi-Fi",
+          "description": "Intel(R) Wi-Fi 6E AX211 160MHz",
+          "mac": "[redacted]"
+        },
+        {
+          "type": "Ethernet",
+          "status": "Up",
+          "speedMbps": 100,
+          "dhcp": true,
+          "ipv4": [
+            "169.254.31.7/16"
+          ],
+          "ipv6": [],
+          "gateways": [],
+          "hasIpv6Gateway": false,
+          "dnsServers": [],
+          "staticDns": false,
+          "name": "Ethernet",
+          "description": "Realtek PCIe GbE Family Controller",
+          "mac": "[redacted]"
+        },
+        {
+          "type": "Other",
+          "status": "Up",
+          "speedMbps": 100000,
+          "dhcp": false,
+          "ipv4": [
+            "10.2.0.2/32"
+          ],
+          "ipv6": [],
+          "gateways": [],
+          "hasIpv6Gateway": false,
+          "dnsServers": [],
+          "staticDns": false,
+          "name": "ProtonVPN",
+          "description": "ProtonVPN Tunnel"
+        }
+      ],
+      "wifi": [
+        {
+          "adapter": "Intel(R) Wi-Fi 6E AX211 160MHz",
+          "state": "connected",
+          "ssid": "[redacted]",
+          "bssid": "[redacted]",
+          "signalPercent": 31,
+          "rssi": -81,
+          "channel": 6,
+          "frequencyMHz": 2437,
+          "phyType": 7,
+          "rxMbps": 58,
+          "txMbps": 26,
+          "auth": 7
+        }
+      ],
+      "proxy": {
+        "enabled": true,
+        "server": "127.0.0.1:8877",
+        "autoDetect": true
+      },
+      "hosts": [
+        {
+          "address": "0.0.0.0",
+          "host": "update.microsoft.com"
+        },
+        {
+          "address": "0.0.0.0",
+          "host": "www.malwarebytes.com"
+        },
+        {
+          "address": "45.83.10.2",
+          "host": "www.paypal.com"
+        }
+      ],
+      "hostsCount": 3,
+      "winsock": [
+        {
+          "catalog": "Protocol",
+          "path": "C:\\Program Files (x86)\\WebBoost\\wbsp64.dll",
+          "standard": false
+        },
+        {
+          "catalog": "Protocol",
+          "path": "%SystemRoot%\\system32\\mswsock.dll",
+          "standard": true
+        }
+      ]
+    }
+  },
+  "connectivity": {
+    "value": {
+      "gateway": "192.168.0.1",
+      "gatewayPing": {
+        "target": "192.168.0.1",
+        "sent": 20,
+        "received": 15,
+        "avgMs": 64,
+        "maxMs": 410
+      },
+      "internetPing": {
+        "target": "1.1.1.1",
+        "sent": 20,
+        "received": 14,
+        "avgMs": 180,
+        "maxMs": 620
+      },
+      "internetTcp": true,
+      "dnsOk": false,
+      "dnsError": "No such host is known",
+      "webOk": false,
+      "webProblem": "The test page didn't load: The remote name could not be resolved",
+      "clockOffsetSeconds": -540,
+      "clockSource": "time.windows.com (NTP)",
+      "timeSyncType": "NoSync",
+      "timeServiceStart": 3
     }
   }
 }

@@ -2,6 +2,7 @@ Critical CPU-007: This Intel processor needs a BIOS update to stop permanent dam
 Critical CRA-001: The PC had 4 blue screens in the last 30 days | 2026-10-23 0xD1 DRIVER_IRQL_NOT_LESS_OR_EQUAL in contosonet.sys; 2026-10-20 0x1A MEMORY_MANAGEMENT; 2026-10-15 0x116 VIDEO_TDR_FAILURE; and 1 more. Latest: A driver touched memory it wasn't allowed to; network, Wi-Fi and antivirus drivers are common causes.
 Critical DRV-001: A device isn't working: Intel(R) Wi-Fi 6E AX211 160MHz | Intel(R) Wi-Fi 6E AX211 160MHz (Net) can't start (code 10).
 Critical MEM-008: Windows Memory Diagnostic found RAM errors | Memory test failed on 2026-10-16.
+Critical NET-003: The internet works but website names don't (DNS) | Network adapter: OK. IP address: OK. Router (gateway): OK. Internet: OK. DNS (name lookup): Looking up www.msftconnecttest.com failed: No such host is known.
 Critical STO-002: Disk 1 (WDC WD10EZEX-08WN4A0) has unreadable sectors | Reallocated: 312, pending: 24, uncorrectable: 8.
 Critical STO-007: A drive reported bad blocks | In the last 30 days: bad blocks once (disk 1); timeouts or resets 3 times.
 Critical STO-008: System drive C:\ is almost full | C:\ has 27.8 GB free of 925.9 GB (3%).
@@ -18,6 +19,14 @@ Warning GPU-005: The graphics driver crashed the PC | 2026-10-15 0x116 VIDEO_TDR
 Warning MEM-006: Memory is nearly full | 98% of RAM in use (0.6 GB free of 31.5 GB); commit 36.4 GB of 37.3 GB (98%).
 Warning MEM-007: The RAM reported corrected errors | 1 WHEA memory error event in 30 days.
 Warning MEM-009: Crashes point to a memory problem | 1 of 4 blue screens in 30 days has a memory-type code: MEMORY_MANAGEMENT.
+Warning NET-002: Connected, but no IP address from the router | Ethernet: 169.254.31.7/16. A 169.254.x.x address means Windows asked the router for an address and got no answer.
+Warning NET-004: The connection to the router is unreliable | router 25% of pings lost (5 of 20); router answers in 64 ms on average (max 410 ms); internet 30% of pings lost (6 of 20); internet answers in 180 ms on average (max 620 ms).
+Warning NET-005: The network cable only runs at 100 Mb/s | Ethernet (Realtek PCIe GbE Family Controller) is a gigabit adapter but linked at 100 Mb/s.
+Warning NET-006: Weak Wi-Fi signal | Signal 31% (-81 dBm) on 2.4 GHz, link 58 Mb/s down / 26 Mb/s up.
+Warning NET-007: Web traffic goes through a proxy | proxy server 127.0.0.1:8877.
+Warning NET-007: The hosts file redirects or blocks important websites | update.microsoft.com -> 0.0.0.0, www.malwarebytes.com -> 0.0.0.0, www.paypal.com -> 45.83.10.2.
+Warning NET-007: DNS servers were set by hand | Wi-Fi: 85.255.112.10; Wi-Fi: 85.255.113.20. They aren't from your router or a well-known public DNS service.
+Warning NET-009: Third-party software is hooked into Windows networking (Winsock) | C:\Program Files (x86)\WebBoost\wbsp64.dll.
 Warning PRF-001: 17 programs start with Windows | Steam, Discord, Spotify, Epic Games Launcher, Adobe Creative Cloud, Dropbox, Zoom, Teams, Razer Synapse, iCUE, OneDrive, Skype and 5 more.
 Warning PRF-003: A program is hogging the PC | svchosts.exe is using 82% of the CPU; SearchIndexer.exe is reading/writing 64 MB/s (sampled for 3 s).
 Warning STO-003: Disk 0 (Micron_2400_MTFDKBA1T0QFM) has recorded media errors | 4 media and data integrity errors; spare 100%.
@@ -41,6 +50,7 @@ Warning WIN-008: Windows takes a long time to start | Last boot took 98 s. Slowe
 Warning WIN-009: A service keeps failing: Contoso Updater | Contoso Updater 3 times in 30 days.
 Warning WIN-010: Important Windows services are off | Windows Update is disabled.
 Warning WIN-011: Windows Management Instrumentation (WMI) isn't working properly | Gpus: WMI: 0x80041010 in root\cimv2 (SELECT Name FROM Win32_VideoController)
+Warning WIN-012: The clock is 9 minutes slow | Compared with time.windows.com (NTP). Time sync is set to NoSync.
 Warning WIN-013: Windows had trouble loading a user profile | 1 User Profile Service warning in 30 days.
 Warning WIN-014: Windows ran low on memory | Low virtual memory warnings once in 30 days. The following programs consumed the most virtual memory: chrome.exe (8124) consumed 12884901888 bytes, PhotoEditor.exe (4410) consumed 4294967296 bytes.
 Warning WIN-016: Windows Explorer or the Start menu keeps crashing | explorer.exe 3 times in the last 7 days.
@@ -48,12 +58,14 @@ Warning WIN-017: Windows has been unstable lately | Reliability Monitor stabilit
 Info CPU-003: The processor is running slowly under load | CPU 94% busy but at only 38% of its base speed, while plugged in.
 Info CPU-008: The power plan slows the processor down | the Power saver plan is active; the processor is capped at 80% while plugged in (plan: Power saver).
 Info CRA-004: Windows recorded hardware or driver error reports | recovered problem 0x141 VIDEO_ENGINE_TIMEOUT_DETECTED ×1 in the last 30 days.
-Info DRV-001: A device is disabled: Integrated Webcam | Integrated Webcam (Camera).
+Info DRV-001: 2 devices are disabled | Integrated Webcam (Camera); Intel(R) Ethernet Connection I219-V (Net).
 Info DRV-005: An old driver: Realtek PCIe GbE Family Controller | Realtek PCIe GbE Family Controller: Realtek 10.12.1012.2016 from 2016-10-12.
 Info DRV-010: Drivers for an old graphics card are still installed | Not connected any more: NVIDIA GeForce GTX 1060 6GB.
 Info GPU-007: A display runs below its best refresh rate | Generic PnP Monitor at 2560×1600: 60 Hz, can do 165 Hz.
 Info MEM-003: RAM runs below its rated speed | Running at 4800 MT/s; the modules are rated for 6000 MT/s (F5-6000J3038F16G).
 Info MEM-005: RAM runs in single channel | 1 stick (4 GB LPDDR5) in a board with 2 slots.
+Info NET-008: 1 network adapter is switched off | Intel(R) Ethernet Connection I219-V.
+Info NET-008: A VPN is connected | ProtonVPN Tunnel.
 Info PER-007: The BIOS is old | American Megatrends International, LLC. E1595IMS.10B, dated 2021-03-01 (5.7 years old).
 Info PRF-005: "Optimizer" or adware programs are installed | Driver Booster 12, Wave Browser.
 Info PRF-009: A browser has a lot of extensions | Chrome: Default: 27 extensions.

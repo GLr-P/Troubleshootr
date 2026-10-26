@@ -15,6 +15,8 @@ public sealed class InfoGroup(string title)
     public string BadgeKey { get; set; } = "Info";
     /// <summary>Show a filter box above the table (long lists like the error timeline).</summary>
     public bool Filterable { get; set; }
+    /// <summary>A button under the card that runs something on demand (the speed test) and shows the text it returns.</summary>
+    public (string Label, Func<CancellationToken, Task<string>> Run)? Action { get; set; }
 
     public InfoGroup Row(string label, object? value)
     {
@@ -34,7 +36,7 @@ public sealed class InfoGroup(string title)
 /// <summary>Builds each info tab from the Snapshot. A tab is a list of groups, rendered by InfoPage.</summary>
 public static class InfoPages
 {
-    public static readonly string[] Names = ["Summary", "System", "Updates", "CPU", "Memory", "Motherboard", "Storage", "Graphics", "Devices", "Drivers", "Events & Crashes", "Performance", "Processes", "Startup", "Software"];
+    public static readonly string[] Names = ["Summary", "System", "Updates", "CPU", "Memory", "Motherboard", "Storage", "Graphics", "Devices", "Drivers", "Events & Crashes", "Performance", "Processes", "Startup", "Software", "Network"];
 
     public static List<InfoGroup> Build(string page, Snapshot s) => page switch
     {
@@ -52,6 +54,7 @@ public static class InfoPages
         "Performance" => PerfPages.Performance(s),
         "Startup" => PerfPages.Startup(s),
         "Software" => PerfPages.Software(s),
+        "Network" => NetPages.Network(s),
         _ => [],
     };
 

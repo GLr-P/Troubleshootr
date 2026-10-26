@@ -1,0 +1,10 @@
+Warning CRA-003: Some apps keep crashing | MiracastPowerManager.exe: 8 crashes (in ntdll.dll); mscopilot_proxy.exe: 4 hangs in the last 30 days.
+Warning GPU-003: The graphics driver is old: Intel(R) Arc(TM) Graphics | Driver 31.0.101.5333 from 2024-02-20 (2.7 years old).
+Warning MEM-006: Memory is nearly full | 84% of RAM in use (5 GB free of 31.5 GB); commit 40.6 GB of 43.3 GB (94%).
+Warning STO-007: Drive errors in the event log | In the last 30 days: file system errors reported 2 times on D:.
+Warning WIN-009: A service keeps failing: MBAMService | MBAMService 3 times in 30 days.
+Info CPU-005: The processor's speed is being limited by the firmware | 50 speed-limit events in 30 days (Kernel-Processor-Power 37).
+Info NET-007: The hosts file has 6 custom entries | [redacted] -> [redacted], [redacted] -> [redacted], [redacted] -> [redacted], [redacted] -> [redacted], [redacted] -> [redacted], [redacted] -> [redacted].
+Info NET-008: A VPN is connected | Tailscale Tunnel.
+Info PRF-001: 13 programs start with Windows | Opera Stable, Discord, Steam, Spotify, EADM, com.nanotechservices.plannr, Opera Browser Assistant, RtkAudUService, Adobe CCXProcess, Intel® Graphics Software, Adobe Creative Cloud, RustDesk Tray and 1 more.
+Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.

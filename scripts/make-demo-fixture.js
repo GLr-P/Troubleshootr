@@ -145,5 +145,31 @@ s.health.value.licenseStatus = 5;
 s.health.value.licenseName = 'Windows(R), Professional edition';
 s.cpu.value.packages[0] ={ ...s.cpu.value.packages[0], name: '13th Gen Intel(R) Core(TM) i9-13900K', identifier: 'Intel64 Family 6 Model 183 Stepping 1', microcode: '0x119' };
 
+// Phase 7: weak 2.4 GHz Wi-Fi with loss, a gigabit cable stuck at 100 Mb/s without an address, DNS down, and redirection.
+const adapter = (o) => Object.assign({ type: 'Ethernet', status: 'Up', speedMbps: 0, dhcp: true, ipv4: [], ipv6: [], gateways: [], hasIpv6Gateway: false, dnsServers: [], staticDns: false }, o);
+s.network = { value: {
+  adapters: [
+    adapter({ name: 'Wi-Fi', description: 'Intel(R) Wi-Fi 6E AX211 160MHz', type: 'Wi-Fi', speedMbps: 58, mac: '[redacted]', ipv4: ['192.168.0.42/24'], gateways: ['192.168.0.1'], dnsServers: ['85.255.112.10', '85.255.113.20'], staticDns: true }),
+    adapter({ name: 'Ethernet', description: 'Realtek PCIe GbE Family Controller', speedMbps: 100, mac: '[redacted]', ipv4: ['169.254.31.7/16'] }),
+    adapter({ name: 'ProtonVPN', description: 'ProtonVPN Tunnel', type: 'Other', speedMbps: 100000, dhcp: false, ipv4: ['10.2.0.2/32'] }),
+  ],
+  wifi: [{ adapter: 'Intel(R) Wi-Fi 6E AX211 160MHz', state: 'connected', ssid: '[redacted]', bssid: '[redacted]', signalPercent: 31, rssi: -81, channel: 6, frequencyMHz: 2437, phyType: 7, rxMbps: 58, txMbps: 26, auth: 7 }],
+  proxy: { enabled: true, server: '127.0.0.1:8877', autoDetect: true },
+  hosts: [{ address: '0.0.0.0', host: 'update.microsoft.com' }, { address: '0.0.0.0', host: 'www.malwarebytes.com' }, { address: '45.83.10.2', host: 'www.paypal.com' }],
+  hostsCount: 3,
+  winsock: [
+    { catalog: 'Protocol', path: 'C:\\Program Files (x86)\\WebBoost\\wbsp64.dll', standard: false },
+    { catalog: 'Protocol', path: '%SystemRoot%\\system32\\mswsock.dll', standard: true },
+  ],
+} };
+s.connectivity = { value: {
+  gateway: '192.168.0.1',
+  gatewayPing: { target: '192.168.0.1', sent: 20, received: 15, avgMs: 64, maxMs: 410 },
+  internetPing: { target: '1.1.1.1', sent: 20, received: 14, avgMs: 180, maxMs: 620 },
+  internetTcp: true, dnsOk: false, dnsError: 'No such host is known', webOk: false, webProblem: "The test page didn't load: The remote name could not be resolved",
+  clockOffsetSeconds: -540, clockSource: 'time.windows.com (NTP)', timeSyncType: 'NoSync', timeServiceStart: 3,
+} };
+s.devices.value.devices.push({ name: 'Intel(R) Ethernet Connection I219-V', class: 'Net', problemCode: 22, driverProvider: 'Intel' });
+
 fs.writeFileSync(path.join(dir, 'demo-many-problems.snap.json'), JSON.stringify(s, null, 2) + '\n');
 console.log('wrote demo-many-problems.snap.json');

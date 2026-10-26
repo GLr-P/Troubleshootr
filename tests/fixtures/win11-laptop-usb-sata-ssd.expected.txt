@@ -28,6 +28,14 @@ NotChecked GPU-009: Displays: not collected in this scan
 NotChecked MEM-007: Events: not collected in this scan
 NotChecked MEM-008: Events: not collected in this scan
 NotChecked MEM-009: Events: not collected in this scan
+NotChecked NET-002: Network: not collected in this scan
+NotChecked NET-003: Network: not collected in this scan
+NotChecked NET-004: Connectivity: not collected in this scan
+NotChecked NET-005: Network: not collected in this scan
+NotChecked NET-006: Network: not collected in this scan
+NotChecked NET-007: Network: not collected in this scan
+NotChecked NET-008: Network: not collected in this scan
+NotChecked NET-009: Network: not collected in this scan
 NotChecked PRF-001: Startup: not collected in this scan
 NotChecked PRF-003: Performance: not collected in this scan
 NotChecked PRF-005: Software: not collected in this scan
@@ -46,6 +54,7 @@ NotChecked WIN-007: Events: not collected in this scan
 NotChecked WIN-008: Events: not collected in this scan
 NotChecked WIN-009: Events: not collected in this scan
 NotChecked WIN-010: Health: not collected in this scan
+NotChecked WIN-012: Connectivity: not collected in this scan
 NotChecked WIN-013: Health: not collected in this scan
 NotChecked WIN-014: Events: not collected in this scan
 NotChecked WIN-015: Events: not collected in this scan

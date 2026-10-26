@@ -51,6 +51,7 @@ public sealed class InfoPage : UserControl
             else panel.Children.Add(Table(g.Columns, LimitRows(g.Table, out _)));
             if (!g.Filterable && g.Table.Count > MaxRows) panel.Children.Add(new TextBlock { Text = $"Showing the first {MaxRows} of {g.Table.Count}.", Style = St("Dim") });
         }
+        if (g.Action is { } action) panel.Children.Add(ActionRow(action.Label, action.Run));
         return new Border { Style = (Style)Application.Current.FindResource("Card"), Margin = new Thickness(0, 0, 0, 12), Child = panel };
     }
 
@@ -71,6 +72,25 @@ public sealed class InfoPage : UserControl
             grid.Children.Add(value);
         }
         return grid;
+    }
+
+    /// <summary>A button that runs work in the background and shows its result (or error) next to it.</summary>
+    private static StackPanel ActionRow(string label, Func<CancellationToken, Task<string>> run)
+    {
+        var row = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 10, 0, 0) };
+        var button = new Button { Content = label, Tag = "primary" };
+        var result = new TextBlock { Style = St("Dim"), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(14, 0, 0, 0), TextWrapping = TextWrapping.Wrap };
+        button.Click += async (_, _) =>
+        {
+            button.IsEnabled = false;
+            result.Text = "Running...";
+            try { result.Text = await Task.Run(() => run(CancellationToken.None)); }
+            catch (Exception e) { result.Text = $"Failed: {e.GetBaseException().Message}"; }
+            finally { button.IsEnabled = true; }
+        };
+        row.Children.Add(button);
+        row.Children.Add(result);
+        return row;
     }
 
     /// <summary>Tables are grids of text boxes, so very long ones are cut to keep the tab fast.</summary>
