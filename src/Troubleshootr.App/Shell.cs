@@ -13,7 +13,7 @@ public sealed class Shell : UserControl
     {
         ["Diagnose"] = "", ["Summary"] = "", ["System"] = "", ["CPU"] = "", ["Memory"] = "",
         ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Performance"] = "", ["Processes"] = "", ["Startup"] = "", ["Software"] = "",["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "",
-        ["Network"] = "", ["Security"] = "",
+        ["Network"] = "", ["Security"] = "", ["Sensors"] = "",
     };
 
     private readonly MainViewModel _vm;
@@ -62,6 +62,7 @@ public sealed class Shell : UserControl
                 "Diagnose" => new DiagnosePage(_vm),
                 "Report" => new ReportPage(_vm),
                 "Processes" => new ProcessesPage(_vm),
+                "Sensors" => new SensorsPage(_vm),
                 _ => new InfoPage(page, _vm),
             };
         _content.Content = view;

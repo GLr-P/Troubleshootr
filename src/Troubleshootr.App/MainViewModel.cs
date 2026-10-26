@@ -55,6 +55,17 @@ public sealed class MainViewModel : Observable
     public Snapshot Snapshot { get; private set; } = new();
     /// <summary>False in screenshot mode: live views (Processes) show the loaded snapshot instead of this PC.</summary>
     public bool Live { get; set; } = true;
+
+    /// <summary>Relaunches elevated (one UAC prompt) and closes this window; does nothing if the user says No.</summary>
+    public static void RestartAsAdmin()
+    {
+        try
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(System.Diagnostics.Process.GetCurrentProcess().MainModule!.FileName) { Verb = "runas", UseShellExecute = true });
+            System.Windows.Application.Current.Shutdown();
+        }
+        catch (System.ComponentModel.Win32Exception) { /* the user said No to the UAC prompt */ }
+    }
     public DeviceSummary Device => DeviceSummary.From(Snapshot);
     public bool IsAdmin { get; } = CollectorRegistry.IsElevated();
     public ObservableCollection<CategoryTile> Tiles { get; } = new(Enum.GetValues(typeof(Category)).Cast<Category>().Select(c => new CategoryTile(c)));

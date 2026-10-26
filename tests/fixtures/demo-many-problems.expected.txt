@@ -8,6 +8,7 @@ Critical STO-002: Disk 1 (WDC WD10EZEX-08WN4A0) has unreadable sectors | Realloc
 Critical STO-007: A drive reported bad blocks | In the last 30 days: bad blocks once (disk 1); timeouts or resets 3 times.
 Critical STO-008: System drive C:\ is almost full | C:\ has 27.8 GB free of 925.9 GB (3%).
 Warning CPU-002: The processor is maxed out | CPU 94% busy over 3 s. Top: svchosts.exe 82%, chrome.exe 6%, SearchIndexer.exe 1%.
+Warning CPU-004: The processor is running hot: 97 °C | Intel Core i7-13700K CPU Package: 97 °C while the CPU was 94% busy; 3 °C below its throttle limit.
 Warning CPU-006: The processor reported corrected hardware errors | 1 WHEA processor event in 30 days: Cache Hierarchy Error.
 Warning CRA-002: Blue screens with different causes each time | 4 crashes with 4 different codes: DRIVER_IRQL_NOT_LESS_OR_EQUAL ×1, MEMORY_MANAGEMENT ×1, VIDEO_TDR_FAILURE ×1, SYSTEM_SERVICE_EXCEPTION ×1.
 Warning CRA-003: PhotoEditor.exe keeps crashing | PhotoEditor.exe: 4 crashes (in gpu_helper.dll) in the last 30 days.
@@ -17,9 +18,11 @@ Warning DRV-006: A driver with a known security hole is installed | WinRing0x64.
 Warning DRV-007: A driver crashed the PC: contosonet.sys | contosonet.sys once in the last 30 days (from the crash dumps).
 Warning GPU-004: The graphics driver keeps resetting | 4 graphics driver timeouts or errors in 30 days (up to 1 within 24 hours).
 Warning GPU-005: The graphics driver crashed the PC | 2026-10-15 0x116 VIDEO_TDR_FAILURE.
+Warning GPU-008: The graphics card is running hot: NVIDIA GeForce RTX 3080 | GPU Core 88 °C.
 Warning MEM-006: Memory is nearly full | 98% of RAM in use (0.6 GB free of 31.5 GB); commit 36.4 GB of 37.3 GB (98%).
 Warning MEM-007: The RAM reported corrected errors | 1 WHEA memory error event in 30 days.
 Warning MEM-009: Crashes point to a memory problem | 1 of 4 blue screens in 30 days has a memory-type code: MEMORY_MANAGEMENT.
+Warning MEM-011: A memory stick is running hot | DIMM #1 87 °C.
 Warning NET-002: Connected, but no IP address from the router | Ethernet: 169.254.31.7/16. A 169.254.x.x address means Windows asked the router for an address and got no answer.
 Warning NET-004: The connection to the router is unreliable | router 25% of pings lost (5 of 20); router answers in 64 ms on average (max 410 ms); internet 30% of pings lost (6 of 20); internet answers in 180 ms on average (max 620 ms).
 Warning NET-005: The network cable only runs at 100 Mb/s | Ethernet (Realtek PCIe GbE Family Controller) is a gigabit adapter but linked at 100 Mb/s.

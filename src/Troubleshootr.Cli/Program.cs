@@ -13,6 +13,7 @@ namespace Troubleshootr.Cli;
 /// troubleshootr anonymize --snapshot report-or-snapshot.json --out file.snap.json   (e.g. a report saved by an admin run)
 /// troubleshootr dump --file C:\Windows\Minidump\x.dmp [--drivers]   (reading the Minidump folder needs admin)
 /// troubleshootr speedtest   (downloads for up to 10 s, the same test as the Network tab's button)
+/// troubleshootr sensors | loadtest | driver [--remove|--check]   (sensor readings, 30 s CPU stress test, install/remove PawnIO with one UAC prompt, or only download and verify it)
 /// </summary>
 public static class Program
 {
@@ -29,6 +30,12 @@ public static class Program
                 case "check": return CheckSnapshot(a);
                 case "anonymize": return AnonymizeFile(a);
                 case "dump": return Dump(a);
+                case "sensors": return Sensors();
+                case "driver": return await Driver(a);
+                case "loadtest":
+                    var result = await Troubleshootr.Collectors.Sensors.LoadTest.RunAsync(x => Console.WriteLine($"{x.Second,3} s  speed {x.SpeedPercent:0}%  temp {x.TempC:0} °C"), CancellationToken.None);
+                    Console.WriteLine(result.Summary);
+                    return 0;
                 case "speedtest":
                     var (mbps, mb) = await SpeedTest.RunAsync(CancellationToken.None);
                     Console.WriteLine($"Download: {mbps:0.#} Mb/s ({mb:0.#} MB)");
@@ -43,6 +50,29 @@ public static class Program
             Console.Error.WriteLine(e.Message);
             return 2;
         }
+    }
+
+    /// <summary>Every sensor once (CPU/RAM temperatures need PawnIO and admin).</summary>
+    private static int Sensors()
+    {
+        using var session = Troubleshootr.Collectors.Sensors.SensorSession.Open();
+        var readings = session.Read();
+        Console.WriteLine($"PawnIO installed: {Troubleshootr.Collectors.Sensors.PawnIo.Installed}; admin: {CollectorRegistry.IsElevated()}{(session.Problem is { } p ? $"; problem: {p}" : "")}");
+        foreach (var r in readings.Concat(Troubleshootr.Collectors.Sensors.SensorsCollector.ThermalZones()).Where(r => r.Type is "Temperature" or "Fan" or "Clock" or "Power"))
+            Console.WriteLine($"{r.Kind,-11} {r.Hardware,-32} {r.Name,-28} {r.Format(r.Value)}");
+        return 0;
+    }
+
+    /// <summary>driver [--remove]: the same download, signature check and elevated setup as the Sensors tab's button.</summary>
+    private static async Task<int> Driver(Args a)
+    {
+        var remove = a.Flag("remove");
+        using var setup = await Troubleshootr.Collectors.Sensors.PawnIo.DownloadAsync(CancellationToken.None);
+        Console.WriteLine($"Downloaded PawnIO setup, signed by {setup.Publisher}.");
+        if (a.Flag("check")) return 0;  // verify only
+        var (ok, message) = Troubleshootr.Collectors.Sensors.PawnIo.Run(setup, remove);
+        Console.WriteLine(message);
+        return ok ? 0 : 1;
     }
 
     private static string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "0.0.0";

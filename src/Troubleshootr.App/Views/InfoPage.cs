@@ -28,7 +28,8 @@ public sealed class InfoPage : UserControl
         foreach (var g in InfoPages.Build(_page, _vm.Snapshot)) _root.Children.Add(Card(g));
     }
 
-    private static Border Card(InfoGroup g)
+    /// <summary>One card, also used by the live Sensors tab.</summary>
+    internal static Border Card(InfoGroup g)
     {
         var panel = new StackPanel();
         var header = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 10) };

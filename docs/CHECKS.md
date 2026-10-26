@@ -43,8 +43,8 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | MEM-007 | WHEA memory errors / corrected ECC events | EVT WHEA-Logger 19/47 | | C if uncorrected; W corrected | ✓ | 4 ✅ |
 | MEM-008 | Windows Memory Diagnostic past results | EVT MemoryDiagnostics-Results 1101/1102 | | C if errors found | ✓ | 4 ✅ |
 | MEM-009 | Bugchecks that point to RAM (0x1A, 0x50, 0x3B patterns across dumps) | Crashes section | | W "run a memory test" | ✓ | 4 ✅ |
-| MEM-010 | SPD data and XMP/EXPO profiles; actual primary timings | LHM/RAMSPDToolkit SPD (PawnIO); ZenStates-Core on AMD | ✓ | I (display) | | 9 |
-| MEM-011 | DIMM temperature (DDR5) | LHM | ✓ | W > 85 °C | | 9 |
+| MEM-010 | SPD data and XMP/EXPO profiles; actual primary timings | LHM/RAMSPDToolkit SPD (PawnIO); ZenStates-Core on AMD | ✓ | I (display) | | 12 (moved from 9) |
+| MEM-011 | DIMM temperature (DDR5) | LHM | ✓ | W > 85 °C | | 9 ✅ |
 | MEM-012 | Launch the Windows Memory Diagnostic (fix action) | PROC mdsched | ✓ | n/a | | 12 |
 
 ## CPU and thermals (CPU)
@@ -54,7 +54,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | CPU-001 | CPU identity: name, cores/threads, base/boost, socket, microcode, virtualization on | WMI Win32_Processor, REG, API | | I | ✓ | 1 ✅ |
 | CPU-002 | Sustained high CPU usage and the top processes (3 s sample) | API | | W > 85% average | ✓ | 6 ✅ |
 | CPU-003 | Throttling: current clock far below base under load | WMI Win32_PerfFormattedData_Counters_ProcessorInformation (% Processor Performance) | | W | ✓ | 6 ✅ |
-| CPU-004 | Temperature: package / cores | LHM, fallback ACPI MSAcpi_ThermalZoneTemperature | ✓ | W > 90 °C, C > 100 °C or at TjMax | ✓ | 9 |
+| CPU-004 | Temperature: package / cores | LHM, fallback ACPI MSAcpi_ThermalZoneTemperature | ✓ | W > 90 °C, C > 100 °C or at TjMax | ✓ | 9 ✅ |
 | CPU-005 | Thermal-throttling events / kernel-power thermal events | EVT Kernel-Processor-Power 37 | | I on laptops (normal on battery); W on desktops with 5+ | ✓ | 4 ✅ |
 | CPU-006 | WHEA CPU / cache / bus errors (machine checks: unstable OC or failing hardware) | EVT WHEA-Logger 18/19 | | C if fatal; W corrected | ✓ | 4 ✅ |
 | CPU-007 | Known-bad CPU microcode (Intel 13th/14th-gen Vmin instability: microcode < 0x12B) | REG microcode revision + model | | C on affected models below the fixed version | ✓ | 4 ✅ |
@@ -72,7 +72,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | GPU-005 | Bugchecks in GPU drivers (0x116, 0x119, nvlddmkm.sys / amdkmdag.sys in dumps) | Crashes section | | W | ✓ | 4 ✅ |
 | GPU-006 | Monitor connected to the motherboard while a dedicated GPU exists (desktop) | API EnumDisplayDevices + adapter | | W | ✓ | 5 ✅ |
 | GPU-007 | Refresh rate below the monitor's maximum (144 Hz panel running at 60 Hz) | API EnumDisplaySettings | | I | ✓ | 5 ✅ |
-| GPU-008 | GPU temperature, hotspot, fan, load | LHM (NVAPI/ADL work without PawnIO) | | W > 85 °C core | | 9 |
+| GPU-008 | GPU temperature, hotspot, fan, load | LHM (NVAPI/ADL work without PawnIO) | | W > 85 °C core | | 9 ✅ |
 | GPU-009 | Hybrid laptops: app forced to the iGPU | REG UserGpuPreferences | | I | | 5 ✅ |
 | GPU-010 | Display summary: monitor, GPU, resolution, refresh (HDR and scaling not yet) | API | | I | | 5 ✅ |
 

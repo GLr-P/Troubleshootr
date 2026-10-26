@@ -2,45 +2,54 @@
   "performance": {
     "value": {
       "sampleSeconds": 3.1000000000000001,
-      "cpuPercent": 19,
-      "diskActivePercent": 1.3,
-      "processorPerformancePercent": 60.600000000000001,
+      "cpuPercent": 27.5,
+      "diskActivePercent": 3.2000000000000002,
+      "processorPerformancePercent": 62.100000000000001,
       "processes": [
         {
-          "name": "Code.exe",
-          "pid": 6604,
-          "cpuPercent": 1.2,
-          "privateMB": 503,
-          "workingSetMB": 547,
-          "diskBytesPerSec": 384440,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+          "name": "opera.exe",
+          "pid": 6160,
+          "cpuPercent": 1.3,
+          "privateMB": 576,
+          "workingSetMB": 640,
+          "diskBytesPerSec": 175244,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
         },
         {
           "name": "opera.exe",
           "pid": 28548,
-          "cpuPercent": 0.90000000000000002,
-          "privateMB": 526,
-          "workingSetMB": 558,
-          "diskBytesPerSec": 301164,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
-        },
-        {
-          "name": "opera.exe",
-          "pid": 6160,
-          "cpuPercent": 0.69999999999999996,
-          "privateMB": 571,
-          "workingSetMB": 641,
-          "diskBytesPerSec": 302951,
+          "cpuPercent": 1.2,
+          "privateMB": 523,
+          "workingSetMB": 548,
+          "diskBytesPerSec": 173575,
           "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
         },
         {
           "name": "Code.exe",
-          "pid": 14392,
-          "cpuPercent": 0.29999999999999999,
-          "privateMB": 493,
-          "workingSetMB": 340,
-          "diskBytesPerSec": 384367,
+          "pid": 5408,
+          "cpuPercent": 0.40000000000000002,
+          "privateMB": 354,
+          "workingSetMB": 322,
+          "diskBytesPerSec": 6710,
           "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+        },
+        {
+          "name": "audiodg.exe",
+          "pid": 39064,
+          "cpuPercent": 0.40000000000000002,
+          "privateMB": 71,
+          "workingSetMB": 44,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Windows\\System32\\audiodg.exe"
+        },
+        {
+          "name": "EADesktop.exe",
+          "pid": 21144,
+          "cpuPercent": 0.29999999999999999,
+          "privateMB": 439,
+          "workingSetMB": 169,
+          "diskBytesPerSec": 8691,
+          "path": "C:\\Program Files\\Electronic Arts\\EA Desktop\\13.809.0.6322-1792076696\\EA Desktop\\EADesktop.exe"
         },
         {
           "name": "iGoSwServer.exe",
@@ -53,45 +62,63 @@
         },
         {
           "name": "Creative Cloud UI Helper.exe",
-          "pid": 22844,
+          "pid": 39908,
           "cpuPercent": 0.20000000000000001,
-          "privateMB": 326,
-          "workingSetMB": 186,
-          "diskBytesPerSec": 21826,
+          "privateMB": 470,
+          "workingSetMB": 311,
+          "diskBytesPerSec": 185882,
           "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
         },
         {
-          "name": "IntelGraphicsSoftware.exe",
-          "pid": 20232,
+          "name": "Code.exe",
+          "pid": 30244,
           "cpuPercent": 0.20000000000000001,
-          "privateMB": 171,
-          "workingSetMB": 15,
-          "diskBytesPerSec": 0,
-          "path": "C:\\Program Files\\Intel\\Intel Graphics Software\\IntelGraphicsSoftware.exe"
-        },
-        {
-          "name": "audiodg.exe",
-          "pid": 39064,
-          "cpuPercent": 0.20000000000000001,
-          "privateMB": 71,
-          "workingSetMB": 44,
-          "diskBytesPerSec": 0,
-          "path": "C:\\Windows\\System32\\audiodg.exe"
+          "privateMB": 177,
+          "workingSetMB": 132,
+          "diskBytesPerSec": 22338,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
         },
         {
           "name": "claude.exe",
-          "pid": 3872,
+          "pid": 15100,
           "cpuPercent": 0.10000000000000001,
-          "privateMB": 567,
-          "workingSetMB": 398,
+          "privateMB": 628,
+          "workingSetMB": 199,
           "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+        },
+        {
+          "name": "claude.exe",
+          "pid": 40880,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 627,
+          "workingSetMB": 524,
+          "diskBytesPerSec": 34,
+          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+        },
+        {
+          "name": "Discord.exe",
+          "pid": 40200,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 591,
+          "workingSetMB": 481,
+          "diskBytesPerSec": 1309,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Discord\\app-1.0.9265\\Discord.exe"
+        },
+        {
+          "name": "claude.exe",
+          "pid": 14388,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 580,
+          "workingSetMB": 462,
+          "diskBytesPerSec": 136,
           "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
         },
         {
           "name": "Troubleshootr.exe",
           "pid": 45684,
           "cpuPercent": 0,
-          "privateMB": 880,
+          "privateMB": 881,
           "workingSetMB": 896,
           "diskBytesPerSec": 0,
           "path": "C:\\Users\\[user]\\Desktop\\Troubleshootr-0.6.0\\Troubleshootr.exe"
@@ -100,58 +127,31 @@
           "name": "steamwebhelper.exe",
           "pid": 20092,
           "cpuPercent": 0,
-          "privateMB": 702,
-          "workingSetMB": 446,
-          "diskBytesPerSec": 125,
+          "privateMB": 704,
+          "workingSetMB": 448,
+          "diskBytesPerSec": 168,
           "path": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe"
         },
         {
           "name": "explorer.exe",
           "pid": 4588,
           "cpuPercent": 0,
-          "privateMB": 664,
-          "workingSetMB": 479,
-          "diskBytesPerSec": 0,
+          "privateMB": 665,
+          "workingSetMB": 512,
+          "diskBytesPerSec": 340,
           "path": "C:\\Windows\\explorer.exe"
         },
         {
-          "name": "claude.exe",
-          "pid": 15100,
-          "cpuPercent": 0,
-          "privateMB": 628,
-          "workingSetMB": 192,
-          "diskBytesPerSec": 0,
-          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
-        },
-        {
-          "name": "claude.exe",
-          "pid": 40880,
-          "cpuPercent": 0,
-          "privateMB": 604,
-          "workingSetMB": 508,
-          "diskBytesPerSec": 0,
-          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
-        },
-        {
-          "name": "claude.exe",
-          "pid": 14388,
-          "cpuPercent": 0,
-          "privateMB": 578,
-          "workingSetMB": 458,
-          "diskBytesPerSec": 168,
-          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
-        },
-        {
           "name": "Creative Cloud UI Helper.exe",
-          "pid": 39908,
+          "pid": 22844,
           "cpuPercent": 0,
-          "privateMB": 456,
-          "workingSetMB": 298,
-          "diskBytesPerSec": 22102,
+          "privateMB": 380,
+          "workingSetMB": 209,
+          "diskBytesPerSec": 185781,
           "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
         }
       ],
-      "processCount": 266
+      "processCount": 270
     }
   },
   "tuning": {
@@ -161,7 +161,7 @@
       "maxCpuOnAc": 100,
       "maxCpuOnBattery": 100,
       "onAcPower": false,
-      "batterySaverOn": false,
+      "batterySaverOn": true,
       "pageFileSettings": [
         "?:\\pagefile.sys"
       ],
@@ -169,7 +169,7 @@
         {
           "path": "C:\\pagefile.sys",
           "allocatedMB": 9029,
-          "currentMB": 263,
+          "currentMB": 256,
           "peakMB": 290
         }
       ],
@@ -179,7 +179,7 @@
         {
           "name": "Your temp files",
           "path": "C:\\Users\\[user]\\AppData\\Local\\Temp\\",
-          "bytes": 2561840992,
+          "bytes": 2699305657,
           "atLeast": true
         },
         {
@@ -223,7 +223,7 @@
       "installDateUtc": "2026-06-30T01:25:46Z",
       "is64BitOs": true,
       "architecture": "AMD64",
-      "uptimeSeconds": 479214,
+      "uptimeSeconds": 483306,
       "fastStartupEnabled": true,
       "pendingRebootReasons": [
         "file operations waiting for a restart"
@@ -254,8 +254,8 @@
     "value": {
       "installedMB": 32768,
       "usableMB": 32276,
-      "availableMB": 6974,
-      "commitUsedMB": 38405,
+      "availableMB": 6242,
+      "commitUsedMB": 38424,
       "commitLimitMB": 41305,
       "slotCount": 8,
       "maxCapacityMB": 32768,
@@ -372,7 +372,7 @@
         "fileSystem": "NTFS",
         "driveType": "Fixed",
         "totalBytes": 994179018752,
-        "freeBytes": 526336102400,
+        "freeBytes": 525952413696,
         "isSystem": true
       }
     ]
@@ -415,14 +415,14 @@
           ],
           "nvme": {
             "criticalWarning": 0,
-            "temperatureC": 36,
+            "temperatureC": 33,
             "availableSparePercent": 100,
             "spareThresholdPercent": 5,
             "percentageUsed": 1,
-            "dataUnitsRead": 8260800,
-            "dataUnitsWritten": 9382897,
+            "dataUnitsRead": 8261230,
+            "dataUnitsWritten": 9384729,
             "powerCycles": 187,
-            "powerOnHours": 330,
+            "powerOnHours": 332,
             "unsafeShutdowns": 13,
             "mediaErrors": 0,
             "errorLogEntries": 0,
@@ -3592,7 +3592,7 @@
       },
       "tempProfile": false,
       "profileBackups": 0,
-      "stabilityIndex": 7.1100000000000003,
+      "stabilityIndex": 7.1299999999999999,
       "stabilityLowest30Days": 2.3399999999999999,
       "licenseStatus": 1,
       "licenseName": "Windows(R), Core edition"
@@ -5896,6 +5896,19 @@
           "driverVersion": "10.0.26100.1",
           "driverDate": "2006-06-21T00:00:00Z",
           "inf": "c_swdevice.inf"
+        },
+        {
+          "name": "PawnIO",
+          "class": "SoftwareDevice",
+          "instanceId": "ROOT\\PAWNIO\\0000",
+          "hardwareId": "Root\\PawnIO",
+          "manufacturer": "namazso",
+          "service": "PawnIO",
+          "problemCode": 0,
+          "driverProvider": "namazso",
+          "driverVersion": "2.2.0.0",
+          "driverDate": "2026-03-11T00:00:00Z",
+          "inf": "oem497.inf"
         },
         {
           "name": "Rts-DMFT-Group",
@@ -8379,6 +8392,11 @@
           "name": "partmgr",
           "file": "partmgr.sys",
           "start": 0
+        },
+        {
+          "name": "PawnIO",
+          "file": "PawnIO.sys",
+          "start": 3
         },
         {
           "name": "pci",
@@ -11389,6 +11407,13 @@
           "scope": "Machine"
         },
         {
+          "name": "PawnIO",
+          "version": "2.2.0.0",
+          "publisher": "namazso",
+          "sizeKB": 10000,
+          "scope": "Machine"
+        },
+        {
           "name": "PdfCraft",
           "version": "0.11.0",
           "publisher": "Learning Machines LLC",
@@ -11624,7 +11649,7 @@
           "description": "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)",
           "type": "Wi-Fi",
           "status": "Up",
-          "speedMbps": 544,
+          "speedMbps": 576,
           "mac": "[redacted]",
           "dhcp": true,
           "ipv4": [
@@ -11715,13 +11740,13 @@
           "state": "connected",
           "ssid": "[redacted]",
           "bssid": "[redacted]",
-          "signalPercent": 65,
+          "signalPercent": 62,
           "rssi": -73,
           "channel": 48,
           "frequencyMHz": 5240,
           "phyType": 10,
-          "rxMbps": 544,
-          "txMbps": 144,
+          "rxMbps": 576,
+          "txMbps": 216,
           "auth": 7
         }
       ],
@@ -11789,7 +11814,7 @@
           "description": "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)",
           "type": "Wi-Fi",
           "status": "Up",
-          "speedMbps": 544,
+          "speedMbps": 576,
           "mac": "[redacted]",
           "dhcp": true,
           "ipv4": [
@@ -11815,21 +11840,21 @@
         "target": "192.168.1.254",
         "sent": 20,
         "received": 20,
-        "avgMs": 23.800000000000001,
-        "maxMs": 101
+        "avgMs": 18.399999999999999,
+        "maxMs": 34
       },
       "internetPing": {
         "target": "1.1.1.1",
         "sent": 20,
         "received": 20,
-        "avgMs": 35.100000000000001,
-        "maxMs": 98
+        "avgMs": 32.600000000000001,
+        "maxMs": 45
       },
       "internetTcp": true,
       "dnsOk": true,
-      "dnsMs": 98,
+      "dnsMs": 133,
       "webOk": true,
-      "clockOffsetSeconds": -3.3799999999999999,
+      "clockOffsetSeconds": -3.3900000000000001,
       "clockSource": "time.windows.com (NTP)",
       "timeSyncType": "NTP",
       "timeServiceStart": 3
@@ -11943,9 +11968,412 @@
       "suspiciousTasks": []
     }
   },
+  "sensors": {
+    "value": {
+      "driverInstalled": true,
+      "readings": [
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #1",
+          "type": "Load",
+          "value": 100,
+          "min": 100,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #2",
+          "type": "Load",
+          "value": 100,
+          "min": 100,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #3",
+          "type": "Load",
+          "value": 100,
+          "min": 100,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #4",
+          "type": "Load",
+          "value": 100,
+          "min": 100,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #5",
+          "type": "Load",
+          "value": 100,
+          "min": 100,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #6",
+          "type": "Load",
+          "value": 100,
+          "min": 100,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #7",
+          "type": "Load",
+          "value": 100,
+          "min": 100,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #8",
+          "type": "Load",
+          "value": 100,
+          "min": 100,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #9 Thread #1",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #9 Thread #2",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #10 Thread #1",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #10 Thread #2",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #11 Thread #1",
+          "type": "Load",
+          "value": 49.060001373291016,
+          "min": 49.060001373291016,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #11 Thread #2",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #12 Thread #1",
+          "type": "Load",
+          "value": 17.389999389648438,
+          "min": 17.389999389648438,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #12 Thread #2",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #13 Thread #1",
+          "type": "Load",
+          "value": 19.569999694824219,
+          "min": 19.569999694824219,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #13 Thread #2",
+          "type": "Load",
+          "value": 17.389999389648438,
+          "min": 17.389999389648438,
+          "max": 92
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #14 Thread #1",
+          "type": "Load",
+          "value": 56.520000457763672,
+          "min": 56.520000457763672,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #14 Thread #2",
+          "type": "Load",
+          "value": 8.6999998092651367,
+          "min": 8.6999998092651367,
+          "max": 40
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #15",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core #16",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 4
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Total",
+          "type": "Load",
+          "value": 44.029998779296875,
+          "min": 44.029998779296875,
+          "max": 60.729999542236328
+        },
+        {
+          "hardware": "Intel Core Ultra 7 155H",
+          "kind": "CPU",
+          "name": "CPU Core Max",
+          "type": "Load",
+          "value": 100,
+          "min": 100,
+          "max": 100
+        },
+        {
+          "hardware": "Virtual Memory",
+          "kind": "Memory",
+          "name": "Memory Used",
+          "type": "Data",
+          "value": 37.627017974853516,
+          "min": 37.627017974853516,
+          "max": 37.627017974853516
+        },
+        {
+          "hardware": "Virtual Memory",
+          "kind": "Memory",
+          "name": "Memory Available",
+          "type": "Data",
+          "value": 2.7106475830078125,
+          "min": 2.7106475830078125,
+          "max": 2.7106475830078125
+        },
+        {
+          "hardware": "Virtual Memory",
+          "kind": "Memory",
+          "name": "Memory",
+          "type": "Load",
+          "value": 93.280105590820313,
+          "min": 93.280105590820313,
+          "max": 93.280105590820313
+        },
+        {
+          "hardware": "Total Memory",
+          "kind": "Memory",
+          "name": "Memory Used",
+          "type": "Data",
+          "value": 25.483509063720703,
+          "min": 25.483509063720703,
+          "max": 25.483509063720703
+        },
+        {
+          "hardware": "Total Memory",
+          "kind": "Memory",
+          "name": "Memory Available",
+          "type": "Data",
+          "value": 6.0366401672363281,
+          "min": 6.0366401672363281,
+          "max": 6.0366401672363281
+        },
+        {
+          "hardware": "Total Memory",
+          "kind": "Memory",
+          "name": "Memory",
+          "type": "Load",
+          "value": 80.848312377929688,
+          "min": 80.848312377929688,
+          "max": 80.848312377929688
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D 3D",
+          "type": "Load",
+          "value": 10.100428581237793,
+          "min": 10.100428581237793,
+          "max": 10.100428581237793
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D Video Decode",
+          "type": "Load",
+          "value": 11.49809741973877,
+          "min": 11.49809741973877,
+          "max": 11.49809741973877
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D Copy",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D Video Processing",
+          "type": "Load",
+          "value": 31.094444274902344,
+          "min": 31.094444274902344,
+          "max": 31.094444274902344
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D Video Decode",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D Compute",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D GSC",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D ",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D ",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D ",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D GDI Render",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D Video Processing",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "hardware": "Intel(R) Arc(TM) Graphics",
+          "kind": "GPU",
+          "name": "D3D ",
+          "type": "Load",
+          "value": 0,
+          "min": 0,
+          "max": 0
+        }
+      ],
+      "thermalZones": [
+        {
+          "hardware": "ACPI thermal zone",
+          "kind": "Motherboard",
+          "name": "_TZ.THRM",
+          "type": "Temperature",
+          "value": 47.899999999999999
+        }
+      ]
+    }
+  },
   "meta": {
-    "toolVersion": "0.6.0",
-    "collectedUtc": "2026-10-26T03:32:21.6480301Z",
+    "toolVersion": "0.7.0",
+    "collectedUtc": "2026-10-26T04:40:32.3109967Z",
     "isAdmin": false,
     "anonymized": true,
     "utcOffsetMinutes": -420

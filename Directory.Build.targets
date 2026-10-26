@@ -1,0 +1,15 @@
+<Project>
+  <!--
+    LibreHardwareMonitorLib has no AnyCPU build, only runtimes/win-x64, win-x86 and win-arm64, which a net472 AnyCPU
+    app doesn't copy. Put them next to the exe under lhm\x64, lhm\x86 and lhm\arm64; Collectors' LhmLoader picks the
+    right one at run time.
+  -->
+  <Target Name="CopyLhmRuntimes" AfterTargets="Build" Condition="'$(TargetFramework)' == 'net472' and ('$(OutputType)' == 'Exe' or '$(OutputType)' == 'WinExe')">
+    <PropertyGroup>
+      <LhmRoot>$(NuGetPackageRoot)librehardwaremonitorlib\$(LhmVersion)\runtimes\</LhmRoot>
+    </PropertyGroup>
+    <Copy SourceFiles="$(LhmRoot)win-x64\lib\net472\LibreHardwareMonitorLib.dll" DestinationFolder="$(OutDir)lhm\x64" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(LhmRoot)win-x86\lib\net472\LibreHardwareMonitorLib.dll" DestinationFolder="$(OutDir)lhm\x86" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(LhmRoot)win-arm64\lib\net472\LibreHardwareMonitorLib.dll" DestinationFolder="$(OutDir)lhm\arm64" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

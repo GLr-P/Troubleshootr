@@ -8,7 +8,8 @@
     <ProjectReference Include="..\Troubleshootr.Core\Troubleshootr.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Management" Version="8.0.0" />
+    <PackageReference Include="LibreHardwareMonitorLib" Version="$(LhmVersion)" />
+    <PackageReference Include="System.Management" Version="10.0.2" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
     <PackageReference Include="System.Diagnostics.EventLog" Version="8.0.1" />
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.1" />

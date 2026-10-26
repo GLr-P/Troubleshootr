@@ -44,13 +44,5 @@ public partial class DiagnosePage : UserControl
     private async void Full_Click(object sender, RoutedEventArgs e) => await _vm.ScanAsync(full: true, null);
     private async void Selected_Click(object sender, RoutedEventArgs e) => await _vm.ScanAsync(full: true, SelectedCategories());
 
-    private void Elevate_Click(object sender, RoutedEventArgs e)
-    {
-        try
-        {
-            Process.Start(new ProcessStartInfo(Process.GetCurrentProcess().MainModule!.FileName) { Verb = "runas", UseShellExecute = true });
-            Application.Current.Shutdown();
-        }
-        catch (Win32Exception) { /* the user said No to the UAC prompt */ }
-    }
+    private void Elevate_Click(object sender, RoutedEventArgs e) => MainViewModel.RestartAsAdmin();
 }

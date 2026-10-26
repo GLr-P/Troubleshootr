@@ -103,6 +103,30 @@ public static class Native
         catch (Exception e) when (e is DllNotFoundException or EntryPointNotFoundException) { return null; }
     }
 
+    [StructLayout(LayoutKind.Sequential)]
+    private struct PROCESS_POWER_THROTTLING_STATE { public uint Version; public uint ControlMask; public uint StateMask; }
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool SetProcessInformation(IntPtr process, int infoClass, ref PROCESS_POWER_THROTTLING_STATE info, int size);
+
+    [DllImport("kernel32.dll")]
+    private static extern IntPtr GetCurrentProcess();
+
+    /// <summary>
+    /// Opts this process out of Windows 11's efficiency mode (EcoQoS), which otherwise parks a windowless process on slow
+    /// cores at low clocks. Needed for the CPU stress test to load the CPU for real. False on Windows 7/8 (no such mode).
+    /// </summary>
+    public static bool DisablePowerThrottling()
+    {
+        try
+        {
+            var state = new PROCESS_POWER_THROTTLING_STATE { Version = 1, ControlMask = 0x1 /* EXECUTION_SPEED */, StateMask = 0 };
+            return SetProcessInformation(GetCurrentProcess(), 4 /* ProcessPowerThrottling */, ref state, Marshal.SizeOf<PROCESS_POWER_THROTTLING_STATE>());
+        }
+        catch (EntryPointNotFoundException) { return false; }
+    }
+
     public static MEMORYSTATUSEX? MemoryStatus()
     {
         var m = new MEMORYSTATUSEX { dwLength = (uint)Marshal.SizeOf<MEMORYSTATUSEX>() };

@@ -9,6 +9,7 @@ Info CPU-005: The processor's speed is being limited by the firmware | 40 speed-
 Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
 NotChecked CPU-002: Performance: not collected in this scan
 NotChecked CPU-003: Performance: not collected in this scan
+NotChecked CPU-004: Sensors: not collected in this scan
 NotChecked CPU-008: Tuning: not collected in this scan
 NotChecked DRV-001: Devices: not collected in this scan
 NotChecked DRV-002: Devices: not collected in this scan
@@ -18,7 +19,9 @@ NotChecked DRV-006: Devices: not collected in this scan
 NotChecked DRV-010: Devices: not collected in this scan
 NotChecked GPU-006: Displays: not collected in this scan
 NotChecked GPU-007: Displays: not collected in this scan
+NotChecked GPU-008: Sensors: not collected in this scan
 NotChecked GPU-009: Displays: not collected in this scan
+NotChecked MEM-011: Sensors: not collected in this scan
 NotChecked NET-002: Network: not collected in this scan
 NotChecked NET-003: Network: not collected in this scan
 NotChecked NET-004: Connectivity: not collected in this scan

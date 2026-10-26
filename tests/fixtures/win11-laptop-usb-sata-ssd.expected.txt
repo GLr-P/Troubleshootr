@@ -4,6 +4,7 @@ Info STO-016: Health of Disk 1 (SSD 860 EVO 1TB) can't be read over USB | The US
 Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
 NotChecked CPU-002: Performance: not collected in this scan
 NotChecked CPU-003: Performance: not collected in this scan
+NotChecked CPU-004: Sensors: not collected in this scan
 NotChecked CPU-005: Events: not collected in this scan
 NotChecked CPU-006: Events: not collected in this scan
 NotChecked CPU-008: Tuning: not collected in this scan
@@ -24,10 +25,12 @@ NotChecked GPU-004: Events: not collected in this scan
 NotChecked GPU-005: Events: not collected in this scan
 NotChecked GPU-006: Displays: not collected in this scan
 NotChecked GPU-007: Displays: not collected in this scan
+NotChecked GPU-008: Sensors: not collected in this scan
 NotChecked GPU-009: Displays: not collected in this scan
 NotChecked MEM-007: Events: not collected in this scan
 NotChecked MEM-008: Events: not collected in this scan
 NotChecked MEM-009: Events: not collected in this scan
+NotChecked MEM-011: Sensors: not collected in this scan
 NotChecked NET-002: Network: not collected in this scan
 NotChecked NET-003: Network: not collected in this scan
 NotChecked NET-004: Connectivity: not collected in this scan

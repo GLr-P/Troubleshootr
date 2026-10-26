@@ -1417,5 +1417,140 @@
         }
       ]
     }
+  },
+  "sensors": {
+    "value": {
+      "driverInstalled": true,
+      "readings": [
+        {
+          "hardware": "Intel Core i7-13700K",
+          "kind": "CPU",
+          "name": "CPU Package",
+          "type": "Temperature",
+          "value": 97,
+          "min": 61,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core i7-13700K",
+          "kind": "CPU",
+          "name": "Core Max",
+          "type": "Temperature",
+          "value": 96,
+          "min": 60,
+          "max": 100
+        },
+        {
+          "hardware": "Intel Core i7-13700K",
+          "kind": "CPU",
+          "name": "P-Core #1 Distance to TjMax",
+          "type": "Temperature",
+          "value": 3,
+          "min": 0,
+          "max": 39
+        },
+        {
+          "hardware": "Intel Core i7-13700K",
+          "kind": "CPU",
+          "name": "P-Core #1",
+          "type": "Clock",
+          "value": 4190,
+          "min": 800,
+          "max": 5390
+        },
+        {
+          "hardware": "Intel Core i7-13700K",
+          "kind": "CPU",
+          "name": "CPU Package",
+          "type": "Power",
+          "value": 181.4,
+          "min": 12.2,
+          "max": 224.9
+        },
+        {
+          "hardware": "Intel Core i7-13700K",
+          "kind": "CPU",
+          "name": "CPU Total",
+          "type": "Load",
+          "value": 100,
+          "min": 2,
+          "max": 100
+        },
+        {
+          "hardware": "NVIDIA GeForce RTX 3080",
+          "kind": "GPU",
+          "name": "GPU Core",
+          "type": "Temperature",
+          "value": 88,
+          "min": 41,
+          "max": 89
+        },
+        {
+          "hardware": "NVIDIA GeForce RTX 3080",
+          "kind": "GPU",
+          "name": "GPU Hot Spot",
+          "type": "Temperature",
+          "value": 104,
+          "min": 50,
+          "max": 106
+        },
+        {
+          "hardware": "NVIDIA GeForce RTX 3080",
+          "kind": "GPU",
+          "name": "GPU Fan",
+          "type": "Fan",
+          "value": 2950,
+          "min": 0,
+          "max": 3010
+        },
+        {
+          "hardware": "NVIDIA GeForce RTX 3080",
+          "kind": "GPU",
+          "name": "GPU Core",
+          "type": "Load",
+          "value": 99,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "hardware": "DIMM #1",
+          "kind": "Memory",
+          "name": "Temperature",
+          "type": "Temperature",
+          "value": 87,
+          "min": 44,
+          "max": 88
+        },
+        {
+          "hardware": "Nuvoton NCT6798D",
+          "kind": "Motherboard",
+          "name": "CPU Fan",
+          "type": "Fan",
+          "value": 1980,
+          "min": 650,
+          "max": 2100
+        },
+        {
+          "hardware": "Nuvoton NCT6798D",
+          "kind": "Motherboard",
+          "name": "Vcore",
+          "type": "Voltage",
+          "value": 1.312,
+          "min": 0.71,
+          "max": 1.38
+        }
+      ],
+      "thermalZones": [
+        {
+          "hardware": "ACPI thermal zone",
+          "kind": "Motherboard",
+          "name": "_TZ.THRM",
+          "type": "Temperature",
+          "value": 27.8,
+          "min": 27.8,
+          "max": 27.8
+        }
+      ]
+    }
   }
 }

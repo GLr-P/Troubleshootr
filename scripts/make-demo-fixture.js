@@ -208,5 +208,27 @@ s.board.value.secureBoot = false;
 s.startup.value.entries.push({ name: 'WinSvcHost', location: 'HKCU Run', command: 'C:\\Users\\[user]\\AppData\\Local\\Temp\\winsvchost.exe /silent', enabled: true, file: 'C:\\Users\\[user]\\AppData\\Local\\Temp\\winsvchost.exe', signed: false });
 s.software.value.programs.push({ name: 'AnyDesk', version: '9.0.4', publisher: 'AnyDesk Software GmbH', installDate: '2026-10-23T00:00:00', scope: 'Machine (32-bit)' });
 
+// Phase 9: a hot CPU near its limit, a hot graphics card and a warm DDR5 stick (with the PawnIO driver, as admin).
+const reading = (kind, hardware, name, type, value, min, max) => ({ hardware, kind, name, type, value, min: min ?? value, max: max ?? value });
+s.sensors = { value: {
+  driverInstalled: true,
+  readings: [
+    reading('CPU', 'Intel Core i7-13700K', 'CPU Package', 'Temperature', 97, 61, 100),
+    reading('CPU', 'Intel Core i7-13700K', 'Core Max', 'Temperature', 96, 60, 100),
+    reading('CPU', 'Intel Core i7-13700K', 'P-Core #1 Distance to TjMax', 'Temperature', 3, 0, 39),
+    reading('CPU', 'Intel Core i7-13700K', 'P-Core #1', 'Clock', 4190, 800, 5390),
+    reading('CPU', 'Intel Core i7-13700K', 'CPU Package', 'Power', 181.4, 12.2, 224.9),
+    reading('CPU', 'Intel Core i7-13700K', 'CPU Total', 'Load', 100, 2, 100),
+    reading('GPU', 'NVIDIA GeForce RTX 3080', 'GPU Core', 'Temperature', 88, 41, 89),
+    reading('GPU', 'NVIDIA GeForce RTX 3080', 'GPU Hot Spot', 'Temperature', 104, 50, 106),
+    reading('GPU', 'NVIDIA GeForce RTX 3080', 'GPU Fan', 'Fan', 2950, 0, 3010),
+    reading('GPU', 'NVIDIA GeForce RTX 3080', 'GPU Core', 'Load', 99, 0, 100),
+    reading('Memory', 'DIMM #1', 'Temperature', 'Temperature', 87, 44, 88),
+    reading('Motherboard', 'Nuvoton NCT6798D', 'CPU Fan', 'Fan', 1980, 650, 2100),
+    reading('Motherboard', 'Nuvoton NCT6798D', 'Vcore', 'Voltage', 1.312, 0.71, 1.38),
+  ],
+  thermalZones: [reading('Motherboard', 'ACPI thermal zone', '_TZ.THRM', 'Temperature', 27.8)],
+} };
+
 fs.writeFileSync(path.join(dir, 'demo-many-problems.snap.json'), JSON.stringify(s, null, 2) + '\n');
 console.log('wrote demo-many-problems.snap.json');

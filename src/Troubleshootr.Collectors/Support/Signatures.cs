@@ -41,7 +41,7 @@ public static class Signatures
     private static extern int WinVerifyTrust(IntPtr hwnd, ref Guid action, ref WINTRUST_DATA data);
 
     private static readonly Guid GenericVerifyV2 = new("00AAC56B-CD44-11d0-8CC2-00C04FC295EE");
-    private const uint UiNone = 2, RevokeNone = 0, ChoiceFile = 1, CacheOnlyUrlRetrieval = 0x1000;
+    private const uint UiNone = 2, RevokeNone = 0, RevokeWholeChain = 1, ChoiceFile = 1, CacheOnlyUrlRetrieval = 0x1000;
 
     /// <summary>Results that mean "no valid signature". Anything else (no access, locked, unknown format) means "couldn't check".</summary>
     private static readonly HashSet<uint> NotTrusted =
@@ -60,7 +60,10 @@ public static class Signatures
     private static readonly HashSet<string> Signable = new(StringComparer.OrdinalIgnoreCase) { ".exe", ".dll", ".scr", ".com", ".sys", ".ocx", ".cpl", ".msi" };
 
     /// <summary>True = valid signature, false = unsigned or invalid, null = the file couldn't be checked (missing, no access, not a program file).</summary>
-    public static (bool? Signed, string? Publisher) Check(string file)
+    public static (bool? Signed, string? Publisher) Check(string file) => Check(file, checkRevocation: false);
+
+    /// <summary>With <paramref name="checkRevocation"/>, also asks the certificate authority whether the certificate was revoked (online; for files about to run as admin).</summary>
+    public static (bool? Signed, string? Publisher) Check(string file, bool checkRevocation)
     {
         if (!Signable.Contains(Path.GetExtension(file)) || !File.Exists(file)) return (null, null);
         var info = new WINTRUST_FILE_INFO { cbStruct = (uint)Marshal.SizeOf<WINTRUST_FILE_INFO>(), pcwszFilePath = file };
@@ -70,8 +73,8 @@ public static class Signatures
             Marshal.StructureToPtr(info, infoPtr, false);
             var data = new WINTRUST_DATA
             {
-                cbStruct = (uint)Marshal.SizeOf<WINTRUST_DATA>(), dwUIChoice = UiNone, fdwRevocationChecks = RevokeNone,
-                dwUnionChoice = ChoiceFile, pFile = infoPtr, dwProvFlags = CacheOnlyUrlRetrieval,
+                cbStruct = (uint)Marshal.SizeOf<WINTRUST_DATA>(), dwUIChoice = UiNone, fdwRevocationChecks = checkRevocation ? RevokeWholeChain : RevokeNone,
+                dwUnionChoice = ChoiceFile, pFile = infoPtr, dwProvFlags = checkRevocation ? 0 : CacheOnlyUrlRetrieval,
             };
             var action = GenericVerifyV2;
             var result = WinVerifyTrust(IntPtr.Zero, ref action, ref data);
