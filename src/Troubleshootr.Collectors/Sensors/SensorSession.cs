@@ -52,8 +52,9 @@ public sealed class SensorSession : IDisposable
         var s = new SensorSession();
         if (LhmLoader.Folder() is null) { s.Problem = "the sensor library isn't available for this processor type"; return s; }
         try { s._computer = LhmReader.Open(); }
-        catch (Exception e) when (e is FileNotFoundException or FileLoadException or BadImageFormatException or TypeLoadException)
-        { s.Problem = "the sensor library files are missing next to the app (lhm folder)"; }
+        catch (FileNotFoundException e) { s.Problem = $"a sensor library file is missing next to the app ({e.FileName ?? "lhm folder"}); extract the whole zip, not just the exe"; }
+        catch (Exception e) when (e is FileLoadException or BadImageFormatException or TypeLoadException)
+        { s.Problem = $"Windows wouldn't load the sensor library: {e.Message}"; }
         catch (Exception e) { s.Problem = $"the sensor library failed to start: {e.GetType().Name}: {e.Message}"; }
         return s;
     }

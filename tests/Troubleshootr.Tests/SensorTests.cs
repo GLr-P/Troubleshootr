@@ -78,6 +78,21 @@ public class SensorTests
         Assert.Contains("Temperatures need advanced sensors", LoadTest.Judge(Run(_ => 100), null).Summary);
     }
 
+    /// <summary>
+    /// Regression (2026-10-26, owner's desktop): from a downloaded zip every file is internet-marked and .NET Framework
+    /// refused LoadFrom for lhm\x64\LibreHardwareMonitorLib.dll, so the Sensors tab showed nothing. Both exes need this.
+    /// </summary>
+    [Theory]
+    [InlineData("Troubleshootr.App")]
+    [InlineData("Troubleshootr.Cli")]
+    public void ExesAllowLoadingTheSensorLibraryFromADownloadedZip(string project)
+    {
+        var dir = AppContext.BaseDirectory;
+        while (!File.Exists(Path.Combine(dir, "Troubleshootr.sln"))) dir = Path.GetDirectoryName(dir)!;
+        var config = File.ReadAllText(Path.Combine(dir, "src", project, "App.config"));
+        Assert.Contains("<loadFromRemoteSources enabled=\"true\" />", config);
+    }
+
     [Fact]
     public void Formatting()
     {
