@@ -64,6 +64,21 @@ public static class Snap
             InternetPing = new PingStats { Target = "1.1.1.1", Sent = 20, Received = 20, AvgMs = 18, MaxMs = 30 },
             InternetTcp = true, DnsOk = true, DnsMs = 12, WebOk = true, ClockOffsetSeconds = 0.4, ClockSource = "time.windows.com (NTP)", TimeSyncType = "NTP", TimeServiceStart = 3,
         }),
+        Security = Section<SecurityInfo>.Of(new SecurityInfo
+        {
+            SecurityCenter = true,
+            Antivirus = [new() { Name = "Windows Defender", Enabled = true, UpToDate = true, State = 397568 }],
+            Defender = new DefenderStatus { RunningMode = "Normal", AntivirusEnabled = true, RealTimeProtection = true, TamperProtection = true, SignaturesUpdatedUtc = Now.AddHours(-3), SignatureAgeDays = 0 },
+            FirewallDomain = true, FirewallPrivate = true, FirewallPublic = true, UacOn = true, UacAdminPrompt = 5,
+            TpmVersion = "2.0", TpmPresent = true, BitLocker = [new() { Drive = "C:", Protection = 2 }],
+            Accounts =
+            [
+                new() { Name = "Administrator", Rid = 500, Admin = true, Disabled = true },
+                new() { Name = "Guest", Rid = 501, Disabled = true, PasswordNotRequired = true },
+                new() { Name = "Owner", Rid = 1001, Admin = true },
+            ],
+            Smb1Client = false, Smb1Server = false, RdpEnabled = false, RdpNla = true, RdpPort = 3389, ListeningPorts = [445],
+        }),
         Updates = Section<UpdatesInfo>.Of(new UpdatesInfo { History = [new() { DateUtc = Now.AddDays(-10), Title = "2026-10 Cumulative Update for Windows 11 Version 25H2 (KB5099999)", Result = 2 }] }),
     };
 

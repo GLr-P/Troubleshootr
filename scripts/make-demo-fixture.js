@@ -171,5 +171,42 @@ s.connectivity = { value: {
 } };
 s.devices.value.devices.push({ name: 'Intel(R) Ethernet Connection I219-V', class: 'Net', problemCode: 22, driverProvider: 'Intel' });
 
+// Phase 8: two antiviruses (one out of date), a threat that wasn't removed, UAC off, open sharing, scam remote access.
+s.security = { value: {
+  securityCenter: true,
+  antivirus: [
+    { name: 'Windows Defender', enabled: false, upToDate: true, state: 393472 },
+    { name: 'Norton 360', enabled: true, upToDate: false, state: 266256 },
+    { name: 'McAfee LiveSafe', enabled: true, upToDate: true, state: 266240 },
+  ],
+  firewalls: [],
+  defender: { runningMode: 'Passive Mode', antivirusEnabled: true, realTimeProtection: false, tamperProtection: false, signaturesUpdatedUtc: '2026-10-20T10:00:00Z', signatureAgeDays: 4 },
+  threats: [
+    { name: 'Trojan:Win32/Wacatac.B!ml', severity: 5, detectedUtc: '2026-10-22T18:31:00Z', active: true, removed: false, where: 'file:_C:\\Users\\[user]\\Downloads\\free-game-setup.exe' },
+    { name: 'PUA:Win32/Presenoker', severity: 1, detectedUtc: '2026-10-15T09:12:00Z', active: false, removed: true, where: 'file:_C:\\Users\\[user]\\Downloads\\pdf-converter.exe' },
+  ],
+  firewallDomain: true, firewallPrivate: true, firewallPublic: false,
+  uacOn: false, uacAdminPrompt: 0,
+  tpmVersion: '2.0', tpmPresent: true,
+  bitLocker: [{ drive: 'C:', protection: 1 }],
+  accounts: [
+    { name: '[redacted]', rid: 500, admin: true, disabled: true, passwordNotRequired: false },
+    { name: '[redacted]', rid: 501, admin: false, disabled: false, passwordNotRequired: true },
+    { name: '[redacted]', rid: 1001, admin: true, disabled: false, passwordNotRequired: false, lastLogonUtc: '2026-10-24T08:00:00Z' },
+  ],
+  smb1Client: true, smb1Server: true, rdpEnabled: true, rdpNla: false, rdpPort: 3389, listeningPorts: [445, 3389],
+  browserPolicies: [
+    { browser: 'Chrome', kind: 'Search engine', value: 'https://search.yourfinder.example/?q={searchTerms}' },
+    { browser: 'Chrome', kind: 'Forced extensions', value: 'ohmpcdmgbjnfkfjkgjphnljpcdmkhiad;https://clients2.google.com/service/update2/crx' },
+  ],
+  remoteToolsRunning: ['AnyDesk'],
+  suspiciousTasks: [
+    { name: '\\SystemHealthUpdate', command: 'powershell.exe -w hidden -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkA', reason: 'encoded PowerShell command' },
+  ],
+} };
+s.board.value.secureBoot = false;
+s.startup.value.entries.push({ name: 'WinSvcHost', location: 'HKCU Run', command: 'C:\\Users\\[user]\\AppData\\Local\\Temp\\winsvchost.exe /silent', enabled: true, file: 'C:\\Users\\[user]\\AppData\\Local\\Temp\\winsvchost.exe', signed: false });
+s.software.value.programs.push({ name: 'AnyDesk', version: '9.0.4', publisher: 'AnyDesk Software GmbH', installDate: '2026-10-23T00:00:00', scope: 'Machine (32-bit)' });
+
 fs.writeFileSync(path.join(dir, 'demo-many-problems.snap.json'), JSON.stringify(s, null, 2) + '\n');
 console.log('wrote demo-many-problems.snap.json');

@@ -14,6 +14,7 @@ public sealed class StartupCollector : Collector<StartupInfo>
     private const string Approved = @"Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved";
 
     public override string Section => nameof(Snapshot.Startup);
+    public override TimeSpan Timeout => TimeSpan.FromSeconds(8);
 
     protected override StartupInfo Collect(CollectContext ctx, CancellationToken ct)
     {
@@ -24,10 +25,31 @@ public sealed class StartupCollector : Collector<StartupInfo>
         Folder(info, Environment.GetFolderPath(Environment.SpecialFolder.Startup), RegistryHive.CurrentUser, "Startup folder");
         Folder(info, Environment.GetFolderPath(Environment.SpecialFolder.CommonStartup), RegistryHive.LocalMachine, "All users Startup folder");
         ct.ThrowIfCancellationRequested();
-        try { Tasks(info, ct); }
-        catch (Exception e) when (e is COMException or TargetInvocationException or InvalidCastException) { } // Task Scheduler service off
+        Tasks(info, ct);
+        ct.ThrowIfCancellationRequested();
+        CheckFiles(info, ct);
         return info;
     }
+
+    /// <summary>
+    /// Resolves each entry's file and checks its signature, in parallel. Windows' own files (System32 and friends) are
+    /// skipped: Windows signs most of them through catalogs, which a file check reports as unsigned.
+    /// </summary>
+    private static void CheckFiles(StartupInfo info, CancellationToken ct)
+    {
+        foreach (var e in info.Entries)
+        {
+            var command = e.Command is { } c && c.EndsWith(".lnk", StringComparison.OrdinalIgnoreCase) ? Signatures.ShortcutTarget(c) ?? c : e.Command;
+            e.File = Signatures.FileOf(command);
+        }
+        // Checking hashes the whole file (big launchers are 100+ MB), so it gets a budget; files not reached stay unchecked.
+        var watch = System.Diagnostics.Stopwatch.StartNew();
+        Parallel.ForEach(info.Entries.Where(e => e.File is not null && !StartupEntry.IsWindowsFile(e.File)),
+            new ParallelOptions { CancellationToken = ct, MaxDegreeOfParallelism = 4 },
+            e => { if (watch.ElapsedMilliseconds < SignatureBudgetMs) (e.Signed, e.Publisher) = Signatures.Check(e.File!); });
+    }
+
+    private const int SignatureBudgetMs = 3000;
 
     private static void RunKey(StartupInfo info, RegistryHive hive, RegistryView view, string location, string approvedName)
     {
@@ -80,51 +102,17 @@ public sealed class StartupCollector : Collector<StartupInfo>
         return result;
     }
 
-    private static object? Call(object target, string name, params object[] args) =>
-        target.GetType().InvokeMember(name, BindingFlags.InvokeMethod, null, target, args, CultureInfo.InvariantCulture);
-
-    private static object? Get(object target, string name, params object[] args) =>
-        target.GetType().InvokeMember(name, BindingFlags.GetProperty, null, target, args.Length == 0 ? null : args, CultureInfo.InvariantCulture);
-
-    private static IEnumerable<object> Items(object collection)
-    {
-        var count = Convert.ToInt32(Get(collection, "Count"), CultureInfo.InvariantCulture);
-        for (var i = 1; i <= count; i++) yield return Get(collection, "Item", i)!;
-    }
-
     /// <summary>Scheduled tasks with a logon (9) or boot (8) trigger, outside \Microsoft (those are Windows' own).</summary>
-    private static void Tasks(StartupInfo info, CancellationToken ct)
+    private static void Tasks(StartupInfo info, CancellationToken ct) => TaskWalk.Each(task =>
     {
-        var type = Type.GetTypeFromProgID("Schedule.Service");
-        if (type is null) return;
-        var service = Activator.CreateInstance(type)!;
-        try
+        var definition = Com.Get(task, "Definition")!;
+        if (!Com.Items(Com.Get(definition, "Triggers")!).Any(t => Com.Int(Com.Get(t, "Type")) is 8 or 9)) return;
+        info.Entries.Add(new StartupEntry
         {
-            Call(service, "Connect");
-            var stack = new Stack<object>();
-            stack.Push(Call(service, "GetFolder", @"\")!);
-            while (stack.Count > 0)
-            {
-                ct.ThrowIfCancellationRequested();
-                var folder = stack.Pop();
-                foreach (var task in Items(Call(folder, "GetTasks", 1)!))
-                {
-                    var definition = Get(task, "Definition")!;
-                    var triggers = Items(Get(definition, "Triggers")!).Select(t => Convert.ToInt32(Get(t, "Type"), CultureInfo.InvariantCulture)).ToList();
-                    if (!triggers.Any(t => t is 8 or 9)) continue;
-                    var action = Items(Get(definition, "Actions")!).FirstOrDefault(a => Convert.ToInt32(Get(a, "Type"), CultureInfo.InvariantCulture) == 0);
-                    info.Entries.Add(new StartupEntry
-                    {
-                        Name = Get(task, "Name") as string ?? "",
-                        Location = "Scheduled task",
-                        Command = action is null ? null : $"{Get(action, "Path")} {Get(action, "Arguments")}".Trim(),
-                        Enabled = Get(task, "Enabled") is true,
-                    });
-                }
-                foreach (var sub in Items(Call(folder, "GetFolders", 0)!))
-                    if (!(Get(sub, "Path") as string ?? "").StartsWith(@"\Microsoft", StringComparison.OrdinalIgnoreCase)) stack.Push(sub);
-            }
-        }
-        finally { Marshal.ReleaseComObject(service); }
-    }
+            Name = Com.Get(task, "Name") as string ?? "",
+            Location = "Scheduled task",
+            Command = TaskWalk.Commands(definition).FirstOrDefault(),
+            Enabled = Com.Get(task, "Enabled") is true,
+        });
+    }, ct);
 }

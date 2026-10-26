@@ -1,125 +1,134 @@
 {
   "performance": {
     "value": {
-      "sampleSeconds": 3,
-      "cpuPercent": 18.300000000000001,
-      "diskActivePercent": 6.2999999999999998,
-      "processorPerformancePercent": 184.69999999999999,
+      "sampleSeconds": 3.1000000000000001,
+      "cpuPercent": 19,
+      "diskActivePercent": 1.3,
+      "processorPerformancePercent": 60.600000000000001,
       "processes": [
         {
-          "name": "dotnet.exe",
-          "pid": 14236,
-          "cpuPercent": 1.8,
-          "privateMB": 71,
-          "workingSetMB": 139,
-          "diskBytesPerSec": 0,
-          "path": "C:\\Program Files\\dotnet\\dotnet.exe"
-        },
-        {
           "name": "Code.exe",
-          "pid": 5408,
-          "cpuPercent": 0.69999999999999996,
-          "privateMB": 334,
-          "workingSetMB": 332,
-          "diskBytesPerSec": 61335,
+          "pid": 6604,
+          "cpuPercent": 1.2,
+          "privateMB": 503,
+          "workingSetMB": 547,
+          "diskBytesPerSec": 384440,
           "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
         },
         {
           "name": "opera.exe",
-          "pid": 35380,
-          "cpuPercent": 0.59999999999999998,
-          "privateMB": 879,
-          "workingSetMB": 950,
-          "diskBytesPerSec": 736045,
+          "pid": 28548,
+          "cpuPercent": 0.90000000000000002,
+          "privateMB": 526,
+          "workingSetMB": 558,
+          "diskBytesPerSec": 301164,
           "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
-        },
-        {
-          "name": "explorer.exe",
-          "pid": 4588,
-          "cpuPercent": 0.59999999999999998,
-          "privateMB": 648,
-          "workingSetMB": 410,
-          "diskBytesPerSec": 83076,
-          "path": "C:\\Windows\\explorer.exe"
         },
         {
           "name": "opera.exe",
-          "pid": 5272,
-          "cpuPercent": 0.40000000000000002,
-          "privateMB": 1270,
-          "workingSetMB": 958,
-          "diskBytesPerSec": 112292,
+          "pid": 6160,
+          "cpuPercent": 0.69999999999999996,
+          "privateMB": 571,
+          "workingSetMB": 641,
+          "diskBytesPerSec": 302951,
           "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
         },
         {
-          "name": "Creative Cloud UI Helper.exe",
-          "pid": 39908,
+          "name": "Code.exe",
+          "pid": 14392,
           "cpuPercent": 0.29999999999999999,
-          "privateMB": 452,
-          "workingSetMB": 299,
-          "diskBytesPerSec": 518307,
-          "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
+          "privateMB": 493,
+          "workingSetMB": 340,
+          "diskBytesPerSec": 384367,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+        },
+        {
+          "name": "iGoSwServer.exe",
+          "pid": 10128,
+          "cpuPercent": 0.29999999999999999,
+          "privateMB": 2,
+          "workingSetMB": 5,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Windows\\System32\\DriverStore\\FileRepository\\igoaudioservice.inf_amd64_04b47b6cfc11eefe\\iGoSwServer.exe"
         },
         {
           "name": "Creative Cloud UI Helper.exe",
           "pid": 22844,
           "cpuPercent": 0.20000000000000001,
-          "privateMB": 318,
-          "workingSetMB": 183,
-          "diskBytesPerSec": 524734,
+          "privateMB": 326,
+          "workingSetMB": 186,
+          "diskBytesPerSec": 21826,
           "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
         },
         {
-          "name": "opera.exe",
-          "pid": 12960,
+          "name": "IntelGraphicsSoftware.exe",
+          "pid": 20232,
           "cpuPercent": 0.20000000000000001,
-          "privateMB": 225,
-          "workingSetMB": 314,
-          "diskBytesPerSec": 199899,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
+          "privateMB": 171,
+          "workingSetMB": 15,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Program Files\\Intel\\Intel Graphics Software\\IntelGraphicsSoftware.exe"
         },
         {
-          "name": "Code.exe",
-          "pid": 30244,
+          "name": "audiodg.exe",
+          "pid": 39064,
           "cpuPercent": 0.20000000000000001,
-          "privateMB": 175,
-          "workingSetMB": 130,
-          "diskBytesPerSec": 22616,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+          "privateMB": 71,
+          "workingSetMB": 44,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Windows\\System32\\audiodg.exe"
         },
         {
-          "name": "Code.exe",
-          "pid": 20816,
-          "cpuPercent": 0.20000000000000001,
-          "privateMB": 84,
-          "workingSetMB": 126,
-          "diskBytesPerSec": 20670,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-        },
-        {
-          "name": "Code.exe",
-          "pid": 14392,
+          "name": "claude.exe",
+          "pid": 3872,
           "cpuPercent": 0.10000000000000001,
-          "privateMB": 517,
-          "workingSetMB": 368,
-          "diskBytesPerSec": 152628,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+          "privateMB": 567,
+          "workingSetMB": 398,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+        },
+        {
+          "name": "Troubleshootr.exe",
+          "pid": 45684,
+          "cpuPercent": 0,
+          "privateMB": 880,
+          "workingSetMB": 896,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\Desktop\\Troubleshootr-0.6.0\\Troubleshootr.exe"
         },
         {
           "name": "steamwebhelper.exe",
           "pid": 20092,
           "cpuPercent": 0,
-          "privateMB": 700,
-          "workingSetMB": 445,
-          "diskBytesPerSec": 171,
+          "privateMB": 702,
+          "workingSetMB": 446,
+          "diskBytesPerSec": 125,
           "path": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe"
+        },
+        {
+          "name": "explorer.exe",
+          "pid": 4588,
+          "cpuPercent": 0,
+          "privateMB": 664,
+          "workingSetMB": 479,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Windows\\explorer.exe"
         },
         {
           "name": "claude.exe",
           "pid": 15100,
           "cpuPercent": 0,
-          "privateMB": 626,
+          "privateMB": 628,
           "workingSetMB": 192,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+        },
+        {
+          "name": "claude.exe",
+          "pid": 40880,
+          "cpuPercent": 0,
+          "privateMB": 604,
+          "workingSetMB": 508,
           "diskBytesPerSec": 0,
           "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
         },
@@ -127,31 +136,22 @@
           "name": "claude.exe",
           "pid": 14388,
           "cpuPercent": 0,
-          "privateMB": 579,
-          "workingSetMB": 398,
-          "diskBytesPerSec": 228,
+          "privateMB": 578,
+          "workingSetMB": 458,
+          "diskBytesPerSec": 168,
           "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
         },
         {
-          "name": "claude.exe",
-          "pid": 40880,
+          "name": "Creative Cloud UI Helper.exe",
+          "pid": 39908,
           "cpuPercent": 0,
-          "privateMB": 576,
-          "workingSetMB": 541,
-          "diskBytesPerSec": 215,
-          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
-        },
-        {
-          "name": "claude.exe",
-          "pid": 3872,
-          "cpuPercent": 0,
-          "privateMB": 567,
-          "workingSetMB": 399,
-          "diskBytesPerSec": 0,
-          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+          "privateMB": 456,
+          "workingSetMB": 298,
+          "diskBytesPerSec": 22102,
+          "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
         }
       ],
-      "processCount": 299
+      "processCount": 266
     }
   },
   "tuning": {
@@ -168,9 +168,9 @@
       "pageFiles": [
         {
           "path": "C:\\pagefile.sys",
-          "allocatedMB": 12072,
-          "currentMB": 220,
-          "peakMB": 268
+          "allocatedMB": 9029,
+          "currentMB": 263,
+          "peakMB": 290
         }
       ],
       "transparency": true,
@@ -179,7 +179,7 @@
         {
           "name": "Your temp files",
           "path": "C:\\Users\\[user]\\AppData\\Local\\Temp\\",
-          "bytes": 3448197649,
+          "bytes": 2561840992,
           "atLeast": true
         },
         {
@@ -223,7 +223,7 @@
       "installDateUtc": "2026-06-30T01:25:46Z",
       "is64BitOs": true,
       "architecture": "AMD64",
-      "uptimeSeconds": 476497,
+      "uptimeSeconds": 479214,
       "fastStartupEnabled": true,
       "pendingRebootReasons": [
         "file operations waiting for a restart"
@@ -254,9 +254,9 @@
     "value": {
       "installedMB": 32768,
       "usableMB": 32276,
-      "availableMB": 5156,
-      "commitUsedMB": 41571,
-      "commitLimitMB": 44348,
+      "availableMB": 6974,
+      "commitUsedMB": 38405,
+      "commitLimitMB": 41305,
       "slotCount": 8,
       "maxCapacityMB": 32768,
       "modules": [
@@ -372,7 +372,7 @@
         "fileSystem": "NTFS",
         "driveType": "Fixed",
         "totalBytes": 994179018752,
-        "freeBytes": 520571629568,
+        "freeBytes": 526336102400,
         "isSystem": true
       }
     ]
@@ -415,12 +415,12 @@
           ],
           "nvme": {
             "criticalWarning": 0,
-            "temperatureC": 44,
+            "temperatureC": 36,
             "availableSparePercent": 100,
             "spareThresholdPercent": 5,
             "percentageUsed": 1,
-            "dataUnitsRead": 8256117,
-            "dataUnitsWritten": 9379218,
+            "dataUnitsRead": 8260800,
+            "dataUnitsWritten": 9382897,
             "powerCycles": 187,
             "powerOnHours": 330,
             "unsafeShutdowns": 13,
@@ -3592,7 +3592,7 @@
       },
       "tempProfile": false,
       "profileBackups": 0,
-      "stabilityIndex": 7.0899999999999999,
+      "stabilityIndex": 7.1100000000000003,
       "stabilityLowest30Days": 2.3399999999999999,
       "licenseStatus": 1,
       "licenseName": "Windows(R), Core edition"
@@ -10673,157 +10673,219 @@
           "name": "OneDrive",
           "location": "HKCU Run",
           "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\u0022 /background",
-          "enabled": false
+          "enabled": false,
+          "file": "C:\\Users\\[user]\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe",
+          "signed": true,
+          "publisher": "Microsoft Corporation"
         },
         {
           "name": "Opera Stable",
           "location": "HKCU Run",
           "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe\u0022 --autostart",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe",
+          "signed": true,
+          "publisher": "Opera Norway AS"
         },
         {
           "name": "Discord",
           "location": "HKCU Run",
           "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Discord\\Update.exe\u0022 --processStart Discord.exe --process-start-args \u0022--start-inactive\u0022",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Users\\[user]\\AppData\\Local\\Discord\\Update.exe",
+          "signed": true,
+          "publisher": "Discord Inc."
         },
         {
           "name": "Steam",
           "location": "HKCU Run",
           "command": "\u0022C:\\Program Files (x86)\\Steam\\steam.exe\u0022 -silent",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Program Files (x86)\\Steam\\steam.exe",
+          "signed": true,
+          "publisher": "Valve Corp."
         },
         {
           "name": "com.overwolf.curseforge",
           "location": "HKCU Run",
           "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Programs\\CurseForge Windows\\CurseForge.exe\u0022 --minimized",
-          "enabled": false
+          "enabled": false,
+          "file": "C:\\Users\\[user]\\AppData\\Local\\Programs\\CurseForge Windows\\CurseForge.exe",
+          "signed": true,
+          "publisher": "Overwolf Ltd"
         },
         {
           "name": "Spotify",
           "location": "HKCU Run",
           "command": "\u0022C:\\Users\\[user]\\AppData\\Roaming\\Spotify\\Spotify.exe\u0022 --autostart --minimized",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Users\\[user]\\AppData\\Roaming\\Spotify\\Spotify.exe",
+          "signed": true,
+          "publisher": "Spotify AB"
         },
         {
           "name": "EADM",
           "location": "HKCU Run",
           "command": "\u0022C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EALauncher.exe\u0022 -silentOs",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EALauncher.exe",
+          "signed": true,
+          "publisher": "Electronic Arts, Inc."
         },
         {
           "name": "com.nanotechservices.plannr",
           "location": "HKCU Run",
           "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Programs\\Plannr\\Plannr.exe\u0022 --hidden",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Plannr\\Plannr.exe",
+          "signed": false
         },
         {
           "name": "Opera Browser Assistant",
           "location": "HKCU Run",
           "command": "\u0022C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\assistant\\browser_assistant.exe\u0022",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\assistant\\browser_assistant.exe",
+          "signed": true,
+          "publisher": "Opera Norway AS"
         },
         {
           "name": "MicrosoftEdgeAutoLaunch_9D8E8A6EDA8A2C7E41612F557B2C3C78",
           "location": "HKCU Run",
           "command": "\u0022C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\u0022 --no-startup-window --win-session-start",
-          "enabled": false
+          "enabled": false,
+          "file": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+          "signed": true,
+          "publisher": "Microsoft Corporation"
         },
         {
           "name": "SecurityHealth",
           "location": "HKLM Run",
           "command": "C:\\Windows\\system32\\SecurityHealthSystray.exe",
-          "enabled": false
+          "enabled": false,
+          "file": "C:\\Windows\\system32\\SecurityHealthSystray.exe"
         },
         {
           "name": "RtkAudUService",
           "location": "HKLM Run",
           "command": "\u0022C:\\Windows\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_a112e46fc636d880\\RtkAudUService64.exe\u0022 -background",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Windows\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_a112e46fc636d880\\RtkAudUService64.exe"
         },
         {
           "name": "MSI Pen",
           "location": "HKLM Run",
           "command": "\u0022C:\\Program Files (x86)\\MSI\\MSI Pen\\MSI Pen.exe\u0022",
-          "enabled": false
+          "enabled": false,
+          "file": "C:\\Program Files (x86)\\MSI\\MSI Pen\\MSI Pen.exe",
+          "signed": true,
+          "publisher": "Micro-Star International CO., LTD."
         },
         {
           "name": "Adobe CCXProcess",
           "location": "HKLM Run (32-bit)",
           "command": "C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe",
+          "signed": true,
+          "publisher": "Adobe Inc."
         },
         {
           "name": "Intel\u00AE Graphics Software",
           "location": "HKLM Run (32-bit)",
           "command": "\u0022C:\\Program Files\\Intel\\Intel Graphics Software\\IntelGraphicsSoftware.exe\u0022 -s",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Program Files\\Intel\\Intel Graphics Software\\IntelGraphicsSoftware.exe",
+          "signed": true,
+          "publisher": "Intel Corporation"
         },
         {
           "name": "Adobe Creative Cloud",
           "location": "HKLM Run (32-bit)",
           "command": "\u0022C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud.exe\u0022 --showwindow=false --onOSstartup=true",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud.exe",
+          "signed": true,
+          "publisher": "Adobe Inc."
         },
         {
           "name": "Jagex Launcher",
           "location": "Startup folder",
           "command": "C:\\Users\\[user]\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Jagex Launcher.lnk",
-          "enabled": false
+          "enabled": false,
+          "file": "C:\\Program Files (x86)\\Jagex Launcher\\JagexLauncher.exe",
+          "signed": true,
+          "publisher": "Jagex Limited"
         },
         {
           "name": "Jagex Launcher",
           "location": "All users Startup folder",
           "command": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Jagex Launcher.lnk",
-          "enabled": false
-        },
-        {
-          "name": "RustDesk Tray",
-          "location": "All users Startup folder",
-          "command": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\RustDesk Tray.lnk",
-          "enabled": true
+          "enabled": false,
+          "file": "C:\\Program Files (x86)\\Jagex Launcher\\JagexLauncher.exe",
+          "signed": true,
+          "publisher": "Jagex Limited"
         },
         {
           "name": "Tailscale",
           "location": "All users Startup folder",
           "command": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Tailscale.lnk",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Program Files\\Tailscale\\tailscale-ipn.exe",
+          "signed": true,
+          "publisher": "Tailscale Inc."
         },
         {
           "name": "iGoAudioTaskSession",
           "location": "Scheduled task",
           "command": "C:\\Windows\\System32\\DriverStore\\FileRepository\\igoaudioservice.inf_amd64_04b47b6cfc11eefe\\iGoSwServer.exe --apo --server=session_monitor",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Windows\\System32\\DriverStore\\FileRepository\\igoaudioservice.inf_amd64_04b47b6cfc11eefe\\iGoSwServer.exe"
         },
         {
           "name": "OmApSvcBroker",
           "location": "Scheduled task",
           "command": "C:\\Program Files (x86)\\MSI\\MSI NBFoundation Service\\OmApSvcBroker.exe",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Program Files (x86)\\MSI\\MSI NBFoundation Service\\OmApSvcBroker.exe",
+          "signed": true,
+          "publisher": "Micro-Star International CO., LTD."
         },
         {
           "name": "OneDC_Updater",
           "location": "Scheduled task",
           "command": "C:\\Program Files (x86)\\MSI\\MSI_Center_Updater\\OneDC_Updater.exe OneDragonCenter",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Program Files (x86)\\MSI\\MSI_Center_Updater\\OneDC_Updater.exe",
+          "signed": true,
+          "publisher": "Micro-Star International CO., LTD."
         },
         {
           "name": "OneDrive Startup Task-S-1-5-21-[redacted]",
           "location": "Scheduled task",
           "command": "C:\\Users\\[user]\\AppData\\Local\\Microsoft\\OneDrive\\26.189.0928.0007\\OneDriveLauncher.exe /startInstances",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Users\\[user]\\AppData\\Local\\Microsoft\\OneDrive\\26.189.0928.0007\\OneDriveLauncher.exe",
+          "signed": true,
+          "publisher": "Microsoft Corporation"
         },
         {
           "name": "Opera scheduled assistant Autoupdate 1787426078",
           "location": "Scheduled task",
           "command": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\autoupdate\\opera_autoupdate.exe --scheduledtask --productiscomponent --installdir=\u0022C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\assistant\u0022 --producttype=assistant $(Arg0)",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\autoupdate\\opera_autoupdate.exe",
+          "signed": true,
+          "publisher": "Opera Norway AS"
         },
         {
           "name": "Opera scheduled Autoupdate 1786040029",
           "location": "Scheduled task",
           "command": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\autoupdate\\opera_autoupdate.exe --scheduledtask $(Arg0)",
-          "enabled": true
+          "enabled": true,
+          "file": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\autoupdate\\opera_autoupdate.exe",
+          "signed": true,
+          "publisher": "Opera Norway AS"
         }
       ]
     }
@@ -11562,7 +11624,7 @@
           "description": "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)",
           "type": "Wi-Fi",
           "status": "Up",
-          "speedMbps": 681,
+          "speedMbps": 544,
           "mac": "[redacted]",
           "dhcp": true,
           "ipv4": [
@@ -11653,13 +11715,13 @@
           "state": "connected",
           "ssid": "[redacted]",
           "bssid": "[redacted]",
-          "signalPercent": 75,
-          "rssi": -66,
-          "channel": 161,
-          "frequencyMHz": 5805,
+          "signalPercent": 65,
+          "rssi": -73,
+          "channel": 48,
+          "frequencyMHz": 5240,
           "phyType": 10,
-          "rxMbps": 681,
-          "txMbps": 216,
+          "rxMbps": 544,
+          "txMbps": 144,
           "auth": 7
         }
       ],
@@ -11727,7 +11789,7 @@
           "description": "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)",
           "type": "Wi-Fi",
           "status": "Up",
-          "speedMbps": 681,
+          "speedMbps": 544,
           "mac": "[redacted]",
           "dhcp": true,
           "ipv4": [
@@ -11753,29 +11815,137 @@
         "target": "192.168.1.254",
         "sent": 20,
         "received": 20,
-        "avgMs": 7,
-        "maxMs": 9
+        "avgMs": 23.800000000000001,
+        "maxMs": 101
       },
       "internetPing": {
         "target": "1.1.1.1",
         "sent": 20,
         "received": 20,
-        "avgMs": 21,
-        "maxMs": 22
+        "avgMs": 35.100000000000001,
+        "maxMs": 98
       },
       "internetTcp": true,
       "dnsOk": true,
-      "dnsMs": 23,
+      "dnsMs": 98,
       "webOk": true,
-      "clockOffsetSeconds": -3.3700000000000001,
+      "clockOffsetSeconds": -3.3799999999999999,
       "clockSource": "time.windows.com (NTP)",
       "timeSyncType": "NTP",
       "timeServiceStart": 3
     }
   },
+  "security": {
+    "value": {
+      "securityCenter": true,
+      "antivirus": [
+        {
+          "name": "Windows Defender",
+          "enabled": true,
+          "upToDate": true,
+          "state": 397568
+        }
+      ],
+      "firewalls": [],
+      "defender": {
+        "runningMode": "Normal",
+        "antivirusEnabled": true,
+        "realTimeProtection": true,
+        "tamperProtection": true,
+        "signaturesUpdatedUtc": "2026-10-25T20:04:08Z",
+        "signatureAgeDays": 0
+      },
+      "threats": [],
+      "firewallDomain": true,
+      "firewallPrivate": true,
+      "firewallPublic": true,
+      "uacOn": true,
+      "uacAdminPrompt": 5,
+      "tpmVersion": "2.0",
+      "tpmPresent": true,
+      "bitLocker": [
+        {
+          "drive": "C:",
+          "protection": 1
+        }
+      ],
+      "accounts": [
+        {
+          "name": "[redacted]",
+          "rid": 500,
+          "admin": true,
+          "disabled": true,
+          "passwordNotRequired": false,
+          "lastLogonUtc": "2025-11-10T21:46:36Z"
+        },
+        {
+          "name": "[redacted]",
+          "rid": 1001,
+          "admin": true,
+          "disabled": false,
+          "passwordNotRequired": false
+        },
+        {
+          "name": "[redacted]",
+          "rid": 1003,
+          "admin": false,
+          "disabled": false,
+          "passwordNotRequired": false,
+          "lastLogonUtc": "2026-10-20T18:26:25Z"
+        },
+        {
+          "name": "[redacted]",
+          "rid": 1004,
+          "admin": false,
+          "disabled": false,
+          "passwordNotRequired": false
+        },
+        {
+          "name": "[redacted]",
+          "rid": 503,
+          "admin": false,
+          "disabled": true,
+          "passwordNotRequired": true
+        },
+        {
+          "name": "[redacted]",
+          "rid": 501,
+          "admin": false,
+          "disabled": true,
+          "passwordNotRequired": true
+        },
+        {
+          "name": "[redacted]",
+          "rid": 504,
+          "admin": false,
+          "disabled": true,
+          "passwordNotRequired": false
+        },
+        {
+          "name": "[redacted]",
+          "rid": 1005,
+          "admin": false,
+          "disabled": true,
+          "passwordNotRequired": true,
+          "lastLogonUtc": "2026-10-20T19:01:20Z"
+        }
+      ],
+      "smb1Client": false,
+      "smb1Server": false,
+      "rdpEnabled": false,
+      "rdpNla": true,
+      "rdpPort": 3389,
+      "listeningPorts": [
+        445
+      ],
+      "browserPolicies": [],
+      "remoteToolsRunning": [],
+      "suspiciousTasks": []
+    }
+  },
   "meta": {
     "toolVersion": "0.6.0",
-    "collectedUtc": "2026-10-26T02:47:04.7053439Z",
+    "collectedUtc": "2026-10-26T03:32:21.6480301Z",
     "isAdmin": false,
     "anonymized": true,
     "utcOffsetMinutes": -420

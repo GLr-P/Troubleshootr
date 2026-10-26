@@ -25,7 +25,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | STO-014 | Partition alignment (offset not 4 KiB-aligned on SSD) | WMI Win32_DiskPartition | | W | | 3 ✅ |
 | STO-015 | Disk link speed / mode (SATA at 1.5/3 Gb/s, NVMe at reduced PCIe lanes or generation) | IOCTL / WMI MSFT_PhysicalDisk | ✓ | I/W | | 3 |
 | STO-016 | Drive behind a USB bridge (SMART may be hidden) | IOCTL bus type | | I "connect directly for full health data" | ✓ | 3 ✅ |
-| STO-017 | BitLocker on, and is the recovery key known? (before repair work) | WMI Win32_EncryptableVolume | ✓ | W "back up the key before touching the drive" | ✓ | 8 |
+| STO-017 | BitLocker on, and is the recovery key known? (before repair work) | Shell System.Volume.BitLockerProtection (no admin) | | I "back up the key before touching the drive" | ✓ | 8 ✅ |
 | STO-018 | Large temp / Windows.old / update cache use | FILE sizes | | I with the amount reclaimable | | 6 ✅ |
 | STO-019 | Pagefile location and size sanity (none, on a full or USB drive) | REG / WMI Win32_PageFileUsage | | W | ✓ | 6 ✅ |
 | STO-020 | Average disk queue / active time during scan (disk at 100%) | API PDH counters, 3 s sample | | W if > 90% active for the whole sample | | 6 ✅ |
@@ -109,8 +109,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | UPD-004 | Pending updates available (slow: online search) | COM IUpdateSearcher | | I | | 12 |
 | UPD-005 | Feature update blocked (safeguard hold, not enough space) | REG / free space | | I | | 5 ✅ |
 | UPD-006 | Installed hotfix list | WMI Win32_QuickFixEngineering | | I (display) | | 5 ✅ |
-| UPD-007 | Defender definitions age | WMI root\Microsoft\Windows\Defender MSFT_MpComputerStatus | | W > 7 days | ✓ | 8 |
-
+| UPD-007 | Defender definitions age | WMI root\Microsoft\Windows\Defender MSFT_MpComputerStatus | | W > 7 days | ✓ | 8 ✅ |
 ## Drivers and devices (DRV)
 
 | Id | Check | Src | A | Rule | Q | P |
@@ -145,7 +144,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | PRF-001 | Startup programs (Run/RunOnce keys in both views, Startup folders, logon scheduled tasks, StartupApproved state) with the estimated impact | REG, FILE, Task Scheduler COM | | I; W if > 15 enabled | ✓ | 6 ✅ |
 | PRF-002 | Processes (task-manager view): CPU, memory, disk, path, signer, start time | API | | display | | 6 ✅ |
 | PRF-003 | Resource hogs right now (top CPU / RAM / disk processes during a 3 s sample) | API PDH | | W | ✓ | 6 ✅ |
-| PRF-004 | Multiple antivirus products running (common slowdown) | WMI root\SecurityCenter2 | | W | ✓ | 8 |
+| PRF-004 | Multiple antivirus products running (common slowdown) | WMI root\SecurityCenter2 | | W | ✓ | 8 ✅ |
 | PRF-005 | Third-party "optimizers" / bloatware / PUPs installed (small lookup list) | REG Uninstall | | I | ✓ | 6 ✅ |
 | PRF-006 | Visual effects / transparency / Game Mode / hardware-accelerated GPU scheduling summary | REG | | I | | 6 ✅ |
 | PRF-007 | Services set to Automatic that keep crashing or use lots of CPU | WMI + EVT | | W | | 6 ✅ (covered by WIN-009 + PRF-003) |
@@ -167,23 +166,21 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | NET-008 | Disabled adapters, VPN/virtual adapters, metered connection | API / WMI | | I | | 7 ✅ |
 | NET-009 | Network reset candidates: Winsock catalog LSP entries, broken TCP/IP settings | REG | | W | | 7 ✅ |
 | NET-010 | Download speed test (optional, user-started) | HTTP to a public test file | | I | | 7 ✅ |
-| NET-011 | Firewall profiles on/off; ports open to the internet (RDP 3389, SMB) | API / REG | | W | ✓ | 8 |
-
+| NET-011 | Firewall profiles on/off; ports open to the internet (RDP 3389, SMB) | API / REG | | W | ✓ | 8 ✅ |
 ## Security (SEC)
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| SEC-001 | Antivirus present, enabled and up to date | WMI SecurityCenter2 AntiVirusProduct (workstation only) | | C if none active | ✓ | 8 |
-| SEC-002 | Defender real-time protection, tamper protection, recent threats found | WMI MSFT_MpComputerStatus / MSFT_MpThreatDetection | ✓ | W/C | ✓ | 8 |
-| SEC-003 | UAC disabled | REG EnableLUA | | W | ✓ | 8 |
-| SEC-004 | Suspicious startup entries (unsigned, running from Temp / AppData / ProgramData, random names, script hosts) | startup + signature check (WinVerifyTrust) | | W | ✓ | 8 |
-| SEC-005 | Browser policies forced (home page / search / extension force-install = adware sign) | REG Policies\Google\Chrome, Edge, Firefox | | W | ✓ | 8 |
-| SEC-006 | Remote-access tools installed or running (AnyDesk, TeamViewer, etc.; scam check) | REG Uninstall + processes | | I/W | ✓ | 8 |
-| SEC-007 | Secure Boot off, TPM off, BitLocker status | API / WMI | | I | ✓ | 8 |
-| SEC-008 | Local accounts: admin accounts, accounts with no password, guest enabled | API NetUserEnum | ✓ | W | | 8 |
-| SEC-009 | SMBv1 enabled, RDP enabled without NLA | REG | | W | ✓ | 8 |
-| SEC-010 | Windows Script Host / PowerShell scheduled tasks with encoded commands (persistence) | Task Scheduler COM | ✓ | W | | 8 |
-
+| SEC-001 | Antivirus present, enabled and up to date | WMI SecurityCenter2 AntiVirusProduct (workstation only) | | C if none active | ✓ | 8 ✅ |
+| SEC-002 | Defender real-time protection, tamper protection, recent threats found | WMI MSFT_MpComputerStatus / MSFT_MpThreatDetection | ✓ | W/C | ✓ | 8 ✅ |
+| SEC-003 | UAC disabled | REG EnableLUA | | W | ✓ | 8 ✅ |
+| SEC-004 | Suspicious startup entries (unsigned, running from Temp / AppData / ProgramData, random names, script hosts) | startup + signature check (WinVerifyTrust) | | W | ✓ | 8 ✅ |
+| SEC-005 | Browser policies forced (home page / search / extension force-install = adware sign) | REG Policies\Google\Chrome, Edge, Firefox | | W | ✓ | 8 ✅ |
+| SEC-006 | Remote-access tools installed or running (AnyDesk, TeamViewer, etc.; scam check) | REG Uninstall + processes | | I/W | ✓ | 8 ✅ |
+| SEC-007 | Secure Boot off, TPM off, BitLocker status | API / WMI | | I | ✓ | 8 ✅ |
+| SEC-008 | Local accounts: admin accounts, accounts with no password, guest enabled | API NetUserEnum level 3 | | W | | 8 ✅ |
+| SEC-009 | SMBv1 enabled, RDP enabled without NLA | REG | | W | ✓ | 8 ✅ |
+| SEC-010 | Windows Script Host / PowerShell scheduled tasks with encoded commands (persistence) | Task Scheduler COM | ✓ | W | | 8 ✅ |
 ## Battery and power (BAT)
 
 | Id | Check | Src | A | Rule | Q | P |

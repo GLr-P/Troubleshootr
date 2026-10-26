@@ -143,7 +143,7 @@
       </header>
 
       <div class="hero">
-        <span class="pill">Free preview · <span class="ver">v0.6.0</span></span>
+        <span class="pill">Free preview · <span class="ver">v0.7.0</span></span>
         <h1>The first thing to open when a PC has a problem</h1>
         <p>One scan finds failing drives, blue screens, bad RAM, crashing apps, broken services and more. Every problem is ranked by how serious it is, with the actual numbers and what to do about it. Portable: run it from a USB stick, nothing to install.</p>
         <div class="buttons">
@@ -161,7 +161,7 @@
 
         <div class="stats">
           <div class="stat"><b>~1 s</b><span>Quick scan on a normal PC</span></div>
-          <div class="stat"><b>87</b><span>checks today, about 130 planned</span></div>
+          <div class="stat"><b>101</b><span>checks today, about 130 planned</span></div>
           <div class="stat"><b>0.6 MB</b><span>fits on any USB stick</span></div>
           <div class="stat"><b>Read-only</b><span>changes nothing unless you click a fix</span></div>
         </div>
@@ -211,12 +211,15 @@
             <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01" /></svg></span>"No internet" answers</h3>
             <p>A step-by-step connection test that says exactly where it breaks: adapter, IP address, router, internet, DNS or a sign-in page. Plus packet loss, weak Wi-Fi, a cable stuck at 100 Mb/s, proxy and hosts-file hijacks, hand-set DNS, a wrong clock and a one-click download speed test.</p>
           </div>          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg></span>Malware and scam signs</h3>
+            <p>No antivirus or two at once, threats Defender couldn't remove, old definitions, firewall or UAC switched off, unsigned startup programs in temp folders, encoded PowerShell tasks, browsers locked by adware policies, remote-access apps a scammer just installed, the Guest account, SMB1 and open Remote Desktop, plus BitLocker status before you touch the drive.</p>
+          </div>          <div class="card">
             <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" /></svg></span>Reports for the ticket</h3>
             <p>Copy a short summary straight into your ticket system, or save full text and JSON reports next to the app on the USB stick. The command-line tool can anonymize a report (strips names and serial numbers).</p>
           </div>
           <div class="card">
             <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31M14 9.3V1.99M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0" /></svg></span>Full system info</h3>
-            <p>Tabs for System, Updates, CPU, Memory (every stick, speed and part number), Motherboard and BIOS, Storage, Graphics, Devices, Drivers, Events &amp; Crashes, Performance, a live Processes view, Startup apps, installed Software and Network. Every value can be selected and copied.</p>
+            <p>Tabs for System, Updates, CPU, Memory (every stick, speed and part number), Motherboard and BIOS, Storage, Graphics, Devices, Drivers, Events &amp; Crashes, Performance, a live Processes view, Startup apps, installed Software, Network and Security. Every value can be selected and copied.</p>
           </div>
           <div class="card">
             <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></span>Safe on a customer's PC</h3>
@@ -249,6 +252,7 @@
           <figure><img src="screenshots/performance.png" alt="Performance tab with the scan sample, power plan and space to free" loading="lazy" /><figcaption>Why it's slow: busy processes, power plan, junk to clear</figcaption></figure>
           <figure><img src="screenshots/startup-dark.png" alt="Startup tab in dark mode" loading="lazy" /><figcaption>Everything that starts with Windows</figcaption></figure>
           <figure><img src="screenshots/network.png" alt="Network tab with the connection test failing at DNS" loading="lazy" /><figcaption>Where the connection breaks, step by step</figcaption></figure>
+          <figure><img src="screenshots/security.png" alt="Security tab with antivirus, threats, firewall and accounts" loading="lazy" /><figcaption>Antivirus, threats, firewall, accounts and scam signs</figcaption></figure>
           <figure><img src="screenshots/memory.png" alt="Memory tab with each module" loading="lazy" /><figcaption>Every RAM stick: size, speed, part number</figcaption></figure>
           <figure><img src="screenshots/storage-dark.png" alt="Storage tab in dark mode" loading="lazy" /><figcaption>Wear, temperature, hours and errors per drive</figcaption></figure>
           <figure><img src="screenshots/summary.png" alt="Summary tab" loading="lazy" /><figcaption>The PC at a glance</figcaption></figure>
@@ -266,8 +270,8 @@
           <div class="road"><span class="tag done">Done</span>Drivers, devices, Windows Update</div>
           <div class="road"><span class="tag done">Done</span>Startup apps and performance</div>
           <div class="road"><span class="tag done">Done</span>Network, Wi-Fi and DNS</div>
-          <div class="road"><span class="tag next">Next</span>Security and malware signs</div>
-          <div class="road"><span class="tag later">Later</span>Live temperatures and sensors</div>
+          <div class="road"><span class="tag done">Done</span>Security and malware signs</div>
+          <div class="road"><span class="tag next">Next</span>Live temperatures and sensors</div>
           <div class="road"><span class="tag later">Later</span>Battery wear and power</div>
           <div class="road"><span class="tag later">Later</span>One-click fixes and HTML reports</div>
         </div>

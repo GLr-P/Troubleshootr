@@ -14,4 +14,17 @@ NotChecked NET-006: Network: not collected in this scan
 NotChecked NET-007: Network: not collected in this scan
 NotChecked NET-008: Network: not collected in this scan
 NotChecked NET-009: Network: not collected in this scan
+NotChecked NET-011: Security: not collected in this scan
+NotChecked PRF-004: Security: not collected in this scan
+NotChecked SEC-001: Security: not collected in this scan
+NotChecked SEC-002: Security: not collected in this scan
+NotChecked SEC-003: Security: not collected in this scan
+NotChecked SEC-005: Security: not collected in this scan
+NotChecked SEC-006: Security: not collected in this scan
+NotChecked SEC-007: Security: not collected in this scan
+NotChecked SEC-008: Security: not collected in this scan
+NotChecked SEC-009: Security: not collected in this scan
+NotChecked SEC-010: Security: not collected in this scan
+NotChecked STO-017: Security: not collected in this scan
+NotChecked UPD-007: Security: not collected in this scan
 NotChecked WIN-012: Connectivity: not collected in this scan

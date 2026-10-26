@@ -14,6 +14,18 @@ public sealed class StartupEntry
     [FreeText] public string? Command { get; set; }
     /// <summary>False when switched off in Task Manager's Startup tab (StartupApproved) or a disabled task.</summary>
     public bool Enabled { get; set; } = true;
+    /// <summary>The file the command runs (shortcuts resolved).</summary>
+    [FreeText] public string? File { get; set; }
+    /// <summary>Valid Authenticode signature; false = unsigned or invalid; null = not checked (file missing, or a Windows file signed by catalog).</summary>
+    public bool? Signed { get; set; }
+    public string? Publisher { get; set; }
+
+    /// <summary>
+    /// Windows' own files: System32, SysWOW64, WinSxS, SystemApps or the Windows folder itself. They're catalog-signed, so
+    /// a file signature check would call them unsigned; they aren't checked. C:\Windows\Temp is not one of them.
+    /// </summary>
+    public static bool IsWindowsFile(string path) =>
+        System.Text.RegularExpressions.Regex.IsMatch(path, @"^[A-Z]:\\Windows\\((System32|SysWOW64|WinSxS|SystemApps)\\|[^\\]+$)", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
 
     /// <summary>Scheduled tasks (mostly updaters) aren't in Task Manager's Startup apps list, so they're counted separately.</summary>
     public bool IsTask => Location == "Scheduled task";

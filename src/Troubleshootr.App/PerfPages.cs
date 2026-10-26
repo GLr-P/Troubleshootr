@@ -57,15 +57,24 @@ public static class PerfPages
         var apps = new InfoGroup($"Startup apps ({entries.Count(e => e.Enabled && !e.IsTask)} on)")
         {
             Note = "Turn these on or off in Task Manager > Startup apps. Troubleshootr only shows them.",
-            Columns = ["Name", "Status", "From", "Command"],
+            Columns = ["Name", "Status", "Publisher", "From", "Command"],
         };
         foreach (var e in entries.Where(e => !e.IsTask).OrderByDescending(e => e.Enabled).ThenBy(e => e.Name))
-            apps.Table.Add([e.Name, e.Enabled ? "On" : "Off", e.Location, e.Command ?? ""]);
-        var tasks = new InfoGroup("Scheduled tasks that run at sign-in or startup") { Columns = ["Name", "Status", "Command"] };
+            apps.Table.Add([e.Name, e.Enabled ? "On" : "Off", Signer(e), e.Location, e.Command ?? ""]);
+        var tasks = new InfoGroup("Scheduled tasks that run at sign-in or startup") { Columns = ["Name", "Status", "Publisher", "Command"] };
         foreach (var e in entries.Where(e => e.IsTask).OrderBy(e => e.Name))
-            tasks.Table.Add([e.Name, e.Enabled ? "On" : "Off", e.Command ?? ""]);
+            tasks.Table.Add([e.Name, e.Enabled ? "On" : "Off", Signer(e), e.Command ?? ""]);
         return [apps, tasks];
     }
+
+    /// <summary>The verified signer, "Not signed", "Windows" for files in the Windows folder (catalog-signed), or blank when unknown.</summary>
+    private static string Signer(StartupEntry e) => e.Signed switch
+    {
+        true => e.Publisher ?? "Signed",
+        false => "Not signed",
+        null when e.File is { } f && StartupEntry.IsWindowsFile(f) => "Windows",
+        _ => "",
+    };
 
     public static List<InfoGroup> Software(Snapshot s)
     {

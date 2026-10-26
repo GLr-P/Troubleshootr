@@ -13,7 +13,7 @@ public sealed class Shell : UserControl
     {
         ["Diagnose"] = "", ["Summary"] = "", ["System"] = "", ["CPU"] = "", ["Memory"] = "",
         ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Performance"] = "", ["Processes"] = "", ["Startup"] = "", ["Software"] = "",["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "",
-        ["Network"] = "",
+        ["Network"] = "", ["Security"] = "",
     };
 
     private readonly MainViewModel _vm;
