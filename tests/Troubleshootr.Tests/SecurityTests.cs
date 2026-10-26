@@ -41,7 +41,8 @@ public class SecurityTests
     {
         var none = Snap.Healthy().With(x => { Sec(x).Antivirus[0].Enabled = false; Sec(x).Defender!.RealTimeProtection = false; Sec(x).Defender!.AntivirusEnabled = false; });
         Assert.Equal(Severity.Critical, Sev(new Sec001Antivirus(), none));
-        Assert.Empty(Run(new Sec001Antivirus(), none.With(x => Sec(x).SecurityCenter = false)));  // Windows Server
+        Assert.Empty(Run(new Sec001Antivirus(), Snap.Healthy().With(x => { Sec(x).Antivirus.Clear(); x.Sys().WindowsProductName = "Windows Server 2025 Datacenter"; })));  // Server: SC lists nothing (seen on GitHub's runner)
+        Assert.Empty(Run(new Sec001Antivirus(), none.With(x => Sec(x).SecurityCenter = false)));  // no Security Center at all
 
         // Third-party installed properly: Defender goes passive, one antivirus.
         var norton = Snap.Healthy().With(x => { Sec(x).Antivirus.Add(new AvProduct { Name = "Norton 360", Enabled = true, UpToDate = true }); Sec(x).Defender!.RunningMode = "Passive Mode"; });

@@ -27,7 +27,8 @@ public sealed class Sec001Antivirus : Check
     public override IEnumerable<Finding> Run(Snapshot s)
     {
         var x = Sec.Of(s);
-        if (!x.SecurityCenter) yield break;  // Windows Server
+        // Windows Server has no Security Center, or one that never lists Defender: "no antivirus" would be a false alarm there.
+        if (!x.SecurityCenter || s.System?.Value?.IsServer == true) yield break;
         var active = Sec.ActiveAv(x);
         if (active.Count == 0)
         {

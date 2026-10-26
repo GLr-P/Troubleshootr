@@ -101,6 +101,10 @@ public sealed class SystemInfo
 
     public bool IsLaptop => PcSystemType == 2 || HasBattery == true;
 
+    /// <summary>Windows Server: Security Center doesn't track antivirus there, and desktop-only advice doesn't apply.</summary>
+    public bool IsServer => (WindowsProductName?.IndexOf("Server", StringComparison.OrdinalIgnoreCase) ?? -1) >= 0
+                            || (EditionId?.StartsWith("Server", StringComparison.OrdinalIgnoreCase) ?? false);
+
     /// <summary>Hyper-V, VMware, VirtualBox, QEMU/KVM, Parallels, Xen: hardware checks (RAM sticks, BIOS age…) don't apply.</summary>
     public bool IsVirtualMachine =>
         $"{Manufacturer} {Model}" is var m && new[] { "Virtual Machine", "VMware", "VirtualBox", "innotek", "QEMU", "KVM", "Parallels", "Xen", "Bochs" }
