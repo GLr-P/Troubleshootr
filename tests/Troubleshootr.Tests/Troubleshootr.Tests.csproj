@@ -13,6 +13,9 @@
     <ProjectReference Include="..\..\src\Troubleshootr.Collectors\Troubleshootr.Collectors.csproj" />
     <ProjectReference Include="..\..\src\Troubleshootr.Checks\Troubleshootr.Checks.csproj" />
   </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="..\fixtures\**\*" Link="fixtures\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>

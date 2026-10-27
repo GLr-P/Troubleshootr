@@ -44,7 +44,12 @@
         <ControlTemplate TargetType="Button">
           <Border x:Name="b" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
                   BorderThickness="1" CornerRadius="6" Padding="{TemplateBinding Padding}">
-            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+              <!-- The app-wide TextBlock style sets a text colour, which would beat the button's own (white on primary). -->
+              <ContentPresenter.Resources>
+                <Style TargetType="TextBlock"/>
+              </ContentPresenter.Resources>
+            </ContentPresenter>
           </Border>
           <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
@@ -102,7 +107,7 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="ListBoxItem">
-          <Border x:Name="b" Background="Transparent" CornerRadius="6" Padding="10,4.5" Margin="6,0.5">
+          <Border x:Name="b" Background="Transparent" CornerRadius="6" Padding="10,4" Margin="6,0">
             <ContentPresenter/>
           </Border>
           <ControlTemplate.Triggers>

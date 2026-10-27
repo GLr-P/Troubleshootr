@@ -9,6 +9,7 @@
     <ApplicationManifest>..\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.Net.Http" />
     <ProjectReference Include="..\Troubleshootr.Core\Troubleshootr.Core.csproj" />
     <ProjectReference Include="..\Troubleshootr.Collectors\Troubleshootr.Collectors.csproj" />
     <ProjectReference Include="..\Troubleshootr.Checks\Troubleshootr.Checks.csproj" />

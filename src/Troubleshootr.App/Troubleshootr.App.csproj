@@ -25,6 +25,10 @@
     </ItemGroup>
   </Target>
   <ItemGroup>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Troubleshootr.Core\Troubleshootr.Core.csproj" />
     <ProjectReference Include="..\Troubleshootr.Collectors\Troubleshootr.Collectors.csproj" />
     <ProjectReference Include="..\Troubleshootr.Checks\Troubleshootr.Checks.csproj" />

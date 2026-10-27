@@ -7,12 +7,12 @@ namespace Troubleshootr.App;
 /// <summary>Left navigation + the selected page. Pages are created on first visit and kept.</summary>
 public sealed class Shell : UserControl
 {
-    public static readonly string[] Pages = ["Diagnose", .. InfoPages.Names, "Fixes", "Report"];
+    public static readonly string[] Pages = ["Diagnose", .. InfoPages.Names, "Fixes", "Ask Claude", "Report"];
 
     private static readonly Dictionary<string, string> Glyphs = new()
     {
         ["Diagnose"] = "", ["Summary"] = "", ["System"] = "", ["CPU"] = "", ["Memory"] = "",
-        ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Performance"] = "", ["Processes"] = "", ["Startup"] = "", ["Software"] = "",["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "", ["Fixes"] = "",
+        ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Performance"] = "", ["Processes"] = "", ["Startup"] = "", ["Software"] = "",["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "", ["Fixes"] = "", ["Ask Claude"] = "",
         ["Network"] = "", ["Security"] = "", ["Sensors"] = "", ["Peripherals"] = "", ["Battery"] = "",
     };
 
@@ -63,6 +63,7 @@ public sealed class Shell : UserControl
                 "Diagnose" => new DiagnosePage(_vm),
                 "Report" => new ReportPage(_vm),
                 "Fixes" => new FixesPage(_vm),
+                "Ask Claude" => new AskClaudePage(_vm),
                 "Processes" => new ProcessesPage(_vm),
                 "Sensors" => new SensorsPage(_vm),
                 _ => new InfoPage(page, _vm),

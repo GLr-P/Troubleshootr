@@ -10,6 +10,7 @@ namespace Troubleshootr.Cli;
 /// troubleshootr scan    [--full] [--categories storage,memory] [--json|--html] [--timings] [--anonymize] [--out file]
 /// troubleshootr collect --out file.snap.json [--full] [--anonymize]
 /// troubleshootr check   --snapshot file.snap.json [--json|--html] [--out file]
+/// troubleshootr ask --question "why is it slow?" [--snapshot f.snap.json]   (Ask Claude; key from the ANTHROPIC_API_KEY environment variable)
 /// troubleshootr fix --list | fix --id dns-flush --yes   (runs a fix action; logged to Troubleshootr-actions.log like the app's Fixes tab)
 /// troubleshootr anonymize --snapshot report-or-snapshot.json --out file.snap.json   (e.g. a report saved by an admin run)
 /// troubleshootr dump --file C:\Windows\Minidump\x.dmp [--drivers]   (reading the Minidump folder needs admin)
@@ -32,6 +33,7 @@ public static class Program
                 case "anonymize": return AnonymizeFile(a);
                 case "dump": return Dump(a);
                 case "fix": return await Fix(a);
+                case "ask": return await Ask(a);
                 case "sensors": return Sensors();
                 case "driver": return await Driver(a);
                 case "loadtest":
@@ -92,6 +94,29 @@ public static class Program
         var record = await fix.RunAsync(Console.WriteLine, CancellationToken.None);
         ActionLog.Write($"Fix {(record.Ok ? "done" : "FAILED")} (CLI): {fix.Title}: {record.Summary} ({record.DurationMs / 1000.0:0.#} s)");
         return record.Ok ? 0 : 1;
+    }
+
+    /// <summary>ask: the app's Ask Claude panel from the command line, on this PC's Quick scan or a saved snapshot.</summary>
+    private static async Task<int> Ask(Args a)
+    {
+        var question = a.Value("question") ?? throw new ArgumentException("ask needs --question \"...\"");
+        var key = Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY") ?? throw new ArgumentException("Set the ANTHROPIC_API_KEY environment variable to a Claude API key.");
+        Report report;
+        if (a.Value("snapshot") is { } path)
+        {
+            var snapshot = Json.Deserialize<Snapshot>(File.ReadAllText(path));
+            report = ScanEngine.Evaluate(snapshot, CheckRegistry.All, new ScanOptions { ToolVersion = Version });
+            report.Snapshot = snapshot;
+        }
+        else report = await ScanEngine.ScanAsync(CollectorRegistry.All, CheckRegistry.All, new ScanOptions { IsAdmin = CollectorRegistry.IsElevated(), ToolVersion = Version });
+        using var chat = new Collectors.Assistant.ClaudeChat(key, new AssistantContext(report));
+        try
+        {
+            Console.WriteLine(await chat.AskAsync(question, s => Console.Error.WriteLine(s), CancellationToken.None));
+            Console.Error.WriteLine($"{chat.InputTokens:N0} tokens in ({chat.CachedTokens:N0} cached), {chat.OutputTokens:N0} out");
+            return 0;
+        }
+        catch (Collectors.Assistant.ClaudeException e) { Console.Error.WriteLine(e.Message); return 1; }
     }
 
     private static string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "0.0.0";
