@@ -7,6 +7,10 @@ Warning WIN-008: Windows takes a long time to start | Last boot took 115 s. Slow
 Warning WIN-009: A service keeps failing: MBAMService | MBAMService 3 times in 30 days.
 Info CPU-005: The processor's speed is being limited by the firmware | 40 speed-limit events in 30 days (Kernel-Processor-Power 37).
 Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
+NotChecked BAT-001: Power: not collected in this scan
+NotChecked BAT-002: Power: not collected in this scan
+NotChecked BAT-003: Power: not collected in this scan
+NotChecked BAT-004: Power: not collected in this scan
 NotChecked CPU-002: Performance: not collected in this scan
 NotChecked CPU-003: Performance: not collected in this scan
 NotChecked CPU-004: Sensors: not collected in this scan
@@ -43,6 +47,7 @@ NotChecked PRF-003: Performance: not collected in this scan
 NotChecked PRF-004: Security: not collected in this scan
 NotChecked PRF-005: Software: not collected in this scan
 NotChecked PRF-009: Software: not collected in this scan
+NotChecked PRF-010: Power: not collected in this scan
 NotChecked SEC-001: Security: not collected in this scan
 NotChecked SEC-002: Security: not collected in this scan
 NotChecked SEC-003: Security: not collected in this scan

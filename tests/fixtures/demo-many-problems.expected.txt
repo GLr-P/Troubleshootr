@@ -1,3 +1,4 @@
+Critical BAT-001: The battery is badly worn | 5B10W51867 holds 26.8 Wh of its 57 Wh design (47% health), 912 charge cycles, made 2021-04.
 Critical CPU-007: This Intel processor needs a BIOS update to stop permanent damage | 13th Gen Intel(R) Core(TM) i9-13900K runs microcode 0x119; Intel's fix for 13th/14th-gen instability is 0x12B or newer.
 Critical CRA-001: The PC had 4 blue screens in the last 30 days | 2026-10-23 0xD1 DRIVER_IRQL_NOT_LESS_OR_EQUAL in contosonet.sys; 2026-10-20 0x1A MEMORY_MANAGEMENT; 2026-10-15 0x116 VIDEO_TDR_FAILURE; and 1 more. Latest: A driver touched memory it wasn't allowed to; network, Wi-Fi and antivirus drivers are common causes.
 Critical DRV-001: A device isn't working: Intel(R) Wi-Fi 6E AX211 160MHz | Intel(R) Wi-Fi 6E AX211 160MHz (Net) can't start (code 10).
@@ -73,6 +74,10 @@ Warning WIN-013: Windows had trouble loading a user profile | 1 User Profile Ser
 Warning WIN-014: Windows ran low on memory | Low virtual memory warnings once in 30 days. The following programs consumed the most virtual memory: chrome.exe (8124) consumed 12884901888 bytes, PhotoEditor.exe (4410) consumed 4294967296 bytes.
 Warning WIN-016: Windows Explorer or the Start menu keeps crashing | explorer.exe 3 times in the last 7 days.
 Warning WIN-017: Windows has been unstable lately | Reliability Monitor stability index 2.4 of 10 (lowest in 30 days: 1.2).
+Info BAT-002: Plugged in but not charging at 60% | 5B10W51867 is on mains power, holding at 60% (a round number, so most likely a charge limit).
+Info BAT-003: A timer keeps waking the PC from sleep | 4 timed wakes in 14 days: svchost.exe (SystemEventsBroker) (4).
+Info BAT-003: A device keeps waking the PC from sleep | Device -HID-compliant mouse: 6 times in 14 days.
+Info BAT-004: The battery drains 9.4% an hour in standby | 2 standby sessions on battery in 14 days, 16 h in total; deepest sleep state reached 11% of the time.
 Info CPU-003: The processor is running slowly under load | CPU 94% busy but at only 38% of its base speed, while plugged in.
 Info CPU-008: The power plan slows the processor down | the Power saver plan is active; the processor is capped at 80% while plugged in (plan: Power saver).
 Info CRA-004: Windows recorded hardware or driver error reports | recovered problem 0x141 VIDEO_ENGINE_TIMEOUT_DETECTED ×1 in the last 30 days.

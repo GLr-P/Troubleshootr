@@ -6,6 +6,10 @@ Warning WIN-009: A service keeps failing: MBAMService | MBAMService 3 times in 3
 Info CPU-005: The processor's speed is being limited by the firmware | 40 speed-limit events in 30 days (Kernel-Processor-Power 37).
 Info PRF-001: 13 programs start with Windows | Opera Stable, Discord, Steam, Spotify, EADM, com.nanotechservices.plannr, Opera Browser Assistant, RtkAudUService, Adobe CCXProcess, Intel® Graphics Software, Adobe Creative Cloud, RustDesk Tray and 1 more.
 Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
+NotChecked BAT-001: Power: not collected in this scan
+NotChecked BAT-002: Power: not collected in this scan
+NotChecked BAT-003: Power: not collected in this scan
+NotChecked BAT-004: Power: not collected in this scan
 NotChecked CPU-004: Sensors: not collected in this scan
 NotChecked DRV-009: Peripherals: not collected in this scan
 NotChecked GPU-008: Sensors: not collected in this scan
@@ -25,6 +29,7 @@ NotChecked PER-003: Peripherals: not collected in this scan
 NotChecked PER-005: Peripherals: not collected in this scan
 NotChecked PER-006: Peripherals: not collected in this scan
 NotChecked PRF-004: Security: not collected in this scan
+NotChecked PRF-010: Power: not collected in this scan
 NotChecked SEC-001: Security: not collected in this scan
 NotChecked SEC-002: Security: not collected in this scan
 NotChecked SEC-003: Security: not collected in this scan

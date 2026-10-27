@@ -36,7 +36,7 @@ public sealed class InfoGroup(string title)
 /// <summary>Builds each info tab from the Snapshot. A tab is a list of groups, rendered by InfoPage.</summary>
 public static class InfoPages
 {
-    public static readonly string[] Names = ["Summary", "System", "Updates", "CPU", "Memory", "Motherboard", "Storage", "Graphics", "Devices", "Drivers", "Events & Crashes", "Performance", "Processes", "Sensors", "Startup", "Software", "Network", "Security", "Peripherals"];
+    public static readonly string[] Names = ["Summary", "System", "Updates", "CPU", "Memory", "Motherboard", "Storage", "Graphics", "Devices", "Drivers", "Events & Crashes", "Performance", "Processes", "Sensors", "Startup", "Software", "Network", "Security", "Peripherals", "Battery"];
 
     public static List<InfoGroup> Build(string page, Snapshot s) => page switch
     {
@@ -57,6 +57,7 @@ public static class InfoPages
         "Network" => NetPages.Network(s),
         "Security" => SecurityPage.Build(s),
         "Peripherals" => PeripheralsPage.Build(s),
+        "Battery" => BatteryPage.Build(s),
         _ => [],
     };
 

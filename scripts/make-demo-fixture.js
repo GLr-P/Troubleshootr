@@ -262,5 +262,22 @@ s.peripherals = { value: {
 const mct = { fid_idVendor: '1809', fid_idProduct: '22528' };
 for (let i = 0; i < 3; i++) s.events.value.events.push(ev('Microsoft-Windows-USB-USBHUB3', 196, 2 + i * 3, 3, 'USB device draining system power when system is idle.', mct));
 
+// Phase 11: battery and power. A worn battery held at a charge limit, fast standby drain, a timer and a mouse waking it.
+s.power = { value: {
+  batteries: [{ name: '5B10W51867', manufacturer: 'SMP', chemistry: 'LiP', designMwh: 57000, fullMwh: 26800, remainingMwh: 16080, cycleCount: 912,
+    manufactured: '2021-04-02T00:00:00Z', voltageMv: 11650, rateMw: 0, powerOnline: true, charging: false, discharging: false }],
+  onAc: true, chargePercent: 60, days: 14,
+  wakes: [
+    ...[1, 2, 3, 5].map((d) => ({ timeUtc: ago(d), sleepMinutes: 240, source: 'Timer - Windows will execute \'NT TASK\\Microsoft\\Windows\\UpdateOrchestrator\\Reboot\' scheduled task that requested waking the computer.', timerOwner: '\\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe (SystemEventsBroker)' })),
+    ...[1, 2, 3, 4, 6, 7].map((d) => ({ timeUtc: ago(d + 0.3), sleepMinutes: 35, source: 'Device -HID-compliant mouse' })),
+    { timeUtc: ago(8), sleepMinutes: 600, source: 'Power Button' },
+  ],
+  standby: [
+    { endUtc: ago(1), minutes: 540, drainMwh: 25650, fullMwh: 28500, deepSleepPercent: 8 },
+    { endUtc: ago(3), minutes: 420, drainMwh: 17100, fullMwh: 28500, deepSleepPercent: 15 },
+  ],
+  requests: [], requestsUnavailable: 'needs admin',
+} };
+
 fs.writeFileSync(path.join(dir, 'demo-many-problems.snap.json'), JSON.stringify(s, null, 2) + '\n');
 console.log('wrote demo-many-problems.snap.json');

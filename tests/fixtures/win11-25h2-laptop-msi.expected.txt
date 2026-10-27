@@ -1,6 +1,11 @@
 Warning GPU-003: The graphics driver is old: Intel(R) Arc(TM) Graphics | Driver 31.0.101.5333 from 2024-02-20 (2.7 years old).
 Warning MEM-006: Memory is nearly full | 77% of RAM in use (7.2 GB free of 31.5 GB); commit 36.4 GB of 37.3 GB (98%).
 Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
+NotChecked BAT-001: Power: not collected in this scan
+NotChecked BAT-002: Power: not collected in this scan
+NotChecked BAT-003: Power: not collected in this scan
+NotChecked BAT-004: Power: not collected in this scan
+NotChecked BAT-005: Events: not collected in this scan
 NotChecked CPU-002: Performance: not collected in this scan
 NotChecked CPU-003: Performance: not collected in this scan
 NotChecked CPU-004: Sensors: not collected in this scan
@@ -51,6 +56,7 @@ NotChecked PRF-003: Performance: not collected in this scan
 NotChecked PRF-004: Security: not collected in this scan
 NotChecked PRF-005: Software: not collected in this scan
 NotChecked PRF-009: Software: not collected in this scan
+NotChecked PRF-010: Power: not collected in this scan
 NotChecked SEC-001: Security: not collected in this scan
 NotChecked SEC-002: Security: not collected in this scan
 NotChecked SEC-003: Security: not collected in this scan

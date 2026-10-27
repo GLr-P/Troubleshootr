@@ -31,6 +31,7 @@ public sealed class Snapshot
     public Section<SecurityInfo>? Security { get; set; }
     public Section<SensorsInfo>? Sensors { get; set; }
     public Section<PeripheralsInfo>? Peripherals { get; set; }
+    public Section<PowerInfo>? Power { get; set; }
 
     public static readonly IReadOnlyList<string> SectionNames = typeof(Snapshot).GetProperties()
         .Where(p => p.PropertyType.IsGenericType && p.PropertyType.GetGenericTypeDefinition() == typeof(Section<>))

@@ -1,6 +1,6 @@
 Warning CRA-003: Some apps keep crashing | MiracastPowerManager.exe: 8 crashes (in ntdll.dll); mscopilot_proxy.exe: 4 hangs in the last 30 days.
 Warning GPU-003: The graphics driver is old: Intel(R) Arc(TM) Graphics | Driver 31.0.101.5333 from 2024-02-20 (2.7 years old).
-Warning MEM-006: Memory is nearly full | 79% of RAM in use (6.5 GB free of 31.5 GB); commit 37.1 GB of 39.8 GB (93%).
+Warning MEM-006: Memory is nearly full | 82% of RAM in use (5.8 GB free of 31.5 GB); commit 38 GB of 39.8 GB (95%).
 Warning STO-007: Drive errors in the event log | In the last 30 days: file system errors reported 2 times on D:.
 Warning WIN-009: Some services keep failing | Steam Client Service 4 times; MBAMService 3 times in 30 days.
 Info CPU-005: The processor's speed is being limited by the firmware | 50 speed-limit events in 30 days (Kernel-Processor-Power 37).

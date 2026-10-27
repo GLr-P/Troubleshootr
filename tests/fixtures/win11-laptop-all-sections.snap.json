@@ -2,156 +2,129 @@
   "performance": {
     "value": {
       "sampleSeconds": 3,
-      "cpuPercent": 15.5,
-      "diskActivePercent": 6.7999999999999998,
-      "processorPerformancePercent": 237.5,
+      "cpuPercent": 23.699999999999999,
+      "diskActivePercent": 4.7000000000000002,
+      "processorPerformancePercent": 207.5,
       "processes": [
         {
           "name": "dotnet.exe",
-          "pid": 30212,
-          "cpuPercent": 0.69999999999999996,
-          "privateMB": 58,
-          "workingSetMB": 126,
+          "pid": 44488,
+          "cpuPercent": 2.2999999999999998,
+          "privateMB": 45,
+          "workingSetMB": 100,
           "diskBytesPerSec": 0,
           "path": "C:\\Program Files\\dotnet\\dotnet.exe"
         },
         {
+          "name": "Discord.exe",
+          "pid": 40200,
+          "cpuPercent": 2.2000000000000002,
+          "privateMB": 640,
+          "workingSetMB": 518,
+          "diskBytesPerSec": 1840,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Discord\\app-1.0.9265\\Discord.exe"
+        },
+        {
           "name": "explorer.exe",
           "pid": 4588,
-          "cpuPercent": 0.59999999999999998,
-          "privateMB": 691,
-          "workingSetMB": 506,
-          "diskBytesPerSec": 12491,
+          "cpuPercent": 1.6000000000000001,
+          "privateMB": 716,
+          "workingSetMB": 541,
+          "diskBytesPerSec": 136524,
           "path": "C:\\Windows\\explorer.exe"
         },
         {
-          "name": "Code.exe",
-          "pid": 14392,
-          "cpuPercent": 0.40000000000000002,
-          "privateMB": 450,
-          "workingSetMB": 336,
-          "diskBytesPerSec": 728808,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+          "name": "sobosuba.exe",
+          "pid": 33164,
+          "cpuPercent": 1.3999999999999999,
+          "privateMB": 619,
+          "workingSetMB": 786,
+          "diskBytesPerSec": 340151,
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sobosuba\\sobosuba.exe"
         },
         {
-          "name": "Code.exe",
-          "pid": 29796,
-          "cpuPercent": 0.40000000000000002,
-          "privateMB": 443,
-          "workingSetMB": 427,
-          "diskBytesPerSec": 732288,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+          "name": "steamwebhelper.exe",
+          "pid": 8308,
+          "cpuPercent": 1.3,
+          "privateMB": 711,
+          "workingSetMB": 486,
+          "diskBytesPerSec": 2028033,
+          "path": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe"
         },
         {
           "name": "Creative Cloud UI Helper.exe",
           "pid": 2744,
           "cpuPercent": 0.40000000000000002,
-          "privateMB": 380,
-          "workingSetMB": 342,
-          "diskBytesPerSec": 745901,
+          "privateMB": 370,
+          "workingSetMB": 313,
+          "diskBytesPerSec": 728268,
           "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
         },
         {
-          "name": "claude.exe",
-          "pid": 40532,
-          "cpuPercent": 0.20000000000000001,
-          "privateMB": 500,
-          "workingSetMB": 385,
+          "name": "audiodg.exe",
+          "pid": 39064,
+          "cpuPercent": 0.40000000000000002,
+          "privateMB": 72,
+          "workingSetMB": 62,
           "diskBytesPerSec": 0,
-          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+          "path": "C:\\Windows\\System32\\audiodg.exe"
         },
         {
           "name": "Creative Cloud UI Helper.exe",
           "pid": 22844,
-          "cpuPercent": 0.20000000000000001,
-          "privateMB": 300,
-          "workingSetMB": 175,
-          "diskBytesPerSec": 745798,
+          "cpuPercent": 0.29999999999999999,
+          "privateMB": 293,
+          "workingSetMB": 167,
+          "diskBytesPerSec": 727574,
           "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
+        },
+        {
+          "name": "claude.exe",
+          "pid": 36968,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 637,
+          "workingSetMB": 519,
+          "diskBytesPerSec": 424,
+          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
         },
         {
           "name": "opera.exe",
           "pid": 28016,
-          "cpuPercent": 0.10000000000000001,
-          "privateMB": 685,
-          "workingSetMB": 294,
+          "cpuPercent": 0,
+          "privateMB": 683,
+          "workingSetMB": 199,
           "diskBytesPerSec": 0,
           "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
         },
         {
           "name": "vectorcraft.exe",
           "pid": 22744,
-          "cpuPercent": 0.10000000000000001,
-          "privateMB": 661,
-          "workingSetMB": 716,
+          "cpuPercent": 0,
+          "privateMB": 662,
+          "workingSetMB": 718,
           "diskBytesPerSec": 0,
           "path": "C:\\Program Files\\VectorCraft\\vectorcraft.exe"
         },
         {
-          "name": "Discord.exe",
-          "pid": 40200,
-          "cpuPercent": 0.10000000000000001,
-          "privateMB": 634,
-          "workingSetMB": 494,
-          "diskBytesPerSec": 2107,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Discord\\app-1.0.9265\\Discord.exe"
-        },
-        {
           "name": "claude.exe",
           "pid": 15100,
-          "cpuPercent": 0.10000000000000001,
-          "privateMB": 625,
-          "workingSetMB": 199,
-          "diskBytesPerSec": 0,
-          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
-        },
-        {
-          "name": "claude.exe",
-          "pid": 14388,
-          "cpuPercent": 0.10000000000000001,
-          "privateMB": 587,
-          "workingSetMB": 418,
-          "diskBytesPerSec": 280,
-          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
-        },
-        {
-          "name": "Spotify.exe",
-          "pid": 46084,
-          "cpuPercent": 0.10000000000000001,
-          "privateMB": 251,
-          "workingSetMB": 373,
-          "diskBytesPerSec": 161877,
-          "path": "C:\\Users\\[user]\\AppData\\Roaming\\Spotify\\Spotify.exe"
-        },
-        {
-          "name": "Code.exe",
-          "pid": 30244,
-          "cpuPercent": 0.10000000000000001,
-          "privateMB": 181,
-          "workingSetMB": 134,
-          "diskBytesPerSec": 22674,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-        },
-        {
-          "name": "claude.exe",
-          "pid": 36968,
           "cpuPercent": 0,
-          "privateMB": 654,
-          "workingSetMB": 528,
-          "diskBytesPerSec": 19,
+          "privateMB": 623,
+          "workingSetMB": 197,
+          "diskBytesPerSec": 0,
           "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
         },
         {
           "name": "steamwebhelper.exe",
-          "pid": 8308,
+          "pid": 1312,
           "cpuPercent": 0,
-          "privateMB": 603,
-          "workingSetMB": 346,
-          "diskBytesPerSec": 0,
+          "privateMB": 106,
+          "workingSetMB": 232,
+          "diskBytesPerSec": 178836,
           "path": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe"
         }
       ],
-      "processCount": 280
+      "processCount": 272
     }
   },
   "tuning": {
@@ -169,7 +142,7 @@
         {
           "path": "C:\\pagefile.sys",
           "allocatedMB": 8528,
-          "currentMB": 218,
+          "currentMB": 235,
           "peakMB": 290
         }
       ],
@@ -179,7 +152,7 @@
         {
           "name": "Your temp files",
           "path": "C:\\Users\\[user]\\AppData\\Local\\Temp\\",
-          "bytes": 3465644612,
+          "bytes": 3418952409,
           "atLeast": true
         },
         {
@@ -223,7 +196,7 @@
       "installDateUtc": "2026-06-30T01:25:46Z",
       "is64BitOs": true,
       "architecture": "AMD64",
-      "uptimeSeconds": 616330,
+      "uptimeSeconds": 616949,
       "fastStartupEnabled": true,
       "pendingRebootReasons": [
         "file operations waiting for a restart"
@@ -254,8 +227,8 @@
     "value": {
       "installedMB": 32768,
       "usableMB": 32276,
-      "availableMB": 6651,
-      "commitUsedMB": 38005,
+      "availableMB": 5952,
+      "commitUsedMB": 38936,
       "commitLimitMB": 40805,
       "slotCount": 8,
       "maxCapacityMB": 32768,
@@ -372,7 +345,7 @@
         "fileSystem": "NTFS",
         "driveType": "Fixed",
         "totalBytes": 994179018752,
-        "freeBytes": 529475891200,
+        "freeBytes": 529148608512,
         "isSystem": true
       }
     ]
@@ -415,14 +388,14 @@
           ],
           "nvme": {
             "criticalWarning": 0,
-            "temperatureC": 41,
+            "temperatureC": 42,
             "availableSparePercent": 100,
             "spareThresholdPercent": 5,
             "percentageUsed": 1,
-            "dataUnitsRead": 8343588,
-            "dataUnitsWritten": 9447347,
+            "dataUnitsRead": 8344543,
+            "dataUnitsWritten": 9448234,
             "powerCycles": 189,
-            "powerOnHours": 338,
+            "powerOnHours": 339,
             "unsafeShutdowns": 13,
             "mediaErrors": 0,
             "errorLogEntries": 0,
@@ -11164,7 +11137,7 @@
           "description": "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)",
           "type": "Wi-Fi",
           "status": "Up",
-          "speedMbps": 103,
+          "speedMbps": 115,
           "mac": "[redacted]",
           "dhcp": true,
           "ipv4": [
@@ -11255,13 +11228,13 @@
           "state": "connected",
           "ssid": "[redacted]",
           "bssid": "[redacted]",
-          "signalPercent": 60,
-          "rssi": -68,
+          "signalPercent": 67,
+          "rssi": -69,
           "channel": 10,
           "frequencyMHz": 2457,
           "phyType": 10,
-          "rxMbps": 103,
-          "txMbps": 52,
+          "rxMbps": 115,
+          "txMbps": 49,
           "auth": 7
         }
       ],
@@ -11329,7 +11302,7 @@
           "description": "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)",
           "type": "Wi-Fi",
           "status": "Up",
-          "speedMbps": 103,
+          "speedMbps": 115,
           "mac": "[redacted]",
           "dhcp": true,
           "ipv4": [
@@ -11355,21 +11328,21 @@
         "target": "192.168.9.1",
         "sent": 20,
         "received": 20,
-        "avgMs": 22.199999999999999,
-        "maxMs": 125
+        "avgMs": 12.699999999999999,
+        "maxMs": 55
       },
       "internetPing": {
         "target": "1.1.1.1",
         "sent": 20,
         "received": 20,
-        "avgMs": 54.600000000000001,
-        "maxMs": 164
+        "avgMs": 37.200000000000003,
+        "maxMs": 80
       },
       "internetTcp": true,
       "dnsOk": true,
-      "dnsMs": 86,
+      "dnsMs": 179,
       "webOk": true,
-      "clockOffsetSeconds": -1.52,
+      "clockOffsetSeconds": -1.5600000000000001,
       "clockSource": "time.windows.com (NTP)",
       "timeSyncType": "NTP",
       "timeServiceStart": 3
@@ -11492,44 +11465,44 @@
           "kind": "CPU",
           "name": "CPU Core #1",
           "type": "Load",
-          "value": 62.5,
-          "min": 62.5,
-          "max": 75
+          "value": 30,
+          "min": 30,
+          "max": 100
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #2",
           "type": "Load",
-          "value": 50,
+          "value": 70,
           "min": 50,
-          "max": 50
+          "max": 70
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #3",
           "type": "Load",
-          "value": 50,
+          "value": 70,
           "min": 50,
-          "max": 75
+          "max": 70
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #4",
           "type": "Load",
-          "value": 75,
-          "min": 75,
-          "max": 75
+          "value": 30,
+          "min": 30,
+          "max": 100
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #5",
           "type": "Load",
-          "value": 50,
-          "min": 50,
+          "value": 30,
+          "min": 30,
           "max": 50
         },
         {
@@ -11537,107 +11510,107 @@
           "kind": "CPU",
           "name": "CPU Core #6",
           "type": "Load",
-          "value": 62.5,
+          "value": 50,
           "min": 50,
-          "max": 62.5
+          "max": 50
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #7",
           "type": "Load",
-          "value": 62.5,
-          "min": 62.5,
-          "max": 75
+          "value": 40,
+          "min": 40,
+          "max": 50
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #8",
           "type": "Load",
-          "value": 62.5,
-          "min": 62.5,
-          "max": 75
+          "value": 60,
+          "min": 60,
+          "max": 100
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #9 Thread #1",
           "type": "Load",
-          "value": 87.5,
-          "min": 75,
-          "max": 87.5
+          "value": 80,
+          "min": 50,
+          "max": 80
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #9 Thread #2",
           "type": "Load",
-          "value": 87.5,
-          "min": 50,
-          "max": 87.5
+          "value": 0,
+          "min": 0,
+          "max": 100
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #10 Thread #1",
           "type": "Load",
-          "value": 75,
-          "min": 75,
-          "max": 75
+          "value": 50,
+          "min": 50,
+          "max": 50
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #10 Thread #2",
           "type": "Load",
-          "value": 37.5,
-          "min": 25,
-          "max": 37.5
+          "value": 80,
+          "min": 50,
+          "max": 80
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #11 Thread #1",
           "type": "Load",
-          "value": 62.5,
-          "min": 50,
-          "max": 62.5
+          "value": 90,
+          "min": 90,
+          "max": 100
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #11 Thread #2",
           "type": "Load",
-          "value": 75,
-          "min": 50,
-          "max": 75
+          "value": 22.219999313354492,
+          "min": 0,
+          "max": 22.219999313354492
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #12 Thread #1",
           "type": "Load",
-          "value": 62.5,
-          "min": 25,
-          "max": 62.5
+          "value": 10,
+          "min": 0,
+          "max": 10
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #12 Thread #2",
           "type": "Load",
-          "value": 42.860000610351563,
-          "min": 42.860000610351563,
-          "max": 75
+          "value": 90,
+          "min": 90,
+          "max": 100
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #13 Thread #1",
           "type": "Load",
-          "value": 87.5,
-          "min": 87.5,
+          "value": 80,
+          "min": 80,
           "max": 100
         },
         {
@@ -11645,27 +11618,27 @@
           "kind": "CPU",
           "name": "CPU Core #13 Thread #2",
           "type": "Load",
-          "value": 14.289999961853027,
-          "min": 14.289999961853027,
-          "max": 25
+          "value": 30,
+          "min": 0,
+          "max": 30
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #14 Thread #1",
           "type": "Load",
-          "value": 87.5,
-          "min": 75,
-          "max": 87.5
+          "value": 80,
+          "min": 50,
+          "max": 80
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #14 Thread #2",
           "type": "Load",
-          "value": 14.289999961853027,
-          "min": 14.289999961853027,
-          "max": 25
+          "value": 0,
+          "min": 0,
+          "max": 0
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
@@ -11690,17 +11663,17 @@
           "kind": "CPU",
           "name": "CPU Total",
           "type": "Load",
-          "value": 54.950000762939453,
-          "min": 53.409999847412109,
-          "max": 54.950000762939453
+          "value": 45.099998474121094,
+          "min": 45.099998474121094,
+          "max": 52.270000457763672
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core Max",
           "type": "Load",
-          "value": 87.5,
-          "min": 87.5,
+          "value": 90,
+          "min": 90,
           "max": 100
         },
         {
@@ -11708,63 +11681,63 @@
           "kind": "Memory",
           "name": "Memory Used",
           "type": "Data",
-          "value": 37.150501251220703,
-          "min": 37.150501251220703,
-          "max": 37.150501251220703
+          "value": 38.092445373535156,
+          "min": 38.092445373535156,
+          "max": 38.092445373535156
         },
         {
           "hardware": "Virtual Memory",
           "kind": "Memory",
           "name": "Memory Available",
           "type": "Data",
-          "value": 2.6983413696289063,
-          "min": 2.6983413696289063,
-          "max": 2.6983413696289063
+          "value": 1.7563972473144531,
+          "min": 1.7563972473144531,
+          "max": 1.7563972473144531
         },
         {
           "hardware": "Virtual Memory",
           "kind": "Memory",
           "name": "Memory",
           "type": "Load",
-          "value": 93.228561401367188,
-          "min": 93.228561401367188,
-          "max": 93.228561401367188
+          "value": 95.592353820800781,
+          "min": 95.592353820800781,
+          "max": 95.592353820800781
         },
         {
           "hardware": "Total Memory",
           "kind": "Memory",
           "name": "Memory Used",
           "type": "Data",
-          "value": 25.040863037109375,
-          "min": 25.040863037109375,
-          "max": 25.040863037109375
+          "value": 25.7564697265625,
+          "min": 25.7564697265625,
+          "max": 25.7564697265625
         },
         {
           "hardware": "Total Memory",
           "kind": "Memory",
           "name": "Memory Available",
           "type": "Data",
-          "value": 6.4792861938476563,
-          "min": 6.4792861938476563,
-          "max": 6.4792861938476563
+          "value": 5.7636795043945313,
+          "min": 5.7636795043945313,
+          "max": 5.7636795043945313
         },
         {
           "hardware": "Total Memory",
           "kind": "Memory",
           "name": "Memory",
           "type": "Load",
-          "value": 79.443984985351563,
-          "min": 79.443984985351563,
-          "max": 79.443984985351563
+          "value": 81.714302062988281,
+          "min": 81.714302062988281,
+          "max": 81.714302062988281
         },
         {
           "hardware": "Intel(R) Arc(TM) Graphics",
           "kind": "GPU",
           "name": "D3D 3D",
           "type": "Load",
-          "value": 5.8802280426025391,
-          "min": 5.8802280426025391,
-          "max": 5.8802280426025391
+          "value": 36.676029205322266,
+          "min": 36.676029205322266,
+          "max": 36.676029205322266
         },
         {
           "hardware": "Intel(R) Arc(TM) Graphics",
@@ -11881,7 +11854,7 @@
           "kind": "Motherboard",
           "name": "_TZ.THRM",
           "type": "Temperature",
-          "value": 100.90000000000001
+          "value": 88.900000000000006
         }
       ]
     }
@@ -12091,9 +12064,108 @@
       }
     }
   },
+  "power": {
+    "value": {
+      "batteries": [
+        {
+          "name": "BIF0_9",
+          "manufacturer": "MSI",
+          "chemistry": "LION",
+          "designMwh": 80256,
+          "fullMwh": 79298,
+          "remainingMwh": 79298,
+          "voltageMv": 17204,
+          "rateMw": 0,
+          "powerOnline": true,
+          "charging": false,
+          "discharging": false
+        }
+      ],
+      "onAc": true,
+      "chargePercent": 100,
+      "wakes": [
+        {
+          "timeUtc": "2026-10-27T16:55:25.4148372Z",
+          "sleepMinutes": 1613.0596579983335
+        },
+        {
+          "timeUtc": "2026-10-26T08:02:16.911945Z",
+          "sleepMinutes": 195.14660900833334
+        },
+        {
+          "timeUtc": "2026-10-26T01:35:46.3384398Z",
+          "sleepMinutes": 1606.4639160116667
+        },
+        {
+          "timeUtc": "2026-10-24T19:00:51.0669841Z",
+          "sleepMinutes": 1155.7726221683333
+        },
+        {
+          "timeUtc": "2026-10-23T20:32:42.061657Z",
+          "sleepMinutes": 1312.529662295
+        },
+        {
+          "timeUtc": "2026-10-22T20:28:08.1633288Z",
+          "sleepMinutes": 787.16022273500005
+        },
+        {
+          "timeUtc": "2026-10-21T21:08:56.8480946Z",
+          "sleepMinutes": 1002.6480818333333
+        },
+        {
+          "timeUtc": "2026-10-21T00:18:37.6660299Z",
+          "sleepMinutes": 70.411860216666668
+        },
+        {
+          "timeUtc": "2026-10-20T19:00:52.3945031Z",
+          "sleepMinutes": 8.3920206116666662
+        },
+        {
+          "timeUtc": "2026-10-20T17:00:09.3275212Z",
+          "sleepMinutes": 137.29369773833335
+        },
+        {
+          "timeUtc": "2026-10-20T14:18:21.1831597Z",
+          "sleepMinutes": 550.59791572500001
+        },
+        {
+          "timeUtc": "2026-10-20T02:08:06.1652122Z",
+          "sleepMinutes": 115.78391063833334
+        },
+        {
+          "timeUtc": "2026-10-19T14:43:50.1494508Z",
+          "sleepMinutes": 1191.200477715
+        },
+        {
+          "timeUtc": "2026-10-18T14:32:14.3125564Z",
+          "sleepMinutes": 751.48754121666673
+        },
+        {
+          "timeUtc": "2026-10-18T00:31:42.2832911Z",
+          "sleepMinutes": 10.31960243
+        },
+        {
+          "timeUtc": "2026-10-17T23:38:48.7083125Z",
+          "sleepMinutes": 19.528620058333335
+        },
+        {
+          "timeUtc": "2026-10-17T19:00:26.2860265Z",
+          "sleepMinutes": 3111.0687408399999
+        },
+        {
+          "timeUtc": "2026-10-15T14:48:40.9145551Z",
+          "sleepMinutes": 3583.1659907950002
+        }
+      ],
+      "standby": [],
+      "days": 14,
+      "requests": [],
+      "requestsUnavailable": "needs admin"
+    }
+  },
   "meta": {
     "toolVersion": "0.9.0",
-    "collectedUtc": "2026-10-27T17:37:41.8106129Z",
+    "collectedUtc": "2026-10-27T17:48:00.7266123Z",
     "isAdmin": false,
     "anonymized": true,
     "utcOffsetMinutes": -420

@@ -150,7 +150,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | PRF-007 | Services set to Automatic that keep crashing or use lots of CPU | WMI + EVT | | W | | 6 ✅ (covered by WIN-009 + PRF-003) |
 | PRF-008 | Installed programs (name, version, publisher, install date, size): no Win32_Product | REG Uninstall + Appx | | display | | 6 ✅ |
 | PRF-009 | Browser count and default browser, heavy extension count (Chromium profiles) | FILE | | I | | 6 ✅ |
-| PRF-010 | Thermal or power limits causing slowness on laptops (battery saver on, plugged into a low-watt charger) | API GetSystemPowerStatus + battery | | I | ✓ | 11 |
+| PRF-010 | Thermal or power limits causing slowness on laptops (battery saver on, plugged into a low-watt charger) | API GetSystemPowerStatus + battery | | I | ✓ | 11 ✅ |
 
 ## Network (NET)
 
@@ -185,11 +185,11 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| BAT-001 | Battery wear: full-charge vs design capacity, cycle count, chemistry | WMI root\wmi BatteryFullChargedCapacity / BatteryStaticData / BatteryCycleCount | | W < 70%, C < 50% | ✓ | 11 |
-| BAT-002 | Charging state, charger wattage, charge limit set by the vendor tool | API / WMI | | I | ✓ | 11 |
-| BAT-003 | Sleep problems: what prevents sleep (powercfg /requests), last wake source, wake timers | PROC powercfg (timeout) | ✓ | I | | 11 |
-| BAT-004 | Modern Standby drain (sleep study) summary | PROC powercfg /sleepstudy | ✓ | I | | 11 |
-| BAT-005 | Kernel-Power 41 with power-button presses (PSU or power-delivery suspicion on desktops) | EVT | | W | ✓ | 11 |
+| BAT-001 | Battery wear: full-charge vs design capacity, cycle count, chemistry | IOCTL_BATTERY_QUERY_INFORMATION (no admin; WMI BatteryStaticData needs admin) | | W < 70%, C < 50% | ✓ | 11 ✅ |
+| BAT-002 | Charging state, charger wattage, charge limit set by the vendor tool | API / WMI | | I | ✓ | 11 ✅ |
+| BAT-003 | Sleep problems: wake timers and devices that keep waking the PC (Power-Troubleshooter 1), what prevents sleep now (powercfg /requests, admin only) | EVT + PROC powercfg (timeout) | | I | | 11 ✅ |
+| BAT-004 | Modern Standby drain: % per hour on battery from Kernel-Power 507 (no admin, no powercfg) | EVT | | I | | 11 ✅ |
+| BAT-005 | Desktops: repeated Kernel-Power 41 with no blue screen and no power-button press (sudden power loss: PSU or wall power) | EVT | | W | ✓ | 11 ✅ |
 
 ## Peripherals and other (PER)
 

@@ -36,7 +36,9 @@ public sealed class Win007UnexpectedShutdowns : Check
     {
         var ev = s.Events!.Value!;
         var all41 = ev.Find(BlueScreens.KernelPower, 41).ToList();
-        var kp41 = all41.Within(s, Ev.Window).Where(e => e.Get("BugcheckCode") is null or "0").ToList();
+        // Repeated instant power losses on a desktop are BAT-005's finding; don't report them twice.
+        var cuts = Battery.Bat005PowerCuts.Cuts(s);
+        var kp41 = all41.Within(s, Ev.Window).Where(e => e.Get("BugcheckCode") is null or "0").Except(cuts).ToList();
         // EventLog 6008 is logged at the same boot as Kernel-Power 41; count each restart once, and not if it was a blue screen.
         var e6008 = ev.Find("EventLog", 6008).Within(s, Ev.Window)
             .Where(e => !all41.Any(k => Math.Abs((k.TimeUtc - e.TimeUtc).TotalMinutes) < 10)).ToList();

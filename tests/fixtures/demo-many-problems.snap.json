@@ -1741,5 +1741,108 @@
         ]
       }
     }
+  },
+  "power": {
+    "value": {
+      "batteries": [
+        {
+          "name": "5B10W51867",
+          "manufacturer": "SMP",
+          "chemistry": "LiP",
+          "designMwh": 57000,
+          "fullMwh": 26800,
+          "remainingMwh": 16080,
+          "cycleCount": 912,
+          "manufactured": "2021-04-02T00:00:00Z",
+          "voltageMv": 11650,
+          "rateMw": 0,
+          "powerOnline": true,
+          "charging": false,
+          "discharging": false
+        }
+      ],
+      "onAc": true,
+      "chargePercent": 60,
+      "days": 14,
+      "wakes": [
+        {
+          "timeUtc": "2026-10-23T20:18:33.771Z",
+          "sleepMinutes": 240,
+          "source": "Timer - Windows will execute 'NT TASK\\Microsoft\\Windows\\UpdateOrchestrator\\Reboot' scheduled task that requested waking the computer.",
+          "timerOwner": "\\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe (SystemEventsBroker)"
+        },
+        {
+          "timeUtc": "2026-10-22T20:18:33.771Z",
+          "sleepMinutes": 240,
+          "source": "Timer - Windows will execute 'NT TASK\\Microsoft\\Windows\\UpdateOrchestrator\\Reboot' scheduled task that requested waking the computer.",
+          "timerOwner": "\\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe (SystemEventsBroker)"
+        },
+        {
+          "timeUtc": "2026-10-21T20:18:33.771Z",
+          "sleepMinutes": 240,
+          "source": "Timer - Windows will execute 'NT TASK\\Microsoft\\Windows\\UpdateOrchestrator\\Reboot' scheduled task that requested waking the computer.",
+          "timerOwner": "\\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe (SystemEventsBroker)"
+        },
+        {
+          "timeUtc": "2026-10-19T20:18:33.771Z",
+          "sleepMinutes": 240,
+          "source": "Timer - Windows will execute 'NT TASK\\Microsoft\\Windows\\UpdateOrchestrator\\Reboot' scheduled task that requested waking the computer.",
+          "timerOwner": "\\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe (SystemEventsBroker)"
+        },
+        {
+          "timeUtc": "2026-10-23T13:06:33.771Z",
+          "sleepMinutes": 35,
+          "source": "Device -HID-compliant mouse"
+        },
+        {
+          "timeUtc": "2026-10-22T13:06:33.771Z",
+          "sleepMinutes": 35,
+          "source": "Device -HID-compliant mouse"
+        },
+        {
+          "timeUtc": "2026-10-21T13:06:33.771Z",
+          "sleepMinutes": 35,
+          "source": "Device -HID-compliant mouse"
+        },
+        {
+          "timeUtc": "2026-10-20T13:06:33.771Z",
+          "sleepMinutes": 35,
+          "source": "Device -HID-compliant mouse"
+        },
+        {
+          "timeUtc": "2026-10-18T13:06:33.771Z",
+          "sleepMinutes": 35,
+          "source": "Device -HID-compliant mouse"
+        },
+        {
+          "timeUtc": "2026-10-17T13:06:33.771Z",
+          "sleepMinutes": 35,
+          "source": "Device -HID-compliant mouse"
+        },
+        {
+          "timeUtc": "2026-10-16T20:18:33.771Z",
+          "sleepMinutes": 600,
+          "source": "Power Button"
+        }
+      ],
+      "standby": [
+        {
+          "endUtc": "2026-10-23T20:18:33.771Z",
+          "minutes": 540,
+          "drainMwh": 25650,
+          "fullMwh": 28500,
+          "deepSleepPercent": 8
+        },
+        {
+          "endUtc": "2026-10-21T20:18:33.771Z",
+          "minutes": 420,
+          "drainMwh": 17100,
+          "fullMwh": 28500,
+          "deepSleepPercent": 15
+        }
+      ],
+      "requests": [],
+      "requestsUnavailable": "needs admin"
+    }
   }
 }

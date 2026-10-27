@@ -28,6 +28,15 @@ public static class DeviceIo
         return null;
     }
 
+    /// <summary>Opens a device read-only (for IOCTLs that need FILE_READ_ACCESS, like the battery ones).</summary>
+    public static SafeFileHandle? OpenRead(string path)
+    {
+        var h = CreateFile(path, GenericRead, FileShareRead | FileShareWrite, IntPtr.Zero, OpenExisting, 0, IntPtr.Zero);
+        if (!h.IsInvalid) return h;
+        h.Dispose();
+        return null;
+    }
+
     /// <summary>Sends an IOCTL; returns the output bytes, or null with the Win32 error message.</summary>
     public static byte[]? Ioctl(SafeFileHandle h, uint code, byte[]? input, int outputSize, out string? error)
     {

@@ -94,6 +94,7 @@ public static class Snap
             Camera = new PrivacySwitch { Device = "Allow", Apps = "Allow", DesktopApps = "Allow", Devices = ["HD Webcam"] },
             Microphone = new PrivacySwitch { Device = "Allow", Apps = "Allow", DesktopApps = "Allow" },
         }),
+        Power = Section<PowerInfo>.Of(new PowerInfo { OnAc = true, RequestsUnavailable = "needs admin" }),
         Updates = Section<UpdatesInfo>.Of(new UpdatesInfo { History = [new() { DateUtc = Now.AddDays(-10), Title = "2026-10 Cumulative Update for Windows 11 Version 25H2 (KB5099999)", Result = 2 }] }),
     };
 

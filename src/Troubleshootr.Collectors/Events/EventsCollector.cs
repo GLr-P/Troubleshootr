@@ -130,7 +130,7 @@ public sealed class EventsCollector : Collector<EventsInfo>
     }
 
     /// <summary>EventData (or UserData) values by name, from the event's XML. Unnamed values get their position as the name.</summary>
-    private static Dictionary<string, string> Data(EventRecord e)
+    internal static Dictionary<string, string> Data(EventRecord e)
     {
         var data = new Dictionary<string, string>();
         try { Fill(XElement.Parse(e.ToXml()), data); }
