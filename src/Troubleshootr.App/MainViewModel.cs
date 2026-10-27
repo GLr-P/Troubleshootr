@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using Troubleshootr.Checks;
 using Troubleshootr.Collectors;
+using Troubleshootr.Collectors.Fixes;
 using Troubleshootr.Core;
 
 namespace Troubleshootr.App;
@@ -36,6 +37,8 @@ public sealed class CategoryTile(Category category) : Observable
 public sealed class FindingItem(Finding f)
 {
     public Finding Finding { get; } = f;
+    public IFixAction? Fix { get; } = FixRegistry.Find(f.FixActionId);
+    public Visibility FixVisibility => Fix is null ? Visibility.Collapsed : Visibility.Visible;
     public string Title => Finding.Title;
     public string Evidence => Finding.Evidence;
     public string Advice => Finding.Advice;
@@ -49,6 +52,8 @@ public sealed class MainViewModel : Observable
     private Report? _report;
     private bool _scanning;
     private string _status = "Ready. Pick a scan, or select areas and click Scan selected.";
+    private IFixAction? _runningFix;
+    private string _fixOutput = "";
 
     public static string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "0.0.0";
 
@@ -80,6 +85,41 @@ public sealed class MainViewModel : Observable
     public int Critical => Findings.Count(f => f.Finding.Severity == Severity.Critical);
     public int Warnings => Findings.Count(f => f.Finding.Severity == Severity.Warning);
     public int Infos => Findings.Count(f => f.Finding.Severity == Severity.Info);
+
+    /// <summary>Fix actions run in this session, oldest first; every report shares this list.</summary>
+    public List<FixRecord> FixesRun { get; } = new();
+    public IFixAction? RunningFix { get => _runningFix; private set { Set(ref _runningFix, value); Raise(nameof(FixIdle)); } }
+    public bool FixIdle => RunningFix is null;
+    /// <summary>Output of the fixes run so far (the Fixes page shows it live).</summary>
+    public string FixOutput { get => _fixOutput; private set => Set(ref _fixOutput, value); }
+    /// <summary>Asks the shell to show a page ("Fixes").</summary>
+    public event Action<string>? Navigate;
+    public void GoTo(string page) => Navigate?.Invoke(page);
+
+    /// <summary>Runs a fix (the caller has already asked for confirmation), logging it to the action log and the report.</summary>
+    public async Task<FixRecord?> RunFixAsync(IFixAction fix)
+    {
+        if (RunningFix is not null) return null;
+        RunningFix = fix;
+        var dispatcher = Application.Current.Dispatcher;
+        // Keep the box to the last ~40,000 characters; the full output of each fix is in its FixRecord.
+        void Append(string line) => dispatcher.BeginInvoke(new Action(() =>
+        {
+            var text = FixOutput + line + Environment.NewLine;
+            FixOutput = text.Length > 40000 ? text.Substring(text.Length - 30000) : text;
+        }));
+        Append($"--- {DateTime.Now:HH:mm} {fix.Title} ---");
+        ActionLog.Write($"Fix started: {fix.Title} ({fix.Id})");
+        try
+        {
+            var record = await Task.Run(() => fix.RunAsync(Append, CancellationToken.None));
+            ActionLog.Write($"Fix {(record.Ok ? "done" : "FAILED")}: {fix.Title}: {record.Summary} ({record.DurationMs / 1000.0:0.#} s)");
+            FixesRun.Add(record);
+            Raise(nameof(Report));
+            return record;
+        }
+        finally { RunningFix = null; }
+    }
 
     /// <summary>Raised on the UI thread whenever the snapshot gains data (the info tabs redraw).</summary>
     public event Action? SnapshotChanged;
@@ -122,6 +162,12 @@ public sealed class MainViewModel : Observable
     public void Show(Report report)
     {
         if (report.Snapshot is { } s && !ReferenceEquals(s, Snapshot)) { Snapshot = s; Raise(nameof(Device)); SnapshotChanged?.Invoke(); }
+        // Every report shows this session's fixes, including ones run after it was opened.
+        if (!ReferenceEquals(report.FixesRun, FixesRun))
+        {
+            foreach (var x in report.FixesRun.Where(x => !FixesRun.Contains(x))) FixesRun.Add(x);
+            report.FixesRun = FixesRun;
+        }
         Report = report;
         Findings.Clear();
         foreach (var f in report.Findings) Findings.Add(new FindingItem(f));

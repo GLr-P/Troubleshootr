@@ -63,7 +63,7 @@ public sealed class Cra002CrashPattern : Check
         {
             yield return F(Severity.Warning, "Blue screens with different causes each time",
                 $"{list.Count} crashes with {codes.Count} different codes: {string.Join(", ", codes.Select(g => $"{BugChecks.Name(g.Key)} ×{g.Count()}"))}.",
-                "Random crash codes usually mean hardware rather than one bad driver: test the RAM (Windows Memory Diagnostic or MemTest86), remove any CPU/RAM overclock or XMP/EXPO profile, check temperatures and the power supply.");
+                "Random crash codes usually mean hardware rather than one bad driver: test the RAM (Windows Memory Diagnostic or MemTest86), remove any CPU/RAM overclock or XMP/EXPO profile, check temperatures and the power supply.", fix: "memory-diagnostic");
         }
         else if (codes[0].Count() >= 2)
         {
@@ -168,7 +168,7 @@ public sealed class Mem009MemoryCrashes : Check
         if (memory.Count < 2 && !(memory.Count == 1 && list.Select(b => b.Code).Distinct().Count() >= 3)) yield break;
         yield return F(Severity.Warning, "Crashes point to a memory problem",
             $"{memory.Count} of {N(list.Count, "blue screen")} in 30 days {(memory.Count == 1 ? "has a memory-type code" : "have memory-type codes")}: {string.Join(", ", memory.Select(b => BugChecks.Name(b.Code)).Distinct())}.",
-            "Test the RAM: Windows Memory Diagnostic (mdsched) or MemTest86 for several passes. Turn off XMP/EXPO or any memory overclock first; reseat or test the sticks one at a time.");
+            "Test the RAM: Windows Memory Diagnostic (mdsched) or MemTest86 for several passes. Turn off XMP/EXPO or any memory overclock first; reseat or test the sticks one at a time.", fix: "memory-diagnostic");
     }
 }
 

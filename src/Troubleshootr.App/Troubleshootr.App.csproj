@@ -9,6 +9,21 @@
     <Prefer32Bit>false</Prefer32Bit>
     <ApplicationManifest>..\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <!--
+    Single exe: embed every DLL the app needs (and the per-architecture sensor library) so Troubleshootr.exe runs on its own.
+    EmbeddedAssemblies unpacks them to %TEMP% only when they aren't next to the exe.
+  -->
+  <Target Name="EmbedDependencies" AfterTargets="ResolveAssemblyReferences">
+    <PropertyGroup>
+      <LhmRoot>$(NuGetPackageRoot)librehardwaremonitorlib\$(LhmVersion)\runtimes\</LhmRoot>
+    </PropertyGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="@(ReferenceCopyLocalPaths)" Condition="'%(Extension)' == '.dll' and '%(Filename)' != 'LibreHardwareMonitorLib'" LogicalName="embedded/%(Filename)%(Extension)" />
+      <EmbeddedResource Include="$(LhmRoot)win-x64\lib\net472\LibreHardwareMonitorLib.dll" LogicalName="embedded/lhm/x64/LibreHardwareMonitorLib.dll" />
+      <EmbeddedResource Include="$(LhmRoot)win-x86\lib\net472\LibreHardwareMonitorLib.dll" LogicalName="embedded/lhm/x86/LibreHardwareMonitorLib.dll" />
+      <EmbeddedResource Include="$(LhmRoot)win-arm64\lib\net472\LibreHardwareMonitorLib.dll" LogicalName="embedded/lhm/arm64/LibreHardwareMonitorLib.dll" />
+    </ItemGroup>
+  </Target>
   <ItemGroup>
     <ProjectReference Include="..\Troubleshootr.Core\Troubleshootr.Core.csproj" />
     <ProjectReference Include="..\Troubleshootr.Collectors\Troubleshootr.Collectors.csproj" />

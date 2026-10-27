@@ -55,12 +55,12 @@ public sealed class Per002Printers : Check
         if (p.SpoolerStatus is { } status && status != "Running" && p.SpoolerStartType != "Disabled"
             && (p.SpoolerStartType == "Automatic" || real.Count > 0 || p.PrintersUnavailable is not null))
             yield return F(Severity.Warning, "The Print Spooler service isn't running", $"Print Spooler is {status} (start type {p.SpoolerStartType}).",
-                "Start it in Services (services.msc). If it keeps stopping, clear C:\\Windows\\System32\\spool\\PRINTERS with the service stopped, then remove and re-add the printer whose driver crashes it.");
+                "Start it in Services (services.msc). If it keeps stopping, clear C:\\Windows\\System32\\spool\\PRINTERS with the service stopped, then remove and re-add the printer whose driver crashes it.", fix: "spooler-restart");
 
         foreach (var x in real.Where(x => x.ErrorJobs > 0 || (x.Jobs > 0 && x.OldestJobMinutes >= StuckMinutes)))
             yield return F(Severity.Warning, $"Print jobs are stuck on {x.Name}",
                 $"{N(x.Jobs, "job")} in the queue{(x.OldestJobMinutes is { } m ? $", the oldest {Age(m)}" : "")}{(x.ErrorJobs > 0 ? $", {x.ErrorJobs} in error" : "")}.",
-                "Open the printer's queue and cancel the stuck jobs. If they won't go, restart the Print Spooler service. Then check the printer is on, has paper and is on the same network.");
+                "Open the printer's queue and cancel the stuck jobs. If they won't go, restart the Print Spooler service. Then check the printer is on, has paper and is on the same network.", fix: "spooler-restart");
 
         if (real.FirstOrDefault(x => x.IsDefault) is { } def && IsOffline(def))
             yield return F(Severity.Warning, $"The default printer is offline: {def.Name}",

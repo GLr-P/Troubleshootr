@@ -135,7 +135,7 @@ public sealed class Sto018Reclaimable : Check
         if (total < Worth) yield break;
         yield return F(Severity.Info, $"About {Perf.Gb(total)} could be freed up",
             string.Join("; ", items.Where(i => i.Bytes >= ListOver).OrderByDescending(i => i.Bytes).Select(i => $"{i.Name}: {(i.AtLeast ? "at least " : "")}{Perf.Gb(i.Bytes)}")) + ".",
-            "Run Disk Cleanup > Clean up system files (or Settings > System > Storage > Temporary files). Windows.old is only needed to go back to the previous Windows version.");
+            "Run Disk Cleanup > Clean up system files (or Settings > System > Storage > Temporary files). Windows.old is only needed to go back to the previous Windows version.", fix: "temp-cleanup");
     }
 }
 

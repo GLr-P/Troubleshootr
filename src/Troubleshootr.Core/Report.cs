@@ -19,6 +19,8 @@ public sealed class Report
     public List<Finding> Findings { get; set; } = new();
     public List<NotChecked> NotChecked { get; set; } = new();
     public Dictionary<string, long> TimingsMs { get; set; } = new();
+    /// <summary>Fix actions run on this PC in this session, oldest first.</summary>
+    public List<FixRecord> FixesRun { get; set; } = new();
     public Snapshot? Snapshot { get; set; }
 
     public static Report Build(Snapshot s, List<Finding> findings, List<NotChecked> notChecked,
@@ -35,6 +37,25 @@ public sealed class Report
         TimingsMs = timings,
         Snapshot = o.KeepSnapshot ? s : null,
     };
+}
+
+/// <summary>One fix action that ran: when, whether it worked, and the tail of its output.</summary>
+public sealed class FixRecord
+{
+    public const int MaxOutput = 6000;
+
+    public string Id { get; set; } = "";
+    public string Title { get; set; } = "";
+    public DateTime StartedUtc { get; set; }
+    public long DurationMs { get; set; }
+    public bool Ok { get; set; }
+    /// <summary>One plain line: "Flushed the DNS cache.", "SFC found no problems."</summary>
+    public string Summary { get; set; } = "";
+    [FreeText] public string? Output { get; set; }
+
+    /// <summary>Keeps the end of long output (DISM and SFC print hundreds of progress lines).</summary>
+    public static string? Tail(string? text) =>
+        text is null || text.Length <= MaxOutput ? text : "…" + text.Substring(text.Length - MaxOutput);
 }
 
 public sealed class DeviceSummary
@@ -103,6 +124,12 @@ public static class TextReport
             sb.AppendLine($"    {f.Evidence}");
             sb.AppendLine($"    -> {f.Advice}");
         }
+        if (r.FixesRun.Count > 0)
+        {
+            sb.AppendLine();
+            sb.AppendLine("Fixes run:");
+            foreach (var x in r.FixesRun) sb.AppendLine($"    {x.StartedUtc.ToLocalTime():yyyy-MM-dd HH:mm} {x.Title}: {(x.Ok ? "" : "FAILED: ")}{x.Summary}");
+        }
         if (r.NotChecked.Count > 0)
         {
             sb.AppendLine();
@@ -132,6 +159,7 @@ public static class TextReport
         foreach (var f in serious) sb.AppendLine($"- [{f.Severity}] {f.Title}: {f.Evidence}");
         var info = r.Findings.Count(f => f.Severity == Severity.Info);
         if (info > 0) sb.AppendLine($"Also {info} informational note{(info == 1 ? "" : "s")}: {string.Join("; ", r.Findings.Where(f => f.Severity == Severity.Info).Select(f => f.Title))}.");
+        if (r.FixesRun.Count > 0) sb.AppendLine("Done: " + string.Join("; ", r.FixesRun.Select(x => $"{x.Title} ({(x.Ok ? x.Summary.TrimEnd('.') : "failed")})")) + ".");
         return sb.ToString();
     }
 

@@ -25,14 +25,24 @@ public static class LhmLoader
         };
     }
 
-    /// <summary>The folder holding this process's build (x64, x86 or arm64), or null on other architectures.</summary>
-    public static string? Folder() => RuntimeInformation.ProcessArchitecture switch
+    /// <summary>Set by the single-exe app: writes an embedded file ("embedded/lhm/x64/LibreHardwareMonitorLib.dll") to %TEMP% and returns its path.</summary>
+    public static Func<string, string?>? ExtractEmbedded { get; set; }
+
+    /// <summary>
+    /// The folder holding this process's build (x64, x86 or arm64): lhm\<arch> next to the exe, or the copy unpacked from
+    /// the single exe. Null on other architectures.
+    /// </summary>
+    public static string? Folder()
     {
-        Architecture.X64 => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lhm", "x64"),
-        Architecture.X86 => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lhm", "x86"),
-        Architecture.Arm64 => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lhm", "arm64"),
-        _ => null,
-    };
+        var arch = RuntimeInformation.ProcessArchitecture switch
+        {
+            Architecture.X64 => "x64", Architecture.X86 => "x86", Architecture.Arm64 => "arm64", _ => null,
+        };
+        if (arch is null) return null;
+        var local = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lhm", arch);
+        if (File.Exists(Path.Combine(local, "LibreHardwareMonitorLib.dll")) || ExtractEmbedded is null) return local;
+        return ExtractEmbedded($"embedded/lhm/{arch}/LibreHardwareMonitorLib.dll") is { } path ? Path.GetDirectoryName(path) : local;
+    }
 }
 
 /// <summary>

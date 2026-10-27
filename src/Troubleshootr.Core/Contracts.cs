@@ -72,6 +72,24 @@ public abstract class Collector<T> : ICollector where T : class
     }
 }
 
+/// <summary>
+/// Something that changes the PC (system file repair, DNS flush…). Runs only after a button press and a confirmation;
+/// what it did is written to the action log and the report.
+/// </summary>
+public interface IFixAction
+{
+    /// <summary>"system-files", matches Finding.FixActionId.</summary>
+    string Id { get; }
+    string Title { get; }
+    /// <summary>What it changes on the PC, shown in the confirmation.</summary>
+    string Changes { get; }
+    bool NeedsAdmin { get; }
+    /// <summary>"a few seconds", "15–45 minutes".</summary>
+    string Duration { get; }
+    /// <summary>Runs the fix; <paramref name="output"/> receives progress lines. Never throws: failures come back as Ok = false.</summary>
+    Task<FixRecord> RunAsync(Action<string> output, CancellationToken ct);
+}
+
 /// <summary>Thrown by collectors with a message meant for the report ("WMI: invalid class").</summary>
 public sealed class CollectorException(string message, Exception? inner = null) : Exception(message, inner);
 

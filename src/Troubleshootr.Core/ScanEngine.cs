@@ -78,8 +78,13 @@ public static class ScanEngine
         lock (gate) { finished = true; foreach (var c in pending) ready.UnionWith(c.Needs); }
         RunReadyChecks();
 
-        if (o.Anonymize) Anonymizer.Apply(snapshot);
-        return Report.Build(snapshot, findings, notChecked, timings, o, started, Timing.Ms(total));
+        var report = Report.Build(snapshot, findings, notChecked, timings, o, started, Timing.Ms(total));
+        if (!o.Anonymize) return report;
+        // Anonymize the whole report, not only the snapshot: findings quote names, serials and hosts entries.
+        report.Snapshot = snapshot;
+        var anonymized = Anonymizer.Apply(report);
+        if (!o.KeepSnapshot) anonymized.Snapshot = null;
+        return anonymized;
     }
 
     /// <summary>Runs checks against an existing snapshot (fixtures, tests, re-evaluating a saved report).</summary>

@@ -5,6 +5,16 @@ namespace Troubleshootr.App;
 
 public partial class App : Application
 {
+    static App()
+    {
+        EmbeddedAssemblies.Register();
+        UseEmbeddedSensorLibrary();
+    }
+
+    /// <summary>Separate and not inlined: compiling it loads Troubleshootr.Collectors, which needs the resolver registered first.</summary>
+    [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+    private static void UseEmbeddedSensorLibrary() => Troubleshootr.Collectors.Sensors.LhmLoader.ExtractEmbedded = EmbeddedAssemblies.Extract;
+
     protected override async void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
@@ -19,6 +29,13 @@ public partial class App : Application
             ShutdownMode = ShutdownMode.OnExplicitShutdown;
             var code = Screenshots.Run(e.Args);
             Shutdown(code);
+            return;
+        }
+
+        if (Array.IndexOf(e.Args, "--selftest") >= 0)
+        {
+            ShutdownMode = ShutdownMode.OnExplicitShutdown;
+            Shutdown(await SelfTest.RunAsync(e.Args));
             return;
         }
 

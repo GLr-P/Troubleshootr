@@ -143,7 +143,7 @@
       </header>
 
       <div class="hero">
-        <span class="pill">Free preview · <span class="ver">v0.10.0</span></span>
+        <span class="pill">Free · <span class="ver">v1.0.0</span></span>
         <h1>The first thing to open when a PC has a problem</h1>
         <p>One scan finds failing drives, blue screens, bad RAM, crashing apps, broken services and more. Every problem is ranked by how serious it is, with the actual numbers and what to do about it. Portable: run it from a USB stick, nothing to install.</p>
         <div class="buttons">
@@ -156,13 +156,13 @@
             View on GitHub
           </a>
         </div>
-        <div class="small">Windows 10 and 11 · 0.6 MB download · Free under GPL-3.0 · No install, no account, nothing sent anywhere</div>
+        <div class="small">Windows 10 and 11 · one 7 MB file · Free under GPL-3.0 · No install, no account, nothing sent anywhere</div>
         <div class="shot"><img src="screenshots/diagnose.png" alt="The Diagnose screen: the PC's details, scan buttons, area tiles and results sorted from critical to notes" width="1280" height="800" /></div>
 
         <div class="stats">
           <div class="stat"><b>~1 s</b><span>Quick scan on a normal PC</span></div>
           <div class="stat"><b>117</b><span>checks today, about 130 planned</span></div>
-          <div class="stat"><b>2.7 MB</b><span>fits on any USB stick</span></div>
+          <div class="stat"><b>1 file</b><span>a single exe for any USB stick</span></div>
           <div class="stat"><b>Read-only</b><span>changes nothing unless you click a fix</span></div>
         </div>
       </div>
@@ -218,7 +218,11 @@
             <p>Live CPU, graphics card, memory and motherboard temperatures, fans, clocks and power, with min and max. A 30-second stress test tells you whether the CPU throttles. CPU and RAM temperatures use the free, signed PawnIO driver, installed only when you click the button and removable any time.</p>
           </div>          <div class="card">
             <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" /></svg></span>Reports for the ticket</h3>
-            <p>Copy a short summary straight into your ticket system, or save full text and JSON reports next to the app on the USB stick. The command-line tool can anonymize a report (strips names and serial numbers).</p>
+            <p>Copy a short summary straight into your ticket system, open a clean printable report for the customer, or save HTML, text and JSON reports next to the app on the USB stick. One tick anonymizes them: user and PC names, serial numbers, MAC addresses and Wi-Fi names removed.</p>
+          </div>
+          <div class="card">
+            <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg></span>One-click fixes</h3>
+            <p>Repair system files (DISM + SFC), delete temp files, flush DNS, reset Windows networking, clear stuck print jobs or start a RAM test, right from the problem that needs it. Each fix says what it changes and asks first, and what it did goes in the report.</p>
           </div>
           <div class="card">
             <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31M14 9.3V1.99M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0" /></svg></span>Full system info</h3>
@@ -226,7 +230,7 @@
           </div>
           <div class="card">
             <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></span>Safe on a customer's PC</h3>
-            <p>Portable and read-only: no installer, no registry writes, no kernel driver, nothing left behind. Works without admin; "Restart as admin" adds SMART, crash dumps and boot timing.</p>
+            <p>Portable and read-only until you click a fix: no installer, no registry writes, no kernel driver, nothing left behind. Works without admin; "Restart as admin" adds SMART, crash dumps and boot timing.</p>
           </div>
         </div>
       </section>
@@ -248,7 +252,8 @@
           <figure><img src="screenshots/events.png" alt="Events and Crashes tab with blue screens, unexpected shutdowns, app crashes and hardware errors" loading="lazy" /><figcaption>Blue screens, crashes and hardware errors in one place</figcaption></figure>
           <figure><img src="screenshots/storage.png" alt="Storage tab with per-drive health cards" loading="lazy" /><figcaption>Drive health like CrystalDiskInfo</figcaption></figure>
           <figure><img src="screenshots/diagnose-dark.png" alt="The Diagnose screen in dark mode" loading="lazy" /><figcaption>Dark mode</figcaption></figure>
-          <figure><img src="screenshots/report.png" alt="Report tab with a ticket summary" loading="lazy" /><figcaption>A ticket-ready summary in one click</figcaption></figure>
+          <figure><img src="screenshots/report.png" alt="Report tab with a ticket summary, printable report and anonymize option" loading="lazy" /><figcaption>A ticket summary, printable report and anonymize option</figcaption></figure>
+          <figure><img src="screenshots/fixes.png" alt="Fixes tab with system file repair, temp cleanup, DNS flush, network reset, print queue and RAM test" loading="lazy" /><figcaption>Common repairs, each one explained and confirmed</figcaption></figure>
           <figure><img src="screenshots/devices.png" alt="Devices tab with problem devices explained" loading="lazy" /><figcaption>Device Manager problems in plain English</figcaption></figure>
           <figure><img src="screenshots/updates.png" alt="Updates tab with failed updates and their error codes" loading="lazy" /><figcaption>Failed updates with the error explained</figcaption></figure>
           <figure><img src="screenshots/drivers-dark.png" alt="Drivers tab in dark mode" loading="lazy" /><figcaption>Every driver: provider, version and date</figcaption></figure>
@@ -266,7 +271,7 @@
 
       <section id="roadmap">
         <h2>Roadmap</h2>
-        <p class="lead">A new preview comes out after each part is finished. The full list of planned checks is in the <a href="https://github.com/GLr-P/Troubleshootr/blob/main/docs/CHECKS.md">check catalogue</a>.</p>
+        <p class="lead">Version 1.0 covers everything below. The full list of planned checks is in the <a href="https://github.com/GLr-P/Troubleshootr/blob/main/docs/CHECKS.md">check catalogue</a>.</p>
         <div class="roadmap">
           <div class="road"><span class="tag done">Done</span>Drive health and SMART</div>
           <div class="road"><span class="tag done">Done</span>Blue screens, crashes, event logs</div>
@@ -278,7 +283,8 @@
           <div class="road"><span class="tag done">Done</span>Live temperatures and sensors</div>
           <div class="road"><span class="tag done">Done</span>Printers, audio, USB and other peripherals</div>
           <div class="road"><span class="tag done">Done</span>Battery wear and power</div>
-          <div class="road"><span class="tag next">Next</span>One-click fixes and HTML reports</div>
+          <div class="road"><span class="tag done">Done</span>One-click fixes and printable reports</div>
+          <div class="road"><span class="tag next">Next</span>Technician edition: ask Claude about the PC, send reports to Plannr</div>
         </div>
       </section>
     </div>
@@ -288,14 +294,14 @@
         <section id="download">
           <h2>Get started in a minute</h2>
           <ol class="steps">
-            <li>Download <strong class="zip">the zip</strong> from the <a class="dl" href="https://github.com/GLr-P/Troubleshootr/releases">latest release</a>.</li>
-            <li>Unzip it anywhere: your desktop, or a USB stick to carry between PCs.</li>
+            <li>Download <strong class="zip">Troubleshootr.exe</strong> from the <a class="dl" href="https://github.com/GLr-P/Troubleshootr/releases/latest">latest release</a>.</li>
+            <li>Put it anywhere: your desktop, or a USB stick to carry between PCs. It's one file; nothing to unzip or install.</li>
             <li>Run <strong>Troubleshootr.exe</strong>. It isn't code-signed, so if Windows says <em>"Windows protected your PC"</em>, click <strong>More info → Run anyway</strong>.</li>
             <li>Click <strong>Quick scan</strong>. For the full picture (SMART data, crash dump details, boot timing), click <strong>Restart as admin</strong> first.</li>
           </ol>
           <p class="lead" style="margin-top: 24px">
             Needs .NET Framework 4.7.2, which is built into Windows 10 (version 1803 and later) and Windows 11. Technicians can also use
-            <code>troubleshootr-cli.exe</code> for scripted scans and JSON output.
+            <code>troubleshootr-cli.exe</code> (in the zip on the same release) for scripted scans, HTML and JSON output.
           </p>
         </section>
       </div>
@@ -308,12 +314,12 @@
     </footer>
 
     <script>
-      // Point the download links at the newest release's zip (previews are pre-releases, which /releases/latest skips).
+      // Point the download links at the newest release's single exe (or its zip, for older releases).
       fetch('https://api.github.com/repos/GLr-P/Troubleshootr/releases?per_page=1')
         .then((r) => (r.ok ? r.json() : []))
         .then((list) => {
           const rel = list[0];
-          const zip = rel && rel.assets.find((a) => a.name.endsWith('.zip'));
+          const zip = rel && (rel.assets.find((a) => a.name.endsWith('.exe')) || rel.assets.find((a) => a.name.endsWith('.zip')));
           if (!zip) return;
           document.querySelectorAll('a.dl').forEach((a) => (a.href = zip.browser_download_url));
           document.querySelectorAll('.ver').forEach((el) => (el.textContent = rel.tag_name));

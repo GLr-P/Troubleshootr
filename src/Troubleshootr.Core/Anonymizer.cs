@@ -51,6 +51,61 @@ public static class Anonymizer
         s.Meta.Anonymized = true;
     }
 
+    /// <summary>
+    /// An anonymized copy of a report (the original is untouched): the snapshot as <see cref="Apply(Snapshot)"/>, plus every
+    /// name, serial or network name it held scrubbed out of the findings and fix output, which quote them.
+    /// </summary>
+    public static Report Apply(Report original)
+    {
+        var r = Json.Deserialize<Report>(Json.Serialize(original));
+        var secrets = new List<string>();
+        if (r.Snapshot is { } s)
+        {
+            Collect(s, secrets);
+            // Short user and PC names ("Sam") are below Collect's 4-character floor; Apply(Snapshot) scrubs them from 3.
+            if (s.System?.Value is { } sys) secrets.AddRange(new[] { sys.UserName, sys.DeviceName, sys.Domain }.Where(n => n is not null)!);
+            // VPN and tailnet addresses aren't [Sensitive] (most addresses are harmless) but Apply blanks them, so findings must too.
+            if (s.Network?.Value is { } net)
+                secrets.AddRange(net.Hosts.Where(h => IsCgnat(h.Address)).Select(h => h.Address).Concat(net.Adapters.Where(a => a.IsVpn).SelectMany(a => a.Ipv4)));
+            Apply(s);
+        }
+        secrets.AddRange(new[] { r.Device.DeviceName, Environment.UserName, Environment.MachineName }.Where(n => n is { Length: >= 3 })!);
+        // Generic account names and firmware placeholders ("User", "Default string") would blank ordinary words in the advice.
+        var names = secrets.Where(n => n.Length >= 3 && n != Redacted && !NotPersonal.Contains(n.Trim()) && n.Any(char.IsLetterOrDigit))
+            .Distinct(StringComparer.OrdinalIgnoreCase).OrderByDescending(n => n.Length).ToList();
+        r.Device.DeviceName = Redacted;
+        r.Findings = r.Findings.Select(f => f with { Title = Scrub(f.Title, names), Evidence = Scrub(f.Evidence, names), Advice = Scrub(f.Advice, names) }).ToList();
+        foreach (var x in r.FixesRun) { x.Summary = Scrub(x.Summary, names); if (x.Output is { } o) x.Output = Scrub(o, names); }
+        return r;
+    }
+
+    /// <summary>Every [Sensitive] value in the snapshot (before it's blanked), so the same text can be found elsewhere.</summary>
+    private static void Collect(object? node, List<string> found)
+    {
+        if (node is null || node is string || node.GetType().IsPrimitive || node is DateTime) return;
+        if (node is IDictionary) return;
+        if (node is IEnumerable list) { foreach (var item in list) Collect(item, found); return; }
+        foreach (var p in node.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
+        {
+            if (p.GetIndexParameters().Length > 0 || !p.CanRead || p.PropertyType.IsValueType) continue;
+            var value = p.GetValue(node);
+            if (p.GetCustomAttribute<SensitiveAttribute>() is not null)
+            {
+                // Very short values ("1", "N/A") would scrub ordinary numbers and words out of the findings.
+                if (value is string { Length: >= 4 } str) found.Add(str);
+                else if (value is List<string> strs) found.AddRange(strs.Where(x => x.Length >= 4));
+            }
+            else if (value is not string) Collect(value, found);
+        }
+    }
+
+    private static readonly HashSet<string> NotPersonal = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "user", "admin", "administrator", "owner", "guest", "home", "default", "workgroup", "default string", "none", "n/a",
+        "to be filled by o.e.m.", "system serial number", "not specified", "not applicable", "chassis serial number", "base board serial number",
+        "0123456789", "invalid", "unknown",
+    };
+
     private static readonly string[] PublicIpv6Dns = ["2606:4700:", "2001:4860:", "2620:fe:", "2620:119:"];
 
     private static bool IsPersonalIpv6(string ip) =>
@@ -81,8 +136,9 @@ public static class Anonymizer
     {
         text = UserPath.Replace(text, "[user]");
         text = AccountSid.Replace(text, "S-1-5-21-[redacted]");
+        // Whole words only, so a user named "Sam" doesn't turn "Samsung" into "[redacted]sung".
         foreach (var n in names)
-            text = System.Text.RegularExpressions.Regex.Replace(text, System.Text.RegularExpressions.Regex.Escape(n), "[redacted]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            text = System.Text.RegularExpressions.Regex.Replace(text, $@"(?<![\p{{L}}\p{{N}}]){System.Text.RegularExpressions.Regex.Escape(n)}(?![\p{{L}}\p{{N}}])", "[redacted]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         return text;
     }
 

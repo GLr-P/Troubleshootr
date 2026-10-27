@@ -7,6 +7,10 @@ system details sit in tabs.
 
 Built for technicians and enthusiasts. Windows 10 and 11 (Windows 7/8.1 best effort). No install, nothing left behind.
 
-**Website:** https://glr-p.github.io/Troubleshootr/ (screenshots and features). **Download:** the newest zip on [Releases](https://github.com/GLr-P/Troubleshootr/releases) (previews while it's being built; see [PLAN.md](PLAN.md) and the [check catalogue](docs/CHECKS.md)).
+**Website:** https://glr-p.github.io/Troubleshootr/ (screenshots and features). **Download:** `Troubleshootr.exe` from the [latest release](https://github.com/GLr-P/Troubleshootr/releases/latest): one file, nothing to install. The zip on the same page adds `troubleshootr-cli.exe` for scripted scans. See the [check catalogue](docs/CHECKS.md) for everything it looks at.
+
+It isn't code-signed, so the first time Windows may say "Windows protected your PC": click **More info → Run anyway**.
+
+It only changes the PC when you click a fix on the Fixes tab (system file repair, temp cleanup, DNS flush, network reset, print queue, RAM test); each one asks first and is logged in `Troubleshootr-actions.log` and the report.
 
 License: GPL-3.0.

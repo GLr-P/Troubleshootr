@@ -44,5 +44,10 @@ public partial class DiagnosePage : UserControl
     private async void Full_Click(object sender, RoutedEventArgs e) => await _vm.ScanAsync(full: true, null);
     private async void Selected_Click(object sender, RoutedEventArgs e) => await _vm.ScanAsync(full: true, SelectedCategories());
 
+    private async void Fix_Click(object sender, RoutedEventArgs e)
+    {
+        if (sender is FrameworkElement { DataContext: FindingItem { Fix: { } fix } }) await FixesPage.Run(_vm, fix);
+    }
+
     private void Elevate_Click(object sender, RoutedEventArgs e) => MainViewModel.RestartAsAdmin();
 }

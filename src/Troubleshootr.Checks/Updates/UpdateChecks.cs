@@ -48,7 +48,7 @@ public sealed class Upd002FailedUpdates : Check
         if (failed.Count == 0) yield break;
         yield return F(Severity.Warning, failed.Count == 1 ? "An update keeps failing" : $"{failed.Count} updates failed to install",
             string.Join("; ", failed.Take(4).Select(e => $"{Short(e.Title)}: {UpdateErrors.Describe(e.HResult)}")) + ".",
-            "Restart and try again. If it still fails: run 'DISM /Online /Cleanup-Image /RestoreHealth' and 'sfc /scannow' as admin, free up disk space, and reset the update cache (stop wuauserv and bits, rename C:\\Windows\\SoftwareDistribution).");
+            "Restart and try again. If it still fails: run 'DISM /Online /Cleanup-Image /RestoreHealth' and 'sfc /scannow' as admin, free up disk space, and reset the update cache (stop wuauserv and bits, rename C:\\Windows\\SoftwareDistribution).", fix: "system-files");
     }
 
     private static string Short(string title) => title.Length <= 90 ? title : title.Substring(0, 87) + "…";

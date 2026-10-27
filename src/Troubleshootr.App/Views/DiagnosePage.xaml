@@ -103,7 +103,11 @@
                         <TextBlock Style="{StaticResource Dim}" FontSize="11.5" HorizontalAlignment="Right" Text="{Binding Meta}"/>
                       </Grid>
                       <TextBlock Style="{StaticResource Dim}" Margin="0,4,0,0" Text="{Binding Evidence}"/>
-                      <TextBlock Margin="0,6,0,0"><Run FontWeight="SemiBold" Text="What to do: "/><Run Text="{Binding Advice, Mode=OneWay}"/></TextBlock>
+                      <TextBlock Margin="0,6,0,0" TextWrapping="Wrap"><Run FontWeight="SemiBold" Text="What to do: "/><Run Text="{Binding Advice, Mode=OneWay}"/></TextBlock>
+                      <Button HorizontalAlignment="Left" Margin="0,8,0,0" Padding="12,4" Visibility="{Binding FixVisibility}" Click="Fix_Click"
+                              IsEnabled="{Binding DataContext.FixIdle, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                        <TextBlock><Run Text="Fix: "/><Run Text="{Binding Fix.Title, Mode=OneWay}"/></TextBlock>
+                      </Button>
                     </StackPanel>
                   </Grid>
                 </Grid>

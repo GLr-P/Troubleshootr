@@ -50,11 +50,11 @@ public sealed class Net003Connection : Check
             "Network adapter" => F(Severity.Critical, "Not connected to any network", fail.Detail,
                 "Plug in the network cable or join a Wi-Fi network. If Wi-Fi networks don't show up, check that Wi-Fi and airplane mode aren't switched off (the network icon by the clock)."),
             "Router (gateway)" => F(Severity.Critical, "The router doesn't answer", evidence.Trim(),
-                "Restart the router (unplug it for 30 seconds). Check the cable or move closer to the Wi-Fi. If other devices work, run Network reset on this PC (Settings > Network & internet > Advanced network settings)."),
+                "Restart the router (unplug it for 30 seconds). Check the cable or move closer to the Wi-Fi. If other devices work, run Network reset on this PC (Settings > Network & internet > Advanced network settings).", fix: "network-reset"),
             "Internet" => F(Severity.Critical, "Connected to the router, but no internet", evidence.Trim(),
                 "The problem is past this PC: restart the modem and router, and check whether other devices have internet. If none do, call the internet provider."),
             "DNS (name lookup)" => F(Severity.Critical, "The internet works but website names don't (DNS)", evidence.Trim(),
-                "Websites won't load by name. Restart the router; if that doesn't help, set the DNS server to automatic in the adapter's settings, or try 1.1.1.1. Flushing the DNS cache (ipconfig /flushdns) can also help."),
+                "Websites won't load by name. Restart the router; if that doesn't help, set the DNS server to automatic in the adapter's settings, or try 1.1.1.1. Flushing the DNS cache (ipconfig /flushdns) can also help.", fix: "dns-flush"),
             _ => F(Severity.Warning, "Something is getting in the way of web pages", evidence.Trim(),
                 "On public Wi-Fi, open a browser and accept the sign-in page. Otherwise check the proxy settings and any web filter or security software that inspects traffic."),
         };
@@ -226,7 +226,7 @@ public sealed class Net009Winsock : Check
         if (proto.Count > 0)
             yield return F(Severity.Warning, "Third-party software is hooked into Windows networking (Winsock)",
                 string.Join(", ", proto.Select(w => w.Path)) + ".",
-                "Old security suites, adware and \"internet accelerators\" install these, and broken ones stop connections working. If the internet misbehaves, uninstall that program, or reset Winsock (netsh winsock reset, then restart).");
+                "Old security suites, adware and \"internet accelerators\" install these, and broken ones stop connections working. If the internet misbehaves, uninstall that program, or reset Winsock (netsh winsock reset, then restart).", fix: "network-reset");
         var ns = extra.Except(proto).ToList();
         if (ns.Count > 0)
             yield return F(Severity.Info, $"{N(ns.Count, "extra name-lookup provider")} installed",

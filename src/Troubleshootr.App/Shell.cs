@@ -7,12 +7,12 @@ namespace Troubleshootr.App;
 /// <summary>Left navigation + the selected page. Pages are created on first visit and kept.</summary>
 public sealed class Shell : UserControl
 {
-    public static readonly string[] Pages = ["Diagnose", .. InfoPages.Names, "Report"];
+    public static readonly string[] Pages = ["Diagnose", .. InfoPages.Names, "Fixes", "Report"];
 
     private static readonly Dictionary<string, string> Glyphs = new()
     {
         ["Diagnose"] = "", ["Summary"] = "", ["System"] = "", ["CPU"] = "", ["Memory"] = "",
-        ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Performance"] = "", ["Processes"] = "", ["Startup"] = "", ["Software"] = "",["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "",
+        ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Performance"] = "", ["Processes"] = "", ["Startup"] = "", ["Software"] = "",["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "", ["Fixes"] = "",
         ["Network"] = "", ["Security"] = "", ["Sensors"] = "", ["Peripherals"] = "", ["Battery"] = "",
     };
 
@@ -52,6 +52,7 @@ public sealed class Shell : UserControl
         grid.Children.Add(_content);
         Content = grid;
         _nav.SelectedIndex = 0;
+        vm.Navigate += Show;
     }
 
     public void Show(string page)
@@ -61,6 +62,7 @@ public sealed class Shell : UserControl
             {
                 "Diagnose" => new DiagnosePage(_vm),
                 "Report" => new ReportPage(_vm),
+                "Fixes" => new FixesPage(_vm),
                 "Processes" => new ProcessesPage(_vm),
                 "Sensors" => new SensorsPage(_vm),
                 _ => new InfoPage(page, _vm),

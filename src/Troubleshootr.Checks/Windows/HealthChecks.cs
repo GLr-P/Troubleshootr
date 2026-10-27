@@ -16,7 +16,7 @@ public sealed class Win006SystemFiles : Check
         if (c.CannotRepair > 0 || c.StoreCorrupt > 0)
             yield return F(Severity.Warning, "Windows system files are damaged",
                 $"CBS.log (last 90 days): {(c.CannotRepair > 0 ? $"{N(c.CannotRepair, "file")} SFC couldn't repair" : "")}{(c.CannotRepair > 0 && c.StoreCorrupt > 0 ? "; " : "")}{(c.StoreCorrupt > 0 ? $"{N(c.StoreCorrupt, "component store corruption entry", "component store corruption entries")}" : "")}.",
-                "As admin, run 'DISM /Online /Cleanup-Image /RestoreHealth', then 'sfc /scannow', and restart. If DISM fails, an in-place upgrade (run Windows setup from the ISO, keep files and apps) repairs it.");
+                "As admin, run 'DISM /Online /Cleanup-Image /RestoreHealth', then 'sfc /scannow', and restart. If DISM fails, an in-place upgrade (run Windows setup from the ISO, keep files and apps) repairs it.", fix: "system-files");
         else if (c.Repaired > 0)
             yield return F(Severity.Info, "SFC repaired system files recently", $"CBS.log (last 90 days): {N(c.Repaired, "file")} repaired.",
                 "Nothing to do unless problems continue; if they do, run DISM RestoreHealth and SFC again.");

@@ -7,9 +7,10 @@ using Troubleshootr.Core;
 namespace Troubleshootr.Cli;
 
 /// <summary>
-/// troubleshootr scan    [--full] [--categories storage,memory] [--json] [--timings] [--anonymize] [--out file]
+/// troubleshootr scan    [--full] [--categories storage,memory] [--json|--html] [--timings] [--anonymize] [--out file]
 /// troubleshootr collect --out file.snap.json [--full] [--anonymize]
-/// troubleshootr check   --snapshot file.snap.json [--json]
+/// troubleshootr check   --snapshot file.snap.json [--json|--html] [--out file]
+/// troubleshootr fix --list | fix --id dns-flush --yes   (runs a fix action; logged to Troubleshootr-actions.log like the app's Fixes tab)
 /// troubleshootr anonymize --snapshot report-or-snapshot.json --out file.snap.json   (e.g. a report saved by an admin run)
 /// troubleshootr dump --file C:\Windows\Minidump\x.dmp [--drivers]   (reading the Minidump folder needs admin)
 /// troubleshootr speedtest   (downloads for up to 10 s, the same test as the Network tab's button)
@@ -30,6 +31,7 @@ public static class Program
                 case "check": return CheckSnapshot(a);
                 case "anonymize": return AnonymizeFile(a);
                 case "dump": return Dump(a);
+                case "fix": return await Fix(a);
                 case "sensors": return Sensors();
                 case "driver": return await Driver(a);
                 case "loadtest":
@@ -73,6 +75,23 @@ public static class Program
         var (ok, message) = Troubleshootr.Collectors.Sensors.PawnIo.Run(setup, remove);
         Console.WriteLine(message);
         return ok ? 0 : 1;
+    }
+
+    /// <summary>fix --list, or fix --id <id> --yes: the same actions as the Fixes tab, without the confirmation dialog.</summary>
+    private static async Task<int> Fix(Args a)
+    {
+        var fixes = Collectors.Fixes.FixRegistry.All;
+        if (a.Flag("list") || a.Value("id") is null)
+        {
+            foreach (var f in fixes) Console.WriteLine($"{f.Id,-18} {f.Title}{(f.NeedsAdmin ? " (admin)" : "")}: {f.Duration}");
+            return 0;
+        }
+        var fix = Collectors.Fixes.FixRegistry.Find(a.Value("id")) ?? throw new ArgumentException($"Unknown fix '{a.Value("id")}'. See: fix --list");
+        if (!a.Flag("yes")) throw new ArgumentException($"{fix.Title}: {fix.Changes} Add --yes to run it.");
+        ActionLog.Write($"Fix started (CLI): {fix.Title} ({fix.Id})");
+        var record = await fix.RunAsync(Console.WriteLine, CancellationToken.None);
+        ActionLog.Write($"Fix {(record.Ok ? "done" : "FAILED")} (CLI): {fix.Title}: {record.Summary} ({record.DurationMs / 1000.0:0.#} s)");
+        return record.Ok ? 0 : 1;
     }
 
     private static string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "0.0.0";
@@ -138,7 +157,8 @@ public static class Program
 
     private static int Output(Args a, Report report)
     {
-        var text = a.Flag("json") ? Json.Serialize(report) : TextReport.Write(report, a.Flag("timings"));
+        if (a.Flag("anonymize") && report.Snapshot is { Meta.Anonymized: false }) report = Anonymizer.Apply(report);  // check --snapshot
+        var text = a.Flag("json") ? Json.Serialize(report) : a.Flag("html") ? HtmlReport.Write(report) : TextReport.Write(report, a.Flag("timings"));
         if (a.Value("out") is { } outPath) File.WriteAllText(outPath, text);
         else Console.WriteLine(text);
         return report.Findings.Any(f => f.Severity == Severity.Critical) ? 1 : 0;

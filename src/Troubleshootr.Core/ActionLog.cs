@@ -1,10 +1,10 @@
 using System.IO;
 
-namespace Troubleshootr.App;
+namespace Troubleshootr.Core;
 
 /// <summary>
 /// Everything Troubleshootr changes on a PC is written to Troubleshootr-actions.log next to the exe (on the USB stick),
-/// or in %LOCALAPPDATA%\Troubleshootr if that folder is read-only. The fix-action framework (Phase 12) builds on it.
+/// or in %LOCALAPPDATA%\Troubleshootr if that folder is read-only. Used by the app and by the CLI's fix command.
 /// </summary>
 public static class ActionLog
 {
