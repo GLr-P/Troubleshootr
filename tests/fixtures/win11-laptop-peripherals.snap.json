@@ -1,157 +1,157 @@
 {
   "performance": {
     "value": {
-      "sampleSeconds": 3.1000000000000001,
-      "cpuPercent": 27.5,
-      "diskActivePercent": 3.2000000000000002,
-      "processorPerformancePercent": 62.100000000000001,
+      "sampleSeconds": 3,
+      "cpuPercent": 15.5,
+      "diskActivePercent": 6.7999999999999998,
+      "processorPerformancePercent": 237.5,
       "processes": [
         {
-          "name": "opera.exe",
-          "pid": 6160,
-          "cpuPercent": 1.3,
-          "privateMB": 576,
-          "workingSetMB": 640,
-          "diskBytesPerSec": 175244,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
+          "name": "dotnet.exe",
+          "pid": 30212,
+          "cpuPercent": 0.69999999999999996,
+          "privateMB": 58,
+          "workingSetMB": 126,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Program Files\\dotnet\\dotnet.exe"
         },
         {
-          "name": "opera.exe",
-          "pid": 28548,
-          "cpuPercent": 1.2,
-          "privateMB": 523,
-          "workingSetMB": 548,
-          "diskBytesPerSec": 173575,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
+          "name": "explorer.exe",
+          "pid": 4588,
+          "cpuPercent": 0.59999999999999998,
+          "privateMB": 691,
+          "workingSetMB": 506,
+          "diskBytesPerSec": 12491,
+          "path": "C:\\Windows\\explorer.exe"
         },
         {
           "name": "Code.exe",
-          "pid": 5408,
+          "pid": 14392,
           "cpuPercent": 0.40000000000000002,
-          "privateMB": 354,
-          "workingSetMB": 322,
-          "diskBytesPerSec": 6710,
+          "privateMB": 450,
+          "workingSetMB": 336,
+          "diskBytesPerSec": 728808,
           "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
         },
         {
-          "name": "audiodg.exe",
-          "pid": 39064,
+          "name": "Code.exe",
+          "pid": 29796,
           "cpuPercent": 0.40000000000000002,
-          "privateMB": 71,
-          "workingSetMB": 44,
-          "diskBytesPerSec": 0,
-          "path": "C:\\Windows\\System32\\audiodg.exe"
-        },
-        {
-          "name": "EADesktop.exe",
-          "pid": 21144,
-          "cpuPercent": 0.29999999999999999,
-          "privateMB": 439,
-          "workingSetMB": 169,
-          "diskBytesPerSec": 8691,
-          "path": "C:\\Program Files\\Electronic Arts\\EA Desktop\\13.809.0.6322-1792076696\\EA Desktop\\EADesktop.exe"
-        },
-        {
-          "name": "iGoSwServer.exe",
-          "pid": 10128,
-          "cpuPercent": 0.29999999999999999,
-          "privateMB": 2,
-          "workingSetMB": 5,
-          "diskBytesPerSec": 0,
-          "path": "C:\\Windows\\System32\\DriverStore\\FileRepository\\igoaudioservice.inf_amd64_04b47b6cfc11eefe\\iGoSwServer.exe"
+          "privateMB": 443,
+          "workingSetMB": 427,
+          "diskBytesPerSec": 732288,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
         },
         {
           "name": "Creative Cloud UI Helper.exe",
-          "pid": 39908,
-          "cpuPercent": 0.20000000000000001,
-          "privateMB": 470,
-          "workingSetMB": 311,
-          "diskBytesPerSec": 185882,
+          "pid": 2744,
+          "cpuPercent": 0.40000000000000002,
+          "privateMB": 380,
+          "workingSetMB": 342,
+          "diskBytesPerSec": 745901,
           "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
         },
         {
-          "name": "Code.exe",
-          "pid": 30244,
+          "name": "claude.exe",
+          "pid": 40532,
           "cpuPercent": 0.20000000000000001,
-          "privateMB": 177,
-          "workingSetMB": 132,
-          "diskBytesPerSec": 22338,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+          "privateMB": 500,
+          "workingSetMB": 385,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
+        },
+        {
+          "name": "Creative Cloud UI Helper.exe",
+          "pid": 22844,
+          "cpuPercent": 0.20000000000000001,
+          "privateMB": 300,
+          "workingSetMB": 175,
+          "diskBytesPerSec": 745798,
+          "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
+        },
+        {
+          "name": "opera.exe",
+          "pid": 28016,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 685,
+          "workingSetMB": 294,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Opera\\opera.exe"
+        },
+        {
+          "name": "vectorcraft.exe",
+          "pid": 22744,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 661,
+          "workingSetMB": 716,
+          "diskBytesPerSec": 0,
+          "path": "C:\\Program Files\\VectorCraft\\vectorcraft.exe"
+        },
+        {
+          "name": "Discord.exe",
+          "pid": 40200,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 634,
+          "workingSetMB": 494,
+          "diskBytesPerSec": 2107,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Discord\\app-1.0.9265\\Discord.exe"
         },
         {
           "name": "claude.exe",
           "pid": 15100,
           "cpuPercent": 0.10000000000000001,
-          "privateMB": 628,
+          "privateMB": 625,
           "workingSetMB": 199,
           "diskBytesPerSec": 0,
           "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
         },
         {
           "name": "claude.exe",
-          "pid": 40880,
+          "pid": 14388,
           "cpuPercent": 0.10000000000000001,
-          "privateMB": 627,
-          "workingSetMB": 524,
-          "diskBytesPerSec": 34,
+          "privateMB": 587,
+          "workingSetMB": 418,
+          "diskBytesPerSec": 280,
           "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
         },
         {
-          "name": "Discord.exe",
-          "pid": 40200,
+          "name": "Spotify.exe",
+          "pid": 46084,
           "cpuPercent": 0.10000000000000001,
-          "privateMB": 591,
-          "workingSetMB": 481,
-          "diskBytesPerSec": 1309,
-          "path": "C:\\Users\\[user]\\AppData\\Local\\Discord\\app-1.0.9265\\Discord.exe"
+          "privateMB": 251,
+          "workingSetMB": 373,
+          "diskBytesPerSec": 161877,
+          "path": "C:\\Users\\[user]\\AppData\\Roaming\\Spotify\\Spotify.exe"
+        },
+        {
+          "name": "Code.exe",
+          "pid": 30244,
+          "cpuPercent": 0.10000000000000001,
+          "privateMB": 181,
+          "workingSetMB": 134,
+          "diskBytesPerSec": 22674,
+          "path": "C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
         },
         {
           "name": "claude.exe",
-          "pid": 14388,
-          "cpuPercent": 0.10000000000000001,
-          "privateMB": 580,
-          "workingSetMB": 462,
-          "diskBytesPerSec": 136,
+          "pid": 36968,
+          "cpuPercent": 0,
+          "privateMB": 654,
+          "workingSetMB": 528,
+          "diskBytesPerSec": 19,
           "path": "C:\\Users\\[user]\\.vscode\\extensions\\anthropic.claude-code-2.1.304-win32-x64\\resources\\native-binary\\claude.exe"
         },
         {
-          "name": "Troubleshootr.exe",
-          "pid": 45684,
-          "cpuPercent": 0,
-          "privateMB": 881,
-          "workingSetMB": 896,
-          "diskBytesPerSec": 0,
-          "path": "C:\\Users\\[user]\\Desktop\\Troubleshootr-0.6.0\\Troubleshootr.exe"
-        },
-        {
           "name": "steamwebhelper.exe",
-          "pid": 20092,
+          "pid": 8308,
           "cpuPercent": 0,
-          "privateMB": 704,
-          "workingSetMB": 448,
-          "diskBytesPerSec": 168,
+          "privateMB": 603,
+          "workingSetMB": 346,
+          "diskBytesPerSec": 0,
           "path": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe"
-        },
-        {
-          "name": "explorer.exe",
-          "pid": 4588,
-          "cpuPercent": 0,
-          "privateMB": 665,
-          "workingSetMB": 512,
-          "diskBytesPerSec": 340,
-          "path": "C:\\Windows\\explorer.exe"
-        },
-        {
-          "name": "Creative Cloud UI Helper.exe",
-          "pid": 22844,
-          "cpuPercent": 0,
-          "privateMB": 380,
-          "workingSetMB": 209,
-          "diskBytesPerSec": 185781,
-          "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
         }
       ],
-      "processCount": 270
+      "processCount": 280
     }
   },
   "tuning": {
@@ -160,16 +160,16 @@
       "powerPlanGuid": "381b4222-f694-41f0-9685-ff5bb260df2e",
       "maxCpuOnAc": 100,
       "maxCpuOnBattery": 100,
-      "onAcPower": false,
-      "batterySaverOn": true,
+      "onAcPower": true,
+      "batterySaverOn": false,
       "pageFileSettings": [
         "?:\\pagefile.sys"
       ],
       "pageFiles": [
         {
           "path": "C:\\pagefile.sys",
-          "allocatedMB": 9029,
-          "currentMB": 256,
+          "allocatedMB": 8528,
+          "currentMB": 218,
           "peakMB": 290
         }
       ],
@@ -179,7 +179,7 @@
         {
           "name": "Your temp files",
           "path": "C:\\Users\\[user]\\AppData\\Local\\Temp\\",
-          "bytes": 2699305657,
+          "bytes": 3465644612,
           "atLeast": true
         },
         {
@@ -191,7 +191,7 @@
         {
           "name": "Downloaded Windows updates",
           "path": "C:\\Windows\\SoftwareDistribution\\Download",
-          "bytes": 1158958,
+          "bytes": 1265454,
           "atLeast": false
         },
         {
@@ -223,7 +223,7 @@
       "installDateUtc": "2026-06-30T01:25:46Z",
       "is64BitOs": true,
       "architecture": "AMD64",
-      "uptimeSeconds": 483306,
+      "uptimeSeconds": 616330,
       "fastStartupEnabled": true,
       "pendingRebootReasons": [
         "file operations waiting for a restart"
@@ -254,9 +254,9 @@
     "value": {
       "installedMB": 32768,
       "usableMB": 32276,
-      "availableMB": 6242,
-      "commitUsedMB": 38424,
-      "commitLimitMB": 41305,
+      "availableMB": 6651,
+      "commitUsedMB": 38005,
+      "commitLimitMB": 40805,
       "slotCount": 8,
       "maxCapacityMB": 32768,
       "modules": [
@@ -372,7 +372,7 @@
         "fileSystem": "NTFS",
         "driveType": "Fixed",
         "totalBytes": 994179018752,
-        "freeBytes": 525952413696,
+        "freeBytes": 529475891200,
         "isSystem": true
       }
     ]
@@ -415,14 +415,14 @@
           ],
           "nvme": {
             "criticalWarning": 0,
-            "temperatureC": 33,
+            "temperatureC": 41,
             "availableSparePercent": 100,
             "spareThresholdPercent": 5,
             "percentageUsed": 1,
-            "dataUnitsRead": 8261230,
-            "dataUnitsWritten": 9384729,
-            "powerCycles": 187,
-            "powerOnHours": 332,
+            "dataUnitsRead": 8343588,
+            "dataUnitsWritten": 9447347,
+            "powerCycles": 189,
+            "powerOnHours": 338,
             "unsafeShutdowns": 13,
             "mediaErrors": 0,
             "errorLogEntries": 0,
@@ -448,6 +448,30 @@
     "value": {
       "days": 30,
       "events": [
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-26T11:59:22.286467Z",
+          "message": "The Steam Client Service service failed to start due to the following error: The service did not respond to the start or control request in a timely fashion.",
+          "data": {
+            "param1": "Steam Client Service",
+            "param2": "%%1053"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7009,
+          "level": 2,
+          "timeUtc": "2026-10-26T11:59:22.286467Z",
+          "message": "A timeout was reached (30000 milliseconds) while waiting for the Steam Client Service service to connect.",
+          "data": {
+            "param1": "30000",
+            "param2": "Steam Client Service"
+          }
+        },
         {
           "log": "System",
           "provider": "Microsoft-Windows-Kernel-Processor-Power",
@@ -632,6 +656,51 @@
             "DriveName": "D:",
             "DeviceName": "\\Device\\HarddiskVolume8",
             "CorruptionActionState": "1"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-USB-USBHUB3",
+          "id": 196,
+          "level": 3,
+          "timeUtc": "2026-10-23T23:31:20.7866441Z",
+          "message": "USB device draining system power when system is idle. USB Device: VID: 0x711 PID: 0x5800 REV: 0x1010 Removal action failed: QueryRemovalInitiated",
+          "data": {
+            "fid_UsbDevice": "0x47f80ba14648",
+            "fid_DripsWatchdogResult": "0",
+            "fid_idVendor": "1809",
+            "fid_idProduct": "22528",
+            "fid_bcdDevice": "4112"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-USB-USBHUB3",
+          "id": 196,
+          "level": 3,
+          "timeUtc": "2026-10-23T23:30:45.7841245Z",
+          "message": "USB device draining system power when system is idle. USB Device: VID: 0x711 PID: 0x5800 REV: 0x1010 Removal action failed: SkippedAsRecentIoObservered",
+          "data": {
+            "fid_UsbDevice": "0x47f80ba14648",
+            "fid_DripsWatchdogResult": "5",
+            "fid_idVendor": "1809",
+            "fid_idProduct": "22528",
+            "fid_bcdDevice": "4112"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-USB-USBHUB3",
+          "id": 196,
+          "level": 3,
+          "timeUtc": "2026-10-22T22:30:19.8430689Z",
+          "message": "USB device draining system power when system is idle. USB Device: VID: 0x711 PID: 0x5800 REV: 0x1010 Removal action failed: QueryRemovalInitiated",
+          "data": {
+            "fid_UsbDevice": "0x47f8115383a8",
+            "fid_DripsWatchdogResult": "0",
+            "fid_idVendor": "1809",
+            "fid_idProduct": "22528",
+            "fid_bcdDevice": "4112"
           }
         },
         {
@@ -1224,6 +1293,21 @@
             "FailureNameLength": "14",
             "FailureName": "\\Driver\\WUDFRd",
             "Version": "0"
+          }
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-USB-USBHUB3",
+          "id": 196,
+          "level": 3,
+          "timeUtc": "2026-10-20T04:54:59.6572414Z",
+          "message": "USB device draining system power when system is idle. USB Device: VID: 0x8087 PID: 0x36 REV: 0x0 Removal action failed: SkippedAsRecentIoObservered",
+          "data": {
+            "fid_UsbDevice": "0x79711fa483c8",
+            "fid_DripsWatchdogResult": "5",
+            "fid_idVendor": "32903",
+            "fid_idProduct": "54",
+            "fid_bcdDevice": "0"
           }
         },
         {
@@ -2018,6 +2102,87 @@
           "provider": "Microsoft-Windows-BitLocker-Driver",
           "id": 24641,
           "level": 2,
+          "timeUtc": "2026-10-27T16:55:22.8484019Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-27T16:55:22.8483753Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-26T12:49:35.5697453Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7000,
+          "level": 2,
+          "timeUtc": "2026-10-26T11:59:22.286467Z",
+          "message": "The Steam Client Service service failed to start due to the following error: The service did not respond to the start or control request in a timely fashion.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Service Control Manager",
+          "id": 7009,
+          "level": 2,
+          "timeUtc": "2026-10-26T11:59:22.286467Z",
+          "message": "A timeout was reached (30000 milliseconds) while waiting for the Steam Client Service service to connect.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-26T10:07:38.9848041Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-DeviceAssociationService",
+          "id": 3503,
+          "level": 2,
+          "timeUtc": "2026-10-26T10:05:16.3072149Z",
+          "message": "Device Association Service detected an endpoint discovery failure.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-26T08:02:14.9456681Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
+          "timeUtc": "2026-10-26T08:02:14.9456492Z",
+          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
+          "data": {}
+        },
+        {
+          "log": "System",
+          "provider": "Microsoft-Windows-BitLocker-Driver",
+          "id": 24641,
+          "level": 2,
           "timeUtc": "2026-10-26T01:35:43.9568417Z",
           "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
           "data": {}
@@ -2480,654 +2645,6 @@
           "timeUtc": "2026-10-20T18:24:14.1567111Z",
           "message": ".NET Runtime version 4.0.30319.0 - There was a failure initializing profiling API attach infrastructure. This process will not allow a profiler to attach. HRESULT: 0x80004005. Process ID (decimal): 31384. Message ID: [0x2509].",
           "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Volsnap",
-          "id": 36,
-          "level": 2,
-          "timeUtc": "2026-10-20T17:17:01.9588789Z",
-          "message": "The shadow copies of volume C: were aborted because the shadow copy storage could not grow due to a user imposed limit.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Service Control Manager",
-          "id": 7000,
-          "level": 2,
-          "timeUtc": "2026-10-20T17:12:30.3340346Z",
-          "message": "The Steam Client Service service failed to start due to the following error: The service did not respond to the start or control request in a timely fashion.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Service Control Manager",
-          "id": 7009,
-          "level": 2,
-          "timeUtc": "2026-10-20T17:12:30.3340346Z",
-          "message": "A timeout was reached (30000 milliseconds) while waiting for the Steam Client Service service to connect.",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Microsoft-Windows-Perflib",
-          "id": 1023,
-          "level": 2,
-          "timeUtc": "2026-10-20T17:12:22.083101Z",
-          "message": "Windows cannot load the extensible counter DLL \u0022C:\\Windows\\system32\\sysmain.dll\u0022 (Win32 error code The specified module could not be found.).",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T17:00:07.9192297Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T17:00:07.9192175Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:26:01.5268615Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:26:01.5268209Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:26:01.5260118Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:26:01.5253632Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:26:01.0965763Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:26:01.0959318Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:26:00.9129918Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:26:00.9113943Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Service Control Manager",
-          "id": 7000,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:25:31.1132572Z",
-          "message": "The MBAMService service failed to start due to the following error: The system cannot find the file specified.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:25:17.1315806Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:25:17.1315536Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:25:17.131525Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:24:59.3494229Z",
-          "message": "The server {A677570A-2BA2-4E9A-B2E2-8A02CD8B4FD3} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "VSS",
-          "id": 13,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:24:58.8259094Z",
-          "message": "Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress. ]",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Service Control Manager",
-          "id": 7000,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:24:47.1854705Z",
-          "message": "The MBAMService service failed to start due to the following error: The system cannot find the file specified.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:24:33.1591284Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:24:33.1591193Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:24:33.1591085Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:52.9065477Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:52.9057257Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:52.6764512Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:52.6757175Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:51.5017448Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:51.5016279Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:51.5007611Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "Application",
-          "provider": "Universal Print",
-          "id": 1,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:51.5007205Z",
-          "message": "Failed to GetUserSid. hr: 0x8001012d",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Service Control Manager",
-          "id": 7000,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:39.1474152Z",
-          "message": "The igccservice service failed to start due to the following error: The specified service does not exist as an installed service.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Service Control Manager",
-          "id": 7000,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:37.469533Z",
-          "message": "The MBAMService service failed to start due to the following error: The system cannot find the file specified.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:11.3676654Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:23:11.3676346Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.7886397Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.771998Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.7558169Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.7420633Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.7261282Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.7101322Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.6932443Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.6723844Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.6499007Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.6283566Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.6113885Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.5945927Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:55.5758138Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.85558Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.8345532Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.8190305Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.8039394Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.7871652Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.7683811Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.7441785Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.7127341Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.6840059Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.6584402Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.6361113Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.6142176Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:53.5936293Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:18.9239469Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T14:18:18.9239251Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T02:08:04.8525979Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-20T02:08:04.8525638Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DistributedCOM",
-          "id": 10010,
-          "level": 2,
-          "timeUtc": "2026-10-19T21:55:34.028659Z",
-          "message": "The server {AB8902B4-09CA-4BB6-B78D-A8F59079A8D5} did not register with DCOM within the required timeout.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-WindowsUpdateClient",
-          "id": 20,
-          "level": 2,
-          "timeUtc": "2026-10-19T15:40:07.4983515Z",
-          "message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9MV0B5HZVK9Z-Microsoft.GamingApp.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-WindowsUpdateClient",
-          "id": 20,
-          "level": 2,
-          "timeUtc": "2026-10-19T14:54:46.3585Z",
-          "message": "Installation Failure: Windows failed to install the following update with error 0x80073D02: 9MV0B5HZVK9Z-Microsoft.GamingApp.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-DeviceAssociationService",
-          "id": 3503,
-          "level": 2,
-          "timeUtc": "2026-10-19T14:45:08.6187674Z",
-          "message": "Device Association Service detected an endpoint discovery failure.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-19T14:43:48.8531835Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
-        },
-        {
-          "log": "System",
-          "provider": "Microsoft-Windows-BitLocker-Driver",
-          "id": 24641,
-          "level": 2,
-          "timeUtc": "2026-10-19T14:43:48.8531524Z",
-          "message": "An unexpected error was encountered attempting to retrieve the BitLocker volume master key during restart.",
-          "data": {}
         }
       ],
       "timelineDays": 7,
@@ -3485,30 +3002,6 @@
           "subject": "Update;MoUpdateO",
           "timeUtc": "2026-09-29T16:56:11.0275557Z",
           "queued": false
-        },
-        {
-          "kind": "NonCritical",
-          "subject": "Update;MoUpdateO",
-          "timeUtc": "2026-09-26T21:31:58.1747157Z",
-          "queued": false
-        },
-        {
-          "kind": "NonCritical",
-          "subject": "Update;MoUpdateO",
-          "timeUtc": "2026-09-26T20:20:34.1361587Z",
-          "queued": false
-        },
-        {
-          "kind": "NonCritical",
-          "subject": "setup.exe",
-          "timeUtc": "2026-09-26T19:40:38.9826307Z",
-          "queued": false
-        },
-        {
-          "kind": "NonCritical",
-          "subject": "Update;MoUpdateO",
-          "timeUtc": "2026-09-26T19:38:43.1556187Z",
-          "queued": false
         }
       ],
       "queuedReports": 5
@@ -3588,11 +3081,11 @@
         "cannotRepair": 0,
         "repaired": 0,
         "storeCorrupt": 0,
-        "lastWriteUtc": "2026-10-26T01:59:29.1128543Z"
+        "lastWriteUtc": "2026-10-27T17:02:44.0107076Z"
       },
       "tempProfile": false,
       "profileBackups": 0,
-      "stabilityIndex": 7.1299999999999999,
+      "stabilityIndex": 7.7400000000000002,
       "stabilityLowest30Days": 2.3399999999999999,
       "licenseStatus": 1,
       "licenseName": "Windows(R), Core edition"
@@ -4743,6 +4236,19 @@
           "inf": "escl.inf"
         },
         {
+          "name": "HPXXXXXX (HP OfficeJet 8020 series)",
+          "class": "Image",
+          "instanceId": "SWD\\DAFWSDPROVIDER\\URN:UUID:E163DE5C-2880-4B92-84BE-B47123A84942/HTTP://E163DE5C-2880-4B92-84BE-B47123A84942/SCANSERVICE",
+          "hardwareId": "UMB\\VEN_03F0\u0026DEV_HP_OfficeJet_8020_series\u0026SUBSYS_1K7K6A",
+          "manufacturer": "HP",
+          "service": "WSDScan",
+          "problemCode": 0,
+          "driverProvider": "Microsoft",
+          "driverVersion": "10.0.26100.8115",
+          "driverDate": "2006-06-21T00:00:00Z",
+          "inf": "wsdscdrv.inf"
+        },
+        {
           "name": "HID Keyboard Device",
           "class": "Keyboard",
           "instanceId": "HID\\INTC816\u0026COL01\\3\u00262361649\u00260\u00260000",
@@ -5821,10 +5327,10 @@
           "inf": "c_swdevice.inf"
         },
         {
-          "name": "Brother HL-L8350CDW series [30055cc8446a]",
+          "name": "HP OfficeJet 8020 series [XXXXXX]",
           "class": "SoftwareDevice",
-          "instanceId": "SWD\\DAFWSDPROVIDER\\URN:UUID:E3248000-80CE-11DB-8000-30055CC8446A",
-          "manufacturer": "Brother",
+          "instanceId": "SWD\\IPP\\E163DE5C-2880-4B92-84BE-B47123A84942",
+          "manufacturer": "HP",
           "problemCode": 0,
           "driverProvider": "Microsoft",
           "driverVersion": "10.0.26100.1",
@@ -5832,9 +5338,20 @@
           "inf": "c_swdevice.inf"
         },
         {
-          "name": "HP OfficeJet 8020 series [XXXXXX]",
+          "name": "HPXXXXXX (HP OfficeJet 8020 series)",
           "class": "SoftwareDevice",
-          "instanceId": "SWD\\IPP\\E163DE5C-2880-4B92-84BE-B47123A84942",
+          "instanceId": "SWD\\DAFWSDPROVIDER\\URN:UUID:E163DE5C-2880-4B92-84BE-B47123A84942/HTTP://WWW.HP.COM/SCHEMAS/IMAGING/CON/LEDM/DISCOVERYTREE/2007/07/01",
+          "manufacturer": "HP",
+          "problemCode": 0,
+          "driverProvider": "Microsoft",
+          "driverVersion": "10.0.26100.1",
+          "driverDate": "2006-06-21T00:00:00Z",
+          "inf": "c_swdevice.inf"
+        },
+        {
+          "name": "HPXXXXXX (HP OfficeJet 8020 series)",
+          "class": "SoftwareDevice",
+          "instanceId": "SWD\\DAFWSDPROVIDER\\URN:UUID:E163DE5C-2880-4B92-84BE-B47123A84942",
           "manufacturer": "HP",
           "problemCode": 0,
           "driverProvider": "Microsoft",
@@ -6968,19 +6485,7 @@
         {
           "name": "Generic volume shadow copy",
           "class": "VolumeSnapshot",
-          "instanceId": "STORAGE\\VOLUMESNAPSHOT\\HARDDISKVOLUMESNAPSHOT2",
-          "hardwareId": "STORAGE\\VolumeSnapshot",
-          "manufacturer": "Microsoft",
-          "problemCode": 0,
-          "driverProvider": "Microsoft",
-          "driverVersion": "10.0.26100.1",
-          "driverDate": "2006-06-21T00:00:00Z",
-          "inf": "volsnap.inf"
-        },
-        {
-          "name": "Generic volume shadow copy",
-          "class": "VolumeSnapshot",
-          "instanceId": "STORAGE\\VOLUMESNAPSHOT\\HARDDISKVOLUMESNAPSHOT3",
+          "instanceId": "STORAGE\\VOLUMESNAPSHOT\\HARDDISKVOLUMESNAPSHOT1",
           "hardwareId": "STORAGE\\VolumeSnapshot",
           "manufacturer": "Microsoft",
           "problemCode": 0,
@@ -7002,11 +6507,11 @@
           "inf": "volsnap.inf"
         },
         {
-          "name": "Brother HL-L8350CDW series [30055cc8446a]",
+          "name": "HPXXXXXX (HP OfficeJet 8020 series)",
           "class": "WSDPrintDevice",
-          "instanceId": "SWD\\DAFWSDPROVIDER\\URN:UUID:E3248000-80CE-11DB-8000-30055CC8446A/URI:E3248000-80CE-11DB-8000-30055CC8446A/PRINTERSERVICE",
-          "hardwareId": "UMB\\VEN_013f\u0026DEV_HL-L8350CDW_series",
-          "manufacturer": "Brother",
+          "instanceId": "SWD\\DAFWSDPROVIDER\\URN:UUID:E163DE5C-2880-4B92-84BE-B47123A84942/HTTP://E163DE5C-2880-4B92-84BE-B47123A84942/PRINTSERVICE",
+          "hardwareId": "UMB\\VEN_03F0\u0026DEV_HP_OfficeJet_8020_series\u0026SUBSYS_1K7K6A",
+          "manufacturer": "HP",
           "service": "WSDPrintDevice",
           "problemCode": 0,
           "driverProvider": "Microsoft",
@@ -7095,7 +6600,7 @@
           "inf": "disk.inf"
         }
       ],
-      "hiddenCount": 94,
+      "hiddenCount": 93,
       "kernelDrivers": [
         {
           "name": "1394ohci",
@@ -9266,7 +8771,12 @@
           "height": 1600,
           "refreshHz": 165,
           "maxRefreshHz": 165,
-          "bitsPerPixel": 32
+          "bitsPerPixel": 32,
+          "monitorMaker": "AU Optronics",
+          "monitorYear": 2021,
+          "sizeInches": 16,
+          "nativeWidth": 2560,
+          "nativeHeight": 1600
         }
       ],
       "powerSavingApps": []
@@ -9275,6 +8785,13 @@
   "updates": {
     "value": {
       "history": [
+        {
+          "dateUtc": "2026-10-27T17:00:57Z",
+          "title": "Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.461.230.0) - Current Channel (Broad)",
+          "result": 2,
+          "hResult": 0,
+          "operation": 1
+        },
         {
           "dateUtc": "2026-10-26T01:50:59Z",
           "title": "Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.461.206.0) - Current Channel (Broad)",
@@ -10667,13 +10184,6 @@
           "result": 2,
           "hResult": 0,
           "operation": 1
-        },
-        {
-          "dateUtc": "2026-08-06T16:59:50Z",
-          "title": "2025-01 Update for Windows 11 Version 24H2 for x64-based Systems (KB5050575)",
-          "result": 2,
-          "hResult": 0,
-          "operation": 1
         }
       ],
       "policy": {
@@ -10927,10 +10437,10 @@
         },
         {
           "name": "ArtCraft Launcher",
-          "version": "0.6.1",
+          "version": "0.8.1",
           "publisher": "Learning Machines LLC",
-          "installDate": "2026-10-22T00:00:00Z",
-          "sizeKB": 23199,
+          "installDate": "2026-10-27T00:00:00Z",
+          "sizeKB": 23347,
           "scope": "Machine"
         },
         {
@@ -11009,7 +10519,7 @@
         },
         {
           "name": "EA app",
-          "version": "13.809.0.6322",
+          "version": "13.813.1.6327",
           "publisher": "Electronic Arts",
           "sizeKB": 772079,
           "scope": "Machine (32-bit)"
@@ -11435,10 +10945,10 @@
         },
         {
           "name": "PhotoCraft",
-          "version": "0.8.2",
+          "version": "0.16.0",
           "publisher": "Learning Machines LLC",
-          "installDate": "2026-10-12T00:00:00Z",
-          "sizeKB": 166113,
+          "installDate": "2026-10-27T00:00:00Z",
+          "sizeKB": 190738,
           "scope": "Machine"
         },
         {
@@ -11521,6 +11031,11 @@
           "scope": "Machine"
         },
         {
+          "name": "sobosuba",
+          "publisher": "keepeetron",
+          "scope": "Machine"
+        },
+        {
           "name": "SoundCraft",
           "version": "0.6.1",
           "publisher": "Learning Machines LLC",
@@ -11535,9 +11050,9 @@
         },
         {
           "name": "Spotify",
-          "version": "1.3.5.3058.g5d40d5480152",
+          "version": "1.3.6.1921.g7086c071a617",
           "publisher": "Spotify AB",
-          "installDate": "2026-10-20T00:00:00Z",
+          "installDate": "2026-10-27T00:00:00Z",
           "scope": "User"
         },
         {
@@ -11615,10 +11130,10 @@
         },
         {
           "name": "VectorCraft",
-          "version": "0.10.0",
+          "version": "0.17.0",
           "publisher": "Learning Machines LLC",
-          "installDate": "2026-10-12T00:00:00Z",
-          "sizeKB": 232870,
+          "installDate": "2026-10-27T00:00:00Z",
+          "sizeKB": 268098,
           "scope": "Machine"
         },
         {
@@ -11649,19 +11164,19 @@
           "description": "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)",
           "type": "Wi-Fi",
           "status": "Up",
-          "speedMbps": 576,
+          "speedMbps": 103,
           "mac": "[redacted]",
           "dhcp": true,
           "ipv4": [
-            "192.168.1.162/24"
+            "192.168.9.204/24"
           ],
           "ipv6": [],
           "gateways": [
-            "192.168.1.254"
+            "192.168.9.1"
           ],
           "hasIpv6Gateway": false,
           "dnsServers": [
-            "192.168.1.254"
+            "192.168.9.1"
           ],
           "staticDns": false
         },
@@ -11740,13 +11255,13 @@
           "state": "connected",
           "ssid": "[redacted]",
           "bssid": "[redacted]",
-          "signalPercent": 62,
-          "rssi": -73,
-          "channel": 48,
-          "frequencyMHz": 5240,
+          "signalPercent": 60,
+          "rssi": -68,
+          "channel": 10,
+          "frequencyMHz": 2457,
           "phyType": 10,
-          "rxMbps": 576,
-          "txMbps": 216,
+          "rxMbps": 103,
+          "txMbps": 52,
           "auth": 7
         }
       ],
@@ -11814,19 +11329,19 @@
           "description": "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)",
           "type": "Wi-Fi",
           "status": "Up",
-          "speedMbps": 576,
+          "speedMbps": 103,
           "mac": "[redacted]",
           "dhcp": true,
           "ipv4": [
-            "192.168.1.162/24"
+            "192.168.9.204/24"
           ],
           "ipv6": [],
           "gateways": [
-            "192.168.1.254"
+            "192.168.9.1"
           ],
           "hasIpv6Gateway": false,
           "dnsServers": [
-            "192.168.1.254"
+            "192.168.9.1"
           ],
           "staticDns": false
         }
@@ -11835,26 +11350,26 @@
   },
   "connectivity": {
     "value": {
-      "gateway": "192.168.1.254",
+      "gateway": "192.168.9.1",
       "gatewayPing": {
-        "target": "192.168.1.254",
+        "target": "192.168.9.1",
         "sent": 20,
         "received": 20,
-        "avgMs": 18.399999999999999,
-        "maxMs": 34
+        "avgMs": 22.199999999999999,
+        "maxMs": 125
       },
       "internetPing": {
         "target": "1.1.1.1",
         "sent": 20,
         "received": 20,
-        "avgMs": 32.600000000000001,
-        "maxMs": 45
+        "avgMs": 54.600000000000001,
+        "maxMs": 164
       },
       "internetTcp": true,
       "dnsOk": true,
-      "dnsMs": 133,
+      "dnsMs": 86,
       "webOk": true,
-      "clockOffsetSeconds": -3.3900000000000001,
+      "clockOffsetSeconds": -1.52,
       "clockSource": "time.windows.com (NTP)",
       "timeSyncType": "NTP",
       "timeServiceStart": 3
@@ -11877,7 +11392,7 @@
         "antivirusEnabled": true,
         "realTimeProtection": true,
         "tamperProtection": true,
-        "signaturesUpdatedUtc": "2026-10-25T20:04:08Z",
+        "signaturesUpdatedUtc": "2026-10-27T11:32:31Z",
         "signatureAgeDays": 0
       },
       "threats": [],
@@ -11977,152 +11492,152 @@
           "kind": "CPU",
           "name": "CPU Core #1",
           "type": "Load",
-          "value": 100,
-          "min": 100,
-          "max": 100
+          "value": 62.5,
+          "min": 62.5,
+          "max": 75
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #2",
           "type": "Load",
-          "value": 100,
-          "min": 100,
-          "max": 100
+          "value": 50,
+          "min": 50,
+          "max": 50
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #3",
           "type": "Load",
-          "value": 100,
-          "min": 100,
-          "max": 100
+          "value": 50,
+          "min": 50,
+          "max": 75
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #4",
           "type": "Load",
-          "value": 100,
-          "min": 100,
-          "max": 100
+          "value": 75,
+          "min": 75,
+          "max": 75
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #5",
           "type": "Load",
-          "value": 100,
-          "min": 100,
-          "max": 100
+          "value": 50,
+          "min": 50,
+          "max": 50
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #6",
           "type": "Load",
-          "value": 100,
-          "min": 100,
-          "max": 100
+          "value": 62.5,
+          "min": 50,
+          "max": 62.5
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #7",
           "type": "Load",
-          "value": 100,
-          "min": 100,
-          "max": 100
+          "value": 62.5,
+          "min": 62.5,
+          "max": 75
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #8",
           "type": "Load",
-          "value": 100,
-          "min": 100,
-          "max": 100
+          "value": 62.5,
+          "min": 62.5,
+          "max": 75
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #9 Thread #1",
           "type": "Load",
-          "value": 0,
-          "min": 0,
-          "max": 0
+          "value": 87.5,
+          "min": 75,
+          "max": 87.5
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #9 Thread #2",
           "type": "Load",
-          "value": 0,
-          "min": 0,
-          "max": 0
+          "value": 87.5,
+          "min": 50,
+          "max": 87.5
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #10 Thread #1",
           "type": "Load",
-          "value": 0,
-          "min": 0,
-          "max": 0
+          "value": 75,
+          "min": 75,
+          "max": 75
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #10 Thread #2",
           "type": "Load",
-          "value": 0,
-          "min": 0,
-          "max": 0
+          "value": 37.5,
+          "min": 25,
+          "max": 37.5
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #11 Thread #1",
           "type": "Load",
-          "value": 49.060001373291016,
-          "min": 49.060001373291016,
-          "max": 100
+          "value": 62.5,
+          "min": 50,
+          "max": 62.5
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #11 Thread #2",
           "type": "Load",
-          "value": 0,
-          "min": 0,
-          "max": 0
+          "value": 75,
+          "min": 50,
+          "max": 75
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #12 Thread #1",
           "type": "Load",
-          "value": 17.389999389648438,
-          "min": 17.389999389648438,
-          "max": 100
+          "value": 62.5,
+          "min": 25,
+          "max": 62.5
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #12 Thread #2",
           "type": "Load",
-          "value": 0,
-          "min": 0,
-          "max": 0
+          "value": 42.860000610351563,
+          "min": 42.860000610351563,
+          "max": 75
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #13 Thread #1",
           "type": "Load",
-          "value": 19.569999694824219,
-          "min": 19.569999694824219,
+          "value": 87.5,
+          "min": 87.5,
           "max": 100
         },
         {
@@ -12130,27 +11645,27 @@
           "kind": "CPU",
           "name": "CPU Core #13 Thread #2",
           "type": "Load",
-          "value": 17.389999389648438,
-          "min": 17.389999389648438,
-          "max": 92
+          "value": 14.289999961853027,
+          "min": 14.289999961853027,
+          "max": 25
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #14 Thread #1",
           "type": "Load",
-          "value": 56.520000457763672,
-          "min": 56.520000457763672,
-          "max": 100
+          "value": 87.5,
+          "min": 75,
+          "max": 87.5
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core #14 Thread #2",
           "type": "Load",
-          "value": 8.6999998092651367,
-          "min": 8.6999998092651367,
-          "max": 40
+          "value": 14.289999961853027,
+          "min": 14.289999961853027,
+          "max": 25
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
@@ -12168,24 +11683,24 @@
           "type": "Load",
           "value": 0,
           "min": 0,
-          "max": 4
+          "max": 0
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Total",
           "type": "Load",
-          "value": 44.029998779296875,
-          "min": 44.029998779296875,
-          "max": 60.729999542236328
+          "value": 54.950000762939453,
+          "min": 53.409999847412109,
+          "max": 54.950000762939453
         },
         {
           "hardware": "Intel Core Ultra 7 155H",
           "kind": "CPU",
           "name": "CPU Core Max",
           "type": "Load",
-          "value": 100,
-          "min": 100,
+          "value": 87.5,
+          "min": 87.5,
           "max": 100
         },
         {
@@ -12193,72 +11708,72 @@
           "kind": "Memory",
           "name": "Memory Used",
           "type": "Data",
-          "value": 37.627017974853516,
-          "min": 37.627017974853516,
-          "max": 37.627017974853516
+          "value": 37.150501251220703,
+          "min": 37.150501251220703,
+          "max": 37.150501251220703
         },
         {
           "hardware": "Virtual Memory",
           "kind": "Memory",
           "name": "Memory Available",
           "type": "Data",
-          "value": 2.7106475830078125,
-          "min": 2.7106475830078125,
-          "max": 2.7106475830078125
+          "value": 2.6983413696289063,
+          "min": 2.6983413696289063,
+          "max": 2.6983413696289063
         },
         {
           "hardware": "Virtual Memory",
           "kind": "Memory",
           "name": "Memory",
           "type": "Load",
-          "value": 93.280105590820313,
-          "min": 93.280105590820313,
-          "max": 93.280105590820313
+          "value": 93.228561401367188,
+          "min": 93.228561401367188,
+          "max": 93.228561401367188
         },
         {
           "hardware": "Total Memory",
           "kind": "Memory",
           "name": "Memory Used",
           "type": "Data",
-          "value": 25.483509063720703,
-          "min": 25.483509063720703,
-          "max": 25.483509063720703
+          "value": 25.040863037109375,
+          "min": 25.040863037109375,
+          "max": 25.040863037109375
         },
         {
           "hardware": "Total Memory",
           "kind": "Memory",
           "name": "Memory Available",
           "type": "Data",
-          "value": 6.0366401672363281,
-          "min": 6.0366401672363281,
-          "max": 6.0366401672363281
+          "value": 6.4792861938476563,
+          "min": 6.4792861938476563,
+          "max": 6.4792861938476563
         },
         {
           "hardware": "Total Memory",
           "kind": "Memory",
           "name": "Memory",
           "type": "Load",
-          "value": 80.848312377929688,
-          "min": 80.848312377929688,
-          "max": 80.848312377929688
+          "value": 79.443984985351563,
+          "min": 79.443984985351563,
+          "max": 79.443984985351563
         },
         {
           "hardware": "Intel(R) Arc(TM) Graphics",
           "kind": "GPU",
           "name": "D3D 3D",
           "type": "Load",
-          "value": 10.100428581237793,
-          "min": 10.100428581237793,
-          "max": 10.100428581237793
+          "value": 5.8802280426025391,
+          "min": 5.8802280426025391,
+          "max": 5.8802280426025391
         },
         {
           "hardware": "Intel(R) Arc(TM) Graphics",
           "kind": "GPU",
           "name": "D3D Video Decode",
           "type": "Load",
-          "value": 11.49809741973877,
-          "min": 11.49809741973877,
-          "max": 11.49809741973877
+          "value": 0,
+          "min": 0,
+          "max": 0
         },
         {
           "hardware": "Intel(R) Arc(TM) Graphics",
@@ -12274,9 +11789,9 @@
           "kind": "GPU",
           "name": "D3D Video Processing",
           "type": "Load",
-          "value": 31.094444274902344,
-          "min": 31.094444274902344,
-          "max": 31.094444274902344
+          "value": 0,
+          "min": 0,
+          "max": 0
         },
         {
           "hardware": "Intel(R) Arc(TM) Graphics",
@@ -12366,14 +11881,219 @@
           "kind": "Motherboard",
           "name": "_TZ.THRM",
           "type": "Temperature",
-          "value": 47.899999999999999
+          "value": 100.90000000000001
         }
       ]
     }
   },
+  "peripherals": {
+    "value": {
+      "audio": [
+        {
+          "name": "Speakers",
+          "device": "Realtek(R) Audio",
+          "playback": true,
+          "state": 1,
+          "isDefault": true
+        },
+        {
+          "name": "Headphones",
+          "device": "Realtek(R) Audio",
+          "playback": true,
+          "state": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Speakers",
+          "device": "[redacted]\u0027s iPhone Hands-Free HF Audio",
+          "playback": true,
+          "state": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Microphone Array",
+          "device": "Intel\u00AE Smart Sound Technology for Digital Microphones",
+          "playback": false,
+          "state": 1,
+          "isDefault": true
+        },
+        {
+          "name": "Stereo Mix",
+          "device": "Realtek(R) Audio",
+          "playback": false,
+          "state": 1,
+          "isDefault": false
+        },
+        {
+          "name": "Microphone",
+          "device": "[redacted]\u0027s iPhone Hands-Free HF Audio",
+          "playback": false,
+          "state": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Microphone",
+          "device": "[redacted]\u0027s iPhone A2DP SNK",
+          "playback": false,
+          "state": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Microphone",
+          "device": "Realtek(R) Audio",
+          "playback": false,
+          "state": 8,
+          "isDefault": false
+        }
+      ],
+      "printers": [
+        {
+          "name": "HPXXXXXX (HP OfficeJet 8020 series)",
+          "driver": "Microsoft IPP Class Driver",
+          "port": "WSD-884ce0a8-95cb-4239-9d93-a7481fb935fe",
+          "isDefault": true,
+          "isNetwork": false,
+          "offline": false,
+          "status": 3,
+          "errorState": 0,
+          "jobs": 0,
+          "errorJobs": 0
+        },
+        {
+          "name": "Brother HL-L8350CDW series Printer (Copy 1)",
+          "driver": "Brother HL-L8350CDW series",
+          "port": "192.168.1.145",
+          "isDefault": false,
+          "isNetwork": false,
+          "offline": false,
+          "status": 1,
+          "errorState": 9,
+          "jobs": 0,
+          "errorJobs": 0
+        },
+        {
+          "name": "HP OfficeJet 8020 series [XXXXXX] (Fax)",
+          "driver": "Microsoft IPP Class Driver",
+          "port": "WSD-5f132445-f29f-4e2c-bf14-1ec64b3882eb",
+          "isDefault": false,
+          "isNetwork": false,
+          "offline": false,
+          "status": 3,
+          "errorState": 0,
+          "jobs": 0,
+          "errorJobs": 0
+        },
+        {
+          "name": "Microsoft Print to PDF",
+          "driver": "Microsoft Print To PDF",
+          "port": "PORTPROMPT:",
+          "isDefault": false,
+          "isNetwork": false,
+          "offline": false,
+          "status": 3,
+          "errorState": 0,
+          "jobs": 0,
+          "errorJobs": 0
+        },
+        {
+          "name": "OneNote (Desktop)",
+          "driver": "Send to Microsoft OneNote 16 Driver",
+          "port": "nul:",
+          "isDefault": false,
+          "isNetwork": false,
+          "offline": false,
+          "status": 3,
+          "errorState": 0,
+          "jobs": 0,
+          "errorJobs": 0
+        }
+      ],
+      "spoolerStatus": "Running",
+      "spoolerStartType": "Automatic",
+      "usb": [
+        {
+          "hub": "USB Root Hub (USB 3.0)",
+          "port": 4,
+          "device": "Goodix MOC Fingerprint",
+          "vendorId": 10182,
+          "productId": 24724,
+          "isHub": false,
+          "status": 1,
+          "speed": 1,
+          "superSpeedCapable": false,
+          "portSupportsUsb3": false
+        },
+        {
+          "hub": "USB Root Hub (USB 3.0)",
+          "port": 5,
+          "device": "FHD Camera",
+          "vendorId": 22918,
+          "productId": 4499,
+          "isHub": false,
+          "status": 1,
+          "speed": 2,
+          "superSpeedCapable": false,
+          "portSupportsUsb3": false
+        },
+        {
+          "hub": "USB Root Hub (USB 3.0)",
+          "port": 6,
+          "device": "Rapoo Gaming Device",
+          "vendorId": 9390,
+          "productId": 5139,
+          "isHub": false,
+          "status": 1,
+          "speed": 2,
+          "superSpeedCapable": false,
+          "portSupportsUsb3": false
+        },
+        {
+          "hub": "USB Root Hub (USB 3.0)",
+          "port": 10,
+          "device": "Intel(R) Wireless Bluetooth(R)",
+          "vendorId": 32903,
+          "productId": 54,
+          "isHub": false,
+          "status": 1,
+          "speed": 1,
+          "superSpeedCapable": false,
+          "portSupportsUsb3": false
+        }
+      ],
+      "usbSelectiveSuspendAc": true,
+      "usbSelectiveSuspendDc": true,
+      "bluetooth": {
+        "adapters": [
+          "Intel(R) Wireless Bluetooth(R)"
+        ],
+        "radioFound": true,
+        "connectable": true,
+        "paired": 1,
+        "serviceStatus": "Running",
+        "serviceStartType": "Manual"
+      },
+      "camera": {
+        "device": "Allow",
+        "apps": "Allow",
+        "desktopApps": "Allow",
+        "devices": [
+          "FHD Camera",
+          "FHD IR Camera"
+        ]
+      },
+      "microphone": {
+        "device": "Allow",
+        "apps": "Allow",
+        "desktopApps": "Allow",
+        "devices": [
+          "Microphone Array (Intel\u00AE Smart Sound Technology for Digital Microphones)"
+        ]
+      }
+    }
+  },
   "meta": {
-    "toolVersion": "0.7.0",
-    "collectedUtc": "2026-10-26T04:40:32.3109967Z",
+    "toolVersion": "0.9.0",
+    "collectedUtc": "2026-10-27T17:37:41.8106129Z",
     "isAdmin": false,
     "anonymized": true,
     "utcOffsetMinutes": -420

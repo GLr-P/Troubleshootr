@@ -90,9 +90,10 @@ public static class DevicePages
     public static InfoGroup? Displays(Snapshot s)
     {
         if (s.Displays?.Value is not { } d) return null;
-        var g = new InfoGroup("Displays") { Columns = ["Monitor", "Connected to", "Resolution", "Refresh", "Best refresh", "Main"] };
+        var g = new InfoGroup("Displays") { Columns = ["Monitor", "Size", "Connected to", "Resolution", "Native", "Refresh", "Best refresh", "Main"] };
         foreach (var x in d.Displays)
-            g.Table.Add([x.Monitor ?? "", x.Adapter ?? "", $"{x.Width} × {x.Height}", $"{x.RefreshHz} Hz", x.MaxRefreshHz > x.RefreshHz ? $"{x.MaxRefreshHz} Hz" : "", x.Primary ? "Yes" : ""]);
+            g.Table.Add([x.DisplayName, x.SizeInches > 0 ? $"{x.SizeInches:0.#}\"{(x.MonitorYear > 0 ? $" ({x.MonitorYear})" : "")}" : "", x.Adapter ?? "", $"{x.Width} × {x.Height}",
+                x.NativeWidth > 0 ? $"{x.NativeWidth} × {x.NativeHeight}" : "", $"{x.RefreshHz} Hz", x.MaxRefreshHz > x.RefreshHz ? $"{x.MaxRefreshHz} Hz" : "", x.Primary ? "Yes" : ""]);
         if (d.PowerSavingApps.Count > 0) g.Note = $"Set to the power-saving GPU: {string.Join(", ", d.PowerSavingApps.Select(System.IO.Path.GetFileName))}.";
         return g;
     }

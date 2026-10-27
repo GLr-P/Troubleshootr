@@ -20,6 +20,7 @@ NotChecked DRV-005: Devices: not collected in this scan
 NotChecked DRV-006: Devices: not collected in this scan
 NotChecked DRV-007: Events: not collected in this scan
 NotChecked DRV-008: Events: not collected in this scan
+NotChecked DRV-009: Peripherals: not collected in this scan
 NotChecked DRV-010: Devices: not collected in this scan
 NotChecked GPU-004: Events: not collected in this scan
 NotChecked GPU-005: Events: not collected in this scan
@@ -40,6 +41,12 @@ NotChecked NET-007: Network: not collected in this scan
 NotChecked NET-008: Network: not collected in this scan
 NotChecked NET-009: Network: not collected in this scan
 NotChecked NET-011: Security: not collected in this scan
+NotChecked PER-001: Peripherals: not collected in this scan
+NotChecked PER-002: Peripherals: not collected in this scan
+NotChecked PER-003: Peripherals: not collected in this scan
+NotChecked PER-004: Displays: not collected in this scan
+NotChecked PER-005: Peripherals: not collected in this scan
+NotChecked PER-006: Peripherals: not collected in this scan
 NotChecked PRF-001: Startup: not collected in this scan
 NotChecked PRF-003: Performance: not collected in this scan
 NotChecked PRF-004: Security: not collected in this scan

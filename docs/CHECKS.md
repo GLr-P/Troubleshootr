@@ -122,7 +122,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | DRV-006 | Known-problem drivers (old Realtek audio, Killer network, vulnerable drivers on Microsoft's blocklist, old WinRing0 copies) | small lookup table | | W | ✓ | 5 ✅ |
 | DRV-007 | Drivers that crashed the PC (driver names from the minidumps) | Crashes section | | W | ✓ | 4 ✅ |
 | DRV-008 | Driver install failures (Kernel-PnP 219, 411; DeviceSetupManager) | EVT | | I/W | | 5 ✅ |
-| DRV-009 | USB problems: connect/disconnect storms, power-surge events, selective suspend | EVT Kernel-PnP / USB + REG | | W | | 10 |
+| DRV-009 | USB problems: ports that cut a device off (power surge, failed start), repeated USBHUB3 errors, a device keeping a laptop awake (USBHUB3 196), selective suspend | USB hub IOCTLs, EVT USBHUB3 | | W/I | | 10 ✅ |
 | DRV-010 | Ghost devices from old hardware (hidden non-present devices) | SetupAPI | | I | | 5 ✅ |
 
 ## Crashes and errors (CRA)
@@ -195,12 +195,12 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 
 | Id | Check | Src | A | Rule | Q | P |
 |---|---|---|---|---|---|---|
-| PER-001 | Audio: default playback/record devices, disabled devices, Audio services | API MMDevice COM | | W if no output device | ✓ | 10 |
-| PER-002 | Printers: list, default, stuck jobs, Spooler status, errors (PrintService log) | WMI Win32_Printer, EVT | | W | ✓ | 10 |
-| PER-003 | USB controllers and devices tree; devices at USB 2 speed on a USB 3 port | SetupAPI | | I | | 10 |
-| PER-004 | Monitors: model (EDID), size, max resolution and refresh | REG EDID | | I | | 10 |
-| PER-005 | Bluetooth adapter and radio state | SetupAPI | | I | | 10 |
-| PER-006 | Webcam / microphone privacy blocks (the "camera doesn't work" ticket) | REG CapabilityAccessManager | | W | ✓ | 10 |
+| PER-001 | Audio: default playback/record devices, disabled devices, Audio services | API MMDevice COM | | W if no output device | ✓ | 10 ✅ |
+| PER-002 | Printers: list, default, stuck jobs, Spooler status, errors (PrintService log) | WMI Win32_Printer, EVT | | W | ✓ | 10 ✅ |
+| PER-003 | USB controllers and devices tree; devices at USB 2 speed on a USB 3 port | SetupAPI | | I | | 10 ✅ |
+| PER-004 | Monitors: model (EDID), size, max resolution and refresh | REG EDID | | I | | 10 ✅ |
+| PER-005 | Bluetooth adapter and radio state (finding: service disabled with an adapter present) | SetupAPI, bthprops | | W | | 10 ✅ |
+| PER-006 | Webcam / microphone privacy blocks (the "camera doesn't work" ticket) | REG CapabilityAccessManager | | W | ✓ | 10 ✅ |
 | PER-007 | Motherboard and BIOS: vendor, model, BIOS version and date (BIOS > 3 years old) | WMI Win32_BaseBoard / Win32_BIOS | | I | ✓ | 1 ✅ |
 
 ## Info only (no findings, but shown on tabs)

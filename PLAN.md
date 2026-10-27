@@ -93,7 +93,9 @@ under 1 s; Quick scan under 10 s.
 - [ ] Moved to Phase 12: MEM-010 SPD + XMP/EXPO profiles (RAMSPDToolkit, check its license first) and AMD trained timings (ZenStates-Core) on the Memory tab.
 - Decision 2026-10-25 (owner approved): LibreHardwareMonitorLib 0.9.6 is worth its size. With HidSharp, RAMSPDToolkit and DiskInfoToolkit and three per-architecture builds it adds about 5 MB (the app goes from about 2 MB to about 7 MB, well under the 15 MB cap). PawnIO is downloaded on demand, never bundled.
 
-### Phase 10: Peripherals: PER-001..006, DRV-009
+### Phase 10: Peripherals: PER-001..006, DRV-009: done (v0.9.0)
+- [x] Peripherals collector (sound endpoints + defaults, printers + queues + spooler, USB ports from the hub drivers, Bluetooth radio/service/paired count, camera and microphone privacy switches) and EDID monitor details on the Displays card. Peripherals tab.
+- Not done: connect/disconnect storms (no reliable event source without the USB analytic logs), Bluetooth on/off as Windows Settings shows it (WinRT only; "accepting connections" is used instead).
 
 ### Phase 11: Battery and power: BAT-*, PRF-010
 
@@ -103,6 +105,7 @@ under 1 s; Quick scan under 10 s.
 
 ### Phase 13: Technician edition
 - [ ] **Claude panel:** bring-your-own API key (DPAPI-encrypted), anonymized report as context, follow-up tool calls into the Snapshot, model from the current Anthropic docs.
+- [ ] **Send to Plannr over the internet (owner's wish, 2026-10-27):** after a scan on a customer's PC (from the USB stick), a "Send" tab offers three choices: add to an existing ticket, create a new ticket, or create a note. A couple of clicks, no copying files off the stick. What lands in Plannr: a short, easy-to-read summary (device name, model, CPU/RAM/GPU/storage, Windows version, and every Critical/Warning finding in plain text), plus a link that opens the full detailed log (every section and finding) stored online. Goes through the Plannr sync Worker (Cloudflare), so the technician's own Plannr login/sync key is a setting, never in code. Keep the full report stored so it can be pulled up any time.
 - [ ] **Plannr export:** JSON contract doc; in Plannr, "Import diagnostic report" (match the customer/device, attach to the open ticket or create one; summary = possible issues, Windows version, device name, specs). Later: direct send through the Plannr sync Worker.
 - [ ] Optional: a USB "kit" layout (Troubleshootr + Reports folder + the owner's other portable tools).
 

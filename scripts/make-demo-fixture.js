@@ -94,7 +94,12 @@ s.devices = { value: {
   testSigning: true, integrityChecksOff: false,
 } };
 s.displays = { value: {
-  displays: [{ adapter: 'Intel(R) Arc(TM) Graphics', monitor: 'Generic PnP Monitor', primary: true, width: 2560, height: 1600, refreshHz: 60, maxRefreshHz: 165, bitsPerPixel: 32 }],
+  displays: [
+    { adapter: 'Intel(R) Arc(TM) Graphics', monitor: 'Generic PnP Monitor', primary: true, width: 2560, height: 1600, refreshHz: 60, maxRefreshHz: 165, bitsPerPixel: 32,
+      monitorMaker: 'AU Optronics', monitorYear: 2021, sizeInches: 16, nativeWidth: 2560, nativeHeight: 1600 },
+    { adapter: 'Intel(R) Arc(TM) Graphics', monitor: 'Generic PnP Monitor', primary: false, width: 1920, height: 1080, refreshHz: 60, maxRefreshHz: 60, bitsPerPixel: 32,
+      monitorMaker: 'Dell', monitorModel: 'DELL U2722D', monitorYear: 2022, sizeInches: 27, nativeWidth: 2560, nativeHeight: 1440 },
+  ],
   powerSavingApps: [],
 } };
 const upd = (days, title, result, hResult = 0) => ({ dateUtc: ago(days), title, result, hResult, operation: 1 });
@@ -229,6 +234,33 @@ s.sensors = { value: {
   ],
   thermalZones: [reading('Motherboard', 'ACPI thermal zone', '_TZ.THRM', 'Temperature', 27.8)],
 } };
+
+// Phase 10: peripherals. No working speakers, a stuck default printer, a USB 3 drive at USB 2 speed, a port that cut
+// power, the camera blocked for desktop apps, and a USB display adapter keeping the laptop awake.
+s.peripherals = { value: {
+  audio: [
+    { name: 'Speakers', device: 'Realtek(R) Audio', playback: true, state: 2, isDefault: false },
+    { name: 'Headphones', device: 'Realtek(R) Audio', playback: true, state: 8, isDefault: false },
+    { name: 'Microphone Array', device: 'Intel® Smart Sound Technology for Digital Microphones', playback: false, state: 1, isDefault: true },
+  ],
+  printers: [
+    { name: 'Brother HL-L2350DW series', driver: 'Brother HL-L2350DW series', port: 'USB001', isDefault: true, isNetwork: false, offline: false, status: 3, errorState: 4, jobs: 3, oldestJobMinutes: 190, errorJobs: 1 },
+    { name: 'Microsoft Print to PDF', driver: 'Microsoft Print To PDF', port: 'PORTPROMPT:', isDefault: false, isNetwork: false, offline: false, status: 3, errorState: 2, jobs: 0, errorJobs: 0 },
+  ],
+  spoolerStatus: 'Running', spoolerStartType: 'Automatic',
+  usb: [
+    { hub: 'USB Root Hub (USB 3.0)', port: 1, device: 'Samsung Portable SSD T7', vendorId: 0x04E8, productId: 0x4001, isHub: false, status: 1, speed: 2, superSpeedCapable: true, portSupportsUsb3: true },
+    { hub: 'USB Root Hub (USB 3.0)', port: 3, vendorId: 0, productId: 0, isHub: false, status: 4, speed: 0 },
+    { hub: 'USB Root Hub (USB 3.0)', port: 5, device: 'FHD Camera', vendorId: 0x5986, productId: 0x1193, isHub: false, status: 1, speed: 2, superSpeedCapable: false, portSupportsUsb3: false },
+    { hub: 'USB Root Hub (USB 3.0)', port: 10, device: 'Intel(R) Wireless Bluetooth(R)', vendorId: 0x8087, productId: 0x0036, isHub: false, status: 1, speed: 1, superSpeedCapable: false, portSupportsUsb3: false },
+  ],
+  usbSelectiveSuspendAc: true, usbSelectiveSuspendDc: true,
+  bluetooth: { adapters: ['Intel(R) Wireless Bluetooth(R)'], radioFound: true, connectable: true, paired: 2, serviceStatus: 'Running', serviceStartType: 'Manual' },
+  camera: { device: 'Allow', apps: 'Allow', desktopApps: 'Deny', devices: ['FHD Camera', 'FHD IR Camera'] },
+  microphone: { device: 'Allow', apps: 'Allow', desktopApps: 'Allow', devices: ['Microphone Array (Intel® Smart Sound Technology for Digital Microphones)'] },
+} };
+const mct = { fid_idVendor: '1809', fid_idProduct: '22528' };
+for (let i = 0; i < 3; i++) s.events.value.events.push(ev('Microsoft-Windows-USB-USBHUB3', 196, 2 + i * 3, 3, 'USB device draining system power when system is idle.', mct));
 
 fs.writeFileSync(path.join(dir, 'demo-many-problems.snap.json'), JSON.stringify(s, null, 2) + '\n');
 console.log('wrote demo-many-problems.snap.json');

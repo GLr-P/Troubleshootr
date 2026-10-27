@@ -26,6 +26,18 @@ public static class Anonymizer
         // Network printers put the end of their MAC address in their name ("HP732C80", "[732C80]").
         foreach (var d in (s.Devices?.Value?.Devices ?? []).Concat(s.Devices?.Value?.Hidden ?? []))
             d.Name = PrinterMac.Replace(d.Name, m => m.Groups[1].Value + "XXXXXX" + m.Groups[2].Value);
+        if (s.Peripherals?.Value is { } per)
+        {
+            // Bluetooth headsets and phones show up as sound devices under their owner's name ("Sam's iPhone Hands-Free").
+            foreach (var a in per.Audio)
+            {
+                a.Name = Possessive.Replace(a.Name, "[redacted]'s ");
+                if (a.Device is { } d) a.Device = Possessive.Replace(d, "[redacted]'s ");
+            }
+            per.Microphone.Devices = per.Microphone.Devices.Select(d => Possessive.Replace(d, "[redacted]'s ")).ToList();
+            foreach (var p in per.Printers) p.Name = PrinterMac.Replace(p.Name, m => m.Groups[1].Value + "XXXXXX" + m.Groups[2].Value);
+            per.Camera.Devices = per.Camera.Devices.Select(d => PrinterMac.Replace(d, m => m.Groups[1].Value + "XXXXXX" + m.Groups[2].Value)).ToList();
+        }
         // A router's global IPv6 DNS address carries the household's prefix; a VPN address (and the tailnet hosts it maps) names the account.
         if (s.Network?.Value is { } net)
         {
@@ -50,6 +62,9 @@ public static class Anonymizer
 
     private static readonly System.Text.RegularExpressions.Regex UserPath =
         new(@"(?<=\\Users\\)(?!Public\\|Default\\|All Users\\)[^\\""<>|]+", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+    /// <summary>"Alexander’s " / "Sam's ": a personal device name up to the possessive, at the start or inside "(…)".</summary>
+    private static readonly System.Text.RegularExpressions.Regex Possessive = new(@"(?<=^|\()[^,()]{1,40}?['’]s\s");
 
     private static readonly System.Text.RegularExpressions.Regex PrinterMac = new(@"(\bHP|\[)[0-9A-F]{6}(\]|\b)");
 

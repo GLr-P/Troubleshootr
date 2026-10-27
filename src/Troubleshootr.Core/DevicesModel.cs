@@ -108,7 +108,7 @@ public static class Vendors
         ["8087"] = "Intel", ["046D"] = "Logitech", ["045E"] = "Microsoft", ["1532"] = "Razer", ["1B1C"] = "Corsair", ["0951"] = "Kingston",
         ["0781"] = "SanDisk", ["05AC"] = "Apple", ["04F2"] = "Chicony", ["5986"] = "Bison (webcam)", ["13D3"] = "IMC Networks", ["0489"] = "Foxconn",
         ["04CA"] = "Lite-On", ["06CB"] = "Synaptics", ["04F3"] = "Elan", ["27C6"] = "Goodix", ["138A"] = "Validity (fingerprint)",
-        ["1A86"] = "QinHeng (CH340 serial)", ["0403"] = "FTDI", ["067B"] = "Prolific", ["10C4"] = "Silicon Labs", ["0B05"] = "ASUS",
+        ["0711"] = "Magic Control (USB display adapter)", ["17E9"] = "DisplayLink", ["1A86"] = "QinHeng (CH340 serial)", ["0403"] = "FTDI", ["067B"] = "Prolific", ["10C4"] = "Silicon Labs", ["0B05"] = "ASUS",
         ["1043"] = "ASUS", ["1462"] = "MSI", ["1458"] = "Gigabyte", ["03F0"] = "HP", ["103C"] = "HP", ["04A9"] = "Canon", ["04B8"] = "Epson",
         ["04F9"] = "Brother", ["413C"] = "Dell", ["1028"] = "Dell", ["17AA"] = "Lenovo", ["0C45"] = "Microdia (webcam)", ["1D50"] = "OpenMoko",
         ["054C"] = "Sony", ["057E"] = "Nintendo", ["28DE"] = "Valve", ["1050"] = "Yubico", ["2357"] = "TP-Link", ["0846"] = "Netgear",
@@ -141,6 +141,19 @@ public sealed class DisplayInfo
     /// <summary>Highest refresh rate the display offers at this resolution.</summary>
     public int MaxRefreshHz { get; set; }
     public int BitsPerPixel { get; set; }
+
+    // From the monitor's EDID (PER-004); zero/null when the monitor didn't send one.
+    public string? MonitorMaker { get; set; }
+    public string? MonitorModel { get; set; }
+    public int MonitorYear { get; set; }
+    public double SizeInches { get; set; }
+    public int NativeWidth { get; set; }
+    public int NativeHeight { get; set; }
+
+    /// <summary>"Acer V226HQL", or "AU Optronics" for a laptop panel with no model name, or Windows' generic name.</summary>
+    public string DisplayName =>
+        MonitorModel is { } m ? (MonitorMaker is { } maker && !m.StartsWith(maker.Split(' ')[0], StringComparison.OrdinalIgnoreCase) ? $"{maker} {m}" : m)
+        : MonitorMaker ?? Monitor ?? "";
 }
 
 /// <summary>Windows Update: install history, policies and upgrade blocks.</summary>

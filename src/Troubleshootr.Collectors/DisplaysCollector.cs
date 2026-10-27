@@ -49,6 +49,7 @@ public sealed class DisplaysCollector : Collector<DisplaysInfo>
     protected override DisplaysInfo Collect(CollectContext ctx, CancellationToken ct)
     {
         var info = new DisplaysInfo();
+        var edids = Edids();
         var adapter = NewDevice();
         for (uint i = 0; EnumDisplayDevicesW(null, i, ref adapter, 0); i++, adapter = NewDevice())
         {
@@ -60,21 +61,66 @@ public sealed class DisplaysCollector : Collector<DisplaysInfo>
             for (var m = 0; m < 5000 && EnumDisplaySettingsW(adapter.DeviceName, m, ref mode); m++, mode = NewMode())
                 if (mode.dmPelsWidth == current.dmPelsWidth && mode.dmPelsHeight == current.dmPelsHeight && mode.dmDisplayFrequency > max) max = mode.dmDisplayFrequency;
             var monitor = NewDevice();
-            info.Displays.Add(new DisplayInfo
+            var hasMonitor = EnumDisplayDevicesW(adapter.DeviceName, 0, ref monitor, 0);
+            var display = new DisplayInfo
             {
                 Adapter = adapter.DeviceString,
-                Monitor = EnumDisplayDevicesW(adapter.DeviceName, 0, ref monitor, 0) ? monitor.DeviceString : null,
+                Monitor = hasMonitor ? monitor.DeviceString : null,
                 Primary = (adapter.StateFlags & PrimaryDevice) != 0,
                 Width = current.dmPelsWidth,
                 Height = current.dmPelsHeight,
                 RefreshHz = current.dmDisplayFrequency,
                 MaxRefreshHz = max,
                 BitsPerPixel = current.dmBitsPerPel,
-            });
+            };
+            // DeviceID is "MONITOR\<model>\<driver key>"; the driver key finds the monitor's EDID.
+            var parts = hasMonitor ? monitor.DeviceID?.Split(['\\'], 3) : null;
+            if (parts is { Length: 3 } && edids.TryGetValue(parts[2], out var edid) && Edid.Parse(edid) is { } e)
+            {
+                display.MonitorMaker = e.Maker;
+                display.MonitorModel = e.Name;
+                display.MonitorYear = e.Year;
+                display.SizeInches = Math.Round(e.Inches, 1);
+                display.NativeWidth = e.NativeWidth;
+                display.NativeHeight = e.NativeHeight;
+            }
+            info.Displays.Add(display);
         }
         foreach (var (app, pref) in GpuPreferences())
             if (pref == 1) info.PowerSavingApps.Add(app);
         return info;
+    }
+
+    private static Guid MonitorClass = new("4d36e96e-e325-11ce-bfc1-08002be10318");
+
+    /// <summary>EDID bytes of every connected monitor, by driver key ("{4d36e96e-…}\0001").</summary>
+    private static Dictionary<string, byte[]> Edids()
+    {
+        var map = new Dictionary<string, byte[]>(StringComparer.OrdinalIgnoreCase);
+        try { ReadEdids(map); }
+        catch (Exception e) when (e is not OutOfMemoryException) { } // optional detail: the display modes still count
+        return map;
+    }
+
+    private static void ReadEdids(Dictionary<string, byte[]> map)
+    {
+        var set = SetupApi.SetupDiGetClassDevsW(ref MonitorClass, null, IntPtr.Zero, SetupApi.DigcfPresent);
+        if (set == SetupApi.Invalid) return;
+        try
+        {
+            var data = new SetupApi.SP_DEVINFO_DATA { cbSize = (uint)Marshal.SizeOf<SetupApi.SP_DEVINFO_DATA>() };
+            for (uint i = 0; SetupApi.SetupDiEnumDeviceInfo(set, i, ref data); i++)
+            {
+                if (SetupApi.Property(set, ref data, SetupApi.SpdrpDriver) is not { } key) continue;
+                try
+                {
+                    using var k = SetupApi.DeviceKey(set, ref data);
+                    if (k?.GetValue("EDID") is byte[] edid) map[key] = edid;
+                }
+                catch (Exception e) when (e is System.Security.SecurityException or UnauthorizedAccessException or IOException) { }
+            }
+        }
+        finally { SetupApi.SetupDiDestroyDeviceInfoList(set); }
     }
 
     private static DISPLAY_DEVICE NewDevice() => new() { cb = Marshal.SizeOf<DISPLAY_DEVICE>() };

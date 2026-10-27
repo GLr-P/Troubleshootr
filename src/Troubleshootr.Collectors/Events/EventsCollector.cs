@@ -46,6 +46,9 @@ public sealed class EventsCollector : Collector<EventsInfo>
         new("System", "Microsoft-Windows-GroupPolicy", [1085, 1096, 1129]),
         // Driver load failures (DRV-008)
         new("System", "Microsoft-Windows-Kernel-PnP", [219, 411]),
+        // USB port problems and devices keeping a laptop awake (DRV-009)
+        new("System", "Microsoft-Windows-USB-USBHUB3", [], WarningsOnly: true),
+        new("System", "usbhub", [], WarningsOnly: true),
         new("Application", "Microsoft-Windows-User Profiles Service", [1511, 1515]),
         // App crashes (CRA-003, WIN-016)
         new("Application", "Application Error", [1000]),

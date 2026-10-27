@@ -16,6 +16,7 @@ Warning DRV-002: A device has no driver | Unknown device made by Realtek [PCI\VE
 Warning DRV-004: Windows is allowing unsigned drivers | Boot options: test-signing mode is on.
 Warning DRV-006: A driver with a known security hole is installed | WinRing0x64.sys from WinRing0 (old fan control, RGB and monitoring tools).
 Warning DRV-007: A driver crashed the PC: contosonet.sys | contosonet.sys once in the last 30 days (from the crash dumps).
+Warning DRV-009: A USB port shut off its device: drew too much power (power surge) | USB Root Hub (USB 3.0) port 3: Drew too much power (power surge).
 Warning GPU-004: The graphics driver keeps resetting | 4 graphics driver timeouts or errors in 30 days (up to 1 within 24 hours).
 Warning GPU-005: The graphics driver crashed the PC | 2026-10-15 0x116 VIDEO_TDR_FAILURE.
 Warning GPU-008: The graphics card is running hot: NVIDIA GeForce RTX 3080 | GPU Core 88 °C.
@@ -32,6 +33,9 @@ Warning NET-007: The hosts file redirects or blocks important websites | update.
 Warning NET-007: DNS servers were set by hand | Wi-Fi: 85.255.112.10; Wi-Fi: 85.255.113.20. They aren't from your router or a well-known public DNS service.
 Warning NET-009: Third-party software is hooked into Windows networking (Winsock) | C:\Program Files (x86)\WebBoost\wbsp64.dll.
 Warning NET-011: Windows Firewall is off for public networks | No other firewall is registered. Listening: Remote Desktop 3389.
+Warning PER-001: Sound output is disabled | No playback device is ready. Disabled: Speakers (Realtek(R) Audio).
+Warning PER-002: Print jobs are stuck on Brother HL-L2350DW series | 3 jobs in the queue, the oldest 3 h old, 1 in error.
+Warning PER-006: Apps can't use the camera | "Let desktop apps access your camera" is off (Zoom, Teams, Discord, browsers). Camera: FHD Camera, FHD IR Camera.
 Warning PRF-001: 18 programs start with Windows | Steam, Discord, Spotify, Epic Games Launcher, Adobe Creative Cloud, Dropbox, Zoom, Teams, Razer Synapse, iCUE, OneDrive, Skype and 6 more.
 Warning PRF-003: A program is hogging the PC | svchosts.exe is using 82% of the CPU; SearchIndexer.exe is reading/writing 64 MB/s (sampled for 3 s).
 Warning PRF-004: Two antivirus programs are running at once | Norton 360, McAfee LiveSafe are all scanning in real time.
@@ -74,12 +78,16 @@ Info CPU-008: The power plan slows the processor down | the Power saver plan is 
 Info CRA-004: Windows recorded hardware or driver error reports | recovered problem 0x141 VIDEO_ENGINE_TIMEOUT_DETECTED ×1 in the last 30 days.
 Info DRV-001: 2 devices are disabled | Integrated Webcam (Camera); Intel(R) Ethernet Connection I219-V (Net).
 Info DRV-005: An old driver: Realtek PCIe GbE Family Controller | Realtek PCIe GbE Family Controller: Realtek 10.12.1012.2016 from 2016-10-12.
+Info DRV-009: A USB device keeps the laptop from sleeping properly | Magic Control (USB display adapter) device 0711:5800: 3 times in 30 days (Windows logged it draining power while idle).
 Info DRV-010: Drivers for an old graphics card are still installed | Not connected any more: NVIDIA GeForce GTX 1060 6GB.
 Info GPU-007: A display runs below its best refresh rate | Generic PnP Monitor at 2560×1600: 60 Hz, can do 165 Hz.
 Info MEM-003: RAM runs below its rated speed | Running at 4800 MT/s; the modules are rated for 6000 MT/s (F5-6000J3038F16G).
 Info MEM-005: RAM runs in single channel | 1 stick (4 GB LPDDR5) in a board with 2 slots.
 Info NET-008: 1 network adapter is switched off | Intel(R) Ethernet Connection I219-V.
 Info NET-008: A VPN is connected | ProtonVPN Tunnel.
+Info PER-002: Brother HL-L2350DW series needs attention | Brother HL-L2350DW series: out of paper.
+Info PER-003: A USB 3 device is running at USB 2 speed: Samsung Portable SSD T7 | Samsung Portable SSD T7 on USB Root Hub (USB 3.0) port 1: USB 2 (480 Mb/s).
+Info PER-004: DELL U2722D isn't at its native resolution | Set to 1920 × 1080; the panel is 2560 × 1440 (27").
 Info PER-007: The BIOS is old | American Megatrends International, LLC. E1595IMS.10B, dated 2021-03-01 (5.7 years old).
 Info PRF-005: "Optimizer" or adware programs are installed | Driver Booster 12, Wave Browser.
 Info PRF-009: A browser has a lot of extensions | Chrome: Default: 27 extensions.

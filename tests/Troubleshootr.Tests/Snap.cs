@@ -79,6 +79,21 @@ public static class Snap
             ],
             Smb1Client = false, Smb1Server = false, RdpEnabled = false, RdpNla = true, RdpPort = 3389, ListeningPorts = [445],
         }),
+        Peripherals = Section<PeripheralsInfo>.Of(new PeripheralsInfo
+        {
+            Audio =
+            [
+                new() { Name = "Speakers", Device = "Realtek(R) Audio", Playback = true, State = AudioEndpoint.Active, IsDefault = true },
+                new() { Name = "Microphone", Device = "Realtek(R) Audio", Playback = false, State = AudioEndpoint.Active, IsDefault = true },
+            ],
+            Printers = [new() { Name = "Office printer", Port = "192.168.1.50", IsDefault = true, Status = 3, ErrorState = 2 }, new() { Name = "Microsoft Print to PDF", Port = "PORTPROMPT:", Status = 3 }],
+            SpoolerStatus = "Running", SpoolerStartType = "Automatic",
+            Usb = [new() { Hub = "USB Root Hub (USB 3.0)", Port = 1, Device = "USB Receiver", VendorId = 0x046D, ProductId = 0xC52B, Status = 1, Speed = 1, SuperSpeedCapable = false, PortSupportsUsb3 = true }],
+            UsbSelectiveSuspendAc = true, UsbSelectiveSuspendDc = true,
+            Bluetooth = new BluetoothInfo { Adapters = ["Intel(R) Wireless Bluetooth(R)"], RadioFound = true, Connectable = true, Paired = 1, ServiceStatus = "Running", ServiceStartType = "Manual" },
+            Camera = new PrivacySwitch { Device = "Allow", Apps = "Allow", DesktopApps = "Allow", Devices = ["HD Webcam"] },
+            Microphone = new PrivacySwitch { Device = "Allow", Apps = "Allow", DesktopApps = "Allow" },
+        }),
         Updates = Section<UpdatesInfo>.Of(new UpdatesInfo { History = [new() { DateUtc = Now.AddDays(-10), Title = "2026-10 Cumulative Update for Windows 11 Version 25H2 (KB5099999)", Result = 2 }] }),
     };
 

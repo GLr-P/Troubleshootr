@@ -7,6 +7,7 @@ Info CPU-005: The processor's speed is being limited by the firmware | 40 speed-
 Info PRF-001: 13 programs start with Windows | Opera Stable, Discord, Steam, Spotify, EADM, com.nanotechservices.plannr, Opera Browser Assistant, RtkAudUService, Adobe CCXProcess, Intel® Graphics Software, Adobe Creative Cloud, RustDesk Tray and 1 more.
 Info WIN-004: A restart is pending | Waiting on: file operations waiting for a restart.
 NotChecked CPU-004: Sensors: not collected in this scan
+NotChecked DRV-009: Peripherals: not collected in this scan
 NotChecked GPU-008: Sensors: not collected in this scan
 NotChecked MEM-011: Sensors: not collected in this scan
 NotChecked NET-002: Network: not collected in this scan
@@ -18,6 +19,11 @@ NotChecked NET-007: Network: not collected in this scan
 NotChecked NET-008: Network: not collected in this scan
 NotChecked NET-009: Network: not collected in this scan
 NotChecked NET-011: Security: not collected in this scan
+NotChecked PER-001: Peripherals: not collected in this scan
+NotChecked PER-002: Peripherals: not collected in this scan
+NotChecked PER-003: Peripherals: not collected in this scan
+NotChecked PER-005: Peripherals: not collected in this scan
+NotChecked PER-006: Peripherals: not collected in this scan
 NotChecked PRF-004: Security: not collected in this scan
 NotChecked SEC-001: Security: not collected in this scan
 NotChecked SEC-002: Security: not collected in this scan
