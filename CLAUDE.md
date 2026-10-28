@@ -5,13 +5,14 @@ problem.** It runs from a USB stick without being installed, scans the PC in sec
 by how serious they are, and shows full hardware, driver and system information. It's for advanced users: technicians
 and enthusiasts.
 
-Hub page: [../Information/projects/troubleshootr.md](../Information/projects/troubleshootr.md). Plan and progress: [PLAN.md](PLAN.md).
+This folder is the code repo (public). The private project files sit one level up in the hub: [../ABOUTME.md](../ABOUTME.md)
+(status, decisions), [../Information/PLAN.md](../Information/PLAN.md), `../Handoff/` (handoff log, past chats), `../Research/`, `../Thoughts/`.
 
 ## Read on demand (don't preload)
 
 | File | When |
 |---|---|
-| [PLAN.md](PLAN.md) | Start of work: find the current phase, then read only that phase |
+| [PLAN.md](../Information/PLAN.md) | Start of work: find the current phase, then read only that phase |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Before touching the engine, collectors, the UI shell or the tests |
 | [docs/CHECKS.md](docs/CHECKS.md) | Before adding or changing a check: the catalogue of every check, with ids, data sources and thresholds |
 
