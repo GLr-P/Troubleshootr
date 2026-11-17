@@ -8,6 +8,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
     <ApplicationManifest>..\app.manifest</ApplicationManifest>
+    <ApplicationIcon>..\app.ico</ApplicationIcon>
   </PropertyGroup>
   <!--
     Single exe: embed every DLL the app needs (and the per-architecture sensor library) so Troubleshootr.exe runs on its own.

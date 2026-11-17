@@ -3,6 +3,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>troubleshootr-cli</AssemblyName>
+    <ApplicationIcon>..\app.ico</ApplicationIcon>
     <RootNamespace>Troubleshootr.Cli</RootNamespace>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
