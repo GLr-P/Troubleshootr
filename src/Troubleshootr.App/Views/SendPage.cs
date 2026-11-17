@@ -171,9 +171,9 @@ public sealed class SendPage : UserControl
             await drop.SendReportAsync(payload, CancellationToken.None);
             _status.Text = target switch
             {
-                PlannrTarget.Ticket => $"Sent. Plannr adds it to ticket {ticket!.Name} within a few minutes (or when its window is opened).",
-                PlannrTarget.Note => "Sent. Plannr creates the note within a few minutes (or when its window is opened).",
-                _ => "Sent. Plannr creates the ticket within a few minutes (or when its window is opened).",
+                PlannrTarget.Ticket => $"Sent. Plannr adds it to ticket {ticket!.Name} within about 20 seconds while Plannr is open (a few minutes if it is closed to the tray).",
+                PlannrTarget.Note => "Sent. Plannr creates the note within about 20 seconds while Plannr is open (a few minutes if it is closed to the tray).",
+                _ => "Sent. Plannr creates the ticket within about 20 seconds while Plannr is open (a few minutes if it is closed to the tray).",
             };
             ActionLog.Write($"Sent the scan to Plannr ({target}{(ticket is null || target != PlannrTarget.Ticket ? "" : $" {ticket.Name}")})");
         }
