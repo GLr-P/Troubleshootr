@@ -39,6 +39,7 @@ public partial class App : Application
             return;
         }
 
+        Troubleshootr.Core.AppFiles.Tidy();  // files older versions left next to the exe on the Desktop
         Ui.ApplyTheme(Ui.SystemUsesDarkTheme());
         var vm = new MainViewModel();
         var window = new Window

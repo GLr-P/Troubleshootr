@@ -67,7 +67,7 @@ public sealed class SendPage : UserControl
     {
         var card = new StackPanel();
         card.Children.Add(new TextBlock { Text = "Connect to your Plannr (once)", FontWeight = FontWeights.SemiBold, FontSize = 14 });
-        card.Children.Add(Dim("In Plannr on your PC: Settings → Sync & devices → Troubleshootr → Connect Troubleshootr, then Copy link and paste it here. The link is saved next to Troubleshootr (on the USB stick); it can only send reports to your Plannr and see open ticket numbers.", 4));
+        card.Children.Add(Dim("In Plannr on your PC: Settings → Sync & devices → Troubleshootr → Connect Troubleshootr, then Copy link and paste it here. The link is saved with Troubleshootr (on the USB stick when it runs from one); it can only send reports to your Plannr and see open ticket numbers.", 4));
         _linkBox.Margin = new Thickness(0, 10, 0, 0);
         card.Children.Add(_linkBox);
         var save = new Button { Content = "Connect", Tag = "primary", HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 10, 0, 0) };

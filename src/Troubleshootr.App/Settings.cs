@@ -6,7 +6,8 @@ using Troubleshootr.Core;
 namespace Troubleshootr.App;
 
 /// <summary>
-/// Troubleshootr-settings.json next to the exe (the USB stick), or in %LOCALAPPDATA%\Troubleshootr if that's read-only.
+/// Troubleshootr-settings.json next to the exe on a USB stick, in %LOCALAPPDATA%\Troubleshootr when run from the Windows
+/// drive (e.g. the Desktop) or when the stick is read-only (see AppFiles).
 /// The Claude API key is encrypted with Windows DPAPI for the current Windows user, one entry per PC and user: a stick
 /// carried to a customer's PC can't decrypt the technician's key there (it asks again), and the customer's PC never
 /// gets a readable copy.
@@ -75,9 +76,5 @@ public sealed class Settings
         return Save();
     }
 
-    private static IEnumerable<string> Paths()
-    {
-        yield return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Troubleshootr-settings.json");
-        yield return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Troubleshootr", "Troubleshootr-settings.json");
-    }
+    private static IEnumerable<string> Paths() => AppFiles.Folders().Select(dir => Path.Combine(dir, AppFiles.SettingsFile));
 }

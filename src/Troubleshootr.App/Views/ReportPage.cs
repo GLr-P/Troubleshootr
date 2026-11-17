@@ -80,11 +80,10 @@ public sealed class ReportPage : UserControl
         catch (System.ComponentModel.Win32Exception e) { _saved.Text = $"Saved, but couldn't open it: {e.Message}"; }
     }
 
-    /// <summary>"Reports" next to the exe (the USB stick); %LOCALAPPDATA% if that drive is read-only.</summary>
+    /// <summary>"Reports" next to the exe on a USB stick; in %LOCALAPPDATA%\Troubleshootr from the Windows drive or a read-only stick.</summary>
     public static string ReportsFolder()
     {
-        foreach (var dir in new[] { Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Reports"),
-                                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Troubleshootr", "Reports") })
+        foreach (var dir in AppFiles.Folders().Select(d => Path.Combine(d, "Reports")))
         {
             try
             {

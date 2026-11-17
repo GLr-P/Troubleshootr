@@ -25,7 +25,7 @@ public sealed class FixesPage : UserControl
 
         var stack = new StackPanel { Margin = new Thickness(28, 24, 28, 28) };
         stack.Children.Add(new TextBlock { Text = "Fixes", Style = (Style)Application.Current.FindResource("H1"), Margin = new Thickness(0, 0, 0, 6) });
-        var hint = Dim("Common repairs. Each one asks first, and what it did goes in the report and in Troubleshootr-actions.log next to the app.", 0);
+        var hint = Dim("Common repairs. Each one asks first, and what it did goes in the report and in Troubleshootr-actions.log (next to the app on a USB stick).", 0);
         hint.Margin = new Thickness(0, 0, 0, 14);
         stack.Children.Add(hint);
         foreach (var fix in FixRegistry.All) stack.Children.Add(Card(fix));
