@@ -85,10 +85,11 @@ public sealed class ClaudeChat : IDisposable
             }
             throw new ClaudeException("Claude kept looking things up without answering; try a narrower question.");
         }
-        catch
+        catch (Exception e)
         {
             // Drop the unanswered turn so the next question starts from a valid history.
             while (_messages.Count > rollback) _messages.RemoveAt(_messages.Count - 1);
+            if (e is InvalidOperationException or FormatException) throw new ClaudeException("Claude sent an answer Troubleshootr couldn't read; try again.", e);
             throw;
         }
     }
@@ -133,7 +134,9 @@ public sealed class ClaudeChat : IDisposable
                 var code = (int)response.StatusCode;
                 if (response.IsSuccessStatusCode)
                 {
-                    var json = JsonNode.Parse(text) as JsonObject ?? throw new ClaudeException("Claude sent an empty answer.");
+                    JsonObject json;
+                    try { json = JsonNode.Parse(text) as JsonObject ?? throw new ClaudeException("Claude sent an empty answer."); }
+                    catch (JsonException e) { throw new ClaudeException("The answer wasn't from Claude (a proxy or sign-in page in the way?).", e); }
                     if (json["usage"] is JsonObject u)
                     {
                         var cached = Long(u["cache_read_input_tokens"]);

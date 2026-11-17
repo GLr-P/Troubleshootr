@@ -9,7 +9,8 @@ namespace Troubleshootr.Core;
 /// </summary>
 public static class HtmlReport
 {
-    public static string Write(Report r)
+    /// <param name="full">Also every data section of the scan, folded (the copy sent to Plannr, to look anything up later).</param>
+    public static string Write(Report r, bool full = false)
     {
         var d = r.Device;
         var sb = new StringBuilder();
@@ -63,6 +64,19 @@ public static class HtmlReport
             foreach (var g in r.NotChecked.GroupBy(n => n.Reason).OrderByDescending(g => g.Count()))
                 sb.Append($"<li>{E(string.Join(", ", g.Select(n => n.CheckId)))}: {E(g.Key)}</li>");
             sb.Append("</ul>");
+        }
+        if (full && r.Snapshot is { } snap)
+        {
+            sb.Append("<h2>All scan data</h2><p class=dim>Everything Troubleshootr collected, by section. Click a section to open it.</p>");
+            foreach (var p in typeof(Snapshot).GetProperties().Where(p => p.PropertyType.IsGenericType && p.PropertyType.GetGenericTypeDefinition() == typeof(Section<>)))
+            {
+                if (p.GetValue(snap) is not { } section) continue;
+                var why = section.GetType().GetProperty("Unavailable")?.GetValue(section) as string;
+                var value = section.GetType().GetProperty("Value")?.GetValue(section);
+                sb.Append($"<details class=data><summary>{E(p.Name)}{(why is null ? "" : $" <span class=dim>(unavailable: {E(why)})</span>")}</summary>");
+                if (value is not null) sb.Append($"<pre>{E(Json.Serialize(value))}</pre>");
+                sb.Append("</details>");
+            }
         }
         sb.Append($"<footer class=dim>Made with Troubleshootr {E(r.ToolVersion)}, a free diagnostic tool: github.com/GLr-P/Troubleshootr{(r.Snapshot?.Meta.Anonymized == true ? ". Names, serial numbers and network names removed." : ".")}</footer>");
         sb.Append("</body></html>");
@@ -130,6 +144,7 @@ public static class HtmlReport
         .Ok{border-left-color:#2e7d32}
         pre{white-space:pre-wrap;font:11px Consolas,monospace;max-height:320px;overflow:auto;background:#f6f6f6;padding:6px}
         .notchecked{font-size:12px;padding-left:18px}
+        details.data{border-bottom:1px solid #ddd;padding:4px 0}details.data summary{cursor:pointer;font-weight:600}details.data pre{max-height:600px}
         footer{margin-top:26px;font-size:11px;border-top:1px solid #bbb;padding-top:6px}
         @media print{body{margin:0;max-width:none}details{display:none}a{color:#111}}
         """;

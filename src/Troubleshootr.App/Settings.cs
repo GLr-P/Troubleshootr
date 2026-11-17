@@ -15,11 +15,38 @@ public sealed class Settings
 {
     public Dictionary<string, string> ClaudeKeys { get; set; } = new();
 
+    /// <summary>
+    /// The Plannr inbox link, in plain text so it works on every PC the stick goes to. It can only add reports to that
+    /// Plannr and list its open ticket numbers; reconnecting in Plannr makes it stop working.
+    /// </summary>
+    public string? PlannrLink { get; set; }
+
+    /// <summary>Writes the settings file; false if no folder was writable.</summary>
+    public bool Save()
+    {
+        foreach (var path in Paths())
+        {
+            try
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+                File.WriteAllText(path, Json.Serialize(this));
+                return true;
+            }
+            catch (Exception e) when (e is IOException or UnauthorizedAccessException) { }
+        }
+        return false;
+    }
+
     private static readonly byte[] Entropy = Encoding.UTF8.GetBytes("Troubleshootr Claude key v1");
 
     private static string ThisPc => Convert.ToBase64String(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes($"{Environment.MachineName}\\{Environment.UserName}".ToUpperInvariant())));
 
-    public static Settings Load()
+    private static Settings? _current;
+
+    /// <summary>The one copy every page uses: each Save writes the whole file, so separate copies would undo each other.</summary>
+    public static Settings Current => _current ??= Load();
+
+    private static Settings Load()
     {
         foreach (var path in Paths())
         {
@@ -45,17 +72,7 @@ public sealed class Settings
     {
         if (string.IsNullOrWhiteSpace(key)) ClaudeKeys.Remove(ThisPc);
         else ClaudeKeys[ThisPc] = Convert.ToBase64String(ProtectedData.Protect(Encoding.UTF8.GetBytes(key!.Trim()), Entropy, DataProtectionScope.CurrentUser));
-        foreach (var path in Paths())
-        {
-            try
-            {
-                Directory.CreateDirectory(Path.GetDirectoryName(path)!);
-                File.WriteAllText(path, Json.Serialize(this));
-                return true;
-            }
-            catch (Exception e) when (e is IOException or UnauthorizedAccessException) { }
-        }
-        return false;
+        return Save();
     }
 
     private static IEnumerable<string> Paths()

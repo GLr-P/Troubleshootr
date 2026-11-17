@@ -7,12 +7,12 @@ namespace Troubleshootr.App;
 /// <summary>Left navigation + the selected page. Pages are created on first visit and kept.</summary>
 public sealed class Shell : UserControl
 {
-    public static readonly string[] Pages = ["Diagnose", .. InfoPages.Names, "Fixes", "Ask Claude", "Report"];
+    public static readonly string[] Pages = ["Diagnose", .. InfoPages.Names, "Fixes", "Ask Claude", "Send to Plannr", "Report"];
 
     private static readonly Dictionary<string, string> Glyphs = new()
     {
         ["Diagnose"] = "", ["Summary"] = "", ["System"] = "", ["CPU"] = "", ["Memory"] = "",
-        ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Performance"] = "", ["Processes"] = "", ["Startup"] = "", ["Software"] = "",["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "", ["Fixes"] = "", ["Ask Claude"] = "",
+        ["Motherboard"] = "", ["Storage"] = "", ["Graphics"] = "", ["Devices"] = "", ["Performance"] = "", ["Processes"] = "", ["Startup"] = "", ["Software"] = "",["Drivers"] = "", ["Updates"] = "",["Events & Crashes"] = "", ["Report"] = "", ["Fixes"] = "", ["Ask Claude"] = "", ["Send to Plannr"] = "",
         ["Network"] = "", ["Security"] = "", ["Sensors"] = "", ["Peripherals"] = "", ["Battery"] = "",
     };
 
@@ -64,6 +64,7 @@ public sealed class Shell : UserControl
                 "Report" => new ReportPage(_vm),
                 "Fixes" => new FixesPage(_vm),
                 "Ask Claude" => new AskClaudePage(_vm),
+                "Send to Plannr" => SendPageFor(),
                 "Processes" => new ProcessesPage(_vm),
                 "Sensors" => new SensorsPage(_vm),
                 _ => new InfoPage(page, _vm),
@@ -71,6 +72,13 @@ public sealed class Shell : UserControl
         _content.Content = view;
         var index = Array.IndexOf(Pages, page);
         if (_nav.SelectedIndex != index) _nav.SelectedIndex = index;
+    }
+
+    private SendPage SendPageFor()
+    {
+        var page = new SendPage(_vm);
+        if (!_vm.Live) page.ShowExample();  // screenshot mode: no Plannr to ask
+        return page;
     }
 
     private static ListBoxItem NavItem(string page)

@@ -21,7 +21,7 @@ public sealed class AskClaudePage : UserControl
     ];
 
     private readonly MainViewModel _vm;
-    private readonly Settings _settings = Settings.Load();
+    private readonly Settings _settings = Settings.Current;
     private string? _key;
     private ClaudeChat? _chat;
     private Report? _chatReport;
@@ -201,6 +201,11 @@ public sealed class AskClaudePage : UserControl
         }
         catch (ClaudeException e) { if (ReferenceEquals(chat, _chat)) { _status.Text = e.Message; _question.Text = question; } }
         catch (OperationCanceledException) { }
+        catch (Exception e)
+        {
+            // An async click handler must never throw (it would close the app).
+            if (ReferenceEquals(chat, _chat)) { _status.Text = $"Something went wrong: {e.Message}"; _question.Text = question; }
+        }
         finally
         {
             _cts?.Dispose();

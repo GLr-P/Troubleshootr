@@ -11,6 +11,7 @@ namespace Troubleshootr.Cli;
 /// troubleshootr collect --out file.snap.json [--full] [--anonymize]
 /// troubleshootr check   --snapshot file.snap.json [--json|--html] [--out file]
 /// troubleshootr ask --question "why is it slow?" [--snapshot f.snap.json]   (Ask Claude; key from the ANTHROPIC_API_KEY environment variable)
+/// troubleshootr send --link "<Plannr link>" [--ticket 7 | --note | --customer "Jane Doe"] [--snapshot f.snap.json]   (Send to Plannr; --list only lists the open tickets)
 /// troubleshootr fix --list | fix --id dns-flush --yes   (runs a fix action; logged to Troubleshootr-actions.log like the app's Fixes tab)
 /// troubleshootr anonymize --snapshot report-or-snapshot.json --out file.snap.json   (e.g. a report saved by an admin run)
 /// troubleshootr dump --file C:\Windows\Minidump\x.dmp [--drivers]   (reading the Minidump folder needs admin)
@@ -34,6 +35,7 @@ public static class Program
                 case "dump": return Dump(a);
                 case "fix": return await Fix(a);
                 case "ask": return await Ask(a);
+                case "send": return await Send(a);
                 case "sensors": return Sensors();
                 case "driver": return await Driver(a);
                 case "loadtest":
@@ -94,6 +96,37 @@ public static class Program
         var record = await fix.RunAsync(Console.WriteLine, CancellationToken.None);
         ActionLog.Write($"Fix {(record.Ok ? "done" : "FAILED")} (CLI): {fix.Title}: {record.Summary} ({record.DurationMs / 1000.0:0.#} s)");
         return record.Ok ? 0 : 1;
+    }
+
+    /// <summary>send: the Send to Plannr tab from the command line (this PC's Quick scan, or a saved snapshot).</summary>
+    private static async Task<int> Send(Args a)
+    {
+        var link = Collectors.Plannr.PlannrLink.TryParse(a.Value("link")) ?? throw new ArgumentException("send needs --link with the link from Plannr (Settings > Sync & devices > Troubleshootr)");
+        if (a.Flag("list"))
+        {
+            using var lister = new Collectors.Plannr.PlannrDrop(link);
+            try { foreach (var t in await lister.OpenTicketsAsync(CancellationToken.None)) Console.WriteLine(t.Label); return 0; }
+            catch (Collectors.Plannr.PlannrException e) { Console.Error.WriteLine(e.Message); return 1; }
+        }
+        var report = await ReportFor(a);
+        var target = a.Value("ticket") is not null ? PlannrTarget.Ticket : a.Flag("note") ? PlannrTarget.Note : PlannrTarget.NewTicket;
+        using var drop = new Collectors.Plannr.PlannrDrop(link);
+        try
+        {
+            await drop.SendReportAsync(PlannrPayload.Build(report, target, int.TryParse(a.Value("ticket"), out var n) ? n : null, a.Value("customer")), CancellationToken.None);
+            Console.WriteLine($"Sent ({target}).");
+            return 0;
+        }
+        catch (Collectors.Plannr.PlannrException e) { Console.Error.WriteLine(e.Message); return 1; }
+    }
+
+    private static async Task<Report> ReportFor(Args a)
+    {
+        if (a.Value("snapshot") is not { } path) return await ScanEngine.ScanAsync(CollectorRegistry.All, CheckRegistry.All, new ScanOptions { IsAdmin = CollectorRegistry.IsElevated(), ToolVersion = Version });
+        var snapshot = Json.Deserialize<Snapshot>(File.ReadAllText(path));
+        var report = ScanEngine.Evaluate(snapshot, CheckRegistry.All, new ScanOptions { ToolVersion = Version });
+        report.Snapshot = snapshot;
+        return report;
     }
 
     /// <summary>ask: the app's Ask Claude panel from the command line, on this PC's Quick scan or a saved snapshot.</summary>
