@@ -120,6 +120,16 @@ public class EventTests
         Assert.Equal(Severity.Warning, Sev(new Sto007DiskErrors(), usb));
         Assert.Empty(Run(new Sto007DiskErrors(), Snap.Healthy().Event("stornvme", 129)));
         Assert.Equal(Severity.Warning, Sev(new Sto007DiskErrors(), Snap.Healthy().Events(3, "storahci", 129)));
+        // Intel RST/VMD resets (a real case: an HP laptop with VMD on freezing for 60 s, only iaStorVD logged the 129s).
+        Assert.Empty(Run(new Sto007DiskErrors(), Snap.Healthy().Events(2, "iaStorVD", 129)));
+        var rst = Assert.Single(Run(new Sto007DiskErrors(), Snap.Healthy().Events(5, "iaStorVD", 129)));
+        Assert.Equal(Severity.Warning, rst.Severity);
+        Assert.Contains("Intel RST storage driver (iaStorVD) reset the drive 5 times", rst.Evidence);
+        Assert.Contains("VMD", rst.Advice);
+        // A flood of 153 retries must not share a query (and its 200 cap) with bad blocks.
+        var diskRules = Troubleshootr.Collectors.Events.EventsCollector.Rules.Where(r => r.Provider == "disk").ToList();
+        Assert.DoesNotContain(diskRules, r => r.Ids.Contains(7) && r.Ids.Contains(153));
+        Assert.Contains(Troubleshootr.Collectors.Events.EventsCollector.Rules, r => r.Provider == "iaStorVD" && r.Ids.Contains(129));
         var ntfs = Snap.Healthy().Event("Microsoft-Windows-Ntfs", 98, 1, level: 3, data: new() { ["DriveName"] = "D:" });
         Assert.Contains("on D:", Assert.Single(Run(new Sto007DiskErrors(), ntfs)).Evidence);
     }

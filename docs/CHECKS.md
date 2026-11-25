@@ -15,7 +15,7 @@ A ✅ after the phase number means done (the check and its tests exist, or the i
 | STO-004 | SSD wear (NVMe percentage used, ATA wear attributes E7/E9/A9/AD by vendor) | IOCTL | ✓ | W ≥ 80% used, C ≥ 100% | ✓ | 3 ✅ |
 | STO-005 | Drive temperature now (SMART C2 / NVMe composite) | IOCTL | ✓ | W HDD > 50 °C, NVMe > 70 °C; C above the drive's critical temp | ✓ | 3 ✅ |
 | STO-006 | Power-on hours and age context | IOCTL | ✓ | I; W HDD > 40,000 h | ✓ | 3 ✅ |
-| STO-007 | Disk errors in the System log (disk 7, 11, 51, 153; storahci/stornvme 129; Ntfs 55, 98) in 30 days | EVT | | C if bad-block events (7) are recent; W for timeouts/resets | ✓ | 4 ✅ |
+| STO-007 | Disk errors in the System log (disk 7, 11, 51, 153; storahci/stornvme 129; Intel RST iaStorVD/iaStorAC/iaStorAVC/iaStorA 129, with VMD advice; Ntfs 55, 98) in 30 days | EVT | | C if bad-block events (7) are recent; W for timeouts/resets | ✓ | 4 ✅ |
 | STO-008 | Volume free space (system drive and others) | API GetDiskFreeSpaceEx | | C system < 5% or < 5 GB; W < 15% | ✓ | 1 ✅ |
 | STO-009 | File system dirty bit / chkdsk scheduled | IOCTL FSCTL_IS_VOLUME_DIRTY | ✓ | W | ✓ | 3 ✅ |
 | STO-010 | Windows runs on an HDD (slow-PC cause no. 1) | WMI MSFT_PhysicalDisk MediaType / seek-penalty IOCTL | | W if the system drive is a spinning disk | ✓ | 3 ✅ |

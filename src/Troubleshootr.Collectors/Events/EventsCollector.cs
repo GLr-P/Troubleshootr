@@ -24,9 +24,16 @@ public sealed class EventsCollector : Collector<EventsInfo>
     internal static readonly Rule[] Rules =
     [
         // Storage (STO-007)
-        new("System", "disk", [7, 11, 51, 153]),
+        // Bad blocks and paging errors get their own query so a flood of retries (153) can't push them past MaxPerRule.
+        new("System", "disk", [7, 51]),
+        new("System", "disk", [11, 153]),
         new("System", "storahci", [129]),
         new("System", "stornvme", [11, 129]),
+        // Intel RST / VMD drivers log their own resets (most 10th-gen+ laptops with VMD on use iaStorVD).
+        new("System", "iaStorVD", [129]),
+        new("System", "iaStorAC", [129]),
+        new("System", "iaStorAVC", [129]),
+        new("System", "iaStorA", [129]),
         new("System", "Ntfs", [55, 98], WarningsOnly: true),
         new("System", "Microsoft-Windows-Ntfs", [55, 98], WarningsOnly: true),
         // Crashes and shutdowns (CRA-001, WIN-007)

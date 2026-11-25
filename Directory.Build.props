@@ -4,7 +4,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <Version>1.1.2</Version>
+    <Version>1.1.3</Version>
     <Authors>GLr-P</Authors>
     <Product>Troubleshootr</Product>
     <Copyright>Troubleshootr contributors, GPL-3.0</Copyright>

@@ -14,6 +14,9 @@ public sealed class Sto007DiskErrors : Check
     public override Category Category => Category.Storage;
     public override IReadOnlyList<string> Needs => [nameof(Snapshot.Events)];
 
+    /// <summary>Intel Rapid Storage Technology miniports (VMD, AHCI/RAID); their Event 129 is a reset of the drive behind them.</summary>
+    internal static readonly string[] RstDrivers = ["iaStorVD", "iaStorAC", "iaStorAVC", "iaStorA"];
+
     private static readonly Regex DiskNumber = new(@"Harddisk(\d+)", RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
     public override IEnumerable<Finding> Run(Snapshot s)
@@ -21,6 +24,7 @@ public sealed class Sto007DiskErrors : Check
         var ev = s.Events!.Value!;
         var badBlocks = ev.Find("disk", 7).Within(s, Ev.Window).ToList();
         var timeouts = ev.Find("disk", 11, 153).Concat(ev.Find("storahci", 129)).Concat(ev.Find("stornvme", 11, 129)).Within(s, Ev.Window).ToList();
+        var rst = RstDrivers.SelectMany(p => ev.Find(p, 129)).Within(s, Ev.Window).ToList();
         var paging = ev.Find("disk", 51).Within(s, Ev.Window).ToList();
         var ntfs = ev.Find("Ntfs", 55, 98).Concat(ev.Find("Microsoft-Windows-Ntfs", 55, 98)).Where(e => e.Level is >= 1 and <= 3).Within(s, Ev.Window).ToList();
 
@@ -36,6 +40,12 @@ public sealed class Sto007DiskErrors : Check
             parts.Add($"bad blocks {Ev.Times(badBlocks.Count)}{disks}");
         }
         if (timeouts.Count >= RepeatedTimeouts) { Raise(Severity.Warning); parts.Add($"timeouts or resets {timeouts.Count} times{Disks(timeouts)}"); }
+        if (rst.Count >= RepeatedTimeouts)
+        {
+            Raise(Severity.Warning);
+            var drivers = string.Join(", ", rst.Select(e => e.Provider).Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(p => p));
+            parts.Add($"the Intel RST storage driver ({drivers}) reset the drive {rst.Count} times");
+        }
         if (paging.Count >= RepeatedTimeouts) { Raise(Severity.Warning); parts.Add($"paging errors {paging.Count} times{Disks(paging)}"); }
         if (ntfs.Count > 0)
         {
@@ -48,6 +58,8 @@ public sealed class Sto007DiskErrors : Check
             $"In the last 30 days: {string.Join("; ", parts)}.",
             badBlocks.Count > 0
                 ? "Back up that drive now and check its health on the Storage tab; bad blocks usually mean the drive is failing."
+                : rst.Count >= RepeatedTimeouts
+                ? "The drive stopped answering and Intel RST (VMD) reset it, which shows as a freeze of up to a minute. Update the SSD firmware and the Intel RST driver from the PC maker. If it keeps happening and the drive's health is good, turn off Intel VMD in the BIOS (first set Windows to load the standard NVMe driver at boot, or it won't start); if resets then come from stornvme, replace the drive."
                 : "Check the drive's health on the Storage tab, reseat or replace its cable (desktops), update the storage/chipset driver and SSD firmware, and run chkdsk if corruption was reported.");
     }
 
